@@ -1,0 +1,158 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #ff7f50; /* Coral */
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.tab {
+    padding: 12px 25px;
+    background-color: #e7e7e7;
+    margin: 0 5px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tab:hover {
+    background-color: #d9d9d9;
+}
+
+.active {
+    background-color: #ff7f50; /* Coral */
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    max-width: 800px;
+}
+
+.tab-content.active {
+    display: block;
+    color: black;
+}
+
+.input-field {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #555; /* Darker label color */
+}
+
+input, textarea, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #ff7f50; /* Coral */
+    outline: none;
+}
+
+.color-inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 18px; /* Added margin-bottom for better spacing */
+}
+
+.color-inputs > div {
+    flex: 1;
+    margin-right: 10px;
+    padding: 10px; /* Added padding for better spacing */
+    border: 1px solid #ccc; /* Added border for better visibility */
+    background-color: #fff; /* Added background color for contrast */
+}
+
+.color-inputs > div:last-child {
+    margin-right: 0;
+}
+
+.color-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="color"] {
+    width: 25px; /* Reduced width for a smaller color strip */
+    height: 25px; /* Reduced height for a smaller color strip */
+    border-radius: 3px; /* Corrected 'x' to 'px' */
+    border: none; /* Removed border */
+    padding: 0; /* Remove padding */
+    background-color: transparent; /* Remove grey background */
+}
+
+button {
+    background-color: #ff7f50; /* Coral */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #e76c3c; /* Darker Coral */
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 20px;
+    }
+    .tab {
+        font-size: 16px;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+#tabContent {
+    margin: 20px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    max-width: 800px;
+}

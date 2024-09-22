@@ -1,0 +1,50 @@
+<!-- # new  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notify AI Dashboarda</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Notify AI</h1>
+        <div>
+            <button onclick="window.location.href='/'">Home</button>
+            <button onclick="getInTouch()">Get in Touch</button>
+        </div>
+    </header>
+
+    <div class="tabs">
+        <div class="tab active" onclick="showTab('businessDetails')">Business Details</div>
+        <div class="tab" onclick="showTab('targetAudience')">Target Audience</div>
+        <div class="tab" onclick="showTab('contentIdeation')">Content Ideation</div>
+        <div class="tab" onclick="showTab('contentGeneration')">Content Generation</div>
+        <div class="tab" onclick="showTab('delivery')">Delivery</div>
+    </div>
+
+    <div id="businessDetails" class="tab-content active">
+        {% include 'businessDetails.html' %}
+    </div>
+    <div id="targetAudience" class="tab-content">
+        {% include 'targetAudience.html' %}
+    </div>
+    <div id="contentIdeation" class="tab-content">
+        {% include 'contentIdeation.html' %}
+    </div>
+    <div id="contentGeneration" class="tab-content">
+        {% include 'contentGeneration.html' %}
+    </div>
+    <div id="delivery" class="tab-content">
+        {% include 'delivery.html' %}
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
+
+<!-- end new -->
+
+

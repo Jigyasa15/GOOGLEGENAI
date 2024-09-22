@@ -1,0 +1,47 @@
+    <h2>Delivery Options</h2>
+    
+    <h3>Campaign Type</h3>
+    <label><input type="radio" name="campaignType" value="oneTime" checked> One-Time</label>
+    <label><input type="radio" name="campaignType" value="periodic"> Periodic</label>
+
+    <div id="periodicOptions" style="display: none;">
+        <h4>Choose Frequency</h4>
+        <label><input type="radio" name="periodicType" value="daily" onclick="togglePeriodicOptions()"> Daily</label>
+        <label><input type="radio" name="periodicType" value="weekly" onclick="togglePeriodicOptions()"> Weekly</label>
+        <div id="dailyOptions" style="display: none;">
+            <h4>Daily Options</h4>
+            <label><input type="radio" name="dateTimeOption" value="fixedTime" onclick="toggleDateTimeOption()"> Fixed Time</label>
+            <label><input type="radio" name="dateTimeOption" value="bestTime" onclick="toggleDateTimeOption()"> Best Time for User</label>
+        </div>
+        <div id="weeklyOptions" style="display: none;">
+            <h4>Weekly Options</h4>
+            <label><input type="radio" name="dateTimeOption" value="fixedTime" onclick="toggleDateTimeOption()"> Fixed Time</label>
+            <label><input type="radio" name="dateTimeOption" value="bestTime" onclick="toggleDateTimeOption()"> Best Time for User</label>
+        </div>
+    </div>
+
+    <div id="dateTimeOptions" style="display: block;">
+        <h4>Date and Time Options</h4>
+        <label><input type="radio" name="dateTimeOption" value="sendNow" onclick="toggleDateTimeOption()"> Send Now</label>
+        <label><input type="radio" name="dateTimeOption" value="scheduleLater" onclick="toggleDateTimeOption()"> Schedule for Later</label>
+
+        <div id="fixedTimeOptions" style="display: none;">
+            <h5>Fixed Time Options</h5>
+            <label><input type="radio" name="fixedTimeOption" value="fixedTime" onclick="toggleFixedTime()"> Fixed Time</label>
+            <label><input type="radio" name="fixedTimeOption" value="bestTime" onclick="toggleFixedTime()"> Best Time for User</label>
+            <div id="dateField" style="display: none;">
+                <input type="date" placeholder="Select Date">
+            </div>
+            <div id="timeField" style="display: none;">
+                <input type="time" placeholder="Select Time">
+            </div>
+            <div id="timeZone" style="display: none;">
+                <select>
+                    <option value="GMT">GMT</option>
+                    <option value="PST">PST</option>
+                    <option value="EST">EST</option>
+                </select>
+            </div>
+            <a href="#" id="viewBestTime" style="display: none;">View Best User Time Distribution</a>
+        </div>
+    </div>

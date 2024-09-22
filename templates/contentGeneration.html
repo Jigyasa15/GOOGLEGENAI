@@ -1,0 +1,46 @@
+   <h2>Content Generation</h2>
+    
+    <div id="pushNotification" class="content-section">
+        <h3>Push Notification Details</h3>
+        <div>
+            <label for="pushTitle">Title:</label>
+            <input type="text" id="pushTitle" value="Default Title" readonly>
+        </div>
+        <div>
+            <label for="pushSubtitle">Subtitle:</label>
+            <input type="text" id="pushSubtitle" value="Default Subtitle" readonly>
+        </div>
+        <div>
+            <label for="pushMessage">Push Message:</label>
+            <textarea id="pushMessage" readonly>Default Message</textarea>
+        </div>
+        <div>
+            <label for="pushImage">Image:</label>
+            <img id="pushImage" src="dummy-image.jpg" alt="Push Notification Image" style="width:100px;">
+        </div>
+        <button onclick="editPushNotification()">Edit</button>
+        <button onclick="savePushNotification()">Save</button>
+    </div>
+
+    <div id="email" class="content-section" style="display:none;">
+        <h3>Email Details</h3>
+        <div>
+            <label for="emailSubject">Subject:</label>
+            <input type="text" id="emailSubject" value="Default Subject" readonly>
+        </div>
+        <div>
+            <label for="emailBody">Body:</label>
+            <textarea id="emailBody" readonly>Default Body</textarea>
+        </div>
+        <div>
+            <label for="emailCTA">CTA:</label>
+            <input type="text" id="emailCTA" value="Default CTA" readonly>
+        </div>
+        <div>
+            <label for="emailImage">Image:</label>
+            <img id="emailImage" src="dummy-image.jpg" alt="Email Image" style="width:100px;">
+        </div>
+        <button onclick="editEmail()">Edit</button>
+        <button onclick="saveEmail()">Save</button>
+    </div>
+
