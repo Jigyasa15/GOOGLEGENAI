@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "elevated-summer-436915-p7",
+  "private_key_id": "896356c4430d429976d98964770b464eb763a2e8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC+4+YpsArozhrE\n878gPzltQgs4LKjgQauPTcCt28sGw18hUo77yPixpenruVyqxAQdGpSzmumIoeeK\nJIikwIIxqOc8CUe5wTDU3H1NldFg0C1soCHVEqFyfWBbnJBPmt+fai6jzs3G3cF1\nOeJEmUdZge/4EvIdVsyfuoml3wAZg7M2dXQSXXxkiITjCnDeuDeto8Fi/KD9fjB7\n1xZRDb44nvzKYXuz38+NBZKoDMmQ5XYQ5lfBi8ZjC8fYMvoTxk1iGn/F3FrHs4AZ\ndn8GNg17uhnj4E2KQXp729p7141RSwvjurDDjlQ8sjcoPRYH8J2xCQNlZmulIwlM\nHVoSvtLZAgMBAAECggEAR51ifSNRhHPGcTts6eEuX0IWyXVfyfp5LaMi9VbvPVNQ\nvkSl5epI+wTe1JPPIzW0wWJ2hUdJ8/uhzR7VsNGURqMyVUC6CwNimYk67T+WtLaF\nRCpzZue9cCF/Y/9B2Mumt7zzUHtGkiQh7yPPMqM6tGbeK3iYIs+spwQpnfQiqm8q\ntRleTaK4lVdtIyN9KC1F1Hl6x4mhadCjZlBOvLF/rPXPqcGyq5CaeYoln5HSohcE\noc8yCDau1Hduy3UG24f83dX1JocL3Iw5KZH6BKcFalAVyC6F2878DJC62NZH/Jne\nr9q5andDnOzzASkfvNYNmPBtNQDJTFRPZ/8LX4wyvQKBgQD0onl2ooGIbA5qZLLx\newpA+yGQwXlrxyW4PSYZoi4tR3x2eLtrE2LGbz/oNBRyucHydTw6oVHzuWSpJgqZ\noAjFQqu/d5qBcfiYWh4qbgnJx6eG7zua24L5GV5v9nE1kh0B/tYY/qksrdjgOKEW\nkz69FDrMGklEFzFwjiMhcV+2fwKBgQDHwjkoBaK58aAyL3QzT/RpRg3Kn9JO8jV5\nBBB8RZWrF5TSOhp3fAB8nX1foqHNjG+rn4ohNqqtnX/P1idlDw7QaklPTJQu3QMt\nko/CAfVfJV7snv2zCycAdSEz/M2nC72mARLvEmJ2Uqa866FxxQk6x9PjljnmH8yY\nWom/Mwo6pwKBgAaKMWUSgxP6j4gYmRALkgKatBMCmRRghomeWN5mj4V2W8VvBNOf\n+QwE/VhfzAwlGyI4MBwBJAe39RDwi2f/9zwOxDiiIedD/LlV72iC+JAEXl4lFxrU\ns3OlUfj8RZqBBXWAMokIhc1D+IBGA0hvN0YmvEuoiDzhwdiYdCf4t+5RAoGAClUz\nm6xe9HtZK/9kZVsXa3KiN/74Y/kHZxEcwTDgQw9fNVioEdIqPEfxOkcxU26WQCxq\nerlXLs/c0qVjOEkFHSbCUAXIDHyGM49HPGPZi2hldpvqx54mEFH+u6+x+5gR4Upg\n7ljnGvO/iDowCbCFf7LidP1KVWsDrEXSpj8/ojUCgYBojerdC82N22WeFfoSaKhb\n7IkeYoxmvLNgkAt3Ngn9IeZuQzIWa8as9wxLU90/vodQw/tQAziG8hd73KZzxJ9u\nwAe2LQQZkLufB+UsKB22Aw7f5HKVBNzi3JQ7tPKZfcS+5f8TBVJekjbW0nQlWe8s\nNuFqsrdcrqNFtVujjYesYg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "notify-ai@elevated-summer-436915-p7.iam.gserviceaccount.com",
+  "client_id": "102966309589457958907",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/notify-ai%40elevated-summer-436915-p7.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

@@ -1,61 +1,112 @@
-    <h2>Target Audience</h2>
+<h2>Target Audience</h2>
 
-    <div class="input-field">
-        <label>How would you like to segment your audience?</label>
-        <div>
-            <input type="radio" id="segmentAI" name="segmentOption" value="AI" onclick="toggleSegmentOption()">
-            <label for="segmentAI">Generate customer segment using AI</label>
-        </div>
-        <div>
-            <input type="radio" id="customSegment" name="segmentOption" value="custom" onclick="toggleSegmentOption()">
-            <label for="customSegment">Provide custom segment</label>
-        </div>
-    </div>
 
-    <!-- AI-generated segment fields -->
-    <div id="aiSegmentFields" style="display: none;">
-        <div class="input-field">
-            <label for="campaignGoal">Goal for the campaign:</label>
-            <input type="text" id="campaignGoal" placeholder="Enter your campaign goal" required>
-        </div>
-        <div class="input-field">
-            <label for="customerData">Upload Customer Data (CSV):</label>
-            <input type="file" id="customerData" accept=".csv" required>
-        </div>
+<div class="input-field">
+   <label>How would you like to segment your audience?</label>
+   <div>
+       <input type="radio" id="segmentAI" name="segmentOption" value="AI" onclick="toggleSegmentOption()">
+       <label for="segmentAI">Generate customer segment using AI</label>
+   </div>
+   <div>
+       <input type="radio" id="customSegment" name="segmentOption" value="custom" onclick="toggleSegmentOption()">
+       <label for="customSegment">Provide custom segment</label>
+   </div>
+</div>
 
-        <!-- Prompt template section -->
-        <div class="input-field">
-            <label for="promptTemplate">Choose a prompt template:</label>
-            <div>
-                <input type="radio" id="predefinedTemplate" name="templateOption" value="predefined" onclick="toggleTemplateOption()">
-                <label for="predefinedTemplate">Use predefined template</label>
-            </div>
-            <div>
-                <input type="radio" id="newTemplate" name="templateOption" value="new" onclick="toggleTemplateOption()">
-                <label for="newTemplate">Create new template</label>
-            </div>
-        </div>
 
-        <!-- New template input field -->
-        <div class="input-field" id="newTemplateField" style="display: none;">
-            <label for="customPrompt">Provide the prompt for your new template:</label>
-            <textarea id="customPrompt" rows="4" placeholder="Enter custom prompt" required></textarea>
-        </div>
+<!-- AI-generated segment fields -->
+<div id="aiSegmentFields" style="display: none;">
+   <div class="input-field">
+       <label for="campaignName">Campaign name:</label>
+       <input type="text" id="campaignName" placeholder="Enter your campaign name" required>
+   </div>
+   <div class="input-field">
+       <label for="campaignGoal">Goal for the campaign:</label>
+       <input type="text" id="campaignGoal" placeholder="Enter your campaign goal" required>
+   </div>
+   <div class="input-field">
+       <label for="customerData">Upload Customer Data (CSV):</label>
+       <input type="file" id="customerData" accept=".csv" required>
+   </div>
 
-        <button onclick="generateSegment()">Generate Segment</button>
-    </div>
 
-    <!-- Custom segment field -->
-    <div id="customSegmentField" style="display: none;">
-        <div class="input-field">
-            <label for="customerSegment">Customer Segment:</label>
-            <textarea id="customerSegment" rows="4" placeholder="Provide your customer segment" required></textarea>
-        </div>
-    </div>
+   <!-- Prompt template section -->
+   <div class="input-field">
+       <label for="promptTemplate">Choose a prompt template:</label>
+       <div>
+           <input type="radio" id="predefinedTemplate" name="templateOption" value="predefined" onclick="generatePredefinedPrompt()">
+           <label for="predefinedTemplate">Use predefined template</label>
+       </div>
+       <div>
+           <input type="radio" id="newTemplate" name="templateOption" value="new" onclick="toggleTemplateOption()">
+           <label for="newTemplate">Create new template</label>
+       </div>
+   </div>
 
-    <!-- <button onclick="nextTab('createContent')">Next</button> -->
-     <!-- Buttons aligned to the bottom right -->
+
+   <!-- Predefined template display -->
+   <div class="input-field" id="predefinedTemplateField" style="display: none;">
+       <label for="predefinedPrompt" style="margin-bottom: 10px; display: block;">Predefined Prompt:</label>
+       <input type="text" id="predefinedPrompt" value="Predefined prompt" style="width: 100%;" readonly>
+   </div>
+
+
+   <!-- New template input field -->
+   <div class="input-field" id="newTemplateField" style="display: none;">
+       <label for="customPrompt" style="margin-bottom: 10px; display: block;">Provide the prompt for your new template:</label>
+       <textarea id="customPrompt" rows="4" style="width: 100%; resize: vertical;" placeholder="Enter custom prompt" required></textarea>
+   </div>
+
+
+   <!-- Generate Segment button -->
+   <button id="generateButton" style="display:none;" onclick="generateSegment()">Generate Segment</button>
+
+
+   <!-- Segment options and editable fields (shown after Generate Segment button is clicked) -->
+   <div class="input-field" id="segmentContainer" style="display: none;">
+       <label for="editableSegment" style="margin-bottom: 10px;">Select a Segment:</label>
+       <div class="segment-wrapper">
+           <div class="segment-pill" onclick="selectSegment('Segment 1')">
+               Segment 1
+           </div>
+           <div class="segment-pill" onclick="selectSegment('Segment 2')">
+               Segment 2
+           </div>
+           <div class="segment-pill" onclick="selectSegment('Segment 3')">
+               Segment 3
+           </div>
+       </div>
+
+
+       <!-- Editable segment text field placed inline with segment pills -->
+       <textarea id="editableSegment" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your segment will appear here" required></textarea>
+   </div>
+
+
+   <!-- Regenerate Segment button -->
+   <button id="regenerateButton" style="display:none;" onclick="regenerateSegment()">Regenerate Segment</button>
+</div>
+
+
+<!-- Custom segment field -->
+<div id="customSegmentField" style="display: none;">
+   <div class="input-field">
+       <label for="campaignName">Campaign name:</label>
+       <input type="text" id="campaignName" placeholder="Enter your campaign name" required>
+   </div>
+   <div class="input-field">
+       <label for="campaignGoal">Goal for the campaign:</label>
+       <input type="text" id="campaignGoal" placeholder="Enter your campaign goal" required>
+   </div>
+   <div class="input-field">
+       <label for="customSegment">Custom Segment:</label>
+       <textarea id="customSegment" rows="4" style="width: 100%; resize: vertical;" placeholder="Provide your custom segment" required></textarea>
+   </div>
+</div>
+
+
+<!-- Buttons aligned to the bottom right -->
 <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
-<button onclick="previousTab('businessDetails')">Back</button>
-<button onclick="nextTab('contentIdeation')">Next</button>
+   <button onclick="previousTab('businessDetails')">Back</button>
+   <button onclick="nextTab('contentIdeation')">Next</button>
 </div>

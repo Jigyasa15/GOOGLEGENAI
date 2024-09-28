@@ -96,8 +96,10 @@
 
 # if __name__ == '__main__':  # Corrected here
 #     app.run(debug=True,port=5001)
-
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
+import os
+import pandas as pd
+from google.cloud import aiplatform
 from flask_mail import Mail, Message
 from datetime import datetime, timedelta
 import random
@@ -105,7 +107,6 @@ from authlib.integrations.flask_client import OAuth
 
 app = Flask(__name__)  # Corrected here
 app.secret_key = 'random_secret_key'
-
 # Configure Flask-Mail
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
@@ -133,6 +134,10 @@ google = oauth.register(
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/analytics')
+def analytics():
+    return render_template('analytics.html')
 
 # Sign-In Route
 @app.route('/signin')
@@ -220,6 +225,115 @@ def verify_otp():
     else:
         flash("Session expired or OTP not found. Please request a new OTP.")
         return redirect(url_for('signin'))
+
+@app.route('/submit_business_details', methods=['POST'])
+def submit_business_details():
+    # Save the form data in the session
+    session['business_name'] = request.form.get('businessName')
+    session['industry'] = request.form.get('industry')
+    session['other_industry'] = request.form.get('otherIndustry')
+    session['business_description'] = request.form.get('businessDescription')
+    session['primary_color'] = request.form.get('primaryColor')
+    session['secondary_color'] = request.form.get('secondaryColor')
+    session['tertiary_color'] = request.form.get('tertiaryColor')
+    session['font_size'] = request.form.get('fontSize')
+    session['font_style'] = request.form.get('fontStyle')
+
+    # Handle the business logo file upload (if needed)
+    business_logo = request.files.get('businessLogo')
+    if business_logo:
+        business_logo.save(f"static/uploads/{business_logo.filename}")
+        session['business_logo'] = f"/static/uploads/{business_logo.filename}"
+
+    return jsonify({"success": True})
+
+@app.route('/get_business_details', methods=['GET'])
+def get_business_details():
+    business_details = {
+        'business_name': session.get('business_name'),
+        'industry': session.get('industry'),
+        'other_industry': session.get('other_industry'),
+        'business_description': session.get('business_description'),
+        'primary_color': session.get('primary_color'),
+        'secondary_color': session.get('secondary_color'),
+        'tertiary_color': session.get('tertiary_color'),
+        'font_size': session.get('font_size'),
+        'font_style': session.get('font_style'),
+        'business_logo': session.get('business_logo'),
+    }
+    return jsonify(business_details)
+
+# Set Google Application Credentials (path to your service account key JSON file)
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "elevated-summer-436915-p7-896356c4430d.json"
+
+# Initialize Vertex AI API
+aiplatform.init(project='elevated-summer-436915-p7', location='us-central1')
+
+PROMPT_TEMPLATE = """
+Generate a marketing prompt for a campaign with the following details:
+Campaign Name: {campaign_name}
+Campaign Goal: {campaign_goal}
+Customer Data Insights: {csv_data}
+"""
+
+CSV_ANALYSIS_PROMPT = """
+Analyze the following customer data and extract key trends, patterns, and attributes that would help generate a customer segment for targeted marketing.
+
+{csv_data}
+"""
+
+def read_and_prepare_csv(file):
+    """Reads CSV and prepares it for AI analysis."""
+    try:
+        df = pd.read_csv(file)
+        return df.to_string()  # Convert the entire DataFrame to a string for AI processing
+    except Exception as e:
+        return f"Error processing CSV: {str(e)}"
+
+def analyze_csv_with_vertex_ai(csv_data):
+    """Send the CSV data to Vertex AI for analysis."""
+    prompt = CSV_ANALYSIS_PROMPT.format(csv_data=csv_data)
+
+    # Use Vertex AI Text Generation model
+    model = aiplatform.TextGenerationModel.from_pretrained("text-bison@001")
+    response = model.predict(prompt)
+
+    return response.text  # Return AI-generated CSV insights
+
+def generate_predefined_prompt(campaign_name, campaign_goal, csv_data):
+    """Generate predefined prompt using Vertex AI."""
+    
+    prompt = PROMPT_TEMPLATE.format(
+        campaign_name=campaign_name,
+        campaign_goal=campaign_goal,
+        csv_data=csv_data
+    )
+    
+    model = aiplatform.TextGenerationModel.from_pretrained("text-bison@001")
+    response = model.predict(prompt)
+    
+    return response.text
+
+@app.route('/generate-prompt', methods=['POST'])
+def generate_prompt():
+    """Handle predefined prompt generation based on user inputs."""
+    
+    # Capture campaign details
+    campaign_name = request.form.get('campaignName')
+    campaign_goal = request.form.get('campaignGoal')
+    
+    # Handle CSV file upload
+    csv_file = request.files.get('customerData')
+    if csv_file:
+        csv_data_string = read_and_prepare_csv(csv_file)
+        csv_insights = analyze_csv_with_vertex_ai(csv_data_string)
+    else:
+        csv_insights = "No customer data provided."
+    
+    # Generate the predefined prompt using Vertex AI
+    predefined_prompt = generate_predefined_prompt(campaign_name, campaign_goal, csv_insights)
+    
+    return jsonify({'predefined_prompt': predefined_prompt})
 
 if __name__ == '__main__':  # Corrected here
     app.run(debug=True, port=5001)

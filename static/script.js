@@ -304,3 +304,430 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Function to toggle between one-time and periodic campaign types
+function toggleCampaignType() {
+    const oneTimeOptions = document.getElementById('oneTimeOptions');
+    const periodicOptions = document.getElementById('periodicOptions');
+    const campaignType = document.querySelector('input[name="campaignType"]:checked').value;
+
+    if (campaignType === 'oneTime') {
+        oneTimeOptions.style.display = 'block';
+        periodicOptions.style.display = 'none';
+    } else if (campaignType === 'periodic') {
+        oneTimeOptions.style.display = 'none';
+        periodicOptions.style.display = 'block';
+    }
+}
+
+// Function to toggle date and time options for one-time scheduling
+function toggleOneTimeSchedule() {
+    const oneTimeFixedOptions = document.getElementById('oneTimeFixedOptions');
+    const bestTimeLink = document.getElementById('bestTimeLink');
+    const scheduleType = document.querySelector('input[name="scheduleType"]:checked').value;
+
+    if (scheduleType === 'fixedTime') {
+        oneTimeFixedOptions.style.display = 'block';
+        bestTimeLink.style.display = 'none';
+    } else if (scheduleType === 'bestTime') {
+        oneTimeFixedOptions.style.display = 'none';
+        bestTimeLink.style.display = 'block';
+    }
+}
+
+// Function to toggle date and time options for periodic scheduling (daily/weekly)
+function togglePeriodicSchedule() {
+    const periodicScheduleType = document.querySelector('input[name="periodicScheduleType"]:checked').value;
+    const periodicFixedOptions = document.getElementById('periodicFixedOptions');
+    const bestTimePeriodicLink = document.getElementById('bestTimePeriodicLink');
+    
+    if (periodicScheduleType === 'fixedTime') {
+        periodicFixedOptions.style.display = 'block';
+        bestTimePeriodicLink.style.display = 'none';
+    } else if (periodicScheduleType === 'bestTime') {
+        periodicFixedOptions.style.display = 'none';
+        bestTimePeriodicLink.style.display = 'block';
+    }
+}
+
+// Function to toggle between daily and weekly options
+function toggleDailyOrWeekly() {
+    const periodicType = document.querySelector('input[name="periodicType"]:checked').value;
+    const dailyOptions = document.getElementById('dailyOptions');
+    const weeklyOptions = document.getElementById('weeklyOptions');
+
+    if (periodicType === 'daily') {
+        dailyOptions.style.display = 'block';
+        weeklyOptions.style.display = 'none';
+    } else if (periodicType === 'weekly') {
+        dailyOptions.style.display = 'none';
+        weeklyOptions.style.display = 'block';
+    }
+}
+
+// Function to toggle periodic schedule options only after selecting daily or weekly
+function togglePeriodicType() {
+    const periodicTimeOptions = document.getElementById('periodicTimeOptions');
+    const dailyOptions = document.getElementById('dailyOptions');
+    const weeklyOptions = document.getElementById('weeklyOptions');
+    const periodicType = document.querySelector('input[name="periodicType"]:checked').value;
+
+    if (periodicType === 'daily') {
+        periodicTimeOptions.style.display = 'block';
+        dailyOptions.style.display = 'block';
+        weeklyOptions.style.display = 'none';
+    } else if (periodicType === 'weekly') {
+        periodicTimeOptions.style.display = 'block';
+        dailyOptions.style.display = 'none';
+        weeklyOptions.style.display = 'block';
+    } else {
+        periodicTimeOptions.style.display = 'none';
+    }
+}
+
+// Function to toggle between fixed time and best time for periodic campaigns
+function togglePeriodicSchedule() {
+    const periodicScheduleType = document.querySelector('input[name="periodicScheduleType"]:checked').value;
+    const periodicFixedOptions = document.getElementById('periodicFixedOptions');
+    const bestTimePeriodicLink = document.getElementById('bestTimePeriodicLink');
+    
+    if (periodicScheduleType === 'fixedTime') {
+        periodicFixedOptions.style.display = 'block';
+        bestTimePeriodicLink.style.display = 'none';
+    } else if (periodicScheduleType === 'bestTime') {
+        periodicFixedOptions.style.display = 'none';
+        bestTimePeriodicLink.style.display = 'block';
+    }
+}
+
+function sendCampaign() {
+    alert('Campaign sent successfully!');
+    window.location.href = '/analytics';  // URL path for Flask routing
+}
+
+// Sample data for the table, including create date
+const campaignData = [
+    { name: 'Campaign 1', channel: 'push', status: 'active', variant: 'A/B', distribution: '50/50', ctr: 5, sent: 1000, clicked: 50, ignored: 950, unsubscribe: 10, performance: 50, createDate: '2023-09-01' },
+    { name: 'Campaign 2', channel: 'email', status: 'scheduled', variant: 'Control', distribution: '100%', ctr: 10, sent: 1500, clicked: 150, ignored: 1350, unsubscribe: 20, performance: 65, createDate: '2023-08-15' },
+    { name: 'Campaign 3', channel: 'push', status: 'drafts', variant: 'A/B', distribution: '70/30', ctr: 7, sent: 500, clicked: 35, ignored: 465, unsubscribe: 5, performance: 30, createDate: '2023-09-20' },
+];
+
+// Function to render the table based on filtered data
+function renderTable(data) {
+    const tableBody = document.getElementById('campaignTable').querySelector('tbody');
+    tableBody.innerHTML = ''; // Clear current table data
+
+    data.forEach(row => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${row.name}</td>
+            <td>${row.channel}</td>
+            <td>${row.status}</td>
+            <td>${row.variant}</td>
+            <td>${row.distribution}</td>
+            <td>${row.ctr}</td>
+            <td>${row.sent}</td>
+            <td>${row.clicked}</td>
+            <td>${row.ignored}</td>
+            <td>${row.unsubscribe}</td>
+            <td>${row.performance}</td>
+            <td>${row.createDate}</td> <!-- Added Create Date -->
+        `;
+        tableBody.appendChild(tr);
+    });
+}
+
+// Function to apply filters and sorting
+function applyFilters() {
+    let filteredData = campaignData;
+
+    // Get filter values
+    const channel = document.getElementById('channel').value;
+    const campaignName = document.getElementById('campaignName').value.toLowerCase();
+    const dateFrom = document.getElementById('dateFrom').value;
+    const dateTo = document.getElementById('dateTo').value;
+    const status = document.getElementById('status').value;
+    const sortBy = document.getElementById('sortBy').value;
+
+    // Apply channel and status filters
+    if (channel !== 'all') {
+        filteredData = filteredData.filter(campaign => campaign.channel === channel);
+    }
+    if (campaignName) {
+        filteredData = filteredData.filter(campaign => campaign.name.toLowerCase().includes(campaignName));
+    }
+    if (status !== 'all') {
+        filteredData = filteredData.filter(campaign => campaign.status === status);
+    }
+
+    // Filter based on create date
+    if (dateFrom) {
+        filteredData = filteredData.filter(campaign => new Date(campaign.createDate) >= new Date(dateFrom));
+    }
+    if (dateTo) {
+        filteredData = filteredData.filter(campaign => new Date(campaign.createDate) <= new Date(dateTo));
+    }
+
+    // Apply sorting
+    filteredData.sort((a, b) => {
+        if (sortBy === 'createDate') {
+            return new Date(b.createDate) - new Date(a.createDate); // Sort by create date
+        }
+        return b[sortBy] - a[sortBy]; // Other sorting options (CTR, Sent, Clicked, etc.)
+    });
+
+    // Render the filtered and sorted data in the table
+    renderTable(filteredData);
+}
+
+// Function to download the table data as an Excel file
+function downloadExcel() {
+    let table = document.getElementById('campaignTable');
+    let rows = [...table.rows];
+
+    let csvContent = "data:text/csv;charset=utf-8,";
+    rows.forEach(row => {
+        let rowData = [...row.cells].map(cell => cell.textContent).join(",");
+        csvContent += rowData + "\r\n";
+    });
+
+    // Create a download link and trigger the download
+    let downloadLink = document.createElement('a');
+    downloadLink.setAttribute('href', encodeURI(csvContent));
+    downloadLink.setAttribute('download', 'campaign_analytics.csv');
+    downloadLink.click();
+}
+
+// Initial table render
+document.addEventListener('DOMContentLoaded', () => {
+    renderTable(campaignData); // Render table with initial data
+});
+
+function toggleSegmentOption() {
+    const aiSegmentFields = document.getElementById('aiSegmentFields');
+    const customSegmentField = document.getElementById('customSegmentField');
+   
+    if (document.getElementById('segmentAI').checked) {
+        aiSegmentFields.style.display = 'block';
+        customSegmentField.style.display = 'none';
+    } else {
+        aiSegmentFields.style.display = 'none';
+        customSegmentField.style.display = 'block';
+    }
+ }
+ 
+ 
+ function toggleTemplateOption() {
+    const predefinedTemplateField = document.getElementById('predefinedTemplateField');
+    const newTemplateField = document.getElementById('newTemplateField');
+    const generateButton = document.getElementById('generateButton');
+    const segmentContainer = document.getElementById('segmentContainer');
+    const regenerateButton = document.getElementById('regenerateButton');
+   
+    segmentContainer.style.display = 'none';
+    regenerateButton.style.display = 'none';
+    generateButton.style.display = 'block'; // Show generate button
+ 
+ 
+    if (document.getElementById('predefinedTemplate').checked) {
+        predefinedTemplateField.style.display = 'block';
+        newTemplateField.style.display = 'none';
+        templateType = 'predefined';
+    } else {
+        predefinedTemplateField.style.display = 'none';
+        newTemplateField.style.display = 'block';
+        templateType = 'new';
+    }
+ }
+ 
+ 
+ function generateSegment() {
+    const segmentContainer = document.getElementById('segmentContainer');
+    const regenerateButton = document.getElementById('regenerateButton');
+    const generateButton = document.getElementById('generateButton');
+   
+    // Show segment container and regenerate button after generating
+    segmentContainer.style.display = 'block';
+    regenerateButton.style.display = 'block';
+    generateButton.style.display = 'none'; // Hide the generate button after generation
+    selectSegment('Segment 1');  // Default to Segment 1
+ }
+ 
+ 
+ function selectSegment(segment) {
+    const editableSegment = document.getElementById('editableSegment');
+    editableSegment.value = segment;
+ }
+
+ function selectTitle(title) {
+    const editableTitle = document.getElementById('editableTitle');
+    editableTitle.value = title;
+ }
+
+
+ function selectSubtitle(subtitle) {
+    const editableSubtitle = document.getElementById('editableSubtitle');
+    editableSubtitle.value = subtitle;
+ }
+
+
+ function selectPushmsg(pushmsg) {
+    const editablePushmsg = document.getElementById('editablePushmsg');
+    editablePushmsg.value = pushmsg;
+ }
+
+
+ function selectSubject(subject) {
+    const editableSubject = document.getElementById('editableSubject');
+    editableSubject.value = subject;
+ }
+
+ function selectBody(body) {
+    const editableBody = document.getElementById('editableBody');
+    editableBody.value = body;
+ }
+ 
+ function selectCTA(cta) {
+    const editableCTA = document.getElementById('editableCTA');
+    editableCTA.value = cta;
+ }
+ 
+ function regenerateSegment() {
+    // Logic to regenerate the segment
+    alert("Segment regenerated!");
+ }
+
+ function regenerateContent() {
+    // Logic to regenerate the segment
+    alert("Content regenerated!");
+ }
+ 
+ document.addEventListener('DOMContentLoaded', function () {
+    const selectableImages = document.querySelectorAll('.selectable-image');
+    const editableImage = document.getElementById('editableImage');
+    const imageUpload = document.getElementById('imageUpload');
+
+    // Function to handle image selection
+    selectableImages.forEach(image => {
+        image.addEventListener('click', function () {
+            const imageUrl = image.getAttribute('data-image-url');
+            editableImage.src = imageUrl;
+        });
+    });
+
+    // Function to handle custom image upload
+    imageUpload.addEventListener('change', function () {
+        const file = imageUpload.files[0];
+        const reader = new FileReader();
+        
+        reader.onload = function (e) {
+            editableImage.src = e.target.result;
+        };
+        
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    });
+});
+
+// Submit Image Function (can be modified to perform actions)
+
+
+function toggleTemplateContentOption(selectedOption) {
+    const predefinedTemplateField = document.getElementById('predefinedTemplateContentField');
+    const newTemplateField = document.getElementById('newTemplateContentField');
+   
+    if (selectedOption === 'predefined') {
+        predefinedTemplateField.style.display = 'block';
+        newTemplateField.style.display = 'none';
+    } else if (selectedOption === 'new') {
+        predefinedTemplateField.style.display = 'none';
+        newTemplateField.style.display = 'block';
+    }
+ }
+ 
+ 
+ // Initialize variant count functions
+ function incrementVariantCount() {
+    const variantCount = document.getElementById('variantCount');
+    const currentValue = parseInt(variantCount.value, 10);
+    if (currentValue < 5) {
+        variantCount.value = currentValue + 1;
+    }
+ }
+ 
+ 
+ function decrementVariantCount() {
+    const variantCount = document.getElementById('variantCount');
+    const currentValue = parseInt(variantCount.value, 10);
+    if (currentValue > 1) {
+        variantCount.value = currentValue - 1;
+    }
+ }
+
+ function generatePredefinedPrompt() {
+    // Collect form data from the target audience tab
+    const formData = new FormData();
+    formData.append('campaignName', document.getElementById('campaignName').value);
+    formData.append('campaignGoal', document.getElementById('campaignGoal').value);
+    formData.append('customerData', document.getElementById('customerData').files[0]);
+
+    // Fetch business details from the session via AJAX
+    fetch('/get_business_details', {
+        method: 'GET',
+    })
+    .then(response => response.json())
+    .then(businessDetails => {
+        // Append business details to the form data
+        formData.append('businessName', businessDetails.business_name);
+        formData.append('industry', businessDetails.industry);
+        formData.append('businessDescription', businessDetails.business_description);
+        formData.append('primaryColor', businessDetails.primary_color);
+        formData.append('secondaryColor', businessDetails.secondary_color);
+        formData.append('tertiaryColor', businessDetails.tertiary_color);
+        formData.append('fontSize', businessDetails.font_size);
+        formData.append('fontStyle', businessDetails.font_style);
+
+        // Send the form data to the backend for AI prompt generation
+        return fetch('/generate-prompt', {
+            method: 'POST',
+            body: formData,
+        });
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Display the generated predefined prompt
+        document.getElementById('predefinedPrompt').value = data.predefined_prompt;
+    })
+    .catch(error => console.error('Error:', error));
+}
+ 
+function submitBusinessDetails() {
+    const formData = new FormData();
+    formData.append('businessName', document.getElementById('businessName').value);
+    formData.append('industry', document.getElementById('industry').value);
+    formData.append('otherIndustry', document.getElementById('otherIndustry').value);
+    formData.append('businessDescription', document.getElementById('businessDescription').value);
+    formData.append('businessLogo', document.getElementById('businessLogo').files[0]);
+    formData.append('primaryColor', document.getElementById('primaryColor').value);
+    formData.append('secondaryColor', document.getElementById('secondaryColor').value);
+    formData.append('tertiaryColor', document.getElementById('tertiaryColor').value);
+    formData.append('fontSize', document.getElementById('fontSize').value);
+    formData.append('fontStyle', document.getElementById('fontStyle').value);
+
+    fetch('/submit_business_details', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Redirect to the Target Audience tab
+            nextTab('targetAudience');
+        } else {
+            alert('Error saving business details');
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+ 
+ 

@@ -2,45 +2,157 @@
     
     <div id="pushNotification" class="content-section">
         <h3>Push Notification Details</h3>
-        <div>
-            <label for="pushTitle">Title:</label>
-            <input type="text" id="pushTitle" value="Default Title" readonly>
-        </div>
-        <div>
-            <label for="pushSubtitle">Subtitle:</label>
-            <input type="text" id="pushSubtitle" value="Default Subtitle" readonly>
-        </div>
-        <div>
-            <label for="pushMessage">Push Message:</label>
-            <textarea id="pushMessage" readonly>Default Message</textarea>
-        </div>
-        <div>
-            <label for="pushImage">Image:</label>
-            <img id="pushImage" src="dummy-image.jpg" alt="Push Notification Image" style="width:100px;">
-        </div>
-        <button onclick="editPushNotification()">Edit</button>
-        <button onclick="savePushNotification()">Save</button>
-    </div>
+
+
+<!-- new -->
+  <!-- Segment options and editable fields (shown after Generate Segment button is clicked) -->
+   <div>
+     <label for="pushTitle" style="margin-bottom: 10px;">Title:</label>
+     <textarea id="editableTitle" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your title will appear here" required></textarea>
+     <div class="segment-wrapper" id="pushTitle" >
+         <div class="segment-pill" onclick="selectTitle('Title 1')">
+             Title 1
+         </div>
+         <div class="segment-pill" onclick="selectTitle('Title 2')">
+             Title 2
+         </div>
+         <div class="segment-pill" onclick="selectTitle('Title 3')">
+             Title 3
+         </div>
+</div>
+</div>
+
+<div>
+    <label for="pushSubtitle" style="margin-bottom: 10px;">Subtitle:</label>
+    <textarea id="editableSubtitle" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your title will appear here" required></textarea>
+     <div class="segment-wrapper" id="pushTitle" >
+         <div class="segment-pill" onclick="selectSubtitle('SubTitle 1')">
+            Sub Title 1
+         </div>
+         <div class="segment-pill" onclick="selectSubtitle('SubTitle 2')">
+             Sub Title 2
+         </div>
+         <div class="segment-pill" onclick="selectSubtitle('SubTitle 3')">
+             Sub Title 3
+         </div>
+</div>
+</div>
+
+<div>
+    <label for="pushMessage" style="margin-bottom: 10px;">Push Message:</label>
+    <textarea id="editablePushmsg" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your title will appear here" required></textarea>
+     <div class="segment-wrapper" id="pushTitle" >
+         <div class="segment-pill" onclick="selectPushmsg('Push Message 1')">
+            Push Message 1
+         </div>
+         <div class="segment-pill" onclick="selectPushmsg('Push Message 2')">
+             Push Message 2
+         </div>
+         <div class="segment-pill" onclick="selectPushmsg('Push Meassage 3')">
+             Push Message 3
+         </div>
+</div>
+</div>
+</div>
+
+    <!-- <label for="pushImage">Image:</label>
+    <img id="pushImage" src="dummy-image.jpg" alt="Push Notification Image" style="width:100px;"> -->
+
+    <!-- <div class="image-selection-container"></div>
+        <!Editable Image Field -->
+        <!-- <div class="editable-image-field">
+            <p>Image:</p>
+            <img id="editableImage" src="" alt="Selected Image" style="max-width: 200px;">
+             -->
+            <!-- File Upload for Custom Image -->
+            <!-- <input type="file" id="imageUpload" accept="image/*">
+        </div> -->
+        <!-- Predefined Images -->
+        <!-- <div class="image-options">
+            <img src="{{ url_for('static', filename='image1.jpg') }}" alt="Image 1" class="selectable-image" data-image-url="{{ url_for('static', filename='image1.jpg') }}">
+            <img src="{{ url_for('static', filename='image2.jpg') }}" alt="Image 2" class="selectable-image" data-image-url="{{ url_for('static', filename='image2.jpg') }}">
+            <img src="{{ url_for('static', filename='image3.jpg') }}" alt="Image 3" class="selectable-image" data-image-url="{{ url_for('static', filename='image3.jpg') }}">
+        </div> -->
+<!-- </div>
+        <button id="regenerateContentButton"  onclick="regenerateContent()">Regenerate</button>
+        <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
+        <button onclick="previousTab('contentIdeation')">Back</button>
+   <button onclick="nextTab('delivery')">Next</button> -->
 
     <div id="email" class="content-section" style="display:none;">
         <h3>Email Details</h3>
         <div>
-            <label for="emailSubject">Subject:</label>
-            <input type="text" id="emailSubject" value="Default Subject" readonly>
+            <label for="emailSubject" style="margin-bottom: 10px;">Subject:</label>
+    <textarea id="editableSubject" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your title will appear here" required></textarea>
+     <div class="segment-wrapper" id="editableSubject" >
+         <div class="segment-pill" onclick="selectSubject('Subject 1')">
+            Subject 1
+         </div>
+         <div class="segment-pill" onclick="selectSubject('Subject 2')">
+             Subject 2
+         </div>
+         <div class="segment-pill" onclick="selectSubject('Subject 3')">
+             Subject 3
+         </div>
+        </div>
+        </div>
+
+        <div>
+        <label for="emailBody" style="margin-bottom: 10px;">Body:</label>
+        <textarea id="editableBody" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your title will appear here" required></textarea>
+        <div class="segment-wrapper" id="editableBody" >
+         <div class="segment-pill" onclick="selectBody('Body 1')">
+            Body 1
+         </div>
+         <div class="segment-pill" onclick="selectBody('Body 2')">
+            Body 2
+         </div>
+         <div class="segment-pill" onclick="selectBody('Body 3')">
+            Body 3
+         </div>
+        </div>
+        </div>
+
+        <div>
+            <label for="emailCTA" style="margin-bottom: 10px;">CTA:</label>
+            <textarea id="editableCTA" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your title will appear here" required></textarea>
+            <div class="segment-wrapper" id="editableCTA" >
+             <div class="segment-pill" onclick="selectCTA('CTA 1')">
+                CTA 1
+             </div>
+             <div class="segment-pill" onclick="selectCTA('CTA 2')">
+                CTA 2
+             </div>
+             <div class="segment-pill" onclick="selectCTA('CTA 3')">
+                CTA 3
+             </div>
+            </div>
+            </div>
+        <div>
+        </div>
+    </div>
+            <!-- <label for="emailImage">Image:</label>
+            <img id="emailImage" src="dummy-image.jpg" alt="Email Image" style="width:100px;"> -->
+            <div class="image-selection-container"></div>
+        <!-- Editable Image Field -->
+        <div class="editable-image-field">
+            <p>Image:</p>
+            <img id="editableImage" src="" alt="Selected Image" style="max-width: 200px;">
+            
+            <!-- File Upload for Custom Image -->
+            <input type="file" id="imageUpload" accept="image/*">
+        </div>
+        <!-- Predefined Images -->
+        <div class="image-options">
+            <img src="{{ url_for('static', filename='image1.jpg') }}" alt="Image 1" class="selectable-image" data-image-url="{{ url_for('static', filename='image1.jpg') }}">
+            <img src="{{ url_for('static', filename='image2.jpg') }}" alt="Image 2" class="selectable-image" data-image-url="{{ url_for('static', filename='image2.jpg') }}">
+            <img src="{{ url_for('static', filename='image3.jpg') }}" alt="Image 3" class="selectable-image" data-image-url="{{ url_for('static', filename='image3.jpg') }}">
         </div>
         <div>
-            <label for="emailBody">Body:</label>
-            <textarea id="emailBody" readonly>Default Body</textarea>
+        <button id="regenerateContentButton"  onclick="regenerateContent()">Regenerate</button>
+        <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
+        <button onclick="previousTab('contentIdeation')">Back</button>
+        <button onclick="nextTab('delivery')">Next</button>
         </div>
-        <div>
-            <label for="emailCTA">CTA:</label>
-            <input type="text" id="emailCTA" value="Default CTA" readonly>
-        </div>
-        <div>
-            <label for="emailImage">Image:</label>
-            <img id="emailImage" src="dummy-image.jpg" alt="Email Image" style="width:100px;">
-        </div>
-        <button onclick="editEmail()">Edit</button>
-        <button onclick="saveEmail()">Save</button>
     </div>
 

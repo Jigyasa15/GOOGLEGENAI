@@ -1,47 +1,97 @@
+<div id="deliveryTab">
     <h2>Delivery Options</h2>
-    
-    <h3>Campaign Type</h3>
-    <label><input type="radio" name="campaignType" value="oneTime" checked> One-Time</label>
-    <label><input type="radio" name="campaignType" value="periodic"> Periodic</label>
 
-    <div id="periodicOptions" style="display: none;">
-        <h4>Choose Frequency</h4>
-        <label><input type="radio" name="periodicType" value="daily" onclick="togglePeriodicOptions()"> Daily</label>
-        <label><input type="radio" name="periodicType" value="weekly" onclick="togglePeriodicOptions()"> Weekly</label>
-        <div id="dailyOptions" style="display: none;">
-            <h4>Daily Options</h4>
-            <label><input type="radio" name="dateTimeOption" value="fixedTime" onclick="toggleDateTimeOption()"> Fixed Time</label>
-            <label><input type="radio" name="dateTimeOption" value="bestTime" onclick="toggleDateTimeOption()"> Best Time for User</label>
+    <!-- Campaign Type Selection: One-Time or Periodic -->
+    <div>
+        <label><input type="radio" name="campaignType" value="oneTime" onclick="toggleCampaignType()"> One-Time</label>
+        <label><input type="radio" name="campaignType" value="periodic" onclick="toggleCampaignType()"> Periodic</label>
+    </div>
+
+    <!-- One-Time Campaign Options -->
+    <div id="oneTimeOptions" style="display: none;">
+        <h3>One-Time Options</h3>
+
+        <!-- Date & Time Options -->
+        <div>
+            <label><input type="radio" name="scheduleType" value="fixedTime" onclick="toggleOneTimeSchedule()"> Fixed Time</label>
+            <label><input type="radio" name="scheduleType" value="bestTime" onclick="toggleOneTimeSchedule()"> Best Time for User</label>
         </div>
-        <div id="weeklyOptions" style="display: none;">
-            <h4>Weekly Options</h4>
-            <label><input type="radio" name="dateTimeOption" value="fixedTime" onclick="toggleDateTimeOption()"> Fixed Time</label>
-            <label><input type="radio" name="dateTimeOption" value="bestTime" onclick="toggleDateTimeOption()"> Best Time for User</label>
+
+        <!-- Fixed Time Options for One-Time Campaign -->
+        <div id="oneTimeFixedOptions" style="display: none;">
+            <input type="date" id="oneTimeDate">
+            <input type="time" id="oneTimeTime">
+            <select id="oneTimeTimezone">
+                <option value="PST">PST</option>
+                <option value="EST">EST</option>
+                <!-- Add other timezones as needed -->
+            </select>
+        </div>
+
+        <!-- Best Time Link -->
+        <div id="bestTimeLink" style="display: none;">
+            <a href="#">View Best Time for Users</a>
         </div>
     </div>
 
-    <div id="dateTimeOptions" style="display: block;">
-        <h4>Date and Time Options</h4>
-        <label><input type="radio" name="dateTimeOption" value="sendNow" onclick="toggleDateTimeOption()"> Send Now</label>
-        <label><input type="radio" name="dateTimeOption" value="scheduleLater" onclick="toggleDateTimeOption()"> Schedule for Later</label>
+    <!-- Periodic Campaign Options -->
+    <div id="periodicOptions" style="display: none;">
+        <h3>Periodic Options</h3>
 
-        <div id="fixedTimeOptions" style="display: none;">
-            <h5>Fixed Time Options</h5>
-            <label><input type="radio" name="fixedTimeOption" value="fixedTime" onclick="toggleFixedTime()"> Fixed Time</label>
-            <label><input type="radio" name="fixedTimeOption" value="bestTime" onclick="toggleFixedTime()"> Best Time for User</label>
-            <div id="dateField" style="display: none;">
-                <input type="date" placeholder="Select Date">
+        <!-- Daily or Weekly Selection -->
+        <div>
+            <label><input type="radio" name="periodicType" value="daily" onclick="togglePeriodicType()"> Daily</label>
+            <label><input type="radio" name="periodicType" value="weekly" onclick="togglePeriodicType()"> Weekly</label>
+        </div>
+
+        <!-- Date & Time Options for Periodic Campaign (shown after daily/weekly is selected) -->
+        <div id="periodicTimeOptions" style="display: none;">
+            <!-- Fixed or Best Time for Periodic Campaign -->
+            <div>
+                <label><input type="radio" name="periodicScheduleType" value="fixedTime" onclick="togglePeriodicSchedule()"> Fixed Time</label>
+                <label><input type="radio" name="periodicScheduleType" value="bestTime" onclick="togglePeriodicSchedule()"> Best Time for User</label>
             </div>
-            <div id="timeField" style="display: none;">
-                <input type="time" placeholder="Select Time">
-            </div>
-            <div id="timeZone" style="display: none;">
-                <select>
-                    <option value="GMT">GMT</option>
+
+            <!-- Fixed Time Options for Periodic Campaign -->
+            <div id="periodicFixedOptions" style="display: none;">
+                <input type="date" id="periodicDate">
+                <input type="time" id="periodicTime">
+                <select id="periodicTimezone">
                     <option value="PST">PST</option>
                     <option value="EST">EST</option>
+                    <!-- Add other timezones as needed -->
                 </select>
             </div>
-            <a href="#" id="viewBestTime" style="display: none;">View Best User Time Distribution</a>
+
+            <!-- Best Time for User Link for Periodic Campaign -->
+            <div id="bestTimePeriodicLink" style="display: none;">
+                <a href="#">View Best Time for Users</a>
+            </div>
+        </div>
+
+        <!-- Daily Options (repeat every X days) -->
+        <div id="dailyOptions" style="display: none;">
+            <label>Repeat Every: <input type="number" min="1" id="dailyRepeat"> days</label>
+        </div>
+
+        <!-- Weekly Options (repeat every X weeks + select multiple days) -->
+        <div id="weeklyOptions" style="display: none;">
+            <label>Repeat Every: <input type="number" min="1" id="weeklyRepeat"> weeks</label>
+            <label>Select Days of the Week:</label>
+            <div>
+                <label><input type="checkbox" name="daysOfWeek" value="mon"> Monday</label>
+                <label><input type="checkbox" name="daysOfWeek" value="tue"> Tuesday</label>
+                <label><input type="checkbox" name="daysOfWeek" value="wed"> Wednesday</label>
+                <label><input type="checkbox" name="daysOfWeek" value="thu"> Thursday</label>
+                <label><input type="checkbox" name="daysOfWeek" value="fri"> Friday</label>
+                <label><input type="checkbox" name="daysOfWeek" value="sat"> Saturday</label>
+                <label><input type="checkbox" name="daysOfWeek" value="sun"> Sunday</label>
+            </div>
         </div>
     </div>
+    <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
+        <button onclick="previousTab('contentGeneration')">Back</button>
+        <button onclick="sendCampaign()">Send</button>
+    </div>
+</div>
+

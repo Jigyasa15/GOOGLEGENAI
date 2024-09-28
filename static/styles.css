@@ -156,3 +156,63 @@ button:hover {
     border-radius: 8px;
     max-width: 800px;
 }
+
+.segment-wrapper {
+    display: flex;
+    gap: 15px;  /* Increased gap between segments for better spacing */
+    margin-top: 10px; /* Added margin to create space between label and segment options */
+    margin-bottom: 20px; /* Added margin to separate the segments from the text area */
+ }
+ 
+ 
+ .segment-pill {
+    background-color: #f0f0f0;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    width: auto;
+ }
+ 
+ 
+ .segment-pill:hover {
+    background-color: #ddd;
+ }
+ 
+ 
+ #editableSegment {
+    display: inline-block;
+    vertical-align: top;
+ }
+
+ #editableTitle {
+    display: inline-block;
+    vertical-align: top;
+ }
+ 
+ .image-selection-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.selectable-image {
+    width: 100px;
+    height: auto;
+    margin: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.selectable-image:hover {
+    border: 2px solid orange;
+}
+
+.editable-image-field {
+    margin-top: 20px;
+}
+
+.editable-image-field img {
+    display: block;
+    margin: 10px auto;
+}
