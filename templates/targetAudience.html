@@ -39,7 +39,7 @@
        </div>
        <div>
            <input type="radio" id="newTemplate" name="templateOption" value="new" onclick="toggleTemplateOption()">
-           <label for="newTemplate">Create new template</label>
+           <label for="newTemplate" id="customtemplate">Create new template</label>
        </div>
    </div>
 
@@ -59,24 +59,30 @@
 
 
    <!-- Generate Segment button -->
-   <button id="generateButton" style="display:none;" onclick="generateSegment()">Generate Segment</button>
+   <button id="generateSegmentButton" style="display:none;" onclick="generateSegments()">Generate Segment</button>
 
 
    <!-- Segment options and editable fields (shown after Generate Segment button is clicked) -->
    <div class="input-field" id="segmentContainer" style="display: none;">
        <label for="editableSegment" style="margin-bottom: 10px;">Select a Segment:</label>
        <div class="segment-wrapper">
-           <div class="segment-pill" onclick="selectSegment('Segment 1')">
-               Segment 1
+           <div class="segment-pill" id="segment1" onclick="selectSegment('segment1')">
            </div>
-           <div class="segment-pill" onclick="selectSegment('Segment 2')">
-               Segment 2
+           <div class="segment-pill" id="segment2" onclick="selectSegment('segment2')">
            </div>
-           <div class="segment-pill" onclick="selectSegment('Segment 3')">
-               Segment 3
+           <div class="segment-pill" id="segment3" onclick="selectSegment('segment3')">
            </div>
        </div>
+       <!-- Segment options and editable fields (shown after Generate Segment button is clicked) -->
+    <!-- <div class="input-field" id="segmentContainer" style="display: none;">
+        <label for="segment1">Segment 1:</label>
+        <input type="text" id="segment1" readonly>
 
+        <label for="segment2">Segment 2:</label>
+        <input type="text" id="segment2" readonly>
+
+        <label for="segment3">Segment 3:</label>
+        <input type="text" id="segment3" readonly> -->
 
        <!-- Editable segment text field placed inline with segment pills -->
        <textarea id="editableSegment" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your segment will appear here" required></textarea>

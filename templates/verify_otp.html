@@ -1,43 +1,145 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verify OTP</title>
-</head>
-<body>
-    <h1>Verify OTP</h1>
-    <form action="/verify_otp" method="post">
-        <input type="text" name="otp" placeholder="Enter OTP" required>
-        <button type="submit">Submit OTP</button>
-    </form>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verify OTP</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Verify OTP</title>
+   <style>
+       /* General Reset */
+       * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+           font-family: 'Arial', sans-serif;
+       }
+
+
+       body {
+           background-color: #ffffff;
+           color: #333;
+           font-size: 16px;
+           line-height: 1.6;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           height: 100vh;
+       }
+
+
+       .container {
+           background-color: #fff;
+           width: 400px;
+           padding: 40px;
+           border-radius: 10px;
+           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+           text-align: center;
+       }
+
+
+       h1 {
+           font-size: 28px;
+           color: #000000; /* Dark navy blue */
+           margin-bottom: 20px;
+       }
+
+
+       p {
+           font-size: 16px;
+           color: #5A5A5A; /* Grayish text for tagline */
+           margin-bottom: 40px;
+       }
+
+
+       input[type="text"] {
+           width: 100%;
+           padding: 15px;
+           font-size: 16px;
+           border-radius: 30px;
+           border: 1px solid #ddd;
+           margin-bottom: 20px;
+           transition: border-color 0.3s ease;
+           padding-left: 1rem;
+       }
+
+
+       input[type="text"]:focus {
+           border-color: #ff7f50; /* Coral */
+           outline: none;
+       }
+
+
+       button {
+           width: 100%;
+           padding: 15px;
+           font-size: 16px;
+           background-color: #ff7f50; /* Coral */
+           color: white;
+           border: none;
+           border-radius: 30px;
+           cursor: pointer;
+           transition: background-color 0.3s ease;
+       }
+
+
+       button:hover {
+           background-color: #e76c3c; /* Darker coral on hover */
+       }
+
+
+       /* Flash Messages */
+       .flash-messages {
+           margin-top: 20px;
+           color: red;
+           font-size: 0.9rem;
+       }
+
+
+       /* Responsive Design */
+       @media (max-width: 600px) {
+           .container {
+               width: 100%;
+               padding: 30px;
+           }
+
+
+           h1 {
+               font-size: 24px;
+           }
+       }
+   </style>
 </head>
 <body>
-    <h1>Verify OTP for {{ email }}</h1>
-    <form action="{{ url_for('verify_otp') }}" method="POST">
-        <label for="otp">Enter OTP:</label>
-        <input type="text" name="otp" id="otp" required>
-        <button type="submit">Verify OTP</button>
-    </form>
 
-    <!-- Flash messages for OTP errors -->
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <ul>
-                {% for message in messages %}
-                    <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    {% endwith %}
+
+   <div class="container">
+       <h1>Verify OTP</h1>
+       <p>We've sent an OTP to {{ email }}. Please enter it below to verify your login.</p>
+
+
+       <!-- OTP Verification Form -->
+       <form action="{{ url_for('verify_otp') }}" method="POST">
+           <input type="text" name="otp" id="otp" placeholder="Enter OTP" required>
+           <button type="submit">Verify OTP</button>
+       </form>
+
+
+       <!-- Flash messages for OTP errors -->
+       <div class="flash-messages">
+           {% with messages = get_flashed_messages() %}
+               {% if messages %}
+                   <ul>
+                       {% for message in messages %}
+                           <li>{{ message }}</li>
+                       {% endfor %}
+                   </ul>
+               {% endif %}
+           {% endwith %}
+       </div>
+   </div>
+
+
 </body>
 </html>
+
+
+

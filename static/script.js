@@ -1,28 +1,41 @@
 let selectedContentType = 'push'; // Default value
-function toggleSegmentOption() {
-    const aiSegmentFields = document.getElementById('aiSegmentFields');
-    const customSegmentField = document.getElementById('customSegmentField');
-    const segmentAI = document.getElementById('segmentAI').checked;
+// function toggleSegmentOption() {
+//     const aiSegmentFields = document.getElementById('aiSegmentFields');
+//     const customSegmentField = document.getElementById('customSegmentField');
+//     const segmentAI = document.getElementById('segmentAI').checked;
 
-    if (segmentAI) {
-        aiSegmentFields.style.display = 'block';
-        customSegmentField.style.display = 'none';
-    } else {
-        aiSegmentFields.style.display = 'none';
-        customSegmentField.style.display = 'block';
-    }
-}
+//     if (segmentAI) {
+//         aiSegmentFields.style.display = 'block';
+//         customSegmentField.style.display = 'none';
+//     } else {
+//         aiSegmentFields.style.display = 'none';
+//         customSegmentField.style.display = 'block';
+//     }
+    // Show or hide the predefined prompt generation and segments based on user option
+    // if (document.getElementById('segmentAI').checked) {
+    //     document.getElementById('generatePredefinedButton').style.display = 'block';
+    //     document.getElementById('aiSegmentFields').style.display = 'block';
+    // } else {
+    //     document.getElementById('generatePredefinedButton').style.display = 'none';
+    //     document.getElementById('aiSegmentFields').style.display = 'none';
+    // }
+// }
 
 function toggleTemplateOption() {
     const newTemplateField = document.getElementById('newTemplateField');
+    const predefinedTemplateField = document.getElementById('predefinedTemplateField');
+    const generateButton = document.getElementById('generateSegmentButton');
     const newTemplate = document.getElementById('newTemplate').checked;
 
     if (newTemplate) {
         newTemplateField.style.display = 'block';
+        predefinedTemplateField.style.display = 'none';
+        generateButton.style.display = 'block';
     } else {
         newTemplateField.style.display = 'none';
     }
 }
+
 
 function saveContentType(contentType) {
         sessionStorage.setItem('contentType', contentType);
@@ -516,48 +529,91 @@ function toggleSegmentOption() {
  }
  
  
- function toggleTemplateOption() {
-    const predefinedTemplateField = document.getElementById('predefinedTemplateField');
-    const newTemplateField = document.getElementById('newTemplateField');
-    const generateButton = document.getElementById('generateButton');
-    const segmentContainer = document.getElementById('segmentContainer');
-    const regenerateButton = document.getElementById('regenerateButton');
+//  function toggleTemplateOption() {
+//     const predefinedTemplateField = document.getElementById('predefinedTemplateField');
+//     const newTemplateField = document.getElementById('newTemplateField');
+//     const generateButton = document.getElementById('generateButton');
+//     const segmentContainer = document.getElementById('segmentContainer');
+//     const regenerateButton = document.getElementById('regenerateButton');
    
-    segmentContainer.style.display = 'none';
-    regenerateButton.style.display = 'none';
-    generateButton.style.display = 'block'; // Show generate button
+//     segmentContainer.style.display = 'none';
+//     regenerateButton.style.display = 'none';
+//     generateButton.style.display = 'block'; // Show generate button
+ 
+    
+//     // if (document.getElementById('predefinedTemplate').checked) {
+//     //     predefinedTemplateField.style.display = 'block';
+//     //     newTemplateField.style.display = 'none';
+//     //     templateType = 'predefined';
+//     // } else {
+//         predefinedTemplateField.style.display = 'none';
+//         newTemplateField.style.display = 'block';
+//         templateType = 'new';
+//     // }
+//  }
  
  
-    if (document.getElementById('predefinedTemplate').checked) {
-        predefinedTemplateField.style.display = 'block';
-        newTemplateField.style.display = 'none';
-        templateType = 'predefined';
-    } else {
-        predefinedTemplateField.style.display = 'none';
-        newTemplateField.style.display = 'block';
-        templateType = 'new';
-    }
- }
- 
- 
- function generateSegment() {
-    const segmentContainer = document.getElementById('segmentContainer');
-    const regenerateButton = document.getElementById('regenerateButton');
-    const generateButton = document.getElementById('generateButton');
+//  function generateSegment() {
+//     const segmentContainer = document.getElementById('segmentContainer');
+//     const regenerateButton = document.getElementById('regenerateButton');
+//     const generateButton = document.getElementById('generateButton');
    
-    // Show segment container and regenerate button after generating
-    segmentContainer.style.display = 'block';
-    regenerateButton.style.display = 'block';
-    generateButton.style.display = 'none'; // Hide the generate button after generation
-    selectSegment('Segment 1');  // Default to Segment 1
- }
+//     // Show segment container and regenerate button after generating
+//     segmentContainer.style.display = 'block';
+//     regenerateButton.style.display = 'block';
+//     generateButton.style.display = 'none'; // Hide the generate button after generation
+//     selectSegment('Segment 1');  // Default to Segment 1
+//  }
  
  
- function selectSegment(segment) {
-    const editableSegment = document.getElementById('editableSegment');
-    editableSegment.value = segment;
- }
+//  function selectSegment(segment) {
+//     const editableSegment = document.getElementById('editableSegment');
+//     editableSegment.value = segment;
+//  }
 
+function generateSegment() {
+    // Capture form data
+    const campaignName = document.getElementById('campaignName').value;
+    const campaignGoal = document.getElementById('campaignGoal').value;
+
+    // Prepare form data for POST request
+    const formData = new FormData();
+    formData.append('campaignName', campaignName);
+    formData.append('campaignGoal', campaignGoal);
+
+    // Send POST request to '/generate-prompt' to get the segments
+    fetch('/generate-prompt', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Populate the segment fields with the AI-generated content
+        // document.getElementById('segment1').value = data.segment_1;
+        // document.getElementById('segment2').value = data.segment_2;
+        // document.getElementById('segment3').value = data.segment_3;
+        document.getElementById('segment1').innerText = data.segment_1;
+        document.getElementById('segment2').innerText = data.segment_2;
+        document.getElementById('segment3').innerText = data.segment_3;
+
+        // Show the segment container after generating
+        document.getElementById('segmentContainer').style.display = 'block';
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+// function toggleSegmentOption() {
+//     // Show or hide the generate button based on segment option selection
+//     if (document.getElementById('segmentAI').checked) {
+//         document.getElementById('generateButton').style.display = 'block';
+//         document.getElementById('aiSegmentFields').style.display = 'block';
+//     } else {
+//         document.getElementById('generateButton').style.display = 'none';
+//         document.getElementById('aiSegmentFields').style.display = 'none';
+//     }
+// }
  function selectTitle(title) {
     const editableTitle = document.getElementById('editableTitle');
     editableTitle.value = title;
@@ -665,42 +721,106 @@ function toggleTemplateContentOption(selectedOption) {
  }
 
  function generatePredefinedPrompt() {
-    // Collect form data from the target audience tab
+    // Capture form data
+    const campaignName = document.getElementById('campaignName').value;
+    const campaignGoal = document.getElementById('campaignGoal').value;
+
+    // Prepare form data for POST request
     const formData = new FormData();
-    formData.append('campaignName', document.getElementById('campaignName').value);
-    formData.append('campaignGoal', document.getElementById('campaignGoal').value);
-    formData.append('customerData', document.getElementById('customerData').files[0]);
+    formData.append('campaignName', campaignName);
+    formData.append('campaignGoal', campaignGoal);
 
-    // Fetch business details from the session via AJAX
-    fetch('/get_business_details', {
-        method: 'GET',
-    })
-    .then(response => response.json())
-    .then(businessDetails => {
-        // Append business details to the form data
-        formData.append('businessName', businessDetails.business_name);
-        formData.append('industry', businessDetails.industry);
-        formData.append('businessDescription', businessDetails.business_description);
-        formData.append('primaryColor', businessDetails.primary_color);
-        formData.append('secondaryColor', businessDetails.secondary_color);
-        formData.append('tertiaryColor', businessDetails.tertiary_color);
-        formData.append('fontSize', businessDetails.font_size);
-        formData.append('fontStyle', businessDetails.font_style);
-
-        // Send the form data to the backend for AI prompt generation
-        return fetch('/generate-prompt', {
-            method: 'POST',
-            body: formData,
-        });
+    // Send POST request to '/generate-predefined-prompt' to get the predefined prompt
+    fetch('/generate-predefined-prompt', {
+        method: 'POST',
+        body: formData,
     })
     .then(response => response.json())
     .then(data => {
-        // Display the generated predefined prompt
+        // Populate the predefined prompt field
         document.getElementById('predefinedPrompt').value = data.predefined_prompt;
+        predefinedTemplateField.style.display = 'block';
+        newTemplateField.style.display = 'none';
+        // Show the generate segments button after predefined prompt is generated
+        document.getElementById('generateSegmentButton').style.display = 'block';
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => {
+        console.error('Error:', error);
+    });
+    // Collect form data from the target audience tab
+    // const formData = new FormData();
+    // formData.append('campaignName', document.getElementById('campaignName').value);
+    // formData.append('campaignGoal', document.getElementById('campaignGoal').value);
+    // formData.append('customerData', document.getElementById('customerData').files[0]);
+
+    // // Fetch business details from the session via AJAX
+    // fetch('/get_business_details', {
+    //     method: 'GET',
+    // })
+    // .then(response => response.json())
+    // .then(businessDetails => {
+    //     // Append business details to the form data
+    //     formData.append('businessName', businessDetails.business_name);
+    //     formData.append('industry', businessDetails.industry);
+    //     formData.append('businessDescription', businessDetails.business_description);
+    //     formData.append('primaryColor', businessDetails.primary_color);
+    //     formData.append('secondaryColor', businessDetails.secondary_color);
+    //     formData.append('tertiaryColor', businessDetails.tertiary_color);
+    //     formData.append('fontSize', businessDetails.font_size);
+    //     formData.append('fontStyle', businessDetails.font_style);
+
+    //     // Send the form data to the backend for AI prompt generation
+    //     return fetch('/generate-prompt', {
+    //         method: 'POST',
+    //         body: formData,
+    //     });
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //     // Display the generated predefined prompt
+    //     document.getElementById('predefinedPrompt').value = data.predefined_prompt;
+    //     predefinedTemplateField.style.display = 'block';
+    //     newTemplateField.style.display = 'none';
+    //     document.getElementById("generateButton").style.display = 'inline-block';
+    // })
+    // .catch(error => console.error('Error:', error));
 }
- 
+
+function generateSegments() {
+    // Capture predefined prompt
+    const newTemplate = document.getElementById('newTemplate').checked;
+    const formData = new FormData();
+    if (newTemplate) {
+        const customPrompt = document.getElementById('customPrompt').value;
+        formData.append('customPrompt', customPrompt);
+    }
+    else {  
+        const predefinedPrompt = document.getElementById('predefinedPrompt').value;
+        formData.append('predefinedPrompt', predefinedPrompt);
+
+    // Prepare form data for POST request
+    }
+
+    // Send POST request to '/generate-segments' to get the segments
+    fetch('/generate-segments', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Populate the segment fields with the AI-generated content
+        document.getElementById('segment1').innerHTML = data.segment_1;
+        document.getElementById('segment2').innerHTML = data.segment_2;
+        document.getElementById('segment3').innerHTML = data.segment_3;
+
+        // Show the segment container after generating
+        document.getElementById('segmentContainer').style.display = 'block';
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
 function submitBusinessDetails() {
     const formData = new FormData();
     formData.append('businessName', document.getElementById('businessName').value);
@@ -729,5 +849,9 @@ function submitBusinessDetails() {
     })
     .catch(error => console.error('Error:', error));
 }
- 
+function selectSegment(segment) {
+    segment = document.getElementById(segment).innerText;
+    const editableSegment = document.getElementById('editableSegment');
+    editableSegment.value = segment;
+}
  
