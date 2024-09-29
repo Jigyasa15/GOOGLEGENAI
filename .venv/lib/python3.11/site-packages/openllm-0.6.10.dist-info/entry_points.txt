@@ -1,0 +1,2 @@
+[console_scripts]
+openllm = openllm.__main__:app

@@ -854,4 +854,70 @@ function selectSegment(segment) {
     const editableSegment = document.getElementById('editableSegment');
     editableSegment.value = segment;
 }
- 
+
+function generatePredefinedPromptContent() {
+    // Capture form data
+    const contentType = document.querySelector('input[name="contentChannel"]:checked').value;
+    const contentObjective = document.getElementById('contentObjective').value;
+    const tone = document.getElementById('tone').value;
+    const campaignGoal = sessionStorage.getItem('campaignGoal'); // Assuming you store campaign goal in session storage
+    // const businessDescription = sessionStorage.getItem('businessDescription'); // Assuming this comes from business details
+    const targetSegment = sessionStorage.getItem('segment'); // Selected target segment
+
+    const formData = new FormData();
+    formData.append('contentType', contentType);
+    formData.append('contentObjective', contentObjective);
+    formData.append('tone', tone);
+    formData.append('campaignGoal', campaignGoal);
+    // formData.append('businessDescription', businessDescription);
+    formData.append('targetSegment', targetSegment);
+
+    // Send POST request to Flask
+    fetch('/generate-predefined-content-prompt', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Populate the predefined prompt field with the AI-generated prompt
+        document.getElementById('predefinedPromptContent').value = data.predefined_prompt;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+    toggleTemplateContentOption('predefined');
+}
+
+function saveTargetAudienceData() {
+    // Get values from the Target Audience form
+    let campaignName = document.getElementById('campaignName').value;
+    let campaignGoal = document.getElementById('campaignGoal').value;
+    let custom = document.getElementById('customSegment').checked;
+    let segment = document.getElementById('editableSegment').value;
+    if(custom){
+    segment = document.getElementById('customSegment').value;
+    }
+    // Assuming the customerData is a file input, we handle it separately
+    // let customerData = document.getElementById('customerData').files[0]; // File input
+    
+    // let templateOption = document.querySelector('input[name="templateOption"]:checked').value;
+    
+    // // If using predefined prompt
+    // let predefinedPrompt = document.getElementById('predefinedPrompt').value;
+    
+    // // If using custom prompt (in case they choose to create a new template)
+    // let customPrompt = document.getElementById('customPrompt').value;
+    
+    // Store the data in sessionStorage
+    sessionStorage.setItem('campaignName', campaignName);
+    sessionStorage.setItem('campaignGoal', campaignGoal);
+    sessionStorage.setItem('segment',segment);
+    
+    // Store template choice and prompts
+    // sessionStorage.setItem('templateOption', templateOption);
+    // sessionStorage.setItem('predefinedPrompt', predefinedPrompt);
+    // sessionStorage.setItem('customPrompt', customPrompt);
+    
+    // Navigate to the next tab (you might want to modify this depending on your setup)
+    nextTab('contentIdeation');
+}

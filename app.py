@@ -314,7 +314,6 @@ from authlib.integrations.flask_client import OAuth
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 
-
 app = Flask(__name__)  # Corrected here
 app.secret_key = 'random_secret_key'
 # Configure Flask-Mail
@@ -580,22 +579,32 @@ def generate_predefined_prompt(campaign_name, campaign_goal, csv_data):
 
 # Initialize Google Generative AI
 llm = genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-
 # Function to generate predefined prompt based on user input
+# llm = OpenLLM(
+#     model_name="dolly-v2",
+#     model_id="databricks/dolly-v2-3b",
+#     temperature=0.94,
+#     repetition_penalty=1.2,
+# )
 def generate_predefined_prompt(campaign_name, campaign_goal, business_description, industry):
     """Generate predefined prompt using Gemini AI."""
-    llm = ChatGoogleGenerativeAI(
-                                 model="gemini-1.5-pro",
-                                 temperature=0,
-                                 max_tokens=100,) 
-    prompt_template = PromptTemplate.from_template(template="You are a marketing and prompt generation expert in the {industry} industry with experience in {business_description}. Provide a prompt to generate the top 3 target segment names based on the campaign goal: {campaign_goal} based on these details.Keep the tone formal")
-    prompt = prompt_template.format(industry=industry, business_description=business_description, campaign_goal=campaign_goal)
+   #  llm = ChatGoogleGenerativeAI(
+   #                               model="gemini-1.5-flash",
+   #                               temperature=0,
+   #                               max_tokens=10,) 
+   #  prompt_template = PromptTemplate.from_template(template="You are a marketing and prompt generation expert in the {industry} industry with experience in {business_description}. Provide a prompt to generate the top 3 target segment names based on the campaign goal: {campaign_goal} based on these details.Keep the tone formal")
+   #  prompt = prompt_template.format(industry=industry, business_description=business_description, campaign_goal=campaign_goal)
     
     # Use the AI to generate the predefined prompt
    #  llm = genai.GenerativeModel(model="gemini-1.5-pro", temperature=0, max_tokens=100)
    #  response = llm.generate_content(prompt_template)
-    ai_msg =  llm.invoke(prompt)
-    predefined_prompt = ai_msg.content
+   #  ai_msg =  llm.invoke(prompt)
+    template = ("You are a marketing expert in the {industry} industry. Based on the campaign goal of {campaign_goal}, "
+            "identify and generate three distinct target segment names that effectively encapsulate the characteristics and preferences of potential customers. "
+            "Consider factors such as demographics, psychographics, and behavioral patterns relevant to the {industry} industry and business {business_description}. "
+            )
+    predefined_prompt = template.format(industry=industry, business_description=business_description, campaign_goal=campaign_goal)
+      # predefined_prompt = ai_msg.content
     # Extract the generated prompt from the response
    #  predefined_prompt = response.candidates[0].content.parts[0].text
     return predefined_prompt
@@ -611,10 +620,10 @@ def generate_segments(predefined_prompt):
    #  llm = genai.GenerativeModel(model="gemini-1.5-pro", temperature=0, max_tokens=100)
    #  response = llm.generate_content(segment_prompt_template)
     llm = ChatGoogleGenerativeAI(
-                                 model="gemini-1.5-pro",
+                                 model="gemini-1.5-flash",
                                  temperature=0,
-                                 max_tokens=100,) 
-    segment_prompt_template = PromptTemplate.from_template(template="Prompt: {predefined_prompt}. In the output give 3 distinct target segmnent comma seperated in 15 words")
+                                 max_tokens=10,) 
+    segment_prompt_template = PromptTemplate.from_template(template="{predefined_prompt}.The output should be formatted as follows: segment1, segment2, segment3 and should not contain any extra details. Where segment1, segment 2 and segment3 are the proposed segment names ")
     segment_prompt = segment_prompt_template.format(predefined_prompt=predefined_prompt)
     ai_segment_msg =  llm.invoke(segment_prompt)
     
@@ -659,6 +668,63 @@ def generate_segments_route():
         'segment_2': segments[1],
         'segment_3': segments[2]
     })
+
+@app.route('/generate-predefined-content-prompt', methods=['POST'])
+def generate_predefined_content_prompt():
+    # Capture the form data from the request
+    content_type = request.form.get('contentType')
+    content_objective = request.form.get('contentObjective')
+    tone = request.form.get('tone')
+    campaign_goal = request.form.get('campaignGoal')
+    business_description = session.get('business_description')
+    industry = session.get('industry')
+    target_segment = request.form.get('targetSegment')
+    if content_type == 'push':
+       prompt_template = """You are a content generation expert for {business_description} in the {industry} industry. Based on the campaign goal of {campaign_goal}, content objective {content_objective}, the desired tone of {tone}, and the target segment of {target_segment}, please create content for  {content_type} notification channel.
+The content should include the following elements:
+- Title: A compelling headline that grabs attention, conveys the main benefit, and includes high-performing keywords relevant to the target segment.
+- Subtitle: A supporting line that adds more context or highlights a secondary benefit, tailored to the specific needs of the target audience.
+- Message: A clear and concise body text that emphasizes the key value proposition, action, or solution, ensuring it resonates with the target segment's pain points or desires.
+"""
+    else:
+       prompt_template = """You are a content generation expert for {business_description} in the {industry} industry. Based on the target segment of {target_segment}, the campaign goal of {campaign_goal}, the content objective of {content_objective}, and the desired tone of {tone}, please create content for {content_type} notification. 
+       The content should include: 
+       - Subject: A compelling headline that grabs attention. 
+       - Body: A clear and concise supporting message that adds context or highlights a secondary benefit. 
+       - CTA Button**: A strong, action-driven call-to-action (CTA) button to encourage immediate engagement. """
+
+    content_prompt = prompt_template.format(business_description=business_description,industry=industry,content_type=content_type,content_objective=content_objective,tone=tone,campaign_goal=campaign_goal,target_segment=target_segment)
+    predefined_prompt = content_prompt
+    return jsonify({'predefined_prompt': predefined_prompt})
+
+   #  # Generate a prompt using AI
+   #  prompt_template = """
+   #  You are a content expert for {business_description} and {industry}. Create content for the {content_type} channel.
+   #  The objective is: {content_objective}. The tone should be {tone}.
+   #  The campaign goal is {campaign_goal}, and the target segment is {target_segment}.
+   #  """
+
+#     llm = ChatGoogleGenerativeAI(
+#                                  model="gemini-1.5-flash",
+#                                  temperature=0,
+#                                  max_tokens=100,) 
+#     content_prompt_template = PromptTemplate.from_template(template="""You are a prompt generation expert for {business_description} in the {industry} industry. Create a prompt template for content generation with fields title, message and CTA button for a {content_type} notification channel.
+
+# Ensure the following are reflected in the prompt:
+
+# Content Objective: {content_objective}
+# Campaign Goal: {campaign_goal}
+# Target Segment: {target_segment}
+# Tone: {tone}""")
+
+   #   content_prompt = content_prompt_template.format(business_description=business_description,industry=industry,content_type=content_type,content_objective=content_objective,tone=tone,campaign_goal=campaign_goal,target_segment=target_segment)
+#     ai_content_msg =  llm.invoke(content_prompt)
+    # Extract the generated prompt from the response
+   #  predefined_prompt = ai_content_msg.content
+   
+    
+   #  Return the predefined prompt as JSON
+   #  return jsonify({'predefined_prompt': predefined_prompt})
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
