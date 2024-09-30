@@ -66,10 +66,10 @@ function saveContentType(contentType) {
         }
     }
 
-    function generateContent() {
-        alert('Generating content...');
-        // Add logic for generating content based on inputs
-    }
+    // function generateContent() {
+    //     alert('Generating content...');
+    //     // Add logic for generating content based on inputs
+    // }
 
 
     function saveContentType(contentType) {
@@ -101,10 +101,10 @@ function saveContentType(contentType) {
         }
     }
 
-    function generateContent() {
-        alert('Generating content...');
-        // Add logic for generating content based on inputs
-    }
+    // function generateContent() {
+    //     alert('Generating content...');
+    //     // Add logic for generating content based on inputs
+    // }
 
     function previousTab(prevTabId) {
         showTab(prevTabId);
@@ -195,6 +195,7 @@ function saveContentType(contentType) {
     function nextTab(nextTabId) {
         if (nextTabId === 'contentGeneration'){
             showContentGeneration(selectedContentType);
+            populateContentGenerationPage();
         }
         showTab(nextTabId);
     }
@@ -615,36 +616,43 @@ function generateSegment() {
 //     }
 // }
  function selectTitle(title) {
-    const editableTitle = document.getElementById('editableTitle');
-    editableTitle.value = title;
+    // const editableTitle = document.getElementById('editableTitle');
+    // editableTitle.value = title;
+    document.getElementById('editableTitle').value = document.getElementById(title).innerText;
  }
 
 
  function selectSubtitle(subtitle) {
-    const editableSubtitle = document.getElementById('editableSubtitle');
-    editableSubtitle.value = subtitle;
+    // const editableSubtitle = document.getElementById('editableSubtitle');
+    // editableSubtitle.value = subtitle;
+    document.getElementById('editableSubtitle').value = document.getElementById(subtitle).innerText;
  }
 
 
  function selectPushmsg(pushmsg) {
-    const editablePushmsg = document.getElementById('editablePushmsg');
-    editablePushmsg.value = pushmsg;
+    // const editablePushmsg = document.getElementById('editablePushmsg');
+    // editablePushmsg.value = pushmsg;
+    document.getElementById('editablePushmsg').value = document.getElementById(pushmsg).innerText;
  }
 
 
  function selectSubject(subject) {
-    const editableSubject = document.getElementById('editableSubject');
-    editableSubject.value = subject;
+    // const editableSubject = document.getElementById('editableSubject');
+    // editableSubject.value = subject;
+    document.getElementById('editableSubject').value = document.getElementById(subject).innerText;
  }
 
  function selectBody(body) {
-    const editableBody = document.getElementById('editableBody');
-    editableBody.value = body;
+    // console.log('Body selected:', body);  // For debugging
+    document.getElementById('editableBody').value = document.getElementById(body).innerText;
+    // const editableBody = document.getElementById('editableBody');
+    // editableBody.value = body;
  }
  
  function selectCTA(cta) {
-    const editableCTA = document.getElementById('editableCTA');
-    editableCTA.value = cta;
+    // const editableCTA = document.getElementById('editableCTA');
+    // editableCTA.value = cta;
+    document.getElementById('editableCTA').value = document.getElementById(cta).innerText;
  }
  
  function regenerateSegment() {
@@ -921,3 +929,193 @@ function saveTargetAudienceData() {
     // Navigate to the next tab (you might want to modify this depending on your setup)
     nextTab('contentIdeation');
 }
+
+// function generateContent() {
+//     const contentType = document.querySelector('input[name="contentChannel"]:checked').value;
+//     let prompt = document.getElementById('customPromptContent').value;
+
+//     const predefined = document.getElementById('predefinedTemplateContent').checked;
+//     if (predefined) {
+//         prompt = document.getElementById('predefinedPromptContent').value;
+//     }
+
+//     const formData = new FormData();
+//     formData.append('prompt', prompt);
+//     formData.append('contentType', contentType);
+
+//     fetch('/generate-content', {
+//         method: 'POST',
+//         body: formData,
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         // Store the response data in sessionStorage based on content type
+//         if (contentType === 'push') {
+//             sessionStorage.setItem('generatedContentData', JSON.stringify(data));  // Store the response data
+//         } else if (contentType === 'email') {
+//             populateEmailContent(data);  // Call email-specific function
+//         }
+
+//         // Navigate to content generation tab and then populate data
+//         nextTab('contentGeneration');
+//         populateContentGenerationPage();  // Populate fields after navigating to the page
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//     });
+// }
+
+// // Function to populate email content
+
+// function populateContentGenerationPage() {
+//     // Retrieve the generated content data from sessionStorage
+//     const generatedData = JSON.parse(sessionStorage.getItem('generatedContentData'));
+
+//     if (generatedData) {
+//         // Populate Titles
+//         document.getElementById('pushTitle').innerHTML = generatedData.title.map((title, index) => 
+//             `<button class="segment-pill" onclick="selectTitle('${title}')">Title ${index + 1}</button>`
+//         ).join('');
+
+//         // Populate Subtitles
+//         document.getElementById('pushSubtitle').innerHTML = generatedData.subtitle.map((subtitle, index) => 
+//             `<button class="segment-pill" onclick="selectSubtitle('${subtitle}')">Subtitle ${index + 1}</button>`
+//         ).join('');
+
+//         // Populate Messages
+//         document.getElementById('pushMessage').innerHTML = generatedData.message.map((message, index) => 
+//             `<button class="segment-pill" onclick="selectPushmsg('${message}')">Message ${index + 1}</button>`
+//         ).join('');
+//     }
+// }
+function generateContent() {
+    const contentType = document.querySelector('input[name="contentChannel"]:checked').value;
+    let prompt = document.getElementById('customPromptContent').value;
+    sessionStorage.setItem('contentType', contentType);
+    const predefined = document.getElementById('predefinedTemplateContent').checked;
+    if (predefined) {
+        prompt = document.getElementById('predefinedPromptContent').value;
+    }
+
+    const formData = new FormData();
+    formData.append('prompt', prompt);
+    formData.append('contentType', contentType);
+
+    fetch('/generate-content', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Store the response data in sessionStorage based on content type
+            sessionStorage.setItem('generatedContentData', data);  // Store the response data
+        // Navigate to content generation tab and then populate data
+        nextTab('contentGeneration');
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+// Function to populate the generated content in the Content Generation Page
+function populateContentGenerationPage() {
+    // Retrieve the generated content data from sessionStorage
+    const contentType = document.querySelector('input[name="contentChannel"]:checked').value;
+    const data = sessionStorage.getItem('generatedContentData');
+    let cleanedData = data.replace(/`/g, ''); // This removes backticks
+    if (cleanedData.startsWith('json')) {
+        // Remove the prefix (if it exists)
+        cleanedData = cleanedData.substring(4).trim(); // Remove the first 4 characters
+    }
+    const generatedData = JSON.parse(cleanedData);
+    if (!generatedData) {
+        console.log('No data found in sessionStorage.');
+        return;
+    }
+
+    if(contentType == 'push'){
+    
+    // Populate Titles
+    if (generatedData.Title && Array.isArray(generatedData.Title)) {
+        document.getElementById('pushTitle').innerHTML = generatedData.Title.map((title, index) => 
+            `<button class="segment-pill" id="title${index + 1}" onclick="selectTitle('title${index + 1}')">${title}</button>`
+        ).join('');
+    } else {
+        console.log('No title data found');
+    }
+
+    // Populate Subtitles
+    if (generatedData.Subtitle && Array.isArray(generatedData.Subtitle)) {
+        document.getElementById('pushSubtitle').innerHTML = generatedData.Subtitle.map((subtitle, index) => 
+            `<button class="segment-pill" id="subtitle${index + 1}" onclick="selectSubtitle('subtitle${index + 1}')">${subtitle}</button>`
+        ).join('');
+    } else {
+        console.log('No subtitle data found');
+    }
+
+    // Populate Messages
+    if (generatedData.Message && Array.isArray(generatedData.Message)) {
+        document.getElementById('pushMessage').innerHTML = generatedData.Message.map((message, index) => 
+            `<button class="segment-pill" id="message${index + 1}" onclick="selectPushmsg('message${index + 1}')">${message}</button>`
+        ).join('');
+    } else {
+        console.log('No message data found');
+    }
+}
+else{
+    // Populate Email Subjects
+    document.getElementById('Subject').innerHTML = generatedData.Subject.map((subject, index) => 
+        `<div class="segment-pill" id="subject${index + 1}" onclick="selectSubject('subject${index + 1}')">${subject}</div>`
+    ).join('');
+
+    // Populate Email Body
+    document.getElementById('Body').innerHTML = generatedData.Body.map((body, index) => 
+        `<div class="segment-pill" id="body${index + 1}" onclick="selectBody('body${index + 1}')">${body}</div>`
+    ).join('');
+
+    // Populate Email CTA
+    document.getElementById('CTA').innerHTML = generatedData.CTA.map((cta, index) => 
+        `<div class="segment-pill" id="CTA${index + 1}" onclick="selectCTA('CTA${index + 1}')">${cta}</div>`
+    ).join('');
+}
+
+
+}
+
+function DeliveryInsights() {
+    document.getElementById('deliveryInsightsPopup').style.display = 'block';
+    document.getElementById('popupOverlay').style.display = 'block';
+    contentType = sessionStorage.getItem('contentType');
+    const formData = new FormData();
+    formData.append('contentType', contentType);
+
+    fetch('/generate-timing', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+
+        // // Store the response data in sessionStorage based on content type
+        //     sessionStorage.setItem('generatedContentData', data);  // Store the response data
+        // // Navigate to content generation tab and then populate data
+        // nextTab('contentGeneration');
+        let best_timing = data.best_timing;
+         best_timing = best_timing.replace(/[`*]/g, '');
+        document.getElementById('bestTimeAIContent').innerHTML = `
+            <pre style="font-family: 'Arial', sans-serif; font-size: 16px; white-space: pre-wrap; word-wrap: break-word; width: 100%; overflow-wrap: break-word;">
+                ${best_timing}
+            </pre>
+        `;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+function closeDeliveryInsights() {
+    document.getElementById('deliveryInsightsPopup').style.display = 'none';
+    document.getElementById('popupOverlay').style.display = 'none';
+}
+
+

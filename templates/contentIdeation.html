@@ -1,84 +1,102 @@
 <h2>Create Content</h2>
 
 
+
+
 <!-- Content Channel Type Selection -->
 <div class="input-field">
-   <label for="contentChannel">Select Content Channel Type:</label>
-   <div>
-       <input type="radio" name="contentChannel" value="push" onclick="setContentType('push')" checked>
-       <label for="pushNotification">Push Notification</label>
-   </div>
-   <div>
-       <input type="radio" name="contentChannel" value="email" onclick="setContentType('email')">
-       <label for="email">Email</label>
-   </div>
+  <label for="contentChannel">Select Content Channel Type:</label>
+  <div>
+      <input type="radio" name="contentChannel" value="push" onclick="setContentType('push')" checked>
+      <label for="pushNotification">Push Notification</label>
+  </div>
+  <div>
+      <input type="radio" name="contentChannel" value="email" onclick="setContentType('email')">
+      <label for="email">Email</label>
+  </div>
 </div>
+
+
 
 
 <!-- Objectives for the Content -->
 <div class="input-field">
-   <label for="contentObjective">What are your objectives for this content?</label>
-   <input type="text" id="contentObjective" placeholder="Enter keywords or objectives for this content" required>
+  <label for="contentObjective">What are your objectives for this content?</label>
+  <input type="text" id="contentObjective" placeholder="Enter keywords or objectives for this content" required>
 </div>
+
+
 
 
 <!-- Tone Dropdown -->
 <div class="input-field">
-   <label for="tone">Select Tone:</label>
-   <select id="tone" required>
-       <option value="friendly">Friendly</option>
-       <option value="formal">Formal</option>
-       <option value="informal">Informal</option>
-       <option value="humorous">Humorous</option>
-       <option value="serious">Serious</option>
-       <option value="excited">Excited</option>
-       <option value="persuasive">Persuasive</option>
-   </select>
+  <label for="tone">Select Tone:</label>
+  <select id="tone" required>
+      <option value="friendly">Friendly</option>
+      <option value="formal">Formal</option>
+      <option value="informal">Informal</option>
+      <option value="humorous">Humorous</option>
+      <option value="serious">Serious</option>
+      <option value="excited">Excited</option>
+      <option value="persuasive">Persuasive</option>
+  </select>
 </div>
+
+
 
 
 <!-- Prompt Template Section -->
 <h3 style="margin-top: 30px;">Choose Prompt Template</h3>
 <div class="input-field">
+  <div>
+      <input type="radio" id="predefinedTemplateContent" name="templateOptionContent" value="predefined" onclick="generatePredefinedPromptContent()">
+      <label for="predefinedTemplateContent">Use predefined template</label>
+  </div>
    <div>
-       <input type="radio" id="predefinedTemplateContent" name="templateOptionContent" value="predefined" onclick="generatePredefinedPromptContent()">
-       <label for="predefinedTemplateContent">Use predefined template</label>
-   </div>
-  
-   <div>
-       <input type="radio" id="newTemplateContent" name="templateOptionContent" value="new" onclick="toggleTemplateContentOption('new')">
-       <label for="newTemplateContent">Create new template</label>
-   </div>
+      <input type="radio" id="newTemplateContent" name="templateOptionContent" value="new" onclick="toggleTemplateContentOption('new')">
+      <label for="newTemplateContent">Create new template</label>
+  </div>
 </div>
+
+
 
 
 <!-- Predefined template input field (non-editable) -->
-<div class="input-field" id="predefinedTemplateContentField" style="display: block;">
-   <label for="predefinedPromptContent" style="display: block; margin-bottom: 10px;">Predefined Prompt:</label>
-   <input type="text" id="predefinedPromptContent" value="This is your predefined prompt" style="width: 100%; padding: 10px; box-sizing: border-box;" readonly>
+<div class="input-field" id="predefinedTemplateContentField" style="display: none;">
+  <label for="predefinedPromptContent" style="display: block; margin-bottom: 10px;">Predefined Prompt:</label>
+  <textarea id="predefinedPromptContent" style="width: 100%; height: 100px; resize: vertical; overflow-y: scroll; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); background-color: #e6e6e6; color: black;""" readonly></textarea>
 </div>
+
+
 
 
 <!-- New template input field -->
 <div class="input-field" id="newTemplateContentField" style="display: none;">
-   <label for="customPromptContent" style="display: block; margin-bottom: 10px;">Provide the prompt for your new template:</label>
-   <textarea id="customPromptContent" rows="4" placeholder="Enter custom prompt" style="width: 100%; padding: 10px; box-sizing: border-box;"></textarea>
+  <label for="customPromptContent" style="display: block; margin-bottom: 10px;">Provide the prompt for your new template:</label>
+  <textarea id="customPromptContent" rows="4" placeholder="Enter custom prompt" style="width: 100%; padding: 10px; box-sizing: border-box;"></textarea>
 </div>
+
+
 
 
 <!-- Toggle for Generating Images -->
 <div class="input-field">
-   <label>
-       <input type="checkbox" id="generateImages" style="margin-right: 5px;">
-       Generate images
-   </label>
+  <label>
+      <input type="checkbox" id="generateImages" style="margin-right: 5px;">
+      Generate images
+  </label>
 </div>
+
+
+
+
 
 
 
 
 <!-- Generate Content Button -->
 <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
-   <button onclick="previousTab('targetAudience')">Back</button>
-   <button onclick="nextTab('contentGeneration')">Next</button>
+  <button onclick="previousTab('targetAudience')">Back</button>
+  <button onclick="generateContent()">Next</button>
 </div>
+

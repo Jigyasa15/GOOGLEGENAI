@@ -1,12 +1,12 @@
-   <h2>Content Generation</h2>
+   <!-- <h2>Content Generation</h2>
     
     <div id="pushNotification" class="content-section">
         <h3>Push Notification Details</h3>
 
 
-<!-- new -->
-  <!-- Segment options and editable fields (shown after Generate Segment button is clicked) -->
-   <div>
+new
+  <!Segment options and editable fields (shown after Generate Segment button is clicked) -->
+   <!-- <div>
      <label for="pushTitle" style="margin-bottom: 10px;">Title:</label>
      <textarea id="editableTitle" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your title will appear here" required></textarea>
      <div class="segment-wrapper" id="pushTitle" >
@@ -20,9 +20,9 @@
              Title 3
          </div>
 </div>
-</div>
+</div> -->
 
-<div>
+<!-- <div>
     <label for="pushSubtitle" style="margin-bottom: 10px;">Subtitle:</label>
     <textarea id="editableSubtitle" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your title will appear here" required></textarea>
      <div class="segment-wrapper" id="pushTitle" >
@@ -36,9 +36,9 @@
              Sub Title 3
          </div>
 </div>
-</div>
+</div> -->
 
-<div>
+<!-- <div>
     <label for="pushMessage" style="margin-bottom: 10px;">Push Message:</label>
     <textarea id="editablePushmsg" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your title will appear here" required></textarea>
      <div class="segment-wrapper" id="pushTitle" >
@@ -53,7 +53,7 @@
          </div>
 </div>
 </div>
-</div>
+</div> -->
 
     <!-- <label for="pushImage">Image:</label>
     <img id="pushImage" src="dummy-image.jpg" alt="Push Notification Image" style="width:100px;"> -->
@@ -79,7 +79,7 @@
         <button onclick="previousTab('contentIdeation')">Back</button>
    <button onclick="nextTab('delivery')">Next</button> -->
 
-    <div id="email" class="content-section" style="display:none;">
+    <!-- <div id="email" class="content-section" style="display:none;">
         <h3>Email Details</h3>
         <div>
             <label for="emailSubject" style="margin-bottom: 10px;">Subject:</label>
@@ -131,19 +131,19 @@
         <div>
         </div>
     </div>
-            <!-- <label for="emailImage">Image:</label>
+            < <label for="emailImage">Image:</label>
             <img id="emailImage" src="dummy-image.jpg" alt="Email Image" style="width:100px;"> -->
-            <div class="image-selection-container"></div>
-        <!-- Editable Image Field -->
-        <div class="editable-image-field">
+            <!-- <div class="image-selection-container"></div>
+        <Editable Image Field -->
+        <!-- <div class="editable-image-field">
             <p>Image:</p>
             <img id="editableImage" src="" alt="Selected Image" style="max-width: 200px;">
             
-            <!-- File Upload for Custom Image -->
-            <input type="file" id="imageUpload" accept="image/*">
-        </div>
-        <!-- Predefined Images -->
-        <div class="image-options">
+            < File Upload for Custom Image -->
+            <!-- <input type="file" id="imageUpload" accept="image/*">
+        </div> 
+        <!Predefined Images -->
+        <!-- <div class="image-options"> 
             <img src="{{ url_for('static', filename='image1.jpg') }}" alt="Image 1" class="selectable-image" data-image-url="{{ url_for('static', filename='image1.jpg') }}">
             <img src="{{ url_for('static', filename='image2.jpg') }}" alt="Image 2" class="selectable-image" data-image-url="{{ url_for('static', filename='image2.jpg') }}">
             <img src="{{ url_for('static', filename='image3.jpg') }}" alt="Image 3" class="selectable-image" data-image-url="{{ url_for('static', filename='image3.jpg') }}">
@@ -152,7 +152,78 @@
         <button id="regenerateContentButton"  onclick="regenerateContent()">Regenerate</button>
         <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
         <button onclick="previousTab('contentIdeation')">Back</button>
-        <button onclick="nextTab('delivery')">Next</button>
+        <button onclick="nextTab('delivery')">Next</button> --> 
+        <!-- </div>
+    </div> --> 
+ 
+    <h2>Content Generation</h2>
+
+    <div id="pushNotification" class="content-section">
+        <h3>Push Notification Details</h3>
+    
+        <div>
+            <label for="editableTitle" style="margin-bottom: 10px;">Title:</label>
+            <textarea id="editableTitle" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your title will appear here" required></textarea>
+            <div class="segment-wrapper" id="pushTitle">
+                <!-- Titles will be populated here dynamically -->
+                
+            </div>
+        </div>
+    
+        <div>
+            <label for="editableSubtitle" style="margin-bottom: 10px;">Subtitle:</label>
+            <textarea id="editableSubtitle" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your subtitle will appear here" required></textarea>
+            <div class="segment-wrapper" id="pushSubtitle">
+                <!-- Subtitles will be populated here dynamically -->
+            </div>
+        </div>
+    
+        <div>
+            <label for="editablePushmsg" style="margin-bottom: 10px;">Push Message:</label>
+            <textarea id="editablePushmsg" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your message will appear here" required></textarea>
+            <div class="segment-wrapper" id="pushMessage">
+                <!-- Messages will be populated here dynamically -->
+            </div>
         </div>
     </div>
+    
+    <div id="email" class="content-section" style="display:none;">
+        <h3>Email Details</h3>
+        
+        <div>
+            <label for="editableSubject" style="margin-bottom: 10px;">Subject:</label>
+            <textarea id="editableSubject" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your subject will appear here" required></textarea>
+            <div class="segment-wrapper" id="Subject">
+                <!-- Email subjects will be populated here dynamically -->
+            </div>
+        </div>
+    
+        <div>
+            <label for="editableBody" style="margin-bottom: 10px;">Body:</label>
+            <textarea id="editableBody" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your body will appear here" required></textarea>
+            <div class="segment-wrapper" id="Body">
+                <!-- Email bodies will be populated here dynamically -->
+            </div>
+        </div>
+    
+        <div>
+            <label for="editableCTA" style="margin-bottom: 10px;">CTA:</label>
+            <textarea id="editableCTA" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your CTA will appear here" required></textarea>
+            <div class="segment-wrapper" id="CTA">
+                <!-- CTA buttons will be populated here dynamically -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Button for regenerating content -->
+    <div>
+        <button id="regenerateContentButton" onclick="generateContent()">Generate Content</button>
+    </div>
+    
+    <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
+        <button onclick="previousTab('contentIdeation')">Back</button>
+        <button onclick="nextTab('delivery')">Next</button>
+    </div>
 
+    
+    

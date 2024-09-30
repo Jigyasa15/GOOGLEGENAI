@@ -12,13 +12,14 @@
         <h3>One-Time Options</h3>
 
         <!-- Date & Time Options -->
-        <div>
+        <!-- <div>
             <label><input type="radio" name="scheduleType" value="fixedTime" onclick="toggleOneTimeSchedule()"> Fixed Time</label>
             <label><input type="radio" name="scheduleType" value="bestTime" onclick="toggleOneTimeSchedule()"> Best Time for User</label>
-        </div>
+        </div> -->
 
         <!-- Fixed Time Options for One-Time Campaign -->
-        <div id="oneTimeFixedOptions" style="display: none;">
+        <!-- <div id="oneTimeFixedOptions" style="display: none;"> -->
+
             <input type="date" id="oneTimeDate">
             <input type="time" id="oneTimeTime">
             <select id="oneTimeTimezone">
@@ -26,12 +27,13 @@
                 <option value="EST">EST</option>
                 <!-- Add other timezones as needed -->
             </select>
-        </div>
+            <button onclick="DeliveryInsights()">View Best Time with AI</button>
+        <!-- </div> -->
 
         <!-- Best Time Link -->
-        <div id="bestTimeLink" style="display: none;">
+        <!-- <div id="bestTimeLink" style="display: none;">
             <a href="#">View Best Time for Users</a>
-        </div>
+        </div> -->
     </div>
 
     <!-- Periodic Campaign Options -->
@@ -47,13 +49,13 @@
         <!-- Date & Time Options for Periodic Campaign (shown after daily/weekly is selected) -->
         <div id="periodicTimeOptions" style="display: none;">
             <!-- Fixed or Best Time for Periodic Campaign -->
-            <div>
+            <!-- <div>
                 <label><input type="radio" name="periodicScheduleType" value="fixedTime" onclick="togglePeriodicSchedule()"> Fixed Time</label>
                 <label><input type="radio" name="periodicScheduleType" value="bestTime" onclick="togglePeriodicSchedule()"> Best Time for User</label>
-            </div>
+            </div> -->
 
             <!-- Fixed Time Options for Periodic Campaign -->
-            <div id="periodicFixedOptions" style="display: none;">
+            <!-- <div id="periodicFixedOptions" style="display: none;"> -->
                 <input type="date" id="periodicDate">
                 <input type="time" id="periodicTime">
                 <select id="periodicTimezone">
@@ -61,12 +63,13 @@
                     <option value="EST">EST</option>
                     <!-- Add other timezones as needed -->
                 </select>
-            </div>
+                <button onclick="DeliveryInsights()">View Best Time with AI</button>
+            <!-- </div> -->
 
             <!-- Best Time for User Link for Periodic Campaign -->
-            <div id="bestTimePeriodicLink" style="display: none;">
+            <!-- <div id="bestTimePeriodicLink" style="display: none;">
                 <a href="#">View Best Time for Users</a>
-            </div>
+            </div> -->
         </div>
 
         <!-- Daily Options (repeat every X days) -->
@@ -94,4 +97,26 @@
         <button onclick="sendCampaign()">Send</button>
     </div>
 </div>
+
+<!-- Popup for Delivery Insights -->
+<div id="deliveryInsightsPopup" style="
+    display: none; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100vw; 
+    height: 100vh; 
+    background-color: white; 
+    padding: 10px; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+    z-index: 1000; 
+    overflow-y: auto;
+">
+    <h3>Best Timing Suggestions by AI</h3>
+    <p id="bestTimeAIContent">Loading best times...</p>
+    <button onclick="closeDeliveryInsights()">Close</button>
+</div>
+
+<!-- Overlay for Popup -->
+<div id="popupOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999;" onclick="closeDeliveryInsights()"></div>
 

@@ -1,0 +1,1001 @@
+customer_id,age,gender,location,time_zone,preferred_contact_method,last_engagement_time,avg_engagement_rate,segment,last_purchase,message_type,sent_time,opened,clicked,purchased,push_app_best_hour,email_app_best_hour,app_most_active_time,event_hour,event_name,category,number_of_users
+CUST1000,56,Female,California,CST,Push,2024-09-30 07:12:43,0.65,Loyal Customer,2024-08-09 20:01:35,Transactional,2024-07-08 06:20:02,0,0,0,23,23,10,6,Product Viewed,Smartphones,81
+CUST1001,31,Female,Illinois,MST,Email,2024-09-23 09:06:22,0.35,Frequent Buyer,2024-07-26 18:43:35,Promotional,2024-08-15 22:52:02,0,0,0,4,9,16,14,Product Viewed,Smartphones,174
+CUST1002,62,Female,Illinois,CST,Push,2024-08-10 16:57:13,0.86,Frequent Buyer,,Informational,2024-09-13 23:55:51,1,1,1,8,8,13,10,Product Viewed,Smartphones,316
+CUST1003,50,Male,Texas,EST,Email,2024-07-10 03:09:24,0.7,At-Risk,2024-08-07 00:51:54,Informational,2024-08-09 04:13:19,0,0,0,6,14,9,20,Product Viewed,Smartphones,198
+CUST1004,60,Male,New York,CST,Email,2024-07-20 18:08:56,0.43,High-Value,2024-07-20 23:28:11,Promotional,2024-08-28 20:08:11,0,0,0,12,7,7,20,Product Viewed,Smartphones,67
+CUST1005,33,Other,Illinois,EST,Push,2024-08-02 02:59:19,0.89,Loyal Customer,,Informational,2024-07-31 13:43:14,0,0,0,12,12,16,15,Product Viewed,Smartphones,73
+CUST1006,33,Male,New York,MST,Email,2024-09-20 05:06:27,0.48,First-Time Buyer,2024-09-08 15:59:08,Informational,2024-08-09 03:29:41,0,0,0,15,7,10,17,Product Viewed,Smartphones,266
+CUST1007,37,Male,Florida,EST,Email,2024-09-09 14:59:42,0.46,Frequent Buyer,2024-08-16 16:09:14,Promotional,2024-07-27 05:53:41,0,0,0,16,13,11,20,Product Viewed,Smartphones,404
+CUST1008,51,Female,Texas,EST,Email,2024-07-19 12:41:02,0.65,Frequent Buyer,,Informational,2024-08-27 19:15:26,0,0,0,15,9,22,5,Product Viewed,Smartphones,496
+CUST1009,24,Female,Florida,EST,Push,2024-09-04 11:55:04,0.34,Loyal Customer,,Transactional,2024-09-03 21:38:19,0,0,0,13,13,18,16,Product Viewed,Smartphones,228
+CUST1010,63,Male,Florida,CST,Email,2024-09-16 19:45:12,0.15,High-Value,2024-09-02 15:36:02,Informational,2024-07-02 20:29:02,0,0,0,7,10,12,23,Product Viewed,Smartphones,282
+CUST1011,23,Male,New York,PST,Push,2024-09-25 05:25:54,0.35,At-Risk,,Informational,2024-09-07 18:38:57,1,0,0,10,10,9,4,Product Viewed,Smartphones,92
+CUST1012,19,Female,Florida,MST,Push,2024-08-31 05:06:45,0.75,Loyal Customer,2024-08-28 16:27:44,Transactional,2024-08-28 07:45:33,0,0,0,17,17,4,23,Product Viewed,Smartphones,172
+CUST1013,24,Male,Florida,PST,Email,2024-07-21 17:02:36,0.48,Loyal Customer,2024-09-04 09:09:58,Promotional,2024-07-16 00:04:45,0,0,0,10,9,23,20,Product Viewed,Smartphones,421
+CUST1014,46,Female,Florida,EST,Email,2024-07-18 16:05:47,0.45,First-Time Buyer,2024-08-07 10:33:01,Transactional,2024-09-04 08:05:39,1,0,0,12,2,19,22,Product Viewed,Smartphones,404
+CUST1015,47,Male,California,EST,Email,2024-09-11 16:01:15,0.9,High-Value,2024-08-08 12:34:06,Promotional,2024-08-21 17:12:47,1,0,0,4,18,7,23,Product Viewed,Smartphones,263
+CUST1016,36,Male,Illinois,CST,Push,2024-08-11 09:37:45,0.42,Frequent Buyer,2024-08-03 15:45:24,Promotional,2024-08-19 14:36:59,0,0,0,10,10,3,9,Product Viewed,Smartphones,378
+CUST1017,23,Other,Illinois,MST,Push,2024-08-24 22:51:19,0.29,Frequent Buyer,2024-09-14 21:51:36,Promotional,2024-08-17 12:01:33,0,0,0,19,19,11,9,Product Viewed,Smartphones,258
+CUST1018,28,Other,New York,CST,Push,2024-09-04 13:57:46,0.8,At-Risk,2024-08-12 14:52:16,Informational,2024-09-23 04:27:23,1,1,0,23,23,6,19,Product Viewed,Smartphones,471
+CUST1019,60,Female,Florida,EST,Push,2024-09-16 13:18:52,0.28,First-Time Buyer,2024-08-01 17:40:28,Informational,2024-09-24 06:55:02,0,0,0,17,17,14,18,Product Viewed,Smartphones,431
+CUST1020,41,Male,Illinois,PST,Push,2024-08-05 20:03:32,0.26,At-Risk,,Promotional,2024-07-14 06:25:30,1,1,1,8,8,21,12,Product Viewed,Smartphones,169
+CUST1021,24,Other,Texas,PST,Email,2024-08-16 05:26:59,0.24,High-Value,2024-09-11 01:42:58,Informational,2024-07-22 13:24:48,1,1,1,13,17,3,13,Product Viewed,Smartphones,485
+CUST1022,34,Other,Texas,EST,Push,2024-09-25 04:54:38,0.23,At-Risk,2024-08-28 01:25:47,Promotional,2024-08-21 11:48:58,0,0,0,17,17,15,20,Product Viewed,Smartphones,496
+CUST1023,63,Male,Florida,PST,Email,2024-09-26 23:12:04,0.18,At-Risk,,Transactional,2024-09-06 09:25:58,0,0,0,23,18,5,12,Product Viewed,Smartphones,53
+CUST1024,39,Other,Florida,PST,Push,2024-08-16 11:15:17,0.16,Loyal Customer,2024-07-27 11:36:04,Informational,2024-08-04 02:22:32,0,0,0,0,0,14,13,Product Viewed,Smartphones,224
+CUST1025,32,Male,Florida,MST,Push,2024-07-31 19:30:11,0.55,Frequent Buyer,2024-07-08 09:54:47,Transactional,2024-08-13 18:35:00,0,0,0,7,7,23,14,Product Viewed,Smartphones,233
+CUST1026,65,Female,California,EST,Email,2024-07-22 10:26:40,0.37,High-Value,,Transactional,2024-08-26 18:24:07,0,0,0,17,9,14,1,Product Viewed,Smartphones,458
+CUST1027,59,Male,California,MST,Push,2024-07-27 19:14:43,0.16,Frequent Buyer,,Promotional,2024-07-28 04:15:47,0,0,0,3,3,23,17,Product Viewed,Smartphones,325
+CUST1028,39,Other,New York,MST,Push,2024-08-21 14:28:26,0.68,Frequent Buyer,,Promotional,2024-07-15 07:02:39,0,0,0,16,16,8,19,Product Viewed,Smartphones,147
+CUST1029,37,Female,California,MST,Push,2024-08-04 07:12:48,0.43,First-Time Buyer,2024-08-09 01:59:57,Informational,2024-07-11 08:55:59,0,0,0,13,13,13,22,Product Viewed,Smartphones,237
+CUST1030,56,Female,Florida,CST,Push,2024-09-28 10:06:25,0.44,Frequent Buyer,2024-08-03 21:42:44,Promotional,2024-08-23 11:19:53,1,0,0,21,21,15,19,Product Viewed,Smartphones,87
+CUST1031,18,Other,Illinois,EST,Email,2024-07-24 00:37:48,0.8,High-Value,2024-09-22 00:45:20,Informational,2024-09-25 12:05:19,0,0,0,20,21,11,23,Product Viewed,Smartphones,139
+CUST1032,36,Other,Texas,CST,Push,2024-08-11 16:36:15,0.87,Loyal Customer,2024-08-31 23:03:51,Promotional,2024-09-29 08:39:40,0,0,0,20,20,2,23,Product Viewed,Smartphones,326
+CUST1033,33,Male,New York,EST,Email,2024-09-22 11:55:41,0.5,Frequent Buyer,,Informational,2024-08-26 12:06:33,1,1,1,13,18,20,22,Product Viewed,Smartphones,487
+CUST1034,33,Other,California,EST,Email,2024-09-27 04:06:22,0.32,Frequent Buyer,,Informational,2024-09-21 11:22:07,1,1,1,11,19,22,14,Product Viewed,Smartphones,249
+CUST1035,43,Male,California,PST,Push,2024-08-17 21:22:23,0.38,First-Time Buyer,2024-09-21 04:26:59,Transactional,2024-08-08 05:13:37,1,1,0,18,18,20,8,Product Viewed,Smartphones,83
+CUST1036,54,Female,New York,EST,Push,2024-09-24 11:53:58,0.3,At-Risk,2024-07-07 08:53:53,Promotional,2024-09-07 20:34:23,0,0,0,7,7,23,18,Product Viewed,Smartphones,389
+CUST1037,31,Male,Illinois,PST,Email,2024-09-18 07:44:46,0.42,High-Value,,Transactional,2024-08-16 10:08:32,1,0,0,12,1,2,23,Product Viewed,Smartphones,427
+CUST1038,22,Other,New York,MST,Email,2024-08-21 12:06:04,0.89,Loyal Customer,2024-08-24 20:49:19,Promotional,2024-09-15 15:01:13,0,0,0,21,11,4,0,Product Viewed,Smartphones,333
+CUST1039,64,Female,Texas,CST,Push,2024-07-22 11:42:31,0.55,First-Time Buyer,,Transactional,2024-07-17 20:07:50,0,0,0,17,17,19,9,Product Viewed,Smartphones,91
+CUST1040,33,Male,Illinois,EST,Email,2024-08-14 18:57:46,0.42,High-Value,2024-09-03 16:02:23,Promotional,2024-07-23 15:48:21,0,0,0,3,10,7,12,Product Viewed,Smartphones,423
+CUST1041,42,Male,Florida,CST,Email,2024-08-18 04:32:45,0.31,Loyal Customer,2024-07-12 07:29:17,Transactional,2024-09-21 22:21:22,1,1,0,18,14,21,12,Product Viewed,Smartphones,404
+CUST1042,40,Female,Florida,PST,Push,2024-09-16 14:32:41,0.63,First-Time Buyer,2024-09-15 11:07:51,Transactional,2024-09-17 20:08:42,1,1,0,19,19,17,9,Product Viewed,Smartphones,66
+CUST1043,58,Male,Illinois,MST,Email,2024-07-06 23:45:44,0.44,First-Time Buyer,2024-08-29 03:10:54,Promotional,2024-07-06 07:54:26,0,0,0,20,10,10,22,Product Viewed,Smartphones,496
+CUST1044,23,Other,New York,EST,Email,2024-07-09 01:21:33,0.4,Loyal Customer,2024-08-29 05:04:13,Transactional,2024-09-13 15:44:34,1,1,0,4,6,3,6,Product Viewed,Smartphones,420
+CUST1045,50,Male,Texas,PST,Email,2024-09-29 16:41:11,0.59,Loyal Customer,2024-08-28 11:21:45,Transactional,2024-07-03 15:48:40,1,0,0,5,19,13,10,Product Viewed,Smartphones,438
+CUST1046,61,Female,Texas,EST,Push,2024-07-15 20:36:22,0.86,Frequent Buyer,2024-09-25 11:07:08,Promotional,2024-09-08 16:57:54,1,1,0,6,6,15,4,Product Viewed,Smartphones,321
+CUST1047,24,Female,Illinois,CST,Push,2024-09-05 13:04:26,0.25,First-Time Buyer,,Promotional,2024-09-17 20:43:11,0,0,0,3,3,9,13,Product Viewed,Smartphones,312
+CUST1048,64,Other,New York,CST,Email,2024-09-08 10:55:57,0.58,Loyal Customer,2024-07-29 05:53:46,Transactional,2024-07-15 13:47:02,1,0,0,12,21,4,7,Product Viewed,Smartphones,242
+CUST1049,61,Female,Illinois,MST,Push,2024-09-09 19:18:21,0.14,High-Value,2024-09-06 11:48:00,Informational,2024-09-09 00:29:42,0,0,0,0,0,14,17,Product Viewed,Smartphones,239
+CUST1050,43,Female,Texas,MST,Email,2024-08-07 23:20:17,0.3,High-Value,2024-09-18 20:27:51,Informational,2024-08-29 02:06:44,0,0,0,13,9,18,10,Product Viewed,Smartphones,440
+CUST1051,57,Female,Florida,CST,Push,2024-09-01 01:38:03,0.45,At-Risk,2024-08-24 14:25:55,Transactional,2024-07-18 04:04:46,0,0,0,23,23,22,19,Product Viewed,Smartphones,205
+CUST1052,23,Other,Florida,MST,Push,2024-07-18 11:53:55,0.12,First-Time Buyer,2024-07-27 13:45:15,Transactional,2024-09-02 07:13:50,1,1,1,22,22,14,22,Product Viewed,Smartphones,405
+CUST1053,26,Female,Florida,PST,Push,2024-08-16 09:33:55,0.69,At-Risk,,Promotional,2024-07-04 00:50:40,1,0,0,13,13,1,15,Product Viewed,Smartphones,201
+CUST1054,56,Other,Illinois,MST,Email,2024-09-28 21:22:01,0.61,Frequent Buyer,2024-08-04 08:52:50,Informational,2024-09-21 10:35:06,0,0,0,20,15,17,13,Product Viewed,Smartphones,262
+CUST1055,55,Male,New York,MST,Email,2024-08-05 18:23:23,0.25,High-Value,,Informational,2024-09-22 15:13:36,0,0,0,6,22,3,8,Product Viewed,Smartphones,52
+CUST1056,38,Other,Texas,MST,Email,2024-08-10 04:06:02,0.41,Loyal Customer,,Transactional,2024-09-21 20:02:22,0,0,0,2,22,22,8,Product Viewed,Smartphones,182
+CUST1057,62,Male,Florida,MST,Email,2024-07-22 11:29:41,0.2,First-Time Buyer,2024-09-26 16:16:02,Transactional,2024-08-13 21:48:01,0,0,0,0,21,21,11,Product Viewed,Smartphones,276
+CUST1058,48,Other,Florida,EST,Email,2024-07-22 08:15:26,0.72,First-Time Buyer,2024-07-09 18:18:57,Informational,2024-09-28 05:50:41,0,0,0,4,21,23,13,Product Viewed,Smartphones,133
+CUST1059,19,Other,New York,EST,Email,2024-09-07 13:38:04,0.72,Frequent Buyer,2024-07-24 23:14:13,Transactional,2024-08-26 17:12:17,1,0,0,17,22,16,0,Product Viewed,Smartphones,102
+CUST1060,55,Other,Texas,CST,Push,2024-08-29 15:17:18,0.71,Frequent Buyer,2024-09-04 13:52:22,Transactional,2024-07-09 19:35:32,1,0,0,4,4,1,6,Product Viewed,Smartphones,261
+CUST1061,33,Male,Illinois,PST,Push,2024-07-31 08:10:20,0.29,High-Value,2024-09-14 06:07:17,Informational,2024-07-08 07:45:47,0,0,0,18,18,20,15,Product Viewed,Smartphones,423
+CUST1062,21,Other,New York,PST,Push,2024-08-27 04:23:45,0.42,Frequent Buyer,2024-09-07 12:43:35,Transactional,2024-08-31 15:26:35,1,0,0,10,10,13,17,Product Viewed,Smartphones,168
+CUST1063,49,Other,California,PST,Push,2024-09-04 18:53:47,0.23,At-Risk,2024-09-30 12:56:23,Promotional,2024-08-15 12:49:25,0,0,0,19,19,19,11,Product Viewed,Smartphones,465
+CUST1064,27,Male,Illinois,EST,Email,2024-09-08 03:46:47,0.85,Frequent Buyer,2024-07-29 22:18:24,Promotional,2024-08-27 16:33:02,1,0,0,19,10,6,7,Product Viewed,Smartphones,482
+CUST1065,56,Other,Florida,PST,Email,2024-07-19 20:20:20,0.23,At-Risk,2024-08-20 08:27:15,Promotional,2024-08-15 18:29:06,1,0,0,2,4,2,23,Product Viewed,Smartphones,394
+CUST1066,63,Other,Illinois,CST,Email,2024-09-11 21:29:08,0.62,First-Time Buyer,,Transactional,2024-07-20 06:53:29,1,0,0,20,21,1,21,Product Viewed,Smartphones,172
+CUST1067,58,Male,Florida,MST,Email,2024-08-05 06:52:36,0.37,High-Value,2024-08-28 16:15:23,Transactional,2024-07-09 15:30:03,1,0,0,12,0,4,4,Product Viewed,Smartphones,174
+CUST1068,64,Other,California,MST,Email,2024-07-12 18:43:08,0.83,First-Time Buyer,2024-07-27 16:37:51,Transactional,2024-07-29 15:20:19,0,0,0,15,9,5,13,Product Viewed,Smartphones,315
+CUST1069,53,Male,Texas,EST,Push,2024-08-30 03:56:27,0.26,Loyal Customer,,Promotional,2024-08-10 14:20:08,1,0,0,15,15,18,11,Product Viewed,Smartphones,352
+CUST1070,51,Male,Florida,MST,Email,2024-07-12 07:02:27,0.9,Frequent Buyer,,Promotional,2024-09-03 20:55:17,0,0,0,3,20,8,16,Product Viewed,Smartphones,288
+CUST1071,46,Other,Texas,CST,Push,2024-07-02 22:32:45,0.12,Loyal Customer,2024-07-07 00:02:26,Promotional,2024-07-14 08:58:13,0,0,0,0,0,5,12,Product Viewed,Smartphones,56
+CUST1072,56,Male,Texas,MST,Push,2024-09-25 18:43:34,0.48,First-Time Buyer,2024-09-23 02:11:09,Promotional,2024-08-12 00:55:51,1,0,0,21,21,15,15,Product Viewed,Smartphones,255
+CUST1073,47,Female,Florida,MST,Email,2024-07-29 21:18:28,0.72,At-Risk,2024-07-13 01:45:54,Transactional,2024-07-26 07:14:20,1,1,0,23,11,9,0,Product Viewed,Smartphones,427
+CUST1074,39,Female,Illinois,CST,Email,2024-07-10 07:04:32,0.44,Loyal Customer,2024-07-24 09:45:12,Transactional,2024-09-11 00:51:33,1,1,0,12,17,21,15,Product Viewed,Smartphones,92
+CUST1075,23,Other,California,MST,Push,2024-09-03 12:25:16,0.64,High-Value,,Informational,2024-07-08 16:12:40,0,0,0,2,2,19,1,Product Viewed,Smartphones,328
+CUST1076,51,Other,California,EST,Email,2024-09-05 14:06:59,0.29,First-Time Buyer,2024-09-15 04:15:28,Promotional,2024-07-22 04:10:08,1,1,1,23,16,17,0,Product Viewed,Smartphones,56
+CUST1077,64,Female,New York,EST,Email,2024-07-16 19:11:56,0.78,Loyal Customer,2024-09-28 08:17:03,Informational,2024-08-20 00:17:59,1,0,0,15,20,22,7,Product Viewed,Smartphones,371
+CUST1078,51,Male,Illinois,PST,Push,2024-07-23 21:18:33,0.55,At-Risk,,Promotional,2024-09-22 23:21:31,1,0,0,6,6,2,21,Product Viewed,Smartphones,407
+CUST1079,34,Female,Texas,PST,Email,2024-07-27 19:49:47,0.85,At-Risk,2024-08-14 03:14:12,Transactional,2024-07-23 15:12:16,0,0,0,2,14,5,2,Product Viewed,Smartphones,337
+CUST1080,52,Other,Illinois,CST,Push,2024-09-07 15:05:05,0.71,High-Value,2024-09-19 07:34:57,Informational,2024-08-03 20:19:47,0,0,0,6,6,18,8,Product Viewed,Smartphones,275
+CUST1081,49,Male,Florida,PST,Push,2024-09-12 16:55:20,0.56,High-Value,2024-09-14 00:29:56,Transactional,2024-07-11 19:47:49,1,0,0,9,9,9,14,Product Viewed,Smartphones,64
+CUST1082,46,Other,New York,CST,Push,2024-09-09 20:41:32,0.57,Frequent Buyer,2024-09-16 13:17:42,Informational,2024-07-04 03:04:25,0,0,0,1,1,2,4,Product Viewed,Smartphones,228
+CUST1083,57,Female,Illinois,PST,Push,2024-08-31 06:17:40,0.18,Frequent Buyer,2024-09-23 13:28:57,Promotional,2024-07-18 19:21:25,1,0,0,0,0,19,12,Product Viewed,Smartphones,402
+CUST1084,42,Female,New York,CST,Push,2024-08-20 02:22:09,0.13,At-Risk,2024-09-25 22:28:54,Transactional,2024-08-25 08:24:14,0,0,0,6,6,1,21,Product Viewed,Smartphones,146
+CUST1085,58,Male,Illinois,CST,Push,2024-08-15 06:05:07,0.88,Loyal Customer,2024-07-14 20:19:49,Transactional,2024-08-18 12:04:20,1,0,0,15,15,17,9,Product Viewed,Smartphones,282
+CUST1086,59,Male,Florida,MST,Push,2024-08-23 14:25:27,0.69,Frequent Buyer,2024-08-23 02:48:32,Promotional,2024-09-29 10:13:02,1,0,0,20,20,16,1,Product Viewed,Smartphones,452
+CUST1087,33,Male,Florida,EST,Push,2024-07-18 09:43:41,0.29,Loyal Customer,2024-09-04 12:53:34,Informational,2024-07-26 12:51:45,1,1,0,0,0,4,23,Product Viewed,Smartphones,238
+CUST1088,22,Male,Texas,MST,Email,2024-08-28 03:00:02,0.11,High-Value,,Informational,2024-09-12 22:54:55,1,1,1,7,21,13,17,Product Viewed,Smartphones,308
+CUST1089,30,Other,Illinois,PST,Push,2024-07-16 17:19:47,0.68,First-Time Buyer,,Informational,2024-09-16 08:50:53,0,0,0,6,6,10,21,Product Viewed,Smartphones,164
+CUST1090,20,Female,Illinois,PST,Push,2024-08-11 19:08:31,0.52,High-Value,2024-08-31 18:08:48,Transactional,2024-07-23 23:46:50,1,0,0,1,1,18,11,Product Viewed,Smartphones,273
+CUST1091,65,Other,Illinois,CST,Email,2024-07-31 06:47:25,0.61,Frequent Buyer,,Transactional,2024-07-04 17:11:15,0,0,0,4,1,16,14,Product Viewed,Smartphones,259
+CUST1092,52,Other,Texas,CST,Push,2024-07-07 17:16:49,0.17,Loyal Customer,,Transactional,2024-09-08 17:48:07,0,0,0,23,23,19,1,Product Viewed,Smartphones,202
+CUST1093,37,Male,California,PST,Email,2024-08-14 17:55:34,0.39,High-Value,2024-08-10 05:48:48,Informational,2024-09-10 06:50:41,1,0,0,11,3,13,10,Product Viewed,Smartphones,387
+CUST1094,24,Male,Florida,MST,Push,2024-07-12 02:12:11,0.69,First-Time Buyer,2024-09-20 17:26:13,Transactional,2024-07-07 19:16:17,0,0,0,8,8,6,8,Product Viewed,Smartphones,151
+CUST1095,19,Male,New York,MST,Email,2024-08-09 16:28:49,0.71,Frequent Buyer,,Promotional,2024-09-25 23:58:13,1,1,1,1,7,4,9,Product Viewed,Smartphones,226
+CUST1096,45,Male,California,EST,Push,2024-07-11 02:09:33,0.83,At-Risk,2024-08-10 01:14:50,Transactional,2024-08-20 18:56:44,1,1,1,6,6,7,21,Product Viewed,Smartphones,125
+CUST1097,26,Other,Texas,MST,Email,2024-08-03 18:13:50,0.35,High-Value,2024-09-25 23:46:28,Informational,2024-07-21 10:33:52,0,0,0,17,5,7,12,Product Viewed,Smartphones,136
+CUST1098,61,Other,Texas,CST,Email,2024-08-25 11:10:18,0.79,Frequent Buyer,2024-09-19 00:48:19,Promotional,2024-09-09 11:45:13,1,1,0,18,21,3,7,Product Viewed,Smartphones,81
+CUST1099,64,Female,California,PST,Push,2024-07-10 20:06:08,0.38,Loyal Customer,2024-09-02 02:47:51,Promotional,2024-09-26 14:10:47,1,1,0,20,20,7,3,Product Viewed,Smartphones,372
+CUST1100,25,Female,California,EST,Push,2024-08-03 23:15:19,0.86,Loyal Customer,,Promotional,2024-07-17 16:10:52,1,1,0,3,3,5,12,Product Viewed,Smartphones,279
+CUST1101,44,Female,New York,PST,Push,2024-09-22 05:48:28,0.45,High-Value,,Promotional,2024-08-01 05:42:38,1,1,0,19,19,2,14,Product Viewed,Smartphones,115
+CUST1102,47,Other,Texas,CST,Push,2024-08-06 12:25:52,0.55,Frequent Buyer,2024-09-01 02:48:48,Informational,2024-07-23 16:43:09,0,0,0,8,8,2,18,Product Viewed,Smartphones,254
+CUST1103,20,Other,California,CST,Push,2024-09-23 07:05:39,0.42,First-Time Buyer,,Informational,2024-09-05 07:41:41,0,0,0,3,3,4,9,Product Viewed,Smartphones,261
+CUST1104,41,Male,Illinois,EST,Email,2024-09-03 00:42:16,0.12,At-Risk,,Promotional,2024-08-13 15:26:50,0,0,0,11,1,23,5,Product Viewed,Smartphones,437
+CUST1105,32,Other,Texas,PST,Push,2024-08-14 15:48:56,0.44,First-Time Buyer,2024-08-13 21:24:04,Promotional,2024-08-03 14:05:04,1,0,0,16,16,21,22,Product Viewed,Smartphones,148
+CUST1106,47,Other,Texas,PST,Push,2024-07-27 16:17:18,0.33,High-Value,2024-08-22 04:04:02,Promotional,2024-08-31 16:09:27,1,1,0,8,8,19,0,Product Viewed,Smartphones,412
+CUST1107,60,Male,Illinois,PST,Push,2024-09-06 18:59:32,0.54,At-Risk,2024-08-02 19:46:09,Informational,2024-09-06 08:45:31,0,0,0,23,23,20,23,Product Viewed,Smartphones,190
+CUST1108,21,Other,Florida,PST,Push,2024-08-28 02:39:33,0.79,At-Risk,2024-09-02 12:48:08,Transactional,2024-07-29 11:15:24,0,0,0,9,9,23,22,Product Viewed,Smartphones,393
+CUST1109,57,Female,California,MST,Email,2024-09-30 01:21:14,0.8,First-Time Buyer,,Transactional,2024-07-23 16:15:05,1,0,0,2,20,11,10,Product Viewed,Smartphones,402
+CUST1110,65,Female,Florida,MST,Push,2024-07-14 22:05:19,0.32,High-Value,2024-07-08 21:16:40,Transactional,2024-08-11 15:01:19,0,0,0,16,16,11,13,Product Viewed,Smartphones,347
+CUST1111,48,Male,Florida,CST,Email,2024-08-16 16:47:57,0.53,Frequent Buyer,2024-09-01 05:34:35,Transactional,2024-08-18 15:31:11,1,1,0,1,13,0,5,Product Viewed,Smartphones,262
+CUST1112,32,Other,Florida,MST,Push,2024-08-19 20:43:46,0.8,First-Time Buyer,2024-09-18 14:31:31,Informational,2024-09-29 22:08:45,1,0,0,23,23,8,21,Product Viewed,Smartphones,70
+CUST1113,35,Female,California,PST,Email,2024-07-04 01:14:47,0.11,At-Risk,,Informational,2024-07-15 07:32:12,0,0,0,8,4,9,11,Product Viewed,Smartphones,327
+CUST1114,61,Female,Texas,CST,Push,2024-07-14 08:52:27,0.54,Frequent Buyer,,Transactional,2024-09-15 08:56:39,1,0,0,23,23,9,22,Product Viewed,Smartphones,441
+CUST1115,41,Male,Florida,EST,Email,2024-07-04 20:32:35,0.53,At-Risk,2024-09-27 09:56:42,Transactional,2024-09-27 00:17:16,1,0,0,5,0,17,6,Product Viewed,Smartphones,112
+CUST1116,18,Female,New York,EST,Push,2024-09-07 09:23:09,0.67,At-Risk,2024-09-28 20:16:26,Promotional,2024-07-27 09:27:12,1,0,0,5,5,1,3,Product Viewed,Smartphones,121
+CUST1117,64,Female,California,EST,Push,2024-08-25 07:44:05,0.11,At-Risk,,Informational,2024-09-24 16:30:31,0,0,0,16,16,0,20,Product Viewed,Smartphones,251
+CUST1118,55,Other,Texas,EST,Push,2024-09-30 09:28:30,0.23,Frequent Buyer,2024-09-05 14:48:19,Transactional,2024-08-03 17:05:16,1,0,0,11,11,20,8,Product Viewed,Smartphones,369
+CUST1119,46,Male,Florida,MST,Push,2024-09-02 00:41:21,0.59,First-Time Buyer,2024-09-09 03:21:25,Transactional,2024-07-05 01:23:57,1,1,1,7,7,11,17,Product Viewed,Smartphones,231
+CUST1120,45,Male,New York,CST,Email,2024-08-23 09:25:38,0.11,High-Value,2024-08-14 02:23:20,Informational,2024-09-27 07:28:27,1,0,0,9,17,3,15,Product Viewed,Smartphones,404
+CUST1121,40,Male,California,CST,Push,2024-07-14 18:08:22,0.4,First-Time Buyer,2024-07-03 11:17:23,Promotional,2024-09-03 19:13:13,0,0,0,7,7,8,19,Product Viewed,Smartphones,475
+CUST1122,43,Male,Florida,EST,Push,2024-09-17 14:58:55,0.5,First-Time Buyer,2024-08-01 12:46:01,Informational,2024-09-12 01:16:01,1,1,1,3,3,10,10,Product Viewed,Smartphones,127
+CUST1123,36,Male,Florida,MST,Email,2024-07-12 10:11:34,0.55,Frequent Buyer,,Transactional,2024-08-15 20:56:58,0,0,0,2,21,15,18,Product Viewed,Smartphones,118
+CUST1124,63,Male,New York,EST,Push,2024-08-14 16:28:30,0.24,First-Time Buyer,,Informational,2024-09-08 18:37:48,0,0,0,15,15,5,7,Product Viewed,Smartphones,74
+CUST1125,24,Female,California,CST,Push,2024-07-16 23:37:33,0.35,Loyal Customer,2024-07-04 14:10:34,Transactional,2024-07-28 06:51:26,0,0,0,21,21,7,1,Product Viewed,Smartphones,110
+CUST1126,64,Male,Florida,CST,Email,2024-08-16 08:24:37,0.61,At-Risk,2024-09-27 16:44:28,Promotional,2024-08-16 22:25:33,0,0,0,0,16,1,13,Product Viewed,Smartphones,226
+CUST1127,48,Male,Florida,PST,Push,2024-08-22 02:36:54,0.4,High-Value,2024-08-29 00:31:26,Promotional,2024-08-25 01:16:20,0,0,0,17,17,4,16,Product Viewed,Smartphones,326
+CUST1128,56,Female,Illinois,EST,Push,2024-08-13 07:29:40,0.63,High-Value,2024-09-09 03:47:51,Transactional,2024-07-09 12:22:17,0,0,0,2,2,5,22,Product Viewed,Smartphones,435
+CUST1129,46,Male,Florida,EST,Push,2024-08-22 09:56:00,0.29,High-Value,,Promotional,2024-07-07 09:46:52,0,0,0,13,13,1,11,Product Viewed,Smartphones,488
+CUST1130,30,Other,Illinois,MST,Push,2024-09-24 04:25:18,0.63,First-Time Buyer,2024-08-17 10:56:20,Informational,2024-09-05 13:23:00,0,0,0,4,4,13,3,Product Viewed,Smartphones,372
+CUST1131,48,Male,California,PST,Push,2024-09-18 11:44:37,0.48,High-Value,,Transactional,2024-08-09 08:29:14,1,1,1,6,6,0,20,Product Viewed,Smartphones,297
+CUST1132,38,Female,New York,EST,Email,2024-09-21 00:17:54,0.25,Frequent Buyer,2024-09-03 13:07:20,Transactional,2024-07-15 11:59:06,1,1,1,2,20,14,20,Product Viewed,Smartphones,294
+CUST1133,53,Male,Texas,MST,Email,2024-07-31 02:06:50,0.75,At-Risk,,Informational,2024-08-15 00:07:53,0,0,0,20,17,15,8,Product Viewed,Smartphones,474
+CUST1134,28,Male,Florida,MST,Push,2024-07-09 21:30:58,0.44,First-Time Buyer,,Informational,2024-08-22 16:10:27,0,0,0,1,1,16,13,Product Viewed,Smartphones,350
+CUST1135,43,Other,New York,EST,Email,2024-09-21 01:05:05,0.53,Frequent Buyer,2024-07-24 16:12:23,Transactional,2024-07-07 16:12:14,1,0,0,21,10,15,8,Product Viewed,Smartphones,474
+CUST1136,38,Male,California,EST,Email,2024-09-19 03:32:00,0.86,Frequent Buyer,2024-08-26 18:54:33,Informational,2024-07-14 00:58:56,1,0,0,18,15,14,15,Product Viewed,Smartphones,280
+CUST1137,25,Male,New York,MST,Email,2024-08-28 20:38:38,0.84,Loyal Customer,2024-09-18 05:37:03,Transactional,2024-08-09 10:39:10,1,0,0,21,6,21,14,Product Viewed,Smartphones,177
+CUST1138,64,Female,New York,MST,Email,2024-07-23 10:19:45,0.33,First-Time Buyer,,Transactional,2024-09-24 06:35:37,0,0,0,2,17,19,8,Product Viewed,Smartphones,319
+CUST1139,19,Female,Florida,EST,Email,2024-08-08 19:51:16,0.77,At-Risk,,Promotional,2024-08-05 01:38:01,1,1,0,1,6,11,11,Product Viewed,Smartphones,417
+CUST1140,51,Other,California,EST,Email,2024-08-08 22:20:34,0.73,At-Risk,2024-08-06 02:22:09,Promotional,2024-08-12 01:00:46,0,0,0,23,16,3,14,Product Viewed,Smartphones,449
+CUST1141,37,Male,California,CST,Email,2024-07-15 00:14:10,0.32,At-Risk,2024-09-06 20:16:27,Transactional,2024-07-27 00:35:06,1,0,0,23,12,12,7,Product Viewed,Smartphones,63
+CUST1142,37,Male,Texas,EST,Email,2024-07-21 21:25:27,0.39,Loyal Customer,2024-09-27 23:38:33,Transactional,2024-09-02 18:53:18,1,0,0,10,10,12,18,Product Viewed,Smartphones,165
+CUST1143,35,Other,Texas,MST,Push,2024-09-15 04:21:00,0.32,High-Value,2024-09-17 07:55:44,Transactional,2024-08-30 04:45:20,1,1,1,17,17,10,10,Product Viewed,Smartphones,237
+CUST1144,40,Other,Texas,MST,Email,2024-08-05 10:40:18,0.15,First-Time Buyer,2024-08-13 03:41:11,Transactional,2024-09-09 00:04:36,1,0,0,2,18,14,13,Product Viewed,Smartphones,199
+CUST1145,62,Other,Florida,MST,Email,2024-07-30 11:37:48,0.87,First-Time Buyer,2024-09-01 20:48:06,Promotional,2024-07-31 07:53:11,1,1,0,11,12,18,21,Product Viewed,Smartphones,155
+CUST1146,33,Female,California,EST,Email,2024-08-17 16:38:00,0.74,Frequent Buyer,2024-07-03 01:35:44,Promotional,2024-08-14 11:58:07,0,0,0,15,15,8,18,Product Viewed,Smartphones,203
+CUST1147,61,Other,New York,MST,Push,2024-08-28 04:24:16,0.15,Frequent Buyer,2024-08-07 08:41:36,Transactional,2024-07-09 19:09:26,0,0,0,7,7,16,8,Product Viewed,Smartphones,218
+CUST1148,47,Male,New York,PST,Email,2024-09-27 11:49:33,0.88,First-Time Buyer,2024-09-12 23:46:21,Informational,2024-08-14 14:37:28,0,0,0,7,1,5,9,Product Viewed,Smartphones,478
+CUST1149,54,Other,Texas,CST,Push,2024-09-20 02:09:05,0.59,High-Value,2024-09-26 10:42:05,Promotional,2024-07-20 12:21:35,0,0,0,9,9,22,5,Product Viewed,Smartphones,361
+CUST1150,54,Female,Texas,MST,Push,2024-07-22 17:17:36,0.75,First-Time Buyer,2024-09-19 07:47:19,Informational,2024-07-07 05:10:33,1,0,0,17,17,9,11,Product Viewed,Smartphones,467
+CUST1151,51,Other,California,MST,Email,2024-09-18 19:02:58,0.23,High-Value,,Informational,2024-09-18 22:28:25,1,0,0,7,6,21,6,Product Viewed,Smartphones,375
+CUST1152,53,Male,Texas,CST,Email,2024-09-12 10:48:40,0.26,At-Risk,,Transactional,2024-09-13 08:56:22,1,1,1,4,14,22,19,Product Viewed,Smartphones,369
+CUST1153,48,Female,California,EST,Push,2024-09-21 19:59:34,0.66,At-Risk,,Informational,2024-07-28 18:42:08,1,0,0,2,2,1,9,Product Viewed,Smartphones,470
+CUST1154,33,Other,California,CST,Email,2024-08-24 16:02:12,0.57,Loyal Customer,,Informational,2024-08-31 20:42:28,0,0,0,1,5,15,13,Product Viewed,Smartphones,297
+CUST1155,34,Other,Texas,PST,Push,2024-07-31 02:43:49,0.28,High-Value,,Transactional,2024-08-04 03:33:51,1,1,1,13,13,21,20,Product Viewed,Smartphones,188
+CUST1156,46,Female,Texas,EST,Push,2024-08-05 14:21:34,0.5,High-Value,2024-07-08 08:06:29,Transactional,2024-09-28 08:44:02,1,0,0,21,21,12,13,Product Viewed,Smartphones,238
+CUST1157,44,Female,California,CST,Email,2024-09-10 08:36:46,0.54,Frequent Buyer,,Promotional,2024-08-07 18:25:08,0,0,0,19,20,19,14,Product Viewed,Smartphones,368
+CUST1158,42,Female,Florida,MST,Push,2024-09-02 08:21:41,0.41,First-Time Buyer,2024-08-18 23:36:31,Transactional,2024-07-11 11:27:54,1,1,1,9,9,11,8,Product Viewed,Smartphones,226
+CUST1159,58,Male,Illinois,EST,Email,2024-07-25 09:22:47,0.66,Frequent Buyer,2024-08-18 09:24:32,Informational,2024-07-09 01:11:17,0,0,0,6,20,15,10,Product Viewed,Smartphones,273
+CUST1160,30,Other,Texas,PST,Email,2024-07-25 01:58:54,0.28,At-Risk,,Promotional,2024-09-01 06:56:03,1,0,0,10,22,9,2,Product Viewed,Smartphones,479
+CUST1161,45,Other,Illinois,PST,Email,2024-07-19 21:51:09,0.75,High-Value,2024-09-16 01:54:56,Promotional,2024-09-17 01:59:00,1,0,0,16,21,2,13,Product Viewed,Smartphones,239
+CUST1162,18,Female,California,PST,Email,2024-09-13 11:35:26,0.78,High-Value,,Promotional,2024-09-30 00:31:51,0,0,0,9,5,1,9,Product Viewed,Smartphones,237
+CUST1163,43,Male,Florida,CST,Push,2024-07-19 01:32:04,0.67,Frequent Buyer,2024-09-30 02:56:51,Informational,2024-08-05 05:23:42,1,0,0,0,0,14,23,Product Viewed,Smartphones,82
+CUST1164,35,Male,New York,CST,Push,2024-09-19 09:25:30,0.35,High-Value,2024-08-21 16:59:01,Transactional,2024-07-04 18:26:20,0,0,0,19,19,17,6,Product Viewed,Smartphones,404
+CUST1165,21,Female,Illinois,MST,Email,2024-09-13 14:45:22,0.49,First-Time Buyer,2024-07-14 17:05:55,Promotional,2024-09-24 10:29:44,1,0,0,17,2,20,13,Product Viewed,Smartphones,360
+CUST1166,25,Other,New York,PST,Push,2024-08-27 10:12:23,0.56,First-Time Buyer,2024-08-30 14:58:34,Promotional,2024-07-26 08:22:51,0,0,0,11,11,13,11,Product Viewed,Smartphones,460
+CUST1167,58,Female,California,MST,Email,2024-07-03 01:11:18,0.51,High-Value,2024-08-05 04:02:01,Transactional,2024-08-16 01:54:00,1,1,0,19,5,22,16,Product Viewed,Smartphones,452
+CUST1168,44,Male,Illinois,EST,Email,2024-08-16 15:13:36,0.79,First-Time Buyer,2024-09-20 23:08:49,Informational,2024-09-03 08:03:13,1,0,0,0,21,4,22,Product Viewed,Smartphones,80
+CUST1169,21,Male,Texas,MST,Email,2024-09-29 08:22:08,0.46,High-Value,,Promotional,2024-09-23 11:25:53,0,0,0,14,12,12,7,Product Viewed,Smartphones,452
+CUST1170,38,Male,Texas,MST,Push,2024-07-14 05:38:41,0.55,Loyal Customer,,Transactional,2024-07-21 23:18:52,0,0,0,3,3,20,9,Product Viewed,Smartphones,332
+CUST1171,62,Other,Illinois,EST,Push,2024-09-21 01:04:20,0.53,Loyal Customer,2024-08-21 05:52:45,Transactional,2024-08-11 18:07:16,1,0,0,5,5,21,23,Product Viewed,Smartphones,73
+CUST1172,51,Other,Florida,CST,Push,2024-09-26 08:15:47,0.29,Loyal Customer,2024-09-11 14:21:21,Transactional,2024-08-23 04:13:41,0,0,0,18,18,18,5,Product Viewed,Smartphones,218
+CUST1173,64,Male,California,CST,Email,2024-08-14 08:18:03,0.48,At-Risk,2024-08-21 09:29:25,Promotional,2024-08-23 05:20:32,1,0,0,3,0,3,3,Product Viewed,Smartphones,156
+CUST1174,30,Male,California,PST,Email,2024-08-16 23:07:47,0.18,Loyal Customer,2024-09-29 01:22:28,Transactional,2024-09-08 11:42:18,0,0,0,19,3,4,11,Product Viewed,Smartphones,471
+CUST1175,37,Other,Illinois,EST,Push,2024-08-16 12:28:04,0.75,Frequent Buyer,2024-08-29 18:53:27,Informational,2024-07-19 16:39:34,1,1,0,3,3,17,19,Product Viewed,Smartphones,233
+CUST1176,18,Other,Texas,MST,Push,2024-07-19 17:33:21,0.23,Loyal Customer,2024-09-03 16:02:29,Promotional,2024-08-20 23:16:02,0,0,0,6,6,10,2,Product Viewed,Smartphones,379
+CUST1177,28,Male,Florida,PST,Push,2024-07-07 18:30:57,0.89,Loyal Customer,2024-07-30 20:53:15,Promotional,2024-09-15 17:31:26,0,0,0,17,17,7,2,Product Viewed,Smartphones,268
+CUST1178,32,Other,California,MST,Email,2024-07-11 04:32:17,0.55,Frequent Buyer,,Transactional,2024-07-20 13:42:31,1,1,0,1,1,14,1,Product Viewed,Smartphones,181
+CUST1179,30,Other,Illinois,MST,Email,2024-08-10 22:52:39,0.84,High-Value,2024-09-15 22:43:55,Informational,2024-07-09 11:34:13,1,0,0,13,14,11,5,Product Viewed,Smartphones,185
+CUST1180,26,Male,California,EST,Push,2024-07-11 10:53:07,0.41,First-Time Buyer,2024-08-30 13:14:54,Informational,2024-07-22 18:56:00,1,0,0,9,9,1,13,Product Viewed,Smartphones,70
+CUST1181,46,Other,Illinois,MST,Email,2024-07-03 07:38:47,0.54,Loyal Customer,2024-08-07 08:34:46,Promotional,2024-09-30 09:39:21,0,0,0,23,21,5,22,Product Viewed,Smartphones,492
+CUST1182,24,Other,Texas,CST,Email,2024-08-27 20:14:33,0.27,At-Risk,2024-08-05 06:06:49,Promotional,2024-08-25 17:05:54,0,0,0,21,12,18,9,Product Viewed,Smartphones,465
+CUST1183,64,Male,Florida,MST,Email,2024-08-26 19:00:17,0.45,Loyal Customer,,Transactional,2024-08-04 14:06:25,1,1,0,10,0,20,18,Product Viewed,Smartphones,340
+CUST1184,26,Male,Florida,MST,Push,2024-09-04 19:33:03,0.19,Frequent Buyer,2024-09-21 23:03:15,Promotional,2024-08-14 21:29:32,1,0,0,23,23,15,8,Product Viewed,Smartphones,373
+CUST1185,31,Male,New York,MST,Push,2024-07-20 10:08:56,0.32,First-Time Buyer,2024-08-07 06:20:51,Transactional,2024-07-16 21:48:09,0,0,0,7,7,4,11,Product Viewed,Smartphones,163
+CUST1186,51,Male,Florida,CST,Email,2024-09-06 22:19:00,0.8,High-Value,,Transactional,2024-07-11 21:50:48,0,0,0,12,7,8,17,Product Viewed,Smartphones,442
+CUST1187,57,Female,Florida,MST,Push,2024-08-11 13:45:12,0.8,Loyal Customer,2024-07-20 15:41:52,Promotional,2024-07-21 15:22:16,0,0,0,13,13,18,1,Product Viewed,Smartphones,246
+CUST1188,35,Female,New York,EST,Push,2024-08-03 02:47:31,0.62,First-Time Buyer,,Informational,2024-07-30 21:48:05,1,1,0,7,7,21,19,Product Viewed,Smartphones,477
+CUST1189,45,Other,New York,EST,Email,2024-09-26 01:28:11,0.33,Loyal Customer,,Transactional,2024-08-21 23:32:58,0,0,0,4,13,15,16,Product Viewed,Smartphones,385
+CUST1190,33,Other,Texas,CST,Push,2024-08-20 05:10:02,0.67,Frequent Buyer,,Promotional,2024-07-20 15:27:46,1,1,0,4,4,16,16,Product Viewed,Smartphones,183
+CUST1191,32,Male,Illinois,PST,Push,2024-09-17 12:44:36,0.58,At-Risk,,Promotional,2024-07-21 18:27:36,1,0,0,16,16,22,23,Product Viewed,Smartphones,455
+CUST1192,52,Male,California,PST,Email,2024-07-15 13:46:28,0.81,Loyal Customer,2024-08-08 05:25:39,Transactional,2024-09-03 22:02:55,1,1,1,2,1,16,0,Product Viewed,Smartphones,91
+CUST1193,60,Female,New York,MST,Push,2024-07-18 22:38:24,0.34,High-Value,,Transactional,2024-07-11 09:08:24,0,0,0,16,16,2,4,Product Viewed,Smartphones,138
+CUST1194,43,Female,New York,EST,Push,2024-09-01 20:30:16,0.76,High-Value,2024-07-23 05:38:03,Informational,2024-07-24 13:59:20,0,0,0,4,4,21,23,Product Viewed,Smartphones,338
+CUST1195,40,Other,New York,MST,Email,2024-08-03 06:17:10,0.35,Frequent Buyer,,Promotional,2024-08-12 13:06:22,0,0,0,10,11,7,19,Product Viewed,Smartphones,253
+CUST1196,44,Male,New York,CST,Push,2024-08-30 18:06:03,0.56,At-Risk,,Transactional,2024-08-05 19:47:05,0,0,0,1,1,9,23,Product Viewed,Smartphones,272
+CUST1197,58,Male,California,MST,Push,2024-07-23 16:59:24,0.8,At-Risk,2024-09-23 13:55:29,Transactional,2024-09-04 21:17:52,1,0,0,22,22,19,6,Product Viewed,Smartphones,240
+CUST1198,39,Other,California,PST,Push,2024-09-25 03:47:28,0.26,Frequent Buyer,2024-08-04 19:26:35,Promotional,2024-07-23 14:52:41,0,0,0,17,17,22,19,Product Viewed,Smartphones,308
+CUST1199,20,Other,Florida,PST,Email,2024-07-30 19:19:05,0.72,High-Value,2024-08-17 13:11:15,Promotional,2024-09-09 15:17:20,1,1,1,16,11,1,21,Product Viewed,Smartphones,199
+CUST1200,32,Other,New York,PST,Email,2024-09-17 15:21:47,0.89,At-Risk,2024-07-09 00:38:44,Promotional,2024-08-15 01:59:10,1,1,0,13,5,11,8,Product Viewed,Smartphones,468
+CUST1201,34,Male,Florida,MST,Email,2024-08-11 12:46:25,0.77,At-Risk,2024-07-31 11:39:01,Promotional,2024-08-13 06:20:24,0,0,0,4,11,5,4,Product Viewed,Smartphones,389
+CUST1202,48,Female,Texas,CST,Push,2024-07-26 23:27:49,0.16,At-Risk,2024-07-06 21:21:45,Informational,2024-09-11 20:35:45,1,1,1,16,16,21,8,Product Viewed,Smartphones,324
+CUST1203,56,Other,Texas,CST,Email,2024-07-20 23:45:33,0.76,Frequent Buyer,2024-09-21 10:49:53,Transactional,2024-09-26 01:34:29,1,0,0,17,7,20,8,Product Viewed,Smartphones,189
+CUST1204,31,Male,New York,CST,Push,2024-08-27 11:56:32,0.67,High-Value,,Transactional,2024-07-04 06:33:41,1,1,1,8,8,6,2,Product Viewed,Smartphones,404
+CUST1205,59,Other,California,PST,Email,2024-07-03 00:46:47,0.87,First-Time Buyer,2024-08-27 22:49:37,Informational,2024-09-15 02:51:22,0,0,0,17,15,3,23,Product Viewed,Smartphones,385
+CUST1206,47,Male,California,CST,Push,2024-08-28 02:10:29,0.24,At-Risk,,Promotional,2024-07-23 06:15:58,1,1,1,22,22,10,6,Product Viewed,Smartphones,497
+CUST1207,58,Female,Illinois,CST,Push,2024-09-28 15:39:18,0.34,Loyal Customer,,Transactional,2024-07-12 14:14:37,0,0,0,9,9,10,3,Product Viewed,Smartphones,78
+CUST1208,40,Female,Illinois,PST,Email,2024-08-18 08:23:23,0.56,Loyal Customer,2024-09-03 04:24:22,Informational,2024-09-10 09:39:32,0,0,0,19,19,13,12,Product Viewed,Smartphones,51
+CUST1209,51,Male,California,MST,Push,2024-07-05 00:16:39,0.85,Loyal Customer,2024-07-06 07:04:13,Promotional,2024-08-14 21:32:40,0,0,0,3,3,19,11,Product Viewed,Smartphones,311
+CUST1210,65,Female,Florida,EST,Push,2024-09-15 05:29:54,0.38,Loyal Customer,2024-07-30 10:53:54,Informational,2024-07-22 02:29:58,1,1,1,17,17,13,7,Product Viewed,Smartphones,76
+CUST1211,65,Female,New York,EST,Push,2024-09-08 18:06:19,0.54,Frequent Buyer,2024-09-01 17:16:04,Informational,2024-08-16 19:13:32,0,0,0,11,11,20,13,Product Viewed,Smartphones,289
+CUST1212,36,Female,California,EST,Push,2024-07-04 11:47:57,0.31,Frequent Buyer,2024-08-28 15:13:52,Informational,2024-08-31 14:57:24,0,0,0,7,7,3,15,Product Viewed,Smartphones,102
+CUST1213,58,Male,New York,MST,Push,2024-07-13 06:43:12,0.39,High-Value,2024-08-26 17:14:28,Transactional,2024-08-05 11:06:24,0,0,0,4,4,15,1,Product Viewed,Smartphones,51
+CUST1214,47,Female,Texas,CST,Email,2024-07-20 01:52:34,0.85,High-Value,,Transactional,2024-08-17 15:31:49,0,0,0,4,5,10,20,Product Viewed,Smartphones,157
+CUST1215,22,Male,Illinois,PST,Push,2024-08-20 12:37:59,0.42,High-Value,2024-08-04 23:04:35,Transactional,2024-08-12 19:53:26,0,0,0,4,4,15,21,Product Viewed,Smartphones,240
+CUST1216,43,Female,New York,EST,Email,2024-08-25 11:38:36,0.37,High-Value,,Promotional,2024-08-24 12:21:47,0,0,0,20,12,14,10,Product Viewed,Smartphones,50
+CUST1217,23,Male,Florida,MST,Push,2024-08-07 21:47:25,0.7,High-Value,2024-08-21 18:01:33,Transactional,2024-08-03 21:06:01,1,1,0,11,11,12,9,Product Viewed,Smartphones,299
+CUST1218,63,Other,Illinois,PST,Push,2024-07-26 06:56:25,0.15,First-Time Buyer,,Transactional,2024-08-18 05:42:39,1,1,1,20,20,11,13,Product Viewed,Smartphones,58
+CUST1219,40,Female,New York,MST,Email,2024-07-20 18:43:19,0.76,Loyal Customer,2024-09-15 09:48:38,Informational,2024-09-27 02:35:22,1,1,0,18,8,16,19,Product Viewed,Smartphones,106
+CUST1220,30,Other,Illinois,EST,Push,2024-09-25 19:29:20,0.3,First-Time Buyer,,Transactional,2024-09-21 13:19:23,1,1,1,4,4,23,14,Product Viewed,Smartphones,419
+CUST1221,32,Female,California,CST,Push,2024-09-11 23:44:57,0.79,Loyal Customer,2024-08-17 05:30:56,Transactional,2024-07-15 02:33:10,1,1,1,7,7,11,19,Product Viewed,Smartphones,200
+CUST1222,54,Female,California,EST,Push,2024-08-29 00:46:09,0.85,First-Time Buyer,2024-08-28 19:23:20,Promotional,2024-09-17 04:56:57,0,0,0,15,15,5,22,Product Viewed,Smartphones,92
+CUST1223,62,Female,Florida,PST,Push,2024-07-27 06:23:22,0.66,Loyal Customer,2024-07-19 21:39:05,Informational,2024-09-14 05:26:26,0,0,0,23,23,16,3,Product Viewed,Smartphones,175
+CUST1224,53,Other,Texas,PST,Email,2024-07-05 22:07:32,0.15,Loyal Customer,2024-08-03 08:07:02,Transactional,2024-09-28 18:38:30,0,0,0,22,19,0,21,Product Viewed,Smartphones,323
+CUST1225,56,Female,California,PST,Push,2024-07-30 01:14:40,0.74,Frequent Buyer,,Transactional,2024-08-06 13:10:05,1,1,0,8,8,10,14,Product Viewed,Smartphones,68
+CUST1226,52,Female,California,EST,Email,2024-07-26 11:41:49,0.77,At-Risk,2024-09-20 08:08:35,Transactional,2024-07-23 09:37:19,1,1,1,19,5,5,23,Product Viewed,Smartphones,87
+CUST1227,56,Male,Texas,EST,Email,2024-07-27 17:53:50,0.87,Loyal Customer,2024-09-07 18:46:36,Promotional,2024-07-25 02:11:37,0,0,0,0,1,8,4,Product Viewed,Smartphones,348
+CUST1228,53,Female,California,EST,Push,2024-07-15 12:35:42,0.23,High-Value,,Informational,2024-09-23 17:31:20,0,0,0,16,16,23,14,Product Viewed,Smartphones,259
+CUST1229,46,Male,Illinois,EST,Push,2024-07-03 22:33:45,0.21,Loyal Customer,2024-08-13 03:40:34,Transactional,2024-07-23 22:22:01,1,1,1,21,21,22,12,Product Viewed,Smartphones,198
+CUST1230,23,Female,New York,EST,Email,2024-07-06 17:07:44,0.9,At-Risk,,Promotional,2024-08-06 06:01:38,1,1,0,19,17,6,0,Product Viewed,Smartphones,262
+CUST1231,64,Female,New York,CST,Email,2024-07-19 15:05:40,0.81,Loyal Customer,2024-09-29 01:47:23,Transactional,2024-07-24 06:31:24,1,0,0,1,20,20,16,Product Viewed,Smartphones,412
+CUST1232,22,Male,New York,CST,Push,2024-07-25 07:46:26,0.67,Frequent Buyer,2024-08-11 13:25:09,Promotional,2024-07-10 09:43:26,1,0,0,19,19,16,1,Product Viewed,Smartphones,174
+CUST1233,65,Female,New York,EST,Push,2024-07-03 20:58:10,0.76,High-Value,2024-09-20 11:35:15,Transactional,2024-09-03 07:30:13,1,0,0,20,20,11,23,Product Viewed,Smartphones,418
+CUST1234,21,Other,Florida,MST,Push,2024-08-16 11:05:56,0.79,High-Value,,Transactional,2024-07-25 17:27:23,1,1,0,7,7,15,6,Product Viewed,Smartphones,310
+CUST1235,53,Female,Illinois,CST,Email,2024-07-25 15:44:25,0.58,First-Time Buyer,,Informational,2024-08-18 19:32:33,1,0,0,5,13,18,7,Product Viewed,Smartphones,345
+CUST1236,31,Female,Illinois,CST,Push,2024-07-22 16:08:25,0.38,High-Value,,Informational,2024-08-03 12:15:29,0,0,0,1,1,15,22,Product Viewed,Smartphones,160
+CUST1237,42,Male,Florida,PST,Push,2024-09-11 03:00:40,0.42,Loyal Customer,2024-07-05 01:03:49,Informational,2024-07-07 05:43:16,1,0,0,12,12,7,2,Product Viewed,Smartphones,208
+CUST1238,49,Male,Illinois,EST,Email,2024-09-21 11:54:50,0.66,Loyal Customer,2024-09-25 15:28:36,Informational,2024-08-02 03:33:24,0,0,0,8,21,14,6,Product Viewed,Smartphones,127
+CUST1239,54,Other,California,PST,Push,2024-08-04 12:47:49,0.21,At-Risk,2024-08-06 06:42:16,Promotional,2024-07-28 03:52:52,0,0,0,0,0,23,3,Product Viewed,Smartphones,295
+CUST1240,29,Male,New York,MST,Email,2024-07-21 08:03:27,0.54,First-Time Buyer,2024-09-12 13:32:58,Transactional,2024-07-25 22:13:08,1,0,0,7,3,11,0,Product Viewed,Smartphones,422
+CUST1241,39,Other,New York,MST,Email,2024-07-30 17:29:24,0.28,High-Value,2024-07-10 04:40:06,Informational,2024-07-09 19:19:13,1,0,0,20,6,7,2,Product Viewed,Smartphones,99
+CUST1242,63,Other,Florida,MST,Email,2024-09-26 06:35:54,0.12,At-Risk,,Transactional,2024-08-17 11:54:46,1,0,0,13,11,0,9,Product Viewed,Smartphones,318
+CUST1243,25,Male,Texas,CST,Push,2024-07-06 16:16:49,0.24,Loyal Customer,2024-08-28 16:24:51,Informational,2024-08-31 12:57:11,1,0,0,16,16,22,0,Product Viewed,Smartphones,477
+CUST1244,51,Female,New York,CST,Push,2024-08-08 11:32:04,0.12,Loyal Customer,2024-09-14 06:30:10,Promotional,2024-08-24 13:04:12,1,0,0,18,18,17,0,Product Viewed,Smartphones,447
+CUST1245,54,Other,Illinois,CST,Push,2024-09-16 22:32:10,0.72,Loyal Customer,,Promotional,2024-09-01 22:22:22,0,0,0,17,17,4,2,Product Viewed,Smartphones,275
+CUST1246,44,Other,California,MST,Push,2024-08-19 09:10:40,0.26,High-Value,2024-09-04 02:40:27,Transactional,2024-08-29 11:03:37,1,1,0,18,18,0,0,Product Viewed,Smartphones,243
+CUST1247,58,Male,Texas,PST,Push,2024-09-06 14:22:35,0.45,High-Value,2024-07-18 09:56:23,Transactional,2024-09-18 15:56:02,0,0,0,16,16,19,11,Product Viewed,Smartphones,201
+CUST1248,57,Female,Texas,PST,Push,2024-08-28 21:08:49,0.8,High-Value,2024-08-30 08:09:08,Transactional,2024-07-08 19:30:37,0,0,0,21,21,7,5,Product Viewed,Smartphones,498
+CUST1249,37,Male,California,CST,Push,2024-09-20 12:13:42,0.35,High-Value,,Promotional,2024-09-12 03:00:37,1,0,0,0,0,22,7,Product Viewed,Smartphones,447
+CUST1250,36,Male,Illinois,PST,Push,2024-08-07 14:57:22,0.8,First-Time Buyer,,Transactional,2024-07-14 01:37:54,1,1,1,16,16,17,5,Product Viewed,Smartphones,220
+CUST1251,59,Other,Illinois,PST,Email,2024-09-20 23:44:49,0.59,Loyal Customer,2024-08-25 08:29:53,Transactional,2024-07-22 09:28:08,1,1,0,18,14,9,14,Product Viewed,Smartphones,363
+CUST1252,42,Female,Illinois,EST,Email,2024-09-26 19:08:15,0.5,Loyal Customer,2024-09-17 03:09:19,Promotional,2024-08-26 18:52:51,0,0,0,11,18,16,12,Product Viewed,Smartphones,363
+CUST1253,45,Other,New York,CST,Email,2024-07-26 01:05:38,0.75,At-Risk,2024-07-30 03:10:53,Promotional,2024-08-08 16:58:04,0,0,0,12,17,1,11,Product Viewed,Smartphones,475
+CUST1254,32,Other,California,PST,Email,2024-08-19 23:57:29,0.71,At-Risk,2024-07-16 02:46:15,Transactional,2024-09-08 22:39:30,0,0,0,11,19,4,13,Product Viewed,Smartphones,114
+CUST1255,44,Other,New York,CST,Push,2024-08-24 10:53:47,0.45,First-Time Buyer,,Promotional,2024-08-24 12:56:03,0,0,0,23,23,3,9,Product Viewed,Smartphones,95
+CUST1256,62,Other,Texas,EST,Email,2024-09-14 01:41:26,0.32,First-Time Buyer,,Promotional,2024-09-28 09:11:56,0,0,0,20,21,8,21,Product Viewed,Smartphones,472
+CUST1257,50,Female,Texas,EST,Email,2024-07-13 10:51:53,0.65,First-Time Buyer,2024-07-30 01:40:15,Promotional,2024-09-07 21:42:04,1,1,0,8,10,14,7,Product Viewed,Smartphones,144
+CUST1258,62,Other,New York,CST,Push,2024-08-08 18:28:03,0.29,Loyal Customer,2024-09-02 16:19:34,Informational,2024-08-17 17:06:57,0,0,0,15,15,20,19,Product Viewed,Smartphones,402
+CUST1259,27,Other,Texas,CST,Email,2024-08-06 03:06:24,0.68,Frequent Buyer,2024-07-25 17:33:19,Promotional,2024-08-28 19:48:46,1,1,0,6,2,18,10,Product Viewed,Smartphones,323
+CUST1260,30,Other,Texas,MST,Push,2024-07-22 14:27:03,0.14,Loyal Customer,2024-09-28 22:06:04,Transactional,2024-08-30 03:29:57,1,0,0,19,19,4,18,Product Viewed,Smartphones,326
+CUST1261,61,Female,Illinois,MST,Email,2024-07-23 04:29:34,0.59,Frequent Buyer,,Promotional,2024-08-28 01:36:48,1,0,0,17,5,7,19,Product Viewed,Smartphones,127
+CUST1262,30,Female,New York,EST,Email,2024-07-29 12:48:43,0.14,At-Risk,2024-09-27 17:03:58,Transactional,2024-07-21 05:32:23,0,0,0,12,8,23,18,Product Viewed,Smartphones,384
+CUST1263,23,Female,Texas,MST,Push,2024-08-28 18:07:08,0.58,First-Time Buyer,2024-08-14 22:43:40,Transactional,2024-08-31 23:05:59,1,0,0,10,10,21,1,Product Viewed,Smartphones,299
+CUST1264,32,Other,Illinois,PST,Push,2024-09-20 13:52:26,0.85,First-Time Buyer,2024-08-19 17:50:30,Promotional,2024-07-31 17:52:23,1,1,0,8,8,12,6,Product Viewed,Smartphones,433
+CUST1265,37,Male,New York,PST,Email,2024-09-12 09:52:25,0.82,Frequent Buyer,2024-07-17 22:04:51,Promotional,2024-07-17 03:52:52,0,0,0,15,19,14,23,Product Viewed,Smartphones,84
+CUST1266,63,Female,Texas,CST,Push,2024-09-24 12:26:25,0.13,At-Risk,,Informational,2024-09-27 23:09:33,0,0,0,15,15,7,17,Product Viewed,Smartphones,405
+CUST1267,25,Other,California,EST,Push,2024-09-02 13:00:15,0.59,At-Risk,2024-07-07 08:38:44,Informational,2024-07-05 17:18:53,1,0,0,22,22,2,12,Product Viewed,Smartphones,268
+CUST1268,42,Male,Florida,PST,Email,2024-08-05 00:45:53,0.75,First-Time Buyer,,Informational,2024-08-17 07:16:01,0,0,0,0,19,7,0,Product Viewed,Smartphones,342
+CUST1269,21,Other,New York,EST,Email,2024-07-21 02:18:50,0.46,Loyal Customer,2024-08-29 08:57:26,Promotional,2024-07-15 14:16:16,0,0,0,10,1,5,3,Product Viewed,Smartphones,220
+CUST1270,25,Female,California,MST,Email,2024-09-23 08:40:05,0.43,High-Value,2024-08-10 23:15:35,Transactional,2024-09-19 08:28:37,0,0,0,12,5,14,6,Product Viewed,Smartphones,278
+CUST1271,60,Other,New York,MST,Push,2024-08-02 22:56:43,0.37,High-Value,2024-07-27 19:10:01,Promotional,2024-08-06 00:30:58,0,0,0,22,22,0,7,Product Viewed,Smartphones,401
+CUST1272,19,Male,California,EST,Push,2024-07-24 23:35:16,0.8,High-Value,,Promotional,2024-08-22 05:58:06,0,0,0,12,12,22,3,Product Viewed,Smartphones,151
+CUST1273,61,Other,California,EST,Email,2024-07-19 16:04:47,0.58,High-Value,,Promotional,2024-09-24 12:07:31,0,0,0,15,3,5,8,Product Viewed,Smartphones,338
+CUST1274,37,Female,California,EST,Email,2024-09-17 17:22:03,0.15,At-Risk,2024-07-30 15:13:50,Transactional,2024-08-15 17:37:23,0,0,0,4,21,10,5,Product Viewed,Smartphones,229
+CUST1275,49,Female,Illinois,CST,Push,2024-07-05 20:32:21,0.34,At-Risk,2024-08-16 00:08:43,Transactional,2024-08-07 16:40:10,1,0,0,14,14,11,15,Product Viewed,Smartphones,66
+CUST1276,48,Other,Florida,EST,Email,2024-07-31 11:21:35,0.32,First-Time Buyer,2024-09-19 14:08:00,Transactional,2024-08-20 13:31:32,0,0,0,20,8,21,12,Product Viewed,Smartphones,459
+CUST1277,49,Female,California,PST,Email,2024-09-12 01:58:17,0.24,High-Value,2024-07-28 22:08:04,Informational,2024-08-19 13:24:23,1,1,0,15,4,16,4,Product Viewed,Smartphones,158
+CUST1278,26,Male,New York,CST,Email,2024-08-27 16:01:29,0.64,Loyal Customer,2024-07-19 10:54:53,Transactional,2024-07-31 07:26:02,0,0,0,19,11,21,12,Product Viewed,Smartphones,470
+CUST1279,65,Male,Illinois,PST,Email,2024-09-07 05:32:15,0.63,Frequent Buyer,,Promotional,2024-09-27 20:16:44,1,1,1,3,3,11,15,Product Viewed,Smartphones,403
+CUST1280,21,Male,California,CST,Push,2024-07-11 17:08:20,0.48,Loyal Customer,2024-07-13 22:52:57,Promotional,2024-08-19 05:16:21,1,1,0,20,20,12,2,Product Viewed,Smartphones,280
+CUST1281,63,Female,Texas,EST,Email,2024-08-17 06:07:31,0.76,At-Risk,,Transactional,2024-09-19 00:50:33,1,1,0,17,5,7,15,Product Viewed,Smartphones,304
+CUST1282,64,Other,Illinois,EST,Push,2024-08-19 18:43:22,0.35,High-Value,2024-09-23 10:10:22,Transactional,2024-08-24 21:01:21,0,0,0,20,20,19,6,Product Viewed,Smartphones,146
+CUST1283,30,Male,New York,CST,Email,2024-08-04 14:08:48,0.89,Loyal Customer,2024-08-13 03:54:51,Promotional,2024-07-22 07:47:58,0,0,0,6,17,3,11,Product Viewed,Smartphones,157
+CUST1284,51,Male,New York,EST,Email,2024-08-29 12:32:43,0.27,First-Time Buyer,2024-09-14 15:24:36,Informational,2024-08-21 03:32:10,1,1,1,12,7,23,16,Product Viewed,Smartphones,478
+CUST1285,23,Other,California,CST,Push,2024-08-19 08:08:30,0.62,Loyal Customer,2024-07-07 16:35:06,Informational,2024-08-21 09:57:00,1,1,0,17,17,18,15,Product Viewed,Smartphones,117
+CUST1286,62,Other,Texas,MST,Email,2024-09-04 19:17:44,0.37,Frequent Buyer,2024-09-04 13:11:08,Informational,2024-09-22 23:31:12,1,0,0,5,20,12,19,Product Viewed,Smartphones,137
+CUST1287,22,Other,California,CST,Email,2024-07-18 10:23:45,0.67,At-Risk,2024-09-29 19:00:35,Transactional,2024-07-20 09:12:07,0,0,0,20,11,10,16,Product Viewed,Smartphones,153
+CUST1288,58,Other,Texas,CST,Email,2024-09-27 21:41:32,0.68,Frequent Buyer,,Promotional,2024-07-11 00:41:09,0,0,0,19,5,0,2,Product Viewed,Smartphones,432
+CUST1289,30,Female,California,CST,Push,2024-07-31 19:28:33,0.69,First-Time Buyer,,Transactional,2024-07-17 20:53:05,0,0,0,6,6,1,5,Product Viewed,Smartphones,125
+CUST1290,56,Male,New York,MST,Push,2024-08-11 05:46:41,0.76,Loyal Customer,2024-07-09 01:34:39,Transactional,2024-08-10 19:49:15,1,0,0,21,21,22,5,Product Viewed,Smartphones,352
+CUST1291,27,Female,Florida,EST,Email,2024-08-07 12:46:29,0.76,High-Value,2024-08-02 15:58:08,Promotional,2024-09-29 11:34:42,1,0,0,18,20,18,14,Product Viewed,Smartphones,470
+CUST1292,59,Other,Illinois,CST,Email,2024-09-06 04:10:09,0.67,Frequent Buyer,,Transactional,2024-07-29 20:55:36,1,0,0,4,7,16,9,Product Viewed,Smartphones,326
+CUST1293,26,Male,Florida,MST,Push,2024-08-22 14:49:49,0.42,First-Time Buyer,,Transactional,2024-09-11 19:28:26,0,0,0,10,10,17,11,Product Viewed,Smartphones,282
+CUST1294,38,Other,Florida,MST,Push,2024-08-10 17:35:38,0.2,First-Time Buyer,,Transactional,2024-08-05 06:37:37,1,0,0,17,17,9,8,Product Viewed,Smartphones,67
+CUST1295,27,Other,California,PST,Push,2024-07-30 15:29:13,0.79,At-Risk,2024-08-13 22:00:12,Transactional,2024-07-06 04:55:02,1,1,0,20,20,22,5,Product Viewed,Smartphones,442
+CUST1296,63,Female,California,CST,Email,2024-07-30 02:44:14,0.17,First-Time Buyer,2024-09-28 23:46:18,Transactional,2024-08-09 08:23:59,0,0,0,19,22,15,12,Product Viewed,Smartphones,107
+CUST1297,56,Male,Texas,MST,Push,2024-09-16 09:27:53,0.2,First-Time Buyer,2024-07-29 17:54:43,Informational,2024-07-16 22:09:38,1,1,1,0,0,6,7,Product Viewed,Smartphones,332
+CUST1298,41,Male,Texas,PST,Email,2024-09-20 01:59:38,0.63,First-Time Buyer,,Informational,2024-09-10 06:49:17,1,0,0,11,20,2,10,Product Viewed,Smartphones,470
+CUST1299,26,Male,California,EST,Email,2024-09-27 21:48:08,0.34,Loyal Customer,2024-08-08 05:42:31,Transactional,2024-09-30 08:16:11,0,0,0,11,0,23,19,Product Viewed,Smartphones,283
+CUST1300,60,Female,Texas,CST,Email,2024-09-11 18:12:39,0.43,Loyal Customer,2024-08-01 22:26:53,Transactional,2024-09-14 23:58:03,0,0,0,17,20,23,10,Product Viewed,Smartphones,303
+CUST1301,48,Female,Texas,MST,Email,2024-08-02 14:42:43,0.66,At-Risk,,Promotional,2024-09-11 00:22:13,1,1,0,15,6,2,19,Product Viewed,Smartphones,445
+CUST1302,28,Female,Texas,MST,Push,2024-09-28 14:44:32,0.46,At-Risk,2024-07-09 16:55:47,Transactional,2024-09-22 04:46:29,0,0,0,19,19,18,6,Product Viewed,Smartphones,240
+CUST1303,49,Other,New York,EST,Email,2024-09-12 15:53:47,0.61,At-Risk,2024-07-29 23:38:31,Promotional,2024-08-28 05:52:52,1,1,1,23,6,10,4,Product Viewed,Smartphones,97
+CUST1304,30,Other,New York,EST,Push,2024-09-20 00:18:37,0.69,Loyal Customer,2024-09-30 12:49:47,Informational,2024-09-23 15:43:00,0,0,0,10,10,10,18,Product Viewed,Smartphones,394
+CUST1305,57,Female,California,MST,Push,2024-08-06 15:12:56,0.44,At-Risk,,Informational,2024-09-21 08:31:11,0,0,0,13,13,14,0,Product Viewed,Smartphones,142
+CUST1306,62,Female,Illinois,CST,Push,2024-09-12 12:49:50,0.37,High-Value,2024-09-23 16:55:10,Informational,2024-09-23 05:46:38,0,0,0,16,16,17,0,Product Viewed,Smartphones,482
+CUST1307,22,Male,Illinois,EST,Push,2024-09-13 12:16:39,0.72,Loyal Customer,2024-09-24 11:26:12,Informational,2024-08-21 02:03:29,0,0,0,14,14,0,6,Product Viewed,Smartphones,486
+CUST1308,32,Other,New York,EST,Email,2024-07-17 07:19:28,0.57,At-Risk,2024-09-20 12:47:55,Informational,2024-08-25 13:25:27,0,0,0,5,15,19,6,Product Viewed,Smartphones,143
+CUST1309,53,Other,Texas,MST,Email,2024-07-17 09:36:59,0.74,Loyal Customer,2024-08-19 17:15:29,Promotional,2024-08-14 09:28:14,1,1,1,16,21,21,16,Product Viewed,Smartphones,453
+CUST1310,47,Male,Texas,EST,Push,2024-07-07 03:52:34,0.13,At-Risk,2024-07-14 04:52:30,Promotional,2024-07-21 06:31:11,0,0,0,9,9,9,9,Product Viewed,Smartphones,218
+CUST1311,47,Other,New York,EST,Push,2024-08-24 22:38:38,0.54,Frequent Buyer,,Promotional,2024-07-03 03:06:44,0,0,0,8,8,1,15,Product Viewed,Smartphones,136
+CUST1312,31,Other,New York,MST,Email,2024-08-20 19:09:39,0.51,Loyal Customer,,Promotional,2024-07-20 10:46:06,0,0,0,15,10,15,16,Product Viewed,Smartphones,199
+CUST1313,48,Female,Texas,PST,Email,2024-09-17 05:12:42,0.11,High-Value,2024-07-12 11:00:18,Transactional,2024-09-03 22:25:53,1,0,0,4,2,12,8,Product Viewed,Smartphones,144
+CUST1314,23,Other,Texas,CST,Push,2024-07-16 12:34:38,0.29,First-Time Buyer,2024-09-12 06:33:30,Transactional,2024-08-09 15:31:28,0,0,0,21,21,2,3,Product Viewed,Smartphones,431
+CUST1315,55,Male,Illinois,CST,Push,2024-08-10 03:27:25,0.29,Frequent Buyer,2024-08-03 00:26:24,Transactional,2024-09-22 17:41:48,0,0,0,12,12,4,20,Product Viewed,Smartphones,365
+CUST1316,49,Female,Florida,MST,Email,2024-09-12 01:38:03,0.53,Frequent Buyer,2024-07-09 18:49:42,Transactional,2024-07-29 16:58:24,1,1,1,21,2,0,8,Product Viewed,Smartphones,353
+CUST1317,51,Female,California,EST,Push,2024-07-31 00:33:27,0.66,Frequent Buyer,,Transactional,2024-07-11 14:07:26,1,0,0,14,14,19,10,Product Viewed,Smartphones,108
+CUST1318,60,Female,New York,PST,Push,2024-07-18 06:59:20,0.2,At-Risk,2024-09-13 00:57:07,Informational,2024-07-20 06:28:37,0,0,0,22,22,2,7,Product Viewed,Smartphones,325
+CUST1319,35,Male,California,EST,Email,2024-09-01 20:33:53,0.5,High-Value,2024-09-09 11:46:06,Informational,2024-09-26 19:40:43,1,1,1,18,18,6,18,Product Viewed,Smartphones,195
+CUST1320,18,Female,California,CST,Email,2024-09-18 14:42:18,0.39,High-Value,,Informational,2024-08-22 04:00:39,0,0,0,23,7,23,17,Product Viewed,Smartphones,93
+CUST1321,50,Other,New York,PST,Email,2024-08-17 02:51:38,0.58,First-Time Buyer,2024-07-11 11:34:56,Informational,2024-07-04 18:22:51,1,1,0,1,1,10,17,Product Viewed,Smartphones,360
+CUST1322,35,Male,Texas,PST,Email,2024-07-30 04:09:12,0.25,Loyal Customer,,Transactional,2024-08-27 23:46:28,0,0,0,0,5,3,13,Product Viewed,Smartphones,408
+CUST1323,50,Female,New York,EST,Email,2024-09-18 11:57:31,0.39,Loyal Customer,,Promotional,2024-08-17 06:35:41,0,0,0,18,3,22,13,Product Viewed,Smartphones,494
+CUST1324,51,Male,Illinois,CST,Push,2024-07-10 03:13:53,0.75,Frequent Buyer,,Transactional,2024-07-24 07:28:30,1,0,0,13,13,23,7,Product Viewed,Smartphones,297
+CUST1325,33,Other,California,PST,Push,2024-07-07 16:38:51,0.75,At-Risk,,Informational,2024-07-29 01:57:38,0,0,0,15,15,12,17,Product Viewed,Smartphones,433
+CUST1326,42,Other,New York,CST,Push,2024-09-11 04:57:20,0.55,Loyal Customer,2024-07-16 17:25:17,Informational,2024-07-30 23:47:43,0,0,0,0,0,4,3,Product Viewed,Smartphones,68
+CUST1327,26,Female,Illinois,MST,Email,2024-07-08 23:29:43,0.13,At-Risk,2024-09-21 06:00:31,Informational,2024-07-21 02:19:04,1,0,0,23,9,15,9,Product Viewed,Smartphones,215
+CUST1328,61,Female,California,EST,Push,2024-09-17 20:24:15,0.16,At-Risk,2024-09-15 00:37:37,Transactional,2024-08-18 14:28:11,1,1,0,21,21,20,3,Product Viewed,Smartphones,275
+CUST1329,36,Other,California,EST,Push,2024-08-12 21:50:39,0.21,High-Value,2024-09-06 00:47:25,Transactional,2024-08-17 16:17:42,0,0,0,20,20,16,7,Product Viewed,Smartphones,127
+CUST1330,57,Female,California,EST,Push,2024-09-22 14:44:58,0.54,At-Risk,2024-07-23 13:07:39,Informational,2024-08-30 04:07:16,0,0,0,20,20,10,12,Product Viewed,Smartphones,162
+CUST1331,56,Male,New York,MST,Push,2024-08-10 04:32:14,0.34,First-Time Buyer,,Promotional,2024-07-07 02:58:21,0,0,0,17,17,6,16,Product Viewed,Smartphones,188
+CUST1332,33,Female,Illinois,MST,Email,2024-09-01 10:03:22,0.18,Frequent Buyer,2024-07-15 19:18:35,Transactional,2024-09-13 22:07:35,0,0,0,16,18,16,13,Product Viewed,Smartphones,171
+CUST1333,63,Other,Texas,CST,Email,2024-09-10 19:47:59,0.58,High-Value,2024-09-18 13:04:33,Promotional,2024-08-20 04:03:42,1,0,0,22,5,16,5,Product Viewed,Smartphones,435
+CUST1334,63,Female,California,EST,Push,2024-08-17 20:12:43,0.89,High-Value,,Promotional,2024-07-25 07:07:03,0,0,0,4,4,6,7,Product Viewed,Smartphones,64
+CUST1335,39,Other,New York,CST,Email,2024-08-11 05:10:29,0.83,First-Time Buyer,,Transactional,2024-09-17 23:02:58,0,0,0,4,17,19,11,Product Viewed,Smartphones,382
+CUST1336,39,Male,New York,MST,Push,2024-08-22 14:46:11,0.82,At-Risk,,Promotional,2024-09-06 03:41:30,1,0,0,1,1,0,9,Product Viewed,Smartphones,195
+CUST1337,62,Other,New York,EST,Email,2024-07-16 09:30:24,0.25,First-Time Buyer,,Transactional,2024-08-18 11:34:47,0,0,0,10,4,21,17,Product Viewed,Smartphones,133
+CUST1338,62,Other,Illinois,PST,Email,2024-07-31 23:16:04,0.19,High-Value,2024-08-23 01:44:01,Informational,2024-08-19 03:19:16,0,0,0,3,17,12,14,Product Viewed,Smartphones,290
+CUST1339,60,Other,New York,CST,Push,2024-08-17 22:49:27,0.28,Loyal Customer,2024-07-07 08:32:00,Transactional,2024-08-24 14:52:35,1,1,0,1,1,2,18,Product Viewed,Smartphones,399
+CUST1340,28,Other,Florida,EST,Push,2024-09-25 05:50:21,0.77,Loyal Customer,2024-09-17 02:31:53,Informational,2024-07-03 02:23:39,0,0,0,17,17,10,0,Product Viewed,Smartphones,108
+CUST1341,38,Male,Illinois,PST,Email,2024-08-23 08:00:54,0.61,First-Time Buyer,2024-07-19 11:01:15,Promotional,2024-08-05 13:55:06,0,0,0,21,8,21,23,Product Viewed,Smartphones,262
+CUST1342,29,Male,New York,MST,Push,2024-07-11 15:40:19,0.18,Frequent Buyer,2024-09-17 02:07:28,Informational,2024-08-26 04:50:36,0,0,0,23,23,6,17,Product Viewed,Smartphones,389
+CUST1343,19,Male,Texas,PST,Push,2024-08-16 03:31:44,0.54,At-Risk,2024-09-09 16:16:13,Informational,2024-09-20 04:31:50,0,0,0,5,5,2,15,Product Viewed,Smartphones,280
+CUST1344,48,Male,California,CST,Email,2024-08-07 11:53:49,0.58,Loyal Customer,,Informational,2024-07-06 23:44:04,0,0,0,3,21,11,19,Product Viewed,Smartphones,382
+CUST1345,52,Male,Texas,PST,Push,2024-08-16 04:57:55,0.71,Frequent Buyer,2024-09-20 23:02:04,Promotional,2024-07-06 18:45:15,0,0,0,8,8,1,18,Product Viewed,Smartphones,75
+CUST1346,55,Male,California,PST,Push,2024-08-11 10:36:26,0.7,Frequent Buyer,,Promotional,2024-09-13 08:49:05,1,1,1,0,0,11,6,Product Viewed,Smartphones,158
+CUST1347,37,Male,Illinois,PST,Email,2024-09-20 19:49:45,0.75,At-Risk,2024-07-30 23:34:05,Transactional,2024-09-13 04:53:48,0,0,0,20,8,10,15,Product Viewed,Smartphones,150
+CUST1348,51,Female,California,CST,Email,2024-09-18 15:59:59,0.8,High-Value,2024-09-12 18:34:22,Transactional,2024-07-10 21:12:46,0,0,0,12,5,23,20,Product Viewed,Smartphones,333
+CUST1349,45,Male,Illinois,EST,Push,2024-09-25 14:53:01,0.31,First-Time Buyer,,Promotional,2024-09-19 05:15:18,1,0,0,1,1,23,23,Product Viewed,Smartphones,337
+CUST1350,57,Male,Illinois,PST,Push,2024-08-11 18:34:59,0.78,Frequent Buyer,2024-07-06 07:59:36,Promotional,2024-08-13 22:56:22,1,1,1,9,9,21,6,Product Viewed,Smartphones,149
+CUST1351,51,Female,New York,MST,Email,2024-07-15 23:13:38,0.55,Loyal Customer,,Transactional,2024-08-02 16:32:04,0,0,0,2,0,23,15,Product Viewed,Smartphones,193
+CUST1352,57,Other,California,MST,Push,2024-07-12 10:06:55,0.24,First-Time Buyer,2024-09-01 02:18:49,Informational,2024-07-14 20:19:11,0,0,0,16,16,7,15,Product Viewed,Smartphones,174
+CUST1353,54,Other,California,CST,Email,2024-09-17 09:15:11,0.8,High-Value,2024-08-30 00:19:36,Informational,2024-08-03 18:04:53,1,1,1,12,21,0,13,Product Viewed,Smartphones,363
+CUST1354,40,Female,Texas,PST,Email,2024-07-03 16:13:03,0.16,High-Value,2024-08-05 04:12:46,Promotional,2024-09-08 18:04:53,1,0,0,23,14,18,23,Product Viewed,Smartphones,177
+CUST1355,58,Male,Florida,CST,Email,2024-08-04 06:32:41,0.23,First-Time Buyer,2024-08-22 12:56:24,Informational,2024-09-29 09:32:05,0,0,0,3,2,20,15,Product Viewed,Smartphones,147
+CUST1356,21,Male,New York,CST,Push,2024-09-25 05:12:43,0.72,First-Time Buyer,2024-07-10 21:32:28,Transactional,2024-09-04 03:27:44,1,0,0,8,8,5,15,Product Viewed,Smartphones,370
+CUST1357,64,Male,California,MST,Email,2024-09-05 15:15:45,0.33,Frequent Buyer,,Promotional,2024-07-14 03:03:42,0,0,0,12,11,19,17,Product Viewed,Smartphones,439
+CUST1358,29,Other,California,EST,Email,2024-09-13 06:29:06,0.82,Loyal Customer,,Informational,2024-09-20 23:01:41,1,0,0,22,16,23,13,Product Viewed,Smartphones,65
+CUST1359,38,Other,Illinois,EST,Email,2024-09-22 20:45:28,0.14,Loyal Customer,2024-09-02 07:40:32,Transactional,2024-08-15 10:24:15,0,0,0,18,17,0,15,Product Viewed,Smartphones,168
+CUST1360,26,Male,Florida,PST,Push,2024-07-08 03:45:21,0.86,At-Risk,,Transactional,2024-08-05 12:06:33,0,0,0,16,16,11,6,Product Viewed,Smartphones,170
+CUST1361,29,Male,Florida,EST,Push,2024-09-22 21:07:50,0.89,High-Value,2024-08-27 01:50:01,Transactional,2024-08-15 09:11:06,1,0,0,23,23,9,0,Product Viewed,Smartphones,304
+CUST1362,64,Male,Texas,EST,Email,2024-08-13 15:11:12,0.65,Loyal Customer,2024-07-06 00:40:38,Informational,2024-09-11 05:27:24,0,0,0,1,13,9,3,Product Viewed,Smartphones,217
+CUST1363,48,Female,Illinois,MST,Push,2024-07-14 10:20:57,0.31,High-Value,2024-08-31 19:58:45,Transactional,2024-07-14 20:50:25,0,0,0,0,0,12,15,Product Viewed,Smartphones,377
+CUST1364,41,Male,Texas,MST,Email,2024-08-28 01:41:54,0.49,First-Time Buyer,2024-08-05 19:16:02,Promotional,2024-09-10 19:25:58,0,0,0,16,10,0,6,Product Viewed,Smartphones,244
+CUST1365,50,Male,Texas,PST,Email,2024-09-25 03:16:02,0.59,First-Time Buyer,2024-07-30 18:18:58,Transactional,2024-08-30 18:20:29,1,1,1,15,19,7,23,Product Viewed,Smartphones,493
+CUST1366,40,Female,Illinois,CST,Email,2024-09-07 00:07:07,0.19,At-Risk,,Promotional,2024-08-19 21:39:38,1,0,0,12,10,1,6,Product Viewed,Smartphones,403
+CUST1367,64,Female,Illinois,CST,Push,2024-09-01 14:15:35,0.36,First-Time Buyer,2024-09-06 08:53:42,Informational,2024-08-05 11:19:22,0,0,0,9,9,18,9,Product Viewed,Smartphones,354
+CUST1368,28,Other,California,MST,Push,2024-08-04 20:24:21,0.74,Frequent Buyer,2024-09-22 12:37:10,Informational,2024-08-27 15:28:03,1,0,0,9,9,14,21,Product Viewed,Smartphones,51
+CUST1369,62,Female,Florida,MST,Email,2024-07-25 11:50:43,0.85,First-Time Buyer,2024-09-16 22:02:05,Promotional,2024-08-29 01:48:49,1,0,0,13,7,7,6,Product Viewed,Smartphones,358
+CUST1370,56,Female,Florida,MST,Email,2024-08-03 05:00:08,0.59,Frequent Buyer,2024-09-29 14:29:27,Promotional,2024-08-28 16:43:43,0,0,0,4,2,21,18,Product Viewed,Smartphones,381
+CUST1371,56,Other,New York,EST,Push,2024-07-20 20:48:46,0.71,High-Value,2024-07-28 11:32:15,Promotional,2024-07-10 13:55:57,0,0,0,20,20,12,19,Product Viewed,Smartphones,437
+CUST1372,63,Male,Texas,PST,Push,2024-07-08 23:31:53,0.62,At-Risk,2024-09-06 12:40:35,Transactional,2024-09-04 13:57:00,0,0,0,3,3,4,15,Product Viewed,Smartphones,489
+CUST1373,26,Male,Florida,EST,Email,2024-09-29 09:12:10,0.65,First-Time Buyer,2024-09-14 06:31:18,Informational,2024-07-20 04:08:23,1,1,1,4,15,5,19,Product Viewed,Smartphones,78
+CUST1374,40,Other,Florida,EST,Email,2024-07-08 04:30:33,0.71,First-Time Buyer,2024-08-12 03:20:49,Transactional,2024-08-30 10:37:22,1,0,0,13,15,22,2,Product Viewed,Smartphones,118
+CUST1375,49,Male,Illinois,MST,Push,2024-07-28 21:22:42,0.4,Frequent Buyer,2024-07-06 05:12:37,Promotional,2024-08-27 03:35:30,1,0,0,11,11,1,1,Product Viewed,Smartphones,371
+CUST1376,49,Other,Texas,EST,Push,2024-09-01 21:30:35,0.71,First-Time Buyer,2024-07-08 14:18:17,Informational,2024-07-23 15:23:44,0,0,0,21,21,13,6,Product Viewed,Smartphones,482
+CUST1377,18,Female,Illinois,EST,Email,2024-09-16 18:30:27,0.53,Frequent Buyer,2024-09-01 09:14:15,Promotional,2024-07-25 22:49:34,1,0,0,21,18,13,0,Product Viewed,Smartphones,119
+CUST1378,54,Other,California,CST,Push,2024-09-13 14:45:08,0.49,Loyal Customer,,Informational,2024-09-26 00:41:49,1,0,0,9,9,14,13,Product Viewed,Smartphones,130
+CUST1379,46,Other,California,PST,Push,2024-08-12 15:28:09,0.7,Frequent Buyer,,Promotional,2024-07-23 03:23:12,1,1,0,2,2,9,18,Product Viewed,Smartphones,119
+CUST1380,65,Other,Florida,PST,Push,2024-08-05 08:24:36,0.43,High-Value,2024-07-20 20:38:55,Promotional,2024-08-16 12:42:38,1,0,0,2,2,18,17,Product Viewed,Smartphones,399
+CUST1381,23,Female,Texas,CST,Push,2024-07-18 18:54:56,0.83,First-Time Buyer,2024-07-17 21:12:33,Promotional,2024-09-05 19:09:05,1,0,0,12,12,22,2,Product Viewed,Smartphones,306
+CUST1382,23,Male,Texas,EST,Email,2024-08-10 02:02:25,0.22,First-Time Buyer,2024-09-08 14:54:23,Transactional,2024-08-30 10:00:11,1,0,0,15,4,1,0,Product Viewed,Smartphones,232
+CUST1383,50,Male,New York,MST,Email,2024-07-29 23:31:28,0.66,Frequent Buyer,2024-07-17 22:02:17,Transactional,2024-08-11 08:26:18,0,0,0,22,11,0,11,Product Viewed,Smartphones,66
+CUST1384,31,Other,New York,PST,Email,2024-07-11 07:59:24,0.5,First-Time Buyer,2024-09-24 02:23:42,Informational,2024-08-30 10:18:42,0,0,0,23,14,9,6,Product Viewed,Smartphones,132
+CUST1385,40,Female,Texas,PST,Email,2024-08-18 19:12:00,0.13,Loyal Customer,2024-09-23 17:54:50,Informational,2024-07-12 14:07:14,0,0,0,16,12,5,1,Product Viewed,Smartphones,57
+CUST1386,53,Female,Florida,PST,Push,2024-09-05 14:00:24,0.36,High-Value,2024-08-31 10:52:42,Promotional,2024-08-22 16:05:07,0,0,0,6,6,8,3,Product Viewed,Smartphones,112
+CUST1387,53,Female,New York,PST,Push,2024-07-30 03:47:16,0.54,Frequent Buyer,2024-07-25 19:04:14,Informational,2024-08-10 08:02:58,0,0,0,0,0,13,18,Product Viewed,Smartphones,110
+CUST1388,20,Male,California,MST,Push,2024-07-15 15:12:38,0.75,At-Risk,,Promotional,2024-08-31 13:00:07,0,0,0,6,6,4,16,Product Viewed,Smartphones,221
+CUST1389,54,Male,New York,EST,Email,2024-09-01 18:31:48,0.81,Frequent Buyer,,Promotional,2024-07-23 00:27:19,0,0,0,7,3,4,18,Product Viewed,Smartphones,224
+CUST1390,28,Male,Texas,PST,Email,2024-09-22 07:22:47,0.31,Loyal Customer,2024-09-24 08:13:18,Transactional,2024-09-01 06:08:23,1,0,0,15,14,13,17,Product Viewed,Smartphones,199
+CUST1391,32,Male,Illinois,CST,Email,2024-09-02 07:39:25,0.75,At-Risk,2024-09-29 15:12:00,Promotional,2024-08-10 02:53:05,0,0,0,5,19,4,6,Product Viewed,Smartphones,440
+CUST1392,58,Other,Florida,MST,Push,2024-08-24 11:06:59,0.87,Loyal Customer,2024-08-04 08:33:02,Promotional,2024-07-16 19:01:03,1,1,0,17,17,21,18,Product Viewed,Smartphones,457
+CUST1393,30,Male,Illinois,PST,Email,2024-07-20 21:37:03,0.35,High-Value,,Informational,2024-08-13 12:34:41,0,0,0,20,8,17,6,Product Viewed,Smartphones,102
+CUST1394,57,Female,Texas,MST,Email,2024-07-15 18:52:41,0.45,At-Risk,,Informational,2024-08-13 18:55:27,1,1,1,15,16,21,13,Product Viewed,Smartphones,249
+CUST1395,57,Female,Florida,PST,Push,2024-09-27 18:39:38,0.89,High-Value,2024-07-19 14:49:49,Transactional,2024-08-26 08:59:50,0,0,0,2,2,9,7,Product Viewed,Smartphones,473
+CUST1396,21,Male,Illinois,CST,Email,2024-07-06 13:38:02,0.25,High-Value,2024-09-10 15:53:12,Promotional,2024-09-28 01:48:16,1,0,0,23,7,21,8,Product Viewed,Smartphones,73
+CUST1397,27,Female,Illinois,PST,Email,2024-08-25 03:21:00,0.11,Loyal Customer,2024-07-17 23:24:59,Promotional,2024-09-30 09:16:04,0,0,0,4,17,23,20,Product Viewed,Smartphones,63
+CUST1398,46,Female,Illinois,EST,Email,2024-08-22 03:48:30,0.67,Loyal Customer,2024-07-07 14:49:17,Informational,2024-07-13 02:55:19,0,0,0,23,10,17,0,Product Viewed,Smartphones,257
+CUST1399,22,Male,Texas,PST,Email,2024-08-08 02:02:07,0.28,At-Risk,,Informational,2024-09-25 14:05:27,1,0,0,3,1,9,18,Product Viewed,Smartphones,150
+CUST1400,63,Female,New York,MST,Push,2024-09-11 18:23:53,0.17,At-Risk,2024-08-31 19:34:16,Informational,2024-08-16 02:09:32,1,0,0,16,16,2,5,Product Viewed,Smartphones,305
+CUST1401,42,Other,Texas,MST,Push,2024-07-17 01:43:32,0.25,At-Risk,2024-08-30 08:04:56,Promotional,2024-08-12 20:35:25,1,1,1,15,15,14,6,Product Viewed,Smartphones,97
+CUST1402,59,Female,Illinois,MST,Push,2024-09-21 20:01:45,0.78,Frequent Buyer,2024-08-16 01:47:25,Informational,2024-09-06 22:02:48,0,0,0,22,22,15,13,Product Viewed,Smartphones,420
+CUST1403,48,Male,New York,EST,Push,2024-09-21 14:42:47,0.17,First-Time Buyer,2024-07-25 05:03:19,Promotional,2024-09-21 20:28:53,0,0,0,2,2,5,12,Product Viewed,Smartphones,410
+CUST1404,30,Other,California,MST,Push,2024-09-12 22:04:05,0.69,Frequent Buyer,2024-09-13 00:38:59,Promotional,2024-07-14 14:41:45,0,0,0,10,10,17,1,Product Viewed,Smartphones,362
+CUST1405,28,Male,New York,MST,Email,2024-07-09 04:08:35,0.58,First-Time Buyer,2024-07-18 19:52:42,Promotional,2024-07-30 10:04:12,1,0,0,19,6,13,7,Product Viewed,Smartphones,348
+CUST1406,39,Other,New York,MST,Push,2024-08-05 18:32:29,0.24,Frequent Buyer,2024-08-22 18:00:55,Informational,2024-09-27 18:34:54,1,1,0,7,7,16,17,Product Viewed,Smartphones,262
+CUST1407,39,Female,Illinois,PST,Email,2024-07-04 13:10:51,0.21,Frequent Buyer,2024-09-24 04:36:42,Promotional,2024-08-22 04:45:46,0,0,0,8,8,1,8,Product Viewed,Smartphones,222
+CUST1408,64,Female,New York,PST,Push,2024-07-09 10:05:54,0.72,At-Risk,2024-08-14 23:25:29,Informational,2024-08-10 18:47:59,0,0,0,1,1,14,3,Product Viewed,Smartphones,121
+CUST1409,54,Male,New York,MST,Email,2024-08-24 18:51:36,0.35,Frequent Buyer,2024-08-12 04:50:58,Informational,2024-09-28 15:40:53,0,0,0,16,0,13,0,Product Viewed,Smartphones,344
+CUST1410,59,Male,New York,CST,Push,2024-08-29 02:03:37,0.35,First-Time Buyer,,Transactional,2024-07-25 18:13:56,0,0,0,14,14,1,7,Product Viewed,Smartphones,178
+CUST1411,61,Other,New York,EST,Email,2024-08-23 17:59:34,0.72,Loyal Customer,2024-07-12 18:41:47,Transactional,2024-08-19 08:52:52,0,0,0,2,9,23,11,Product Viewed,Smartphones,409
+CUST1412,40,Female,California,EST,Email,2024-08-09 23:02:45,0.67,Frequent Buyer,,Transactional,2024-07-14 21:19:03,1,0,0,10,17,11,3,Product Viewed,Smartphones,327
+CUST1413,44,Male,California,EST,Push,2024-07-29 15:28:20,0.35,High-Value,,Promotional,2024-09-27 00:48:06,0,0,0,16,16,12,17,Product Viewed,Smartphones,75
+CUST1414,44,Male,New York,EST,Push,2024-09-21 05:14:39,0.72,High-Value,2024-09-08 22:36:38,Promotional,2024-07-07 22:38:54,0,0,0,23,23,21,0,Product Viewed,Smartphones,338
+CUST1415,33,Other,Florida,PST,Email,2024-08-28 17:34:30,0.51,At-Risk,2024-09-06 21:36:33,Transactional,2024-07-05 00:27:04,1,0,0,23,12,19,9,Product Viewed,Smartphones,414
+CUST1416,30,Male,Florida,PST,Email,2024-08-09 04:56:04,0.57,High-Value,,Informational,2024-07-14 05:14:51,1,0,0,5,13,10,9,Product Viewed,Smartphones,54
+CUST1417,33,Female,Illinois,PST,Email,2024-09-24 08:21:29,0.81,Loyal Customer,,Transactional,2024-07-17 12:34:54,1,1,0,8,4,9,12,Product Viewed,Smartphones,116
+CUST1418,31,Female,Texas,CST,Email,2024-09-14 13:24:37,0.88,First-Time Buyer,,Informational,2024-09-24 12:43:26,1,1,0,8,10,7,17,Product Viewed,Smartphones,400
+CUST1419,59,Female,Illinois,MST,Email,2024-09-11 06:34:54,0.43,At-Risk,2024-09-18 01:40:18,Informational,2024-08-22 20:26:44,0,0,0,7,21,15,9,Product Viewed,Smartphones,398
+CUST1420,49,Male,Illinois,EST,Push,2024-07-25 20:36:37,0.32,High-Value,2024-07-21 13:51:43,Promotional,2024-09-11 20:05:59,0,0,0,0,0,13,10,Product Viewed,Smartphones,430
+CUST1421,46,Male,Florida,PST,Push,2024-07-27 21:44:56,0.6,High-Value,2024-09-10 06:31:24,Transactional,2024-09-19 22:30:01,1,1,0,0,0,23,4,Product Viewed,Smartphones,270
+CUST1422,64,Other,Texas,PST,Email,2024-09-18 10:39:28,0.48,Loyal Customer,,Transactional,2024-09-25 20:25:16,1,1,1,20,21,0,18,Product Viewed,Smartphones,439
+CUST1423,61,Other,Illinois,PST,Email,2024-07-26 21:33:37,0.39,High-Value,2024-08-28 19:01:34,Transactional,2024-08-12 01:34:48,0,0,0,14,7,9,22,Product Viewed,Smartphones,436
+CUST1424,40,Male,Texas,PST,Push,2024-08-28 17:17:09,0.62,Frequent Buyer,2024-09-19 03:04:44,Transactional,2024-08-01 19:20:21,1,0,0,3,3,14,11,Product Viewed,Smartphones,347
+CUST1425,50,Female,New York,PST,Push,2024-07-05 16:28:59,0.78,Frequent Buyer,2024-09-04 04:39:38,Informational,2024-08-13 03:23:38,1,1,1,14,14,3,22,Product Viewed,Smartphones,372
+CUST1426,62,Female,Texas,MST,Push,2024-08-24 07:35:31,0.36,Loyal Customer,2024-08-27 22:41:08,Informational,2024-09-16 10:42:22,1,1,1,19,19,5,8,Product Viewed,Smartphones,303
+CUST1427,47,Other,Illinois,CST,Push,2024-08-29 18:15:13,0.31,High-Value,2024-07-08 02:42:58,Transactional,2024-08-31 13:09:45,0,0,0,12,12,22,11,Product Viewed,Smartphones,445
+CUST1428,33,Female,Florida,MST,Email,2024-08-16 03:17:06,0.15,First-Time Buyer,2024-07-27 01:06:27,Transactional,2024-08-27 05:36:04,0,0,0,21,21,15,3,Product Viewed,Smartphones,88
+CUST1429,55,Male,California,MST,Email,2024-09-27 06:20:45,0.9,High-Value,2024-08-23 11:58:39,Transactional,2024-09-05 00:45:57,0,0,0,8,13,7,4,Product Viewed,Smartphones,220
+CUST1430,54,Other,New York,PST,Push,2024-09-03 10:33:14,0.86,Frequent Buyer,2024-09-04 20:08:40,Promotional,2024-08-01 15:58:59,0,0,0,1,1,7,7,Product Viewed,Smartphones,393
+CUST1431,39,Other,New York,MST,Push,2024-07-03 13:29:30,0.42,High-Value,2024-07-19 20:53:17,Informational,2024-08-20 17:45:37,1,1,0,21,21,17,17,Product Viewed,Smartphones,461
+CUST1432,53,Female,Florida,EST,Email,2024-07-04 00:17:41,0.8,Frequent Buyer,,Informational,2024-09-20 02:04:06,1,0,0,9,19,23,15,Product Viewed,Smartphones,124
+CUST1433,29,Female,Illinois,MST,Push,2024-08-20 00:18:37,0.77,First-Time Buyer,2024-09-04 10:38:36,Transactional,2024-09-05 13:31:00,1,1,1,9,9,20,20,Product Viewed,Smartphones,288
+CUST1434,28,Female,Illinois,MST,Push,2024-07-11 11:52:12,0.82,Loyal Customer,,Promotional,2024-09-19 01:57:47,1,0,0,23,23,18,20,Product Viewed,Smartphones,427
+CUST1435,34,Other,Illinois,PST,Email,2024-08-18 17:27:49,0.29,First-Time Buyer,2024-08-09 08:49:51,Transactional,2024-09-03 12:43:00,1,0,0,1,19,9,18,Product Viewed,Smartphones,325
+CUST1436,42,Other,Texas,CST,Push,2024-07-17 07:39:42,0.52,Loyal Customer,2024-07-06 05:23:11,Informational,2024-07-26 16:39:52,0,0,0,20,20,19,13,Product Viewed,Smartphones,281
+CUST1437,38,Male,New York,EST,Email,2024-07-27 21:15:28,0.4,Frequent Buyer,2024-07-22 04:35:05,Transactional,2024-09-28 17:09:03,1,0,0,14,8,16,7,Product Viewed,Smartphones,179
+CUST1438,22,Male,Florida,MST,Email,2024-09-05 19:52:39,0.83,Loyal Customer,,Informational,2024-09-13 06:38:56,1,1,1,20,23,4,19,Product Viewed,Smartphones,189
+CUST1439,27,Male,Florida,PST,Push,2024-09-20 02:24:18,0.82,High-Value,2024-07-11 14:53:26,Informational,2024-08-25 02:49:09,1,0,0,16,16,9,9,Product Viewed,Smartphones,156
+CUST1440,50,Male,Illinois,PST,Push,2024-09-09 02:25:26,0.79,Loyal Customer,2024-09-27 20:28:07,Informational,2024-08-15 13:24:50,0,0,0,6,6,13,7,Product Viewed,Smartphones,435
+CUST1441,21,Male,California,PST,Email,2024-08-04 12:27:03,0.79,At-Risk,2024-09-12 18:23:51,Promotional,2024-08-25 21:29:47,1,0,0,21,3,20,13,Product Viewed,Smartphones,302
+CUST1442,48,Other,Texas,EST,Email,2024-08-01 00:24:49,0.31,First-Time Buyer,2024-08-18 09:58:05,Transactional,2024-07-24 20:35:18,0,0,0,1,6,16,6,Product Viewed,Smartphones,360
+CUST1443,52,Other,New York,CST,Email,2024-07-13 19:49:51,0.79,First-Time Buyer,2024-08-03 06:09:44,Promotional,2024-08-17 06:30:23,0,0,0,4,8,19,23,Product Viewed,Smartphones,131
+CUST1444,57,Male,California,MST,Push,2024-09-10 09:55:21,0.56,Frequent Buyer,,Transactional,2024-09-08 01:59:09,1,0,0,18,18,21,10,Product Viewed,Smartphones,496
+CUST1445,59,Other,Illinois,EST,Email,2024-09-06 02:11:26,0.38,First-Time Buyer,2024-08-23 08:13:59,Transactional,2024-09-13 18:26:59,1,1,1,10,3,23,21,Product Viewed,Smartphones,429
+CUST1446,35,Other,California,PST,Email,2024-08-21 17:32:06,0.23,At-Risk,2024-08-22 19:27:02,Informational,2024-08-30 09:09:44,0,0,0,21,4,12,5,Product Viewed,Smartphones,335
+CUST1447,61,Female,New York,MST,Push,2024-07-22 17:39:22,0.4,Loyal Customer,2024-07-19 17:58:03,Promotional,2024-08-30 16:03:28,0,0,0,9,9,10,13,Product Viewed,Smartphones,471
+CUST1448,63,Male,Florida,MST,Push,2024-08-30 12:40:09,0.54,At-Risk,,Informational,2024-09-08 08:48:32,0,0,0,19,19,5,9,Product Viewed,Smartphones,118
+CUST1449,56,Male,Illinois,MST,Email,2024-09-18 12:01:16,0.43,At-Risk,,Promotional,2024-08-09 08:54:21,1,0,0,0,20,5,13,Product Viewed,Smartphones,371
+CUST1450,54,Other,Florida,MST,Push,2024-08-29 11:08:16,0.17,Loyal Customer,2024-08-14 09:40:20,Informational,2024-09-24 09:30:18,1,0,0,4,4,17,22,Product Viewed,Smartphones,367
+CUST1451,53,Other,Texas,PST,Email,2024-09-22 15:29:03,0.6,Loyal Customer,2024-09-23 03:49:46,Promotional,2024-09-17 11:19:18,1,0,0,18,3,11,10,Product Viewed,Smartphones,165
+CUST1452,45,Male,California,EST,Email,2024-08-20 16:41:55,0.33,High-Value,,Transactional,2024-08-02 06:06:13,1,1,1,8,12,23,16,Product Viewed,Smartphones,396
+CUST1453,19,Other,Illinois,PST,Push,2024-07-09 13:44:10,0.55,At-Risk,2024-08-05 22:21:13,Informational,2024-07-30 07:48:54,1,1,1,17,17,13,6,Product Viewed,Smartphones,366
+CUST1454,36,Other,New York,PST,Email,2024-08-05 09:44:15,0.44,At-Risk,,Transactional,2024-09-14 02:15:18,1,1,1,7,19,4,7,Product Viewed,Smartphones,300
+CUST1455,37,Female,New York,EST,Push,2024-08-30 23:54:29,0.75,High-Value,2024-07-18 07:53:34,Transactional,2024-07-12 04:22:40,1,1,1,15,15,10,22,Product Viewed,Smartphones,180
+CUST1456,24,Other,New York,EST,Push,2024-09-23 06:17:46,0.35,First-Time Buyer,2024-09-08 21:44:13,Transactional,2024-09-09 15:09:34,0,0,0,18,18,9,17,Product Viewed,Smartphones,218
+CUST1457,23,Female,New York,PST,Push,2024-09-08 05:27:23,0.11,First-Time Buyer,2024-09-21 17:08:39,Transactional,2024-07-29 19:24:43,0,0,0,8,8,10,5,Product Viewed,Smartphones,327
+CUST1458,25,Female,Illinois,MST,Email,2024-07-30 09:33:35,0.76,Frequent Buyer,2024-07-06 22:32:49,Informational,2024-08-24 16:18:29,1,0,0,7,11,22,23,Product Viewed,Smartphones,431
+CUST1459,43,Other,Texas,PST,Email,2024-09-05 21:48:11,0.73,High-Value,,Informational,2024-07-29 21:14:19,1,0,0,18,18,6,17,Product Viewed,Smartphones,433
+CUST1460,57,Other,New York,PST,Push,2024-08-28 18:02:36,0.44,First-Time Buyer,,Promotional,2024-09-19 08:57:13,0,0,0,19,19,14,22,Product Viewed,Smartphones,123
+CUST1461,21,Male,New York,EST,Email,2024-08-26 04:46:33,0.62,Frequent Buyer,2024-08-24 12:14:02,Informational,2024-07-20 20:47:45,1,0,0,8,19,0,11,Product Viewed,Smartphones,118
+CUST1462,29,Female,New York,CST,Push,2024-08-10 02:13:22,0.8,Frequent Buyer,,Promotional,2024-07-25 08:31:57,0,0,0,5,5,1,6,Product Viewed,Smartphones,350
+CUST1463,31,Other,Texas,EST,Email,2024-07-29 20:02:53,0.36,First-Time Buyer,2024-07-17 16:50:48,Informational,2024-08-14 14:31:27,0,0,0,21,20,2,2,Product Viewed,Smartphones,296
+CUST1464,44,Female,New York,CST,Push,2024-08-21 06:52:53,0.73,At-Risk,2024-07-27 23:51:34,Transactional,2024-08-04 22:29:19,1,0,0,14,14,10,10,Product Viewed,Smartphones,180
+CUST1465,43,Other,Texas,CST,Push,2024-08-17 20:53:38,0.6,At-Risk,2024-09-15 08:32:43,Promotional,2024-07-13 22:10:21,0,0,0,14,14,5,22,Product Viewed,Smartphones,157
+CUST1466,25,Male,New York,MST,Push,2024-08-14 13:45:10,0.84,At-Risk,2024-08-09 12:52:17,Informational,2024-07-20 08:38:52,1,0,0,5,5,19,4,Product Viewed,Smartphones,207
+CUST1467,49,Female,New York,MST,Push,2024-08-25 15:26:15,0.62,Loyal Customer,2024-09-04 23:03:50,Promotional,2024-08-16 22:16:43,1,0,0,3,3,21,9,Product Viewed,Smartphones,438
+CUST1468,65,Other,New York,MST,Push,2024-07-04 14:32:17,0.75,Frequent Buyer,2024-07-26 10:56:57,Transactional,2024-09-26 22:22:01,1,0,0,11,11,0,21,Product Viewed,Smartphones,285
+CUST1469,45,Male,California,CST,Push,2024-08-11 01:26:46,0.53,First-Time Buyer,2024-08-01 01:45:24,Informational,2024-09-05 08:54:18,1,0,0,6,6,0,12,Product Viewed,Smartphones,332
+CUST1470,41,Male,California,MST,Push,2024-07-24 13:50:03,0.33,Loyal Customer,2024-08-08 13:40:43,Promotional,2024-09-01 21:08:25,0,0,0,15,15,12,10,Product Viewed,Smartphones,196
+CUST1471,52,Other,New York,EST,Push,2024-08-25 22:11:13,0.37,Loyal Customer,2024-08-22 10:38:09,Promotional,2024-07-18 08:21:33,1,0,0,9,9,17,6,Product Viewed,Smartphones,361
+CUST1472,54,Other,California,CST,Email,2024-09-23 13:17:15,0.45,First-Time Buyer,,Informational,2024-08-09 13:32:40,0,0,0,20,18,22,15,Product Viewed,Smartphones,451
+CUST1473,59,Other,Texas,CST,Push,2024-08-23 13:10:48,0.76,Frequent Buyer,2024-09-20 18:42:47,Promotional,2024-08-20 03:52:02,1,0,0,13,13,6,23,Product Viewed,Smartphones,56
+CUST1474,60,Female,New York,PST,Push,2024-09-18 10:53:10,0.57,High-Value,,Informational,2024-09-16 10:56:51,0,0,0,5,5,4,19,Product Viewed,Smartphones,211
+CUST1475,37,Other,Florida,PST,Email,2024-09-26 02:19:26,0.66,At-Risk,2024-07-14 20:17:19,Promotional,2024-07-12 18:09:39,0,0,0,21,4,19,22,Product Viewed,Smartphones,143
+CUST1476,64,Other,California,EST,Push,2024-08-28 08:22:07,0.12,At-Risk,,Transactional,2024-09-30 08:09:42,0,0,0,11,11,9,10,Product Viewed,Smartphones,238
+CUST1477,33,Female,Texas,CST,Email,2024-07-26 18:06:02,0.15,First-Time Buyer,2024-07-31 18:13:30,Informational,2024-07-23 04:44:28,0,0,0,5,6,18,10,Product Viewed,Smartphones,87
+CUST1478,51,Male,California,CST,Email,2024-08-16 13:10:30,0.4,At-Risk,2024-08-28 08:48:24,Transactional,2024-08-08 15:42:49,0,0,0,2,0,17,20,Product Viewed,Smartphones,84
+CUST1479,37,Other,Illinois,PST,Email,2024-07-07 05:42:12,0.86,First-Time Buyer,2024-08-28 20:53:41,Informational,2024-07-04 02:58:41,0,0,0,14,5,1,18,Product Viewed,Smartphones,372
+CUST1480,52,Other,New York,PST,Push,2024-07-12 06:45:52,0.85,Loyal Customer,,Informational,2024-09-28 14:05:05,0,0,0,0,0,19,9,Product Viewed,Smartphones,400
+CUST1481,56,Male,Florida,MST,Email,2024-09-11 08:16:57,0.13,Frequent Buyer,2024-09-17 13:54:46,Transactional,2024-09-18 15:22:09,0,0,0,8,13,18,12,Product Viewed,Smartphones,498
+CUST1482,57,Other,Illinois,PST,Push,2024-07-27 11:06:28,0.72,High-Value,2024-07-20 04:17:17,Promotional,2024-09-15 06:18:52,0,0,0,14,14,2,19,Product Viewed,Smartphones,363
+CUST1483,44,Other,Florida,MST,Email,2024-09-22 13:42:25,0.82,High-Value,2024-09-05 16:07:53,Transactional,2024-08-26 08:52:25,0,0,0,9,9,19,15,Product Viewed,Smartphones,381
+CUST1484,63,Other,California,PST,Email,2024-09-28 17:13:54,0.65,Loyal Customer,2024-09-23 04:53:06,Promotional,2024-07-20 09:19:17,0,0,0,22,13,2,11,Product Viewed,Smartphones,293
+CUST1485,56,Female,New York,PST,Push,2024-08-14 10:08:31,0.53,Loyal Customer,2024-08-28 04:28:39,Informational,2024-08-02 19:45:48,1,1,1,7,7,17,8,Product Viewed,Smartphones,59
+CUST1486,50,Female,Texas,PST,Email,2024-08-17 16:12:08,0.72,High-Value,2024-08-29 14:20:17,Informational,2024-08-24 04:33:10,1,0,0,8,19,13,6,Product Viewed,Smartphones,400
+CUST1487,65,Male,Texas,MST,Push,2024-07-13 02:53:24,0.85,At-Risk,,Informational,2024-08-08 13:49:33,0,0,0,7,7,14,0,Product Viewed,Smartphones,90
+CUST1488,63,Male,Illinois,EST,Email,2024-08-21 01:01:53,0.43,High-Value,2024-08-01 10:48:33,Transactional,2024-07-12 05:52:38,1,0,0,4,3,6,2,Product Viewed,Smartphones,336
+CUST1489,19,Male,Texas,EST,Email,2024-09-28 23:03:14,0.25,Loyal Customer,2024-09-13 22:31:26,Informational,2024-09-24 13:22:21,1,1,0,13,6,11,16,Product Viewed,Smartphones,319
+CUST1490,56,Male,Florida,MST,Push,2024-07-22 00:48:03,0.22,Loyal Customer,2024-08-06 11:08:54,Informational,2024-09-11 20:28:33,1,0,0,12,12,8,17,Product Viewed,Smartphones,203
+CUST1491,56,Male,Illinois,EST,Email,2024-08-02 12:04:09,0.39,At-Risk,,Transactional,2024-07-14 00:32:52,0,0,0,1,16,4,7,Product Viewed,Smartphones,75
+CUST1492,42,Female,Texas,MST,Email,2024-08-07 20:25:12,0.2,Loyal Customer,2024-08-05 09:22:24,Transactional,2024-09-01 00:44:02,1,0,0,14,15,8,9,Product Viewed,Smartphones,395
+CUST1493,27,Other,Illinois,PST,Push,2024-07-20 07:08:46,0.76,High-Value,2024-08-22 16:18:06,Transactional,2024-07-11 23:13:11,1,1,0,18,18,4,0,Product Viewed,Smartphones,215
+CUST1494,22,Male,Florida,CST,Push,2024-07-19 18:44:39,0.77,Loyal Customer,,Promotional,2024-08-19 17:52:46,0,0,0,12,12,6,19,Product Viewed,Smartphones,92
+CUST1495,30,Male,California,MST,Email,2024-09-11 19:27:48,0.24,At-Risk,,Informational,2024-08-06 21:23:44,0,0,0,21,6,9,12,Product Viewed,Smartphones,409
+CUST1496,26,Male,Texas,MST,Push,2024-07-29 03:54:33,0.86,At-Risk,2024-09-10 12:04:40,Promotional,2024-09-05 10:59:18,0,0,0,22,22,12,3,Product Viewed,Smartphones,186
+CUST1497,63,Female,Florida,CST,Email,2024-08-23 20:49:43,0.44,At-Risk,2024-09-08 05:40:08,Promotional,2024-08-02 00:34:29,1,1,0,4,4,23,17,Product Viewed,Smartphones,227
+CUST1498,22,Other,Florida,PST,Email,2024-09-11 22:37:54,0.7,High-Value,2024-07-17 21:59:47,Transactional,2024-08-02 07:24:32,0,0,0,5,11,21,4,Product Viewed,Smartphones,468
+CUST1499,26,Other,Texas,CST,Push,2024-09-03 08:47:27,0.37,Frequent Buyer,2024-07-17 10:54:16,Promotional,2024-07-05 04:40:47,0,0,0,21,21,5,21,Product Viewed,Smartphones,425
+CUST1500,51,Female,Illinois,EST,Push,2024-09-27 11:15:38,0.15,At-Risk,2024-08-13 21:50:16,Informational,2024-07-24 04:50:57,0,0,0,19,19,4,4,Product Viewed,Smartphones,402
+CUST1501,25,Other,Florida,CST,Email,2024-07-08 19:41:01,0.69,Frequent Buyer,2024-09-13 18:12:06,Informational,2024-09-08 04:19:03,0,0,0,13,7,21,23,Product Viewed,Smartphones,430
+CUST1502,22,Female,Florida,EST,Push,2024-08-21 10:59:41,0.44,High-Value,2024-08-30 18:07:38,Informational,2024-09-19 19:19:50,1,0,0,10,10,4,16,Product Viewed,Smartphones,127
+CUST1503,53,Male,Texas,EST,Push,2024-07-15 20:19:28,0.32,Loyal Customer,2024-08-04 08:25:05,Informational,2024-08-06 16:59:04,0,0,0,18,18,19,13,Product Viewed,Smartphones,458
+CUST1504,45,Male,Illinois,EST,Email,2024-08-15 20:34:10,0.78,Loyal Customer,2024-08-26 23:37:45,Promotional,2024-08-30 03:15:36,1,1,1,12,21,7,17,Product Viewed,Smartphones,205
+CUST1505,52,Female,New York,MST,Push,2024-08-31 20:07:13,0.31,First-Time Buyer,2024-09-23 19:40:27,Informational,2024-09-22 09:36:59,1,1,1,2,2,17,17,Product Viewed,Smartphones,131
+CUST1506,54,Female,New York,MST,Email,2024-07-31 23:37:42,0.55,First-Time Buyer,2024-08-12 05:27:14,Transactional,2024-07-09 15:33:59,0,0,0,15,7,10,9,Product Viewed,Smartphones,183
+CUST1507,25,Female,New York,PST,Email,2024-08-02 08:55:12,0.85,High-Value,,Promotional,2024-08-26 10:21:37,0,0,0,1,16,16,1,Product Viewed,Smartphones,299
+CUST1508,30,Female,Illinois,PST,Push,2024-09-09 15:24:00,0.27,Frequent Buyer,2024-07-27 16:37:21,Informational,2024-08-10 20:21:22,0,0,0,23,23,4,15,Product Viewed,Smartphones,147
+CUST1509,51,Other,California,MST,Email,2024-07-28 23:55:48,0.48,High-Value,,Transactional,2024-09-04 00:26:17,1,1,1,15,12,16,4,Product Viewed,Smartphones,493
+CUST1510,25,Other,New York,EST,Email,2024-08-02 12:06:09,0.59,At-Risk,2024-09-29 04:02:19,Promotional,2024-08-07 12:04:13,1,0,0,8,6,5,8,Product Viewed,Smartphones,292
+CUST1511,65,Male,Texas,PST,Push,2024-08-08 09:50:25,0.34,At-Risk,,Promotional,2024-08-17 13:15:17,0,0,0,15,15,15,17,Product Viewed,Smartphones,226
+CUST1512,18,Female,Texas,MST,Push,2024-08-12 03:15:28,0.28,Frequent Buyer,2024-08-23 01:40:03,Transactional,2024-09-02 23:24:37,1,1,0,1,1,16,18,Product Viewed,Smartphones,450
+CUST1513,53,Other,New York,EST,Email,2024-07-12 22:16:11,0.1,Frequent Buyer,2024-09-09 21:10:39,Transactional,2024-07-08 05:18:08,1,1,1,3,6,2,2,Product Viewed,Smartphones,300
+CUST1514,37,Male,California,CST,Push,2024-07-24 05:57:03,0.63,Loyal Customer,2024-08-04 05:12:19,Transactional,2024-07-13 18:19:58,0,0,0,16,16,0,13,Product Viewed,Smartphones,60
+CUST1515,59,Female,California,EST,Push,2024-08-18 05:27:08,0.81,First-Time Buyer,2024-08-03 19:06:41,Transactional,2024-09-15 15:13:34,0,0,0,4,4,7,3,Product Viewed,Smartphones,435
+CUST1516,41,Other,Texas,MST,Push,2024-07-12 06:32:37,0.52,Loyal Customer,2024-08-08 07:56:01,Transactional,2024-07-12 04:44:31,0,0,0,0,0,3,10,Product Viewed,Smartphones,250
+CUST1517,55,Female,Florida,EST,Push,2024-07-11 19:08:21,0.87,Frequent Buyer,2024-09-24 18:29:24,Transactional,2024-09-10 14:25:51,1,0,0,14,14,4,10,Product Viewed,Smartphones,194
+CUST1518,32,Other,Texas,PST,Email,2024-07-08 18:18:18,0.79,High-Value,,Informational,2024-07-08 18:04:41,0,0,0,23,18,4,22,Product Viewed,Smartphones,98
+CUST1519,60,Female,Illinois,PST,Push,2024-08-17 13:47:01,0.23,First-Time Buyer,,Transactional,2024-08-09 07:53:48,0,0,0,9,9,14,23,Product Viewed,Smartphones,180
+CUST1520,58,Female,California,MST,Email,2024-08-17 10:55:10,0.3,First-Time Buyer,2024-09-13 09:04:58,Informational,2024-08-12 05:37:20,1,1,1,5,1,0,13,Product Viewed,Smartphones,174
+CUST1521,28,Female,Florida,PST,Email,2024-09-13 04:36:31,0.71,At-Risk,,Informational,2024-09-17 08:47:14,0,0,0,22,18,2,5,Product Viewed,Smartphones,96
+CUST1522,49,Female,New York,EST,Email,2024-08-23 03:55:38,0.73,Loyal Customer,,Informational,2024-07-11 04:10:09,1,0,0,3,8,10,11,Product Viewed,Smartphones,217
+CUST1523,50,Female,California,PST,Email,2024-09-14 22:36:08,0.5,First-Time Buyer,2024-07-11 01:08:36,Informational,2024-09-01 12:55:36,1,0,0,14,6,0,8,Product Viewed,Smartphones,117
+CUST1524,60,Other,California,CST,Email,2024-09-24 16:34:58,0.73,First-Time Buyer,2024-07-24 16:37:16,Informational,2024-08-27 18:19:28,1,1,1,10,0,12,12,Product Viewed,Smartphones,200
+CUST1525,30,Female,New York,PST,Email,2024-09-16 17:06:36,0.68,At-Risk,2024-08-24 04:12:07,Informational,2024-07-04 02:55:53,1,1,1,13,20,21,19,Product Viewed,Smartphones,96
+CUST1526,46,Female,California,PST,Email,2024-09-10 07:38:49,0.78,High-Value,2024-07-24 11:31:53,Promotional,2024-07-11 18:21:00,0,0,0,8,15,16,19,Product Viewed,Smartphones,439
+CUST1527,30,Other,Illinois,EST,Email,2024-09-23 04:58:13,0.37,Frequent Buyer,2024-07-21 02:11:05,Informational,2024-07-29 12:51:36,0,0,0,11,17,2,4,Product Viewed,Smartphones,150
+CUST1528,32,Other,New York,CST,Push,2024-08-09 13:32:04,0.88,First-Time Buyer,2024-08-10 19:57:36,Promotional,2024-07-22 04:52:23,0,0,0,22,22,21,1,Product Viewed,Smartphones,352
+CUST1529,31,Female,Florida,MST,Email,2024-09-06 05:07:28,0.23,High-Value,2024-09-15 19:28:20,Transactional,2024-07-05 21:26:02,1,1,1,15,8,18,11,Product Viewed,Smartphones,435
+CUST1530,31,Male,California,PST,Email,2024-08-11 06:52:28,0.67,Loyal Customer,,Promotional,2024-08-19 13:09:00,1,1,1,15,21,4,18,Product Viewed,Smartphones,53
+CUST1531,51,Other,California,CST,Push,2024-07-03 22:27:32,0.3,At-Risk,2024-07-10 11:26:31,Promotional,2024-07-31 11:40:33,0,0,0,0,0,21,18,Product Viewed,Smartphones,79
+CUST1532,38,Male,New York,MST,Email,2024-07-29 18:07:25,0.13,Frequent Buyer,2024-09-01 22:44:48,Promotional,2024-07-23 15:33:21,0,0,0,3,0,12,0,Product Viewed,Smartphones,231
+CUST1533,40,Female,Texas,PST,Push,2024-09-27 17:37:46,0.45,Frequent Buyer,2024-08-16 19:12:20,Promotional,2024-09-27 15:18:57,1,1,0,8,8,12,1,Product Viewed,Smartphones,422
+CUST1534,31,Male,New York,EST,Email,2024-07-17 03:04:49,0.31,High-Value,2024-08-31 22:49:22,Informational,2024-07-13 23:24:35,0,0,0,4,17,15,15,Product Viewed,Smartphones,498
+CUST1535,21,Male,California,CST,Email,2024-08-24 10:36:29,0.86,Loyal Customer,2024-07-13 01:33:12,Transactional,2024-09-07 05:13:33,1,1,0,19,22,4,15,Product Viewed,Smartphones,378
+CUST1536,34,Female,New York,PST,Email,2024-09-18 13:36:05,0.58,Frequent Buyer,2024-09-24 21:11:43,Informational,2024-08-04 17:23:30,1,0,0,2,15,11,10,Product Viewed,Smartphones,166
+CUST1537,33,Female,Texas,CST,Email,2024-07-16 19:23:17,0.37,At-Risk,2024-08-29 06:35:59,Informational,2024-07-29 08:39:58,0,0,0,22,18,1,11,Product Viewed,Smartphones,165
+CUST1538,41,Female,Florida,CST,Push,2024-09-03 05:28:32,0.46,Frequent Buyer,2024-08-17 00:53:02,Transactional,2024-07-24 22:08:56,0,0,0,5,5,14,13,Product Viewed,Smartphones,478
+CUST1539,32,Other,New York,CST,Email,2024-09-14 05:07:51,0.67,First-Time Buyer,,Promotional,2024-07-11 19:54:45,1,0,0,7,2,12,12,Product Viewed,Smartphones,194
+CUST1540,61,Female,Florida,CST,Email,2024-09-14 17:28:35,0.57,First-Time Buyer,,Promotional,2024-07-08 13:51:13,1,1,0,7,5,17,20,Product Viewed,Smartphones,133
+CUST1541,39,Female,Florida,MST,Email,2024-08-25 17:43:53,0.53,At-Risk,2024-08-18 05:10:00,Informational,2024-08-30 11:57:11,1,1,1,2,15,19,17,Product Viewed,Smartphones,448
+CUST1542,33,Male,Texas,CST,Push,2024-08-21 00:00:19,0.36,First-Time Buyer,,Promotional,2024-08-14 21:47:38,0,0,0,6,6,9,12,Product Viewed,Smartphones,203
+CUST1543,38,Female,Florida,PST,Email,2024-09-23 08:38:56,0.45,Loyal Customer,2024-07-12 21:26:21,Informational,2024-09-21 07:17:41,1,1,1,6,16,0,23,Product Viewed,Smartphones,412
+CUST1544,38,Other,California,EST,Email,2024-07-19 17:50:45,0.71,Loyal Customer,2024-07-22 06:41:59,Promotional,2024-09-11 15:34:16,1,0,0,18,1,11,10,Product Viewed,Smartphones,444
+CUST1545,60,Female,Illinois,MST,Push,2024-08-09 15:14:32,0.73,At-Risk,2024-08-21 17:28:19,Promotional,2024-08-23 09:25:45,0,0,0,18,18,12,5,Product Viewed,Smartphones,213
+CUST1546,52,Female,Illinois,MST,Push,2024-08-13 09:34:52,0.23,At-Risk,2024-07-13 23:14:16,Informational,2024-07-13 09:50:29,1,0,0,16,16,21,4,Product Viewed,Smartphones,373
+CUST1547,30,Male,New York,MST,Email,2024-07-18 06:44:07,0.17,High-Value,,Promotional,2024-09-09 02:29:46,0,0,0,5,2,22,5,Product Viewed,Smartphones,357
+CUST1548,23,Male,Florida,MST,Email,2024-07-25 18:42:04,0.6,Frequent Buyer,,Informational,2024-08-10 23:44:04,0,0,0,10,9,2,17,Product Viewed,Smartphones,386
+CUST1549,54,Male,Texas,EST,Email,2024-07-30 04:07:39,0.71,First-Time Buyer,2024-09-06 04:53:27,Transactional,2024-07-25 05:53:21,1,1,1,4,11,6,2,Product Viewed,Smartphones,386
+CUST1550,34,Female,Illinois,EST,Push,2024-09-22 15:28:01,0.5,Frequent Buyer,2024-08-28 11:24:40,Transactional,2024-07-08 23:21:55,1,0,0,9,9,20,5,Product Viewed,Smartphones,231
+CUST1551,39,Female,California,EST,Email,2024-08-27 04:54:49,0.25,First-Time Buyer,2024-08-30 00:05:31,Promotional,2024-08-13 03:53:36,1,0,0,8,0,8,2,Product Viewed,Smartphones,404
+CUST1552,51,Male,Texas,PST,Email,2024-07-06 13:54:38,0.79,Loyal Customer,,Informational,2024-08-19 02:26:42,0,0,0,13,13,21,20,Product Viewed,Smartphones,165
+CUST1553,64,Male,New York,CST,Push,2024-07-26 07:16:40,0.4,Loyal Customer,2024-07-26 06:35:00,Promotional,2024-07-17 01:02:57,0,0,0,6,6,11,4,Product Viewed,Smartphones,78
+CUST1554,31,Male,New York,MST,Email,2024-07-19 22:00:31,0.56,High-Value,2024-09-28 08:13:59,Transactional,2024-09-24 10:26:03,0,0,0,20,22,6,13,Product Viewed,Smartphones,329
+CUST1555,53,Other,Texas,PST,Push,2024-07-23 20:35:25,0.24,At-Risk,,Promotional,2024-08-13 11:48:12,1,1,0,23,23,22,0,Product Viewed,Smartphones,494
+CUST1556,25,Female,California,CST,Push,2024-07-17 08:23:37,0.62,Loyal Customer,,Transactional,2024-08-19 22:18:05,1,0,0,16,16,14,2,Product Viewed,Smartphones,177
+CUST1557,39,Male,New York,PST,Email,2024-08-11 20:39:35,0.45,Loyal Customer,,Promotional,2024-07-27 00:25:17,0,0,0,7,23,9,4,Product Viewed,Smartphones,222
+CUST1558,63,Male,California,CST,Email,2024-07-03 20:03:47,0.3,First-Time Buyer,2024-09-26 20:55:37,Promotional,2024-09-12 16:13:52,0,0,0,18,19,4,3,Product Viewed,Smartphones,437
+CUST1559,38,Male,California,EST,Email,2024-08-16 18:35:45,0.75,Frequent Buyer,,Transactional,2024-07-19 16:59:27,1,0,0,10,18,19,6,Product Viewed,Smartphones,284
+CUST1560,21,Male,California,PST,Push,2024-09-13 17:30:56,0.47,At-Risk,2024-07-19 16:57:37,Informational,2024-09-20 23:56:06,0,0,0,12,12,8,10,Product Viewed,Smartphones,140
+CUST1561,39,Female,Illinois,CST,Push,2024-08-13 05:35:41,0.27,First-Time Buyer,2024-08-10 21:18:22,Transactional,2024-08-13 22:22:07,0,0,0,15,15,14,23,Product Viewed,Smartphones,213
+CUST1562,21,Female,Florida,CST,Push,2024-08-09 01:37:59,0.78,High-Value,2024-09-07 14:09:51,Transactional,2024-09-30 00:45:06,1,0,0,1,1,3,20,Product Viewed,Smartphones,54
+CUST1563,63,Female,Texas,EST,Email,2024-07-21 19:26:04,0.77,First-Time Buyer,,Transactional,2024-09-07 19:16:05,0,0,0,8,15,18,6,Product Viewed,Smartphones,334
+CUST1564,53,Male,New York,MST,Push,2024-08-08 07:52:50,0.26,Frequent Buyer,2024-08-08 16:50:04,Informational,2024-08-20 16:20:18,1,0,0,15,15,18,17,Product Viewed,Smartphones,72
+CUST1565,24,Male,California,PST,Email,2024-08-26 15:01:41,0.52,Loyal Customer,2024-07-15 18:25:49,Promotional,2024-09-23 11:50:27,0,0,0,10,2,20,19,Product Viewed,Smartphones,235
+CUST1566,44,Female,Texas,EST,Push,2024-07-30 16:37:40,0.37,First-Time Buyer,,Transactional,2024-07-04 01:20:18,0,0,0,13,13,21,20,Product Viewed,Smartphones,427
+CUST1567,19,Other,New York,MST,Email,2024-08-26 14:43:38,0.57,At-Risk,,Informational,2024-08-14 21:01:01,0,0,0,5,16,22,9,Product Viewed,Smartphones,470
+CUST1568,47,Other,Florida,MST,Push,2024-08-18 09:30:46,0.28,High-Value,,Transactional,2024-08-24 16:32:54,1,1,0,4,4,6,22,Product Viewed,Smartphones,182
+CUST1569,47,Other,Florida,MST,Email,2024-09-10 05:52:49,0.72,Frequent Buyer,2024-07-06 16:01:58,Transactional,2024-07-26 17:38:39,0,0,0,12,16,1,8,Product Viewed,Smartphones,307
+CUST1570,60,Male,Florida,EST,Push,2024-09-24 09:47:52,0.24,High-Value,,Informational,2024-07-11 12:59:10,1,1,0,5,5,19,1,Product Viewed,Smartphones,332
+CUST1571,34,Other,Illinois,CST,Email,2024-09-08 08:23:05,0.15,Frequent Buyer,,Informational,2024-07-12 21:30:09,0,0,0,13,2,4,7,Product Viewed,Smartphones,243
+CUST1572,27,Male,Texas,MST,Email,2024-07-26 04:33:37,0.73,High-Value,2024-07-22 23:18:18,Informational,2024-07-13 15:34:51,0,0,0,20,14,15,12,Product Viewed,Smartphones,425
+CUST1573,38,Male,New York,MST,Push,2024-09-10 02:05:23,0.3,At-Risk,,Transactional,2024-09-29 00:00:26,1,1,0,1,1,23,14,Product Viewed,Smartphones,290
+CUST1574,42,Male,Florida,MST,Push,2024-08-21 07:48:10,0.7,First-Time Buyer,,Promotional,2024-08-22 15:13:33,1,1,1,1,1,7,18,Product Viewed,Smartphones,373
+CUST1575,40,Female,New York,MST,Email,2024-09-14 02:03:06,0.55,At-Risk,2024-09-08 03:38:32,Informational,2024-07-21 16:02:41,0,0,0,23,17,16,1,Product Viewed,Smartphones,149
+CUST1576,45,Female,Florida,EST,Push,2024-08-21 22:41:51,0.25,First-Time Buyer,2024-07-06 21:22:43,Informational,2024-07-22 13:09:25,0,0,0,18,18,19,14,Product Viewed,Smartphones,448
+CUST1577,24,Other,Texas,PST,Push,2024-09-27 03:14:22,0.66,High-Value,,Promotional,2024-09-07 22:09:31,1,0,0,6,6,9,5,Product Viewed,Smartphones,91
+CUST1578,51,Other,California,EST,Email,2024-08-17 09:57:41,0.75,At-Risk,,Transactional,2024-08-24 12:38:33,1,0,0,20,3,16,1,Product Viewed,Smartphones,220
+CUST1579,21,Male,Illinois,PST,Email,2024-08-26 11:27:22,0.35,At-Risk,2024-07-20 00:18:33,Transactional,2024-07-21 08:14:28,1,0,0,9,11,13,10,Product Viewed,Smartphones,381
+CUST1580,46,Other,Florida,CST,Push,2024-08-25 05:34:55,0.3,First-Time Buyer,,Informational,2024-07-21 14:52:31,0,0,0,18,18,13,1,Product Viewed,Smartphones,62
+CUST1581,44,Female,California,MST,Email,2024-07-11 19:30:45,0.77,High-Value,2024-09-17 11:46:57,Promotional,2024-08-09 14:59:18,1,1,1,7,17,22,14,Product Viewed,Smartphones,344
+CUST1582,45,Male,Florida,EST,Push,2024-07-21 16:35:17,0.55,First-Time Buyer,2024-07-14 17:19:25,Informational,2024-09-03 13:02:02,0,0,0,23,23,12,3,Product Viewed,Smartphones,146
+CUST1583,47,Other,New York,PST,Push,2024-09-09 15:22:51,0.53,Frequent Buyer,,Informational,2024-07-30 19:01:05,1,1,0,15,15,0,20,Product Viewed,Smartphones,91
+CUST1584,31,Female,Florida,PST,Push,2024-08-16 20:49:33,0.23,Loyal Customer,,Informational,2024-08-19 15:53:41,0,0,0,7,7,8,15,Product Viewed,Smartphones,445
+CUST1585,20,Female,Florida,CST,Push,2024-09-21 13:53:48,0.75,Frequent Buyer,2024-09-15 07:01:11,Transactional,2024-08-25 02:13:40,1,1,1,21,21,18,8,Product Viewed,Smartphones,96
+CUST1586,65,Male,California,EST,Email,2024-07-24 21:18:04,0.55,Loyal Customer,2024-08-17 10:59:27,Informational,2024-09-20 19:47:23,0,0,0,16,22,10,8,Product Viewed,Smartphones,241
+CUST1587,18,Female,Texas,PST,Email,2024-09-28 10:38:31,0.45,High-Value,2024-09-02 20:56:50,Transactional,2024-08-25 19:02:18,0,0,0,3,0,5,19,Product Viewed,Smartphones,161
+CUST1588,60,Male,California,MST,Email,2024-09-09 20:24:27,0.38,At-Risk,2024-07-18 00:56:26,Promotional,2024-07-06 13:11:18,0,0,0,5,12,7,6,Product Viewed,Smartphones,488
+CUST1589,38,Female,Texas,CST,Email,2024-08-02 13:59:27,0.49,First-Time Buyer,2024-07-18 13:42:05,Promotional,2024-09-01 19:12:39,1,1,0,1,8,4,18,Product Viewed,Smartphones,452
+CUST1590,27,Male,New York,MST,Push,2024-07-30 23:41:00,0.79,Frequent Buyer,2024-09-15 13:48:06,Promotional,2024-09-22 12:55:30,0,0,0,22,22,11,22,Product Viewed,Smartphones,184
+CUST1591,24,Male,Texas,PST,Push,2024-08-30 02:12:31,0.44,Frequent Buyer,2024-09-22 15:32:03,Informational,2024-08-04 13:07:40,0,0,0,22,22,2,21,Product Viewed,Smartphones,211
+CUST1592,27,Female,California,MST,Push,2024-09-07 01:41:31,0.12,At-Risk,,Informational,2024-07-25 14:48:25,0,0,0,16,16,8,15,Product Viewed,Smartphones,204
+CUST1593,35,Other,Florida,PST,Email,2024-09-20 04:48:55,0.61,Loyal Customer,2024-09-02 02:17:34,Transactional,2024-08-11 04:40:19,1,0,0,20,17,13,13,Product Viewed,Smartphones,240
+CUST1594,44,Female,Florida,PST,Push,2024-07-29 06:42:51,0.15,Frequent Buyer,2024-09-06 16:50:05,Informational,2024-09-27 07:08:12,1,0,0,11,11,12,11,Product Viewed,Smartphones,190
+CUST1595,39,Other,Illinois,CST,Email,2024-09-22 14:30:44,0.26,First-Time Buyer,2024-08-17 02:13:53,Promotional,2024-09-14 01:00:26,1,1,1,18,20,20,7,Product Viewed,Smartphones,134
+CUST1596,32,Female,Illinois,EST,Push,2024-07-08 12:13:25,0.67,Frequent Buyer,,Promotional,2024-07-30 08:39:19,0,0,0,20,20,4,8,Product Viewed,Smartphones,411
+CUST1597,49,Female,New York,MST,Email,2024-07-20 06:39:07,0.25,At-Risk,2024-08-06 01:29:35,Promotional,2024-08-20 18:01:16,0,0,0,3,19,8,19,Product Viewed,Smartphones,131
+CUST1598,48,Female,Illinois,MST,Push,2024-08-10 04:18:42,0.14,Frequent Buyer,2024-09-16 19:00:31,Promotional,2024-09-17 15:29:41,0,0,0,14,14,10,12,Product Viewed,Smartphones,70
+CUST1599,29,Male,Texas,EST,Push,2024-09-01 20:49:03,0.5,Loyal Customer,2024-07-26 21:37:38,Transactional,2024-09-30 07:34:08,0,0,0,20,20,4,23,Product Viewed,Smartphones,435
+CUST1600,45,Male,Florida,MST,Email,2024-08-08 08:46:06,0.62,At-Risk,,Informational,2024-07-18 10:01:59,1,0,0,20,3,12,2,Product Viewed,Smartphones,105
+CUST1601,33,Male,Florida,PST,Email,2024-09-22 05:55:52,0.64,First-Time Buyer,2024-08-29 02:39:20,Promotional,2024-08-21 12:43:03,0,0,0,18,13,8,5,Product Viewed,Smartphones,482
+CUST1602,63,Female,Texas,CST,Email,2024-09-30 03:58:28,0.12,Loyal Customer,2024-08-14 17:21:14,Informational,2024-09-18 14:23:25,1,1,0,23,9,17,2,Product Viewed,Smartphones,155
+CUST1603,55,Other,Illinois,EST,Push,2024-07-12 03:11:32,0.29,High-Value,,Transactional,2024-07-30 05:25:38,1,0,0,12,12,14,22,Product Viewed,Smartphones,483
+CUST1604,19,Other,New York,PST,Email,2024-08-30 13:56:17,0.89,High-Value,2024-08-07 09:22:20,Informational,2024-08-10 21:27:11,0,0,0,12,4,2,11,Product Viewed,Smartphones,267
+CUST1605,64,Female,Florida,MST,Email,2024-09-07 09:03:09,0.82,Frequent Buyer,,Promotional,2024-09-20 21:57:47,0,0,0,13,16,6,12,Product Viewed,Smartphones,326
+CUST1606,60,Other,Illinois,CST,Email,2024-08-18 09:07:18,0.56,High-Value,2024-08-20 04:06:08,Transactional,2024-07-23 13:40:52,1,0,0,0,15,21,15,Product Viewed,Smartphones,350
+CUST1607,50,Female,California,CST,Push,2024-07-13 09:54:21,0.88,High-Value,,Promotional,2024-09-10 20:26:48,0,0,0,3,3,21,17,Product Viewed,Smartphones,152
+CUST1608,40,Other,Illinois,EST,Push,2024-07-27 20:03:01,0.89,High-Value,2024-07-26 22:20:28,Transactional,2024-08-22 23:09:19,0,0,0,23,23,13,19,Product Viewed,Smartphones,414
+CUST1609,42,Other,New York,PST,Email,2024-09-19 21:43:57,0.2,At-Risk,,Transactional,2024-08-01 12:37:09,1,1,0,17,18,2,4,Product Viewed,Smartphones,387
+CUST1610,44,Male,New York,MST,Push,2024-09-14 23:00:20,0.85,First-Time Buyer,,Transactional,2024-08-20 10:39:43,0,0,0,4,4,21,1,Product Viewed,Smartphones,217
+CUST1611,31,Male,Florida,MST,Push,2024-07-24 05:59:05,0.43,At-Risk,,Transactional,2024-08-27 18:21:07,0,0,0,9,9,19,12,Product Viewed,Smartphones,154
+CUST1612,25,Female,New York,EST,Push,2024-07-08 19:00:58,0.34,High-Value,2024-09-15 13:06:39,Informational,2024-07-12 03:10:54,0,0,0,19,19,16,1,Product Viewed,Smartphones,150
+CUST1613,47,Male,California,PST,Email,2024-08-11 11:47:49,0.25,Frequent Buyer,,Transactional,2024-08-05 00:02:32,1,1,0,13,12,4,13,Product Viewed,Smartphones,114
+CUST1614,32,Female,California,CST,Email,2024-07-06 16:34:34,0.83,Frequent Buyer,2024-08-15 23:44:18,Promotional,2024-07-03 00:38:52,0,0,0,0,2,4,4,Product Viewed,Smartphones,461
+CUST1615,33,Other,New York,MST,Email,2024-08-19 16:32:53,0.57,High-Value,2024-07-04 23:25:15,Promotional,2024-08-21 13:20:16,0,0,0,2,21,9,19,Product Viewed,Smartphones,99
+CUST1616,23,Male,Texas,EST,Push,2024-08-26 02:24:04,0.54,Frequent Buyer,2024-08-31 01:29:25,Transactional,2024-07-08 13:02:16,1,0,0,5,5,4,10,Product Viewed,Smartphones,354
+CUST1617,29,Other,Illinois,EST,Email,2024-09-13 15:19:35,0.43,First-Time Buyer,2024-08-15 11:11:35,Transactional,2024-09-16 05:07:43,0,0,0,21,9,9,8,Product Viewed,Smartphones,350
+CUST1618,35,Female,Texas,PST,Push,2024-08-02 03:16:55,0.79,Loyal Customer,2024-09-12 03:35:40,Transactional,2024-07-04 00:44:46,1,0,0,3,3,16,16,Product Viewed,Smartphones,469
+CUST1619,40,Other,Illinois,PST,Push,2024-07-12 11:19:27,0.22,High-Value,2024-09-12 13:03:53,Promotional,2024-09-12 09:35:35,0,0,0,20,20,3,10,Product Viewed,Smartphones,290
+CUST1620,36,Other,Texas,PST,Email,2024-08-28 21:38:27,0.72,At-Risk,2024-09-02 13:05:12,Informational,2024-08-13 19:05:36,0,0,0,22,21,16,10,Product Viewed,Smartphones,301
+CUST1621,60,Other,New York,PST,Push,2024-07-29 22:18:43,0.41,At-Risk,,Informational,2024-07-07 23:50:35,0,0,0,4,4,1,7,Product Viewed,Smartphones,482
+CUST1622,59,Male,Texas,EST,Push,2024-07-28 12:32:11,0.79,High-Value,2024-07-24 16:45:13,Informational,2024-08-03 18:47:58,1,0,0,18,18,15,1,Product Viewed,Smartphones,335
+CUST1623,32,Other,Florida,MST,Email,2024-08-07 00:49:04,0.58,High-Value,2024-08-10 07:08:45,Promotional,2024-09-27 14:35:48,0,0,0,19,8,3,19,Product Viewed,Smartphones,110
+CUST1624,51,Female,California,PST,Push,2024-08-09 08:33:47,0.48,First-Time Buyer,2024-07-10 21:21:41,Promotional,2024-09-24 11:32:20,1,0,0,17,17,20,1,Product Viewed,Smartphones,210
+CUST1625,31,Male,Illinois,PST,Push,2024-07-10 15:03:02,0.4,At-Risk,2024-07-15 04:57:22,Transactional,2024-07-05 16:51:42,1,1,1,20,20,13,22,Product Viewed,Smartphones,429
+CUST1626,54,Male,Florida,MST,Push,2024-07-09 10:01:24,0.17,Loyal Customer,,Informational,2024-09-02 08:24:08,1,1,0,12,12,9,20,Product Viewed,Smartphones,320
+CUST1627,60,Male,Florida,MST,Push,2024-08-26 17:44:04,0.38,Loyal Customer,2024-09-21 06:07:35,Informational,2024-09-07 15:26:52,0,0,0,10,10,14,5,Product Viewed,Smartphones,452
+CUST1628,47,Male,New York,PST,Email,2024-08-02 20:56:55,0.76,Frequent Buyer,2024-09-17 02:17:29,Transactional,2024-08-06 14:04:28,1,0,0,12,21,8,13,Product Viewed,Smartphones,216
+CUST1629,51,Female,Illinois,MST,Push,2024-08-11 03:40:28,0.61,First-Time Buyer,2024-09-14 06:08:59,Promotional,2024-08-16 11:08:58,0,0,0,13,13,20,22,Product Viewed,Smartphones,428
+CUST1630,45,Male,Texas,CST,Push,2024-08-29 15:09:48,0.62,Frequent Buyer,,Transactional,2024-07-20 11:37:50,1,1,1,7,7,17,17,Product Viewed,Smartphones,429
+CUST1631,36,Other,Illinois,EST,Email,2024-08-13 19:01:37,0.51,Frequent Buyer,2024-08-04 09:32:21,Transactional,2024-07-20 22:02:21,0,0,0,20,4,2,17,Product Viewed,Smartphones,58
+CUST1632,37,Other,California,PST,Email,2024-09-03 13:27:44,0.65,First-Time Buyer,2024-08-01 12:07:04,Promotional,2024-09-28 02:54:42,1,0,0,9,11,11,2,Product Viewed,Smartphones,495
+CUST1633,34,Male,Illinois,MST,Push,2024-08-09 07:46:34,0.43,Loyal Customer,2024-08-17 02:33:57,Informational,2024-09-30 04:11:50,0,0,0,23,23,9,10,Product Viewed,Smartphones,295
+CUST1634,37,Other,New York,EST,Push,2024-09-10 05:28:53,0.48,Loyal Customer,,Transactional,2024-07-21 16:23:19,0,0,0,8,8,14,2,Product Viewed,Smartphones,61
+CUST1635,62,Female,California,MST,Push,2024-07-07 07:07:21,0.55,Loyal Customer,,Promotional,2024-07-21 08:22:36,0,0,0,3,3,17,20,Product Viewed,Smartphones,207
+CUST1636,28,Male,Texas,PST,Email,2024-07-11 12:10:34,0.1,High-Value,2024-08-06 01:07:06,Promotional,2024-07-19 13:47:56,0,0,0,13,9,12,4,Product Viewed,Smartphones,203
+CUST1637,22,Male,Florida,EST,Email,2024-09-29 14:01:43,0.61,First-Time Buyer,2024-08-17 20:48:10,Promotional,2024-09-21 07:30:31,1,0,0,17,2,6,8,Product Viewed,Smartphones,377
+CUST1638,43,Male,California,EST,Push,2024-07-11 15:47:00,0.46,Frequent Buyer,2024-09-13 14:51:10,Transactional,2024-09-07 13:33:44,1,0,0,3,3,13,18,Product Viewed,Smartphones,388
+CUST1639,54,Female,New York,MST,Push,2024-07-17 15:54:03,0.62,Loyal Customer,,Promotional,2024-08-06 03:34:03,1,0,0,5,5,1,14,Product Viewed,Smartphones,279
+CUST1640,35,Female,New York,CST,Push,2024-07-25 21:08:00,0.38,High-Value,2024-09-03 09:27:23,Transactional,2024-07-27 09:50:06,0,0,0,10,10,15,9,Product Viewed,Smartphones,157
+CUST1641,36,Male,Illinois,MST,Email,2024-07-04 03:43:47,0.28,Frequent Buyer,2024-08-15 12:59:18,Transactional,2024-07-26 12:24:36,0,0,0,9,13,1,13,Product Viewed,Smartphones,292
+CUST1642,48,Male,Texas,EST,Email,2024-07-11 09:32:27,0.5,First-Time Buyer,2024-09-24 10:12:47,Transactional,2024-08-30 02:21:13,0,0,0,0,7,19,9,Product Viewed,Smartphones,150
+CUST1643,64,Female,New York,EST,Push,2024-07-25 10:54:50,0.2,Loyal Customer,2024-08-23 09:30:45,Transactional,2024-09-02 18:35:20,0,0,0,21,21,15,11,Product Viewed,Smartphones,247
+CUST1644,55,Male,Florida,PST,Push,2024-09-18 21:36:02,0.63,At-Risk,2024-07-21 16:14:10,Informational,2024-09-20 22:23:06,0,0,0,12,12,13,20,Product Viewed,Smartphones,287
+CUST1645,37,Male,Illinois,MST,Push,2024-08-16 12:22:01,0.3,Frequent Buyer,2024-08-02 21:13:47,Promotional,2024-07-16 23:48:32,0,0,0,17,17,13,19,Product Viewed,Smartphones,85
+CUST1646,28,Other,Illinois,CST,Email,2024-07-29 19:09:58,0.81,Frequent Buyer,2024-07-16 05:48:50,Transactional,2024-09-07 12:31:06,1,0,0,13,23,6,10,Product Viewed,Smartphones,438
+CUST1647,34,Male,California,CST,Push,2024-08-08 17:26:55,0.33,Loyal Customer,2024-07-29 15:38:20,Informational,2024-09-27 23:43:09,0,0,0,4,4,3,22,Product Viewed,Smartphones,297
+CUST1648,56,Female,Illinois,MST,Email,2024-09-22 02:03:25,0.66,At-Risk,2024-08-07 02:23:49,Transactional,2024-08-19 14:45:17,0,0,0,10,16,21,9,Product Viewed,Smartphones,114
+CUST1649,47,Female,California,EST,Push,2024-08-20 14:55:18,0.66,High-Value,2024-08-18 15:28:13,Transactional,2024-08-29 05:28:06,1,0,0,20,20,21,12,Product Viewed,Smartphones,221
+CUST1650,62,Male,California,PST,Push,2024-08-20 09:38:12,0.71,High-Value,2024-07-03 15:26:42,Promotional,2024-09-17 06:01:18,0,0,0,9,9,4,6,Product Viewed,Smartphones,118
+CUST1651,49,Male,Texas,EST,Email,2024-07-10 01:18:46,0.33,At-Risk,2024-09-05 01:12:55,Transactional,2024-07-26 18:00:07,1,0,0,3,18,8,6,Product Viewed,Smartphones,238
+CUST1652,47,Other,New York,CST,Push,2024-08-17 08:37:22,0.73,Frequent Buyer,2024-07-09 12:04:24,Transactional,2024-09-30 03:30:03,1,1,1,7,7,9,8,Product Viewed,Smartphones,450
+CUST1653,31,Female,Illinois,EST,Email,2024-09-22 23:18:02,0.33,Loyal Customer,2024-09-26 04:00:58,Transactional,2024-09-15 15:21:44,0,0,0,0,6,21,10,Product Viewed,Smartphones,336
+CUST1654,21,Other,California,EST,Push,2024-08-09 05:07:14,0.59,At-Risk,2024-08-29 17:38:20,Transactional,2024-08-17 08:24:26,0,0,0,17,17,18,23,Product Viewed,Smartphones,117
+CUST1655,34,Female,Texas,PST,Email,2024-08-22 07:36:23,0.14,Loyal Customer,2024-08-31 14:51:40,Transactional,2024-09-11 06:11:45,0,0,0,13,8,15,4,Product Viewed,Smartphones,174
+CUST1656,53,Male,Illinois,PST,Email,2024-08-07 14:55:33,0.61,Loyal Customer,2024-09-21 01:16:01,Transactional,2024-09-16 10:26:02,0,0,0,21,12,20,4,Product Viewed,Smartphones,74
+CUST1657,43,Male,Illinois,PST,Email,2024-08-11 12:54:01,0.84,Frequent Buyer,,Informational,2024-08-31 22:53:20,1,0,0,14,12,2,20,Product Viewed,Smartphones,196
+CUST1658,24,Other,Texas,PST,Push,2024-09-13 11:18:37,0.69,At-Risk,2024-07-12 15:07:24,Promotional,2024-09-29 03:42:23,0,0,0,1,1,5,4,Product Viewed,Smartphones,463
+CUST1659,50,Male,Texas,MST,Email,2024-09-21 04:23:48,0.79,First-Time Buyer,,Transactional,2024-07-04 12:37:37,0,0,0,8,8,5,20,Product Viewed,Smartphones,173
+CUST1660,18,Male,California,PST,Push,2024-08-23 21:59:27,0.28,At-Risk,2024-09-18 22:23:42,Informational,2024-07-18 02:15:41,0,0,0,21,21,19,9,Product Viewed,Smartphones,229
+CUST1661,40,Female,Illinois,PST,Email,2024-09-21 00:52:48,0.86,At-Risk,2024-09-13 02:47:00,Promotional,2024-07-26 14:11:01,1,0,0,9,0,0,15,Product Viewed,Smartphones,73
+CUST1662,37,Male,Illinois,CST,Push,2024-07-05 12:56:03,0.5,At-Risk,2024-07-12 19:31:13,Informational,2024-09-08 05:53:10,1,1,0,21,21,19,3,Product Viewed,Smartphones,425
+CUST1663,64,Male,Texas,CST,Push,2024-08-05 07:50:03,0.83,At-Risk,2024-09-28 01:32:48,Informational,2024-07-03 12:44:05,1,1,1,23,23,22,16,Product Viewed,Smartphones,398
+CUST1664,64,Other,Texas,EST,Email,2024-09-25 23:25:02,0.77,Frequent Buyer,2024-07-12 11:19:59,Transactional,2024-09-24 03:24:49,0,0,0,6,18,12,12,Product Viewed,Smartphones,248
+CUST1665,23,Other,Illinois,PST,Email,2024-08-15 14:52:36,0.38,First-Time Buyer,2024-08-15 04:47:40,Promotional,2024-09-20 07:32:31,1,1,0,15,7,23,23,Product Viewed,Smartphones,437
+CUST1666,39,Male,New York,PST,Push,2024-08-22 21:34:46,0.46,Loyal Customer,2024-08-02 05:10:44,Promotional,2024-08-09 06:03:21,0,0,0,8,8,3,22,Product Viewed,Smartphones,270
+CUST1667,47,Male,New York,MST,Push,2024-08-19 13:26:40,0.36,Frequent Buyer,2024-07-15 06:42:52,Promotional,2024-09-29 14:07:38,0,0,0,5,5,3,6,Product Viewed,Smartphones,306
+CUST1668,28,Male,California,MST,Email,2024-09-06 16:44:19,0.57,First-Time Buyer,2024-08-06 18:53:20,Promotional,2024-09-08 11:36:06,1,0,0,22,9,4,16,Product Viewed,Smartphones,69
+CUST1669,39,Male,Illinois,EST,Email,2024-09-14 13:46:21,0.36,First-Time Buyer,2024-09-05 13:29:18,Transactional,2024-08-07 22:02:46,1,0,0,1,11,10,23,Product Viewed,Smartphones,310
+CUST1670,42,Male,Florida,EST,Email,2024-07-18 05:27:19,0.9,Frequent Buyer,2024-09-24 21:13:59,Informational,2024-09-07 06:20:27,0,0,0,12,7,11,23,Product Viewed,Smartphones,222
+CUST1671,35,Male,New York,CST,Push,2024-07-30 03:58:54,0.37,First-Time Buyer,,Informational,2024-07-09 13:11:13,0,0,0,13,13,0,7,Product Viewed,Smartphones,209
+CUST1672,49,Other,Florida,MST,Push,2024-07-30 21:02:14,0.39,First-Time Buyer,2024-09-18 18:41:53,Promotional,2024-08-01 11:05:02,0,0,0,2,2,12,22,Product Viewed,Smartphones,104
+CUST1673,45,Other,Texas,EST,Email,2024-09-06 20:15:10,0.26,Loyal Customer,2024-08-11 08:30:36,Transactional,2024-09-02 12:19:58,1,1,0,18,11,12,5,Product Viewed,Smartphones,492
+CUST1674,26,Male,Illinois,CST,Email,2024-08-02 02:55:34,0.12,At-Risk,2024-09-15 00:08:50,Informational,2024-07-23 14:49:03,1,0,0,11,5,23,23,Product Viewed,Smartphones,415
+CUST1675,59,Female,New York,CST,Email,2024-07-15 17:18:09,0.87,High-Value,2024-07-05 08:00:00,Informational,2024-09-22 23:17:54,0,0,0,13,5,21,13,Product Viewed,Smartphones,498
+CUST1676,57,Other,Florida,EST,Push,2024-08-06 20:02:52,0.8,At-Risk,2024-08-03 06:06:06,Informational,2024-08-31 20:14:24,0,0,0,9,9,8,19,Product Viewed,Smartphones,85
+CUST1677,34,Female,Illinois,MST,Email,2024-07-03 17:18:34,0.13,High-Value,,Informational,2024-09-21 09:04:09,0,0,0,6,13,10,4,Product Viewed,Smartphones,123
+CUST1678,33,Other,Texas,MST,Email,2024-09-04 00:51:31,0.28,First-Time Buyer,,Promotional,2024-08-23 07:43:00,0,0,0,10,5,19,1,Product Viewed,Smartphones,182
+CUST1679,54,Male,Texas,MST,Push,2024-07-13 13:52:36,0.24,At-Risk,2024-09-20 20:52:23,Informational,2024-09-22 11:27:08,1,0,0,9,9,16,5,Product Viewed,Smartphones,220
+CUST1680,28,Male,Illinois,MST,Email,2024-09-29 18:31:53,0.67,High-Value,2024-09-12 17:00:01,Promotional,2024-09-21 05:13:27,1,1,1,22,2,14,22,Product Viewed,Smartphones,239
+CUST1681,45,Other,Texas,EST,Push,2024-09-08 18:59:28,0.63,At-Risk,2024-09-17 13:09:00,Promotional,2024-08-23 14:28:05,1,1,0,6,6,4,1,Product Viewed,Smartphones,235
+CUST1682,61,Other,Texas,EST,Email,2024-09-29 14:08:42,0.27,Frequent Buyer,2024-07-19 12:52:18,Promotional,2024-08-15 23:59:23,0,0,0,2,3,9,20,Product Viewed,Smartphones,416
+CUST1683,52,Female,Florida,CST,Push,2024-09-25 15:04:36,0.75,First-Time Buyer,2024-08-03 01:43:51,Promotional,2024-09-18 23:59:39,0,0,0,20,20,2,10,Product Viewed,Smartphones,167
+CUST1684,40,Female,Florida,CST,Push,2024-07-30 20:19:27,0.61,Frequent Buyer,2024-09-12 05:32:25,Promotional,2024-09-10 04:03:52,0,0,0,5,5,17,15,Product Viewed,Smartphones,279
+CUST1685,39,Other,Florida,PST,Push,2024-09-23 15:10:09,0.61,High-Value,2024-08-20 05:16:33,Transactional,2024-08-24 07:46:05,0,0,0,22,22,5,10,Product Viewed,Smartphones,216
+CUST1686,33,Other,Texas,CST,Push,2024-08-09 01:36:16,0.59,Loyal Customer,2024-09-02 21:45:55,Informational,2024-07-06 13:15:57,1,0,0,9,9,20,9,Product Viewed,Smartphones,275
+CUST1687,40,Other,California,PST,Email,2024-07-03 09:41:29,0.88,Frequent Buyer,2024-09-18 19:16:01,Informational,2024-09-19 10:44:36,0,0,0,14,17,18,19,Product Viewed,Smartphones,326
+CUST1688,54,Male,Florida,CST,Push,2024-08-18 00:40:27,0.1,At-Risk,2024-09-20 04:40:07,Informational,2024-07-20 02:57:16,0,0,0,15,15,21,6,Product Viewed,Smartphones,457
+CUST1689,39,Female,New York,EST,Push,2024-09-19 07:49:16,0.57,High-Value,2024-07-12 03:20:16,Promotional,2024-08-31 09:50:08,0,0,0,7,7,0,13,Product Viewed,Smartphones,351
+CUST1690,58,Male,New York,EST,Push,2024-08-19 17:00:07,0.28,First-Time Buyer,,Informational,2024-09-06 10:08:42,1,1,0,18,18,0,14,Product Viewed,Smartphones,154
+CUST1691,41,Male,New York,MST,Email,2024-09-18 19:07:44,0.29,At-Risk,2024-08-28 14:04:41,Transactional,2024-07-07 13:12:16,0,0,0,4,19,15,18,Product Viewed,Smartphones,435
+CUST1692,35,Other,Illinois,EST,Email,2024-08-09 11:25:57,0.58,High-Value,2024-07-26 15:43:56,Transactional,2024-07-27 14:44:43,1,0,0,8,8,9,4,Product Viewed,Smartphones,180
+CUST1693,56,Male,Florida,CST,Push,2024-08-26 00:25:49,0.89,Frequent Buyer,2024-07-09 11:20:37,Promotional,2024-09-26 10:03:26,0,0,0,22,22,21,7,Product Viewed,Smartphones,361
+CUST1694,59,Male,California,EST,Push,2024-09-19 21:33:02,0.64,Loyal Customer,,Promotional,2024-08-08 23:37:52,1,0,0,18,18,20,0,Product Viewed,Smartphones,391
+CUST1695,57,Male,New York,PST,Email,2024-09-22 23:10:40,0.67,High-Value,2024-08-18 14:00:37,Informational,2024-08-21 02:43:12,0,0,0,1,23,0,10,Product Viewed,Smartphones,459
+CUST1696,35,Other,Illinois,MST,Push,2024-08-20 15:54:36,0.54,Loyal Customer,2024-07-16 04:36:17,Promotional,2024-07-26 08:12:54,0,0,0,1,1,21,0,Product Viewed,Smartphones,154
+CUST1697,28,Male,New York,EST,Push,2024-08-03 05:48:43,0.75,At-Risk,2024-08-25 13:56:29,Promotional,2024-08-22 04:06:16,1,0,0,6,6,17,5,Product Viewed,Smartphones,277
+CUST1698,40,Female,California,PST,Email,2024-07-26 12:59:36,0.58,At-Risk,,Transactional,2024-07-17 00:50:06,0,0,0,11,7,15,12,Product Viewed,Smartphones,290
+CUST1699,44,Male,California,MST,Email,2024-07-19 15:58:04,0.59,At-Risk,,Transactional,2024-08-26 10:41:54,0,0,0,18,11,23,5,Product Viewed,Smartphones,111
+CUST1700,27,Female,Texas,MST,Push,2024-08-04 21:10:31,0.85,First-Time Buyer,,Promotional,2024-08-21 05:24:26,1,0,0,2,2,10,1,Product Viewed,Smartphones,449
+CUST1701,24,Other,Illinois,EST,Push,2024-08-28 05:13:13,0.7,High-Value,2024-08-08 03:27:33,Informational,2024-08-03 09:33:11,0,0,0,18,18,0,16,Product Viewed,Smartphones,268
+CUST1702,50,Male,Illinois,CST,Email,2024-08-25 17:10:03,0.36,High-Value,2024-07-24 03:00:17,Informational,2024-07-13 23:37:05,0,0,0,9,20,18,10,Product Viewed,Smartphones,265
+CUST1703,55,Female,Illinois,PST,Push,2024-07-15 12:17:07,0.15,First-Time Buyer,,Promotional,2024-07-17 10:31:52,0,0,0,17,17,13,2,Product Viewed,Smartphones,402
+CUST1704,19,Male,California,EST,Push,2024-08-03 18:21:12,0.2,Frequent Buyer,,Transactional,2024-09-17 12:25:36,1,1,1,19,19,17,17,Product Viewed,Smartphones,193
+CUST1705,63,Other,New York,CST,Email,2024-07-20 21:45:35,0.37,High-Value,,Transactional,2024-08-12 00:42:54,0,0,0,18,4,12,1,Product Viewed,Smartphones,164
+CUST1706,22,Female,California,CST,Push,2024-07-10 09:15:00,0.56,At-Risk,2024-08-03 20:00:53,Transactional,2024-07-16 04:17:04,1,0,0,11,11,6,20,Product Viewed,Smartphones,238
+CUST1707,54,Male,Illinois,PST,Push,2024-08-25 07:32:53,0.79,Loyal Customer,2024-08-10 12:34:08,Promotional,2024-08-12 11:49:47,1,0,0,22,22,2,17,Product Viewed,Smartphones,268
+CUST1708,56,Other,New York,MST,Push,2024-09-12 20:00:10,0.16,Frequent Buyer,2024-09-15 09:28:06,Informational,2024-09-17 15:43:40,1,1,0,23,23,18,10,Product Viewed,Smartphones,373
+CUST1709,42,Other,Illinois,CST,Push,2024-09-11 04:19:34,0.78,Loyal Customer,2024-07-31 07:49:47,Informational,2024-09-06 11:34:47,0,0,0,1,1,11,13,Product Viewed,Smartphones,399
+CUST1710,58,Other,New York,MST,Email,2024-09-26 12:10:24,0.53,Loyal Customer,2024-09-01 17:57:34,Promotional,2024-07-26 01:59:32,1,0,0,7,0,11,15,Product Viewed,Smartphones,55
+CUST1711,28,Female,California,PST,Email,2024-07-08 04:41:44,0.46,First-Time Buyer,2024-08-19 08:14:38,Promotional,2024-09-12 08:34:51,1,0,0,1,2,0,8,Product Viewed,Smartphones,74
+CUST1712,41,Male,Illinois,MST,Push,2024-07-08 19:08:04,0.61,Frequent Buyer,2024-09-12 05:33:35,Transactional,2024-07-16 14:37:05,0,0,0,9,9,19,18,Product Viewed,Smartphones,406
+CUST1713,45,Other,Illinois,PST,Push,2024-08-02 04:09:20,0.44,First-Time Buyer,2024-07-11 08:08:09,Informational,2024-07-07 20:11:43,1,0,0,18,18,0,4,Product Viewed,Smartphones,352
+CUST1714,36,Male,Texas,PST,Email,2024-08-22 10:49:01,0.29,High-Value,2024-07-29 00:28:33,Informational,2024-09-15 09:53:32,0,0,0,9,21,19,13,Product Viewed,Smartphones,385
+CUST1715,26,Other,New York,PST,Push,2024-09-26 06:21:12,0.55,Loyal Customer,,Transactional,2024-08-11 04:36:15,1,1,1,16,16,10,1,Product Viewed,Smartphones,75
+CUST1716,39,Male,Texas,MST,Push,2024-09-25 06:04:44,0.73,Loyal Customer,2024-07-10 19:38:27,Transactional,2024-08-15 19:02:47,0,0,0,3,3,10,5,Product Viewed,Smartphones,205
+CUST1717,42,Other,California,MST,Push,2024-09-17 22:30:36,0.22,Frequent Buyer,2024-07-12 15:58:27,Promotional,2024-08-10 22:35:30,0,0,0,6,6,23,10,Product Viewed,Smartphones,145
+CUST1718,40,Female,Florida,MST,Email,2024-09-10 04:21:21,0.73,Frequent Buyer,2024-07-09 04:48:09,Informational,2024-09-07 10:09:08,1,1,1,11,3,8,23,Product Viewed,Smartphones,495
+CUST1719,32,Female,Illinois,MST,Push,2024-07-04 03:21:32,0.27,First-Time Buyer,2024-07-03 17:35:33,Transactional,2024-08-28 09:46:13,0,0,0,21,21,19,7,Product Viewed,Smartphones,68
+CUST1720,45,Female,New York,MST,Email,2024-08-19 09:18:04,0.29,Loyal Customer,2024-08-29 13:38:38,Transactional,2024-07-09 14:49:28,0,0,0,20,17,16,18,Product Viewed,Smartphones,218
+CUST1721,61,Female,Illinois,PST,Email,2024-08-16 08:09:57,0.28,First-Time Buyer,2024-09-27 02:29:07,Promotional,2024-07-25 08:37:58,0,0,0,4,11,22,6,Product Viewed,Smartphones,133
+CUST1722,60,Other,Texas,PST,Push,2024-07-17 18:52:24,0.54,First-Time Buyer,,Promotional,2024-09-26 16:25:35,1,0,0,5,5,20,17,Product Viewed,Smartphones,397
+CUST1723,58,Male,California,EST,Push,2024-07-29 21:49:37,0.19,At-Risk,,Informational,2024-07-10 06:30:04,1,1,0,12,12,5,13,Product Viewed,Smartphones,400
+CUST1724,63,Other,California,CST,Push,2024-09-09 15:29:24,0.14,Frequent Buyer,2024-08-30 07:38:10,Transactional,2024-08-01 00:23:46,1,1,1,5,5,23,4,Product Viewed,Smartphones,331
+CUST1725,33,Other,Texas,PST,Email,2024-08-07 12:21:06,0.39,High-Value,2024-09-04 00:14:31,Promotional,2024-07-13 23:13:04,0,0,0,18,19,17,13,Product Viewed,Smartphones,71
+CUST1726,51,Female,Texas,MST,Push,2024-09-09 12:58:53,0.22,First-Time Buyer,2024-09-26 00:23:44,Transactional,2024-07-11 09:15:23,0,0,0,13,13,4,23,Product Viewed,Smartphones,88
+CUST1727,38,Other,Illinois,EST,Email,2024-07-23 12:21:47,0.16,First-Time Buyer,2024-09-17 20:27:15,Informational,2024-09-05 13:33:39,0,0,0,10,1,4,18,Product Viewed,Smartphones,167
+CUST1728,40,Other,New York,PST,Push,2024-08-26 22:25:58,0.37,Frequent Buyer,2024-07-21 22:47:31,Informational,2024-08-10 11:21:09,0,0,0,7,7,13,5,Product Viewed,Smartphones,55
+CUST1729,63,Other,Texas,EST,Push,2024-07-04 08:47:48,0.46,First-Time Buyer,2024-08-16 20:18:32,Transactional,2024-08-17 18:43:44,0,0,0,15,15,10,22,Product Viewed,Smartphones,344
+CUST1730,48,Female,California,EST,Email,2024-09-23 19:36:41,0.77,At-Risk,2024-08-17 22:41:20,Transactional,2024-07-07 03:22:37,0,0,0,11,18,9,6,Product Viewed,Smartphones,84
+CUST1731,42,Female,California,CST,Push,2024-09-20 20:06:54,0.33,First-Time Buyer,2024-07-10 00:16:50,Promotional,2024-07-28 18:43:38,1,1,1,22,22,2,3,Product Viewed,Smartphones,346
+CUST1732,30,Male,California,EST,Email,2024-07-25 03:23:15,0.78,Loyal Customer,2024-08-22 03:32:40,Promotional,2024-07-05 06:16:16,0,0,0,3,9,9,17,Product Viewed,Smartphones,265
+CUST1733,24,Other,New York,CST,Push,2024-08-19 06:16:25,0.25,Loyal Customer,2024-07-24 10:43:15,Transactional,2024-07-15 14:04:01,1,1,0,13,13,14,12,Product Viewed,Smartphones,410
+CUST1734,24,Other,Texas,MST,Push,2024-07-23 03:50:19,0.76,Frequent Buyer,,Transactional,2024-07-25 04:49:21,0,0,0,13,13,7,16,Product Viewed,Smartphones,479
+CUST1735,42,Male,Florida,PST,Push,2024-07-30 22:16:14,0.28,At-Risk,,Transactional,2024-08-07 02:09:02,1,0,0,19,19,2,15,Product Viewed,Smartphones,344
+CUST1736,65,Other,Florida,EST,Email,2024-09-27 02:43:17,0.7,First-Time Buyer,,Promotional,2024-08-29 21:57:10,1,0,0,2,7,7,9,Product Viewed,Smartphones,100
+CUST1737,63,Male,Illinois,EST,Push,2024-07-17 20:22:15,0.6,Frequent Buyer,2024-09-19 18:33:47,Promotional,2024-07-05 07:21:26,1,0,0,12,12,6,1,Product Viewed,Smartphones,467
+CUST1738,64,Male,Illinois,MST,Email,2024-07-07 01:23:56,0.1,High-Value,2024-09-10 02:49:41,Transactional,2024-08-11 08:24:10,0,0,0,10,22,2,3,Product Viewed,Smartphones,289
+CUST1739,26,Other,Florida,MST,Push,2024-09-08 17:52:53,0.16,At-Risk,2024-07-11 01:14:05,Transactional,2024-09-09 10:40:17,1,1,0,2,2,5,9,Product Viewed,Smartphones,231
+CUST1740,27,Male,California,MST,Email,2024-09-17 04:09:30,0.64,Frequent Buyer,2024-07-04 22:04:03,Informational,2024-08-30 06:12:29,1,1,1,1,7,16,4,Product Viewed,Smartphones,204
+CUST1741,47,Female,Illinois,CST,Push,2024-07-26 20:35:17,0.73,Loyal Customer,,Promotional,2024-07-07 13:44:35,0,0,0,20,20,22,11,Product Viewed,Smartphones,292
+CUST1742,44,Female,California,CST,Email,2024-09-20 14:22:08,0.27,High-Value,2024-09-21 20:38:45,Transactional,2024-07-22 01:08:04,0,0,0,10,5,3,15,Product Viewed,Smartphones,107
+CUST1743,62,Other,California,EST,Email,2024-07-14 14:30:05,0.89,Frequent Buyer,,Transactional,2024-09-19 13:35:01,1,0,0,14,9,5,19,Product Viewed,Smartphones,438
+CUST1744,18,Other,Texas,CST,Email,2024-09-29 05:59:10,0.7,Frequent Buyer,2024-07-15 21:56:10,Transactional,2024-09-24 19:56:46,0,0,0,18,8,4,7,Product Viewed,Smartphones,378
+CUST1745,36,Male,New York,PST,Push,2024-08-22 05:08:36,0.12,Loyal Customer,2024-08-11 17:02:36,Promotional,2024-08-16 13:45:45,1,0,0,16,16,1,6,Product Viewed,Smartphones,143
+CUST1746,58,Other,California,EST,Push,2024-07-18 12:58:28,0.48,Frequent Buyer,2024-08-20 03:40:53,Transactional,2024-08-18 06:15:13,0,0,0,20,20,14,7,Product Viewed,Smartphones,57
+CUST1747,43,Other,California,PST,Push,2024-07-27 01:16:47,0.72,High-Value,,Transactional,2024-09-05 16:33:27,0,0,0,3,3,17,12,Product Viewed,Smartphones,482
+CUST1748,48,Female,Texas,EST,Push,2024-09-01 19:30:16,0.62,High-Value,,Transactional,2024-09-27 11:06:25,1,0,0,12,12,6,12,Product Viewed,Smartphones,313
+CUST1749,64,Female,Illinois,EST,Push,2024-08-28 08:58:12,0.47,First-Time Buyer,,Transactional,2024-09-21 08:52:28,1,0,0,23,23,21,9,Product Viewed,Smartphones,430
+CUST1750,23,Female,Florida,PST,Push,2024-07-03 01:55:53,0.53,High-Value,2024-09-25 11:31:15,Promotional,2024-07-26 06:46:13,0,0,0,23,23,3,13,Product Viewed,Smartphones,122
+CUST1751,37,Male,Illinois,MST,Push,2024-07-27 00:07:25,0.35,High-Value,,Informational,2024-07-16 12:34:57,1,1,0,23,23,10,15,Product Viewed,Smartphones,234
+CUST1752,26,Other,Illinois,MST,Email,2024-07-06 06:08:03,0.22,At-Risk,,Informational,2024-07-10 14:41:06,0,0,0,23,13,17,23,Product Viewed,Smartphones,238
+CUST1753,64,Other,Texas,CST,Email,2024-07-06 04:39:28,0.62,High-Value,2024-08-05 01:45:46,Promotional,2024-09-23 18:29:04,1,0,0,21,3,15,8,Product Viewed,Smartphones,68
+CUST1754,52,Female,Texas,EST,Email,2024-07-05 09:45:54,0.12,First-Time Buyer,2024-08-08 03:54:26,Informational,2024-07-19 18:33:29,1,0,0,18,13,8,7,Product Viewed,Smartphones,416
+CUST1755,55,Other,Texas,EST,Push,2024-09-15 21:23:26,0.52,At-Risk,2024-07-13 05:55:34,Informational,2024-08-13 15:39:39,0,0,0,15,15,10,7,Product Viewed,Smartphones,119
+CUST1756,32,Female,New York,PST,Push,2024-08-12 22:22:34,0.86,Loyal Customer,,Transactional,2024-09-15 21:38:14,0,0,0,1,1,17,21,Product Viewed,Smartphones,63
+CUST1757,24,Female,Florida,MST,Push,2024-07-30 15:29:24,0.74,Frequent Buyer,,Informational,2024-07-07 20:25:11,1,0,0,0,0,22,9,Product Viewed,Smartphones,103
+CUST1758,62,Female,New York,MST,Push,2024-08-14 12:24:30,0.59,First-Time Buyer,2024-07-14 01:42:28,Informational,2024-07-09 04:18:14,1,0,0,22,22,1,23,Product Viewed,Smartphones,150
+CUST1759,52,Other,California,PST,Push,2024-09-18 11:19:11,0.88,Loyal Customer,2024-07-03 15:13:06,Informational,2024-08-08 16:11:27,1,1,1,13,13,6,3,Product Viewed,Smartphones,58
+CUST1760,64,Other,Illinois,PST,Push,2024-07-28 16:03:48,0.58,Loyal Customer,2024-08-24 20:37:17,Transactional,2024-09-09 07:15:02,0,0,0,3,3,1,8,Product Viewed,Smartphones,490
+CUST1761,25,Female,New York,MST,Push,2024-09-19 08:59:56,0.75,High-Value,2024-07-23 12:10:15,Informational,2024-08-11 00:53:53,1,1,1,21,21,6,14,Product Viewed,Smartphones,77
+CUST1762,19,Female,California,CST,Push,2024-09-07 16:34:40,0.87,High-Value,2024-08-28 13:45:42,Promotional,2024-07-23 00:28:31,1,1,0,19,19,16,16,Product Viewed,Smartphones,111
+CUST1763,41,Male,Illinois,PST,Push,2024-07-15 22:21:16,0.17,Loyal Customer,,Transactional,2024-08-09 22:01:59,1,0,0,1,1,16,4,Product Viewed,Smartphones,230
+CUST1764,21,Other,Florida,EST,Push,2024-08-23 19:24:20,0.9,Frequent Buyer,2024-08-16 04:23:03,Informational,2024-09-01 09:19:02,1,0,0,7,7,17,6,Product Viewed,Smartphones,157
+CUST1765,60,Other,Texas,MST,Push,2024-07-04 08:03:35,0.45,First-Time Buyer,2024-07-16 12:33:06,Transactional,2024-09-01 11:43:59,1,1,0,15,15,20,18,Product Viewed,Smartphones,113
+CUST1766,31,Other,Texas,PST,Push,2024-07-13 06:29:21,0.45,Loyal Customer,,Promotional,2024-08-10 21:04:42,1,0,0,10,10,0,2,Product Viewed,Smartphones,80
+CUST1767,65,Other,New York,EST,Push,2024-07-17 21:01:59,0.56,High-Value,2024-08-12 00:39:13,Informational,2024-08-25 04:48:59,0,0,0,5,5,5,23,Product Viewed,Smartphones,107
+CUST1768,50,Male,Illinois,EST,Email,2024-07-24 23:24:04,0.76,High-Value,2024-07-22 00:56:32,Promotional,2024-09-22 06:16:05,0,0,0,21,3,13,2,Product Viewed,Smartphones,153
+CUST1769,64,Male,Illinois,CST,Email,2024-09-20 04:01:59,0.28,High-Value,2024-09-05 10:51:14,Informational,2024-07-25 12:55:23,0,0,0,2,7,16,3,Product Viewed,Smartphones,327
+CUST1770,42,Female,California,CST,Email,2024-09-01 08:57:43,0.35,First-Time Buyer,2024-08-08 17:45:36,Informational,2024-08-17 20:45:45,1,1,1,15,13,21,1,Product Viewed,Smartphones,381
+CUST1771,52,Female,Illinois,MST,Email,2024-09-02 22:56:21,0.44,High-Value,2024-08-31 15:48:48,Transactional,2024-08-03 21:21:00,0,0,0,18,2,14,8,Product Viewed,Smartphones,95
+CUST1772,28,Other,California,CST,Push,2024-07-21 11:29:05,0.72,Loyal Customer,,Informational,2024-07-06 07:22:58,1,0,0,7,7,5,7,Product Viewed,Smartphones,189
+CUST1773,46,Female,California,MST,Push,2024-07-06 15:29:42,0.4,Loyal Customer,2024-09-05 18:27:52,Promotional,2024-07-04 17:39:22,1,1,0,20,20,11,8,Product Viewed,Smartphones,174
+CUST1774,63,Male,California,EST,Email,2024-09-15 03:50:59,0.48,First-Time Buyer,2024-07-13 20:38:59,Transactional,2024-08-22 09:12:45,1,0,0,20,4,22,15,Product Viewed,Smartphones,140
+CUST1775,28,Other,New York,EST,Push,2024-07-13 04:43:05,0.77,Loyal Customer,2024-07-03 19:27:04,Promotional,2024-09-01 12:44:24,1,1,1,8,8,15,18,Product Viewed,Smartphones,114
+CUST1776,18,Male,California,PST,Email,2024-07-25 03:53:06,0.63,Frequent Buyer,,Promotional,2024-08-02 09:03:51,1,1,0,16,20,18,0,Product Viewed,Smartphones,167
+CUST1777,63,Male,Texas,MST,Email,2024-09-30 15:19:47,0.59,High-Value,2024-09-03 16:44:57,Transactional,2024-09-10 11:50:59,0,0,0,13,20,9,19,Product Viewed,Smartphones,181
+CUST1778,50,Female,California,MST,Email,2024-07-26 12:21:27,0.72,Loyal Customer,,Informational,2024-07-26 20:15:34,0,0,0,7,5,7,21,Product Viewed,Smartphones,175
+CUST1779,40,Female,Florida,CST,Email,2024-08-09 23:46:27,0.63,First-Time Buyer,,Transactional,2024-07-13 00:38:50,0,0,0,22,13,11,21,Product Viewed,Smartphones,373
+CUST1780,39,Female,New York,PST,Email,2024-08-11 21:33:39,0.24,Frequent Buyer,2024-09-27 09:10:05,Informational,2024-08-14 10:52:07,1,0,0,18,7,13,18,Product Viewed,Smartphones,394
+CUST1781,41,Male,California,CST,Push,2024-08-29 09:57:39,0.87,Frequent Buyer,,Transactional,2024-08-30 15:41:33,0,0,0,7,7,11,14,Product Viewed,Smartphones,169
+CUST1782,37,Other,Illinois,MST,Email,2024-07-21 21:40:40,0.56,Loyal Customer,2024-09-08 00:06:14,Informational,2024-07-19 17:24:57,0,0,0,17,11,21,20,Product Viewed,Smartphones,116
+CUST1783,53,Other,New York,EST,Push,2024-09-01 07:47:33,0.76,At-Risk,2024-09-04 06:38:30,Transactional,2024-08-16 07:19:56,1,0,0,19,19,20,13,Product Viewed,Smartphones,150
+CUST1784,64,Female,Texas,PST,Push,2024-08-30 02:54:03,0.85,High-Value,2024-09-28 04:46:26,Promotional,2024-09-08 11:09:10,0,0,0,2,2,3,22,Product Viewed,Smartphones,179
+CUST1785,39,Other,Illinois,CST,Push,2024-09-29 03:10:48,0.5,Frequent Buyer,,Transactional,2024-08-17 18:38:14,1,0,0,21,21,9,3,Product Viewed,Smartphones,103
+CUST1786,57,Male,Texas,CST,Email,2024-07-15 08:09:03,0.6,At-Risk,2024-09-10 02:05:06,Promotional,2024-08-07 18:51:06,1,0,0,21,13,8,23,Product Viewed,Smartphones,340
+CUST1787,50,Female,California,CST,Push,2024-08-12 09:22:59,0.51,First-Time Buyer,,Transactional,2024-07-29 22:44:40,1,1,0,4,4,12,2,Product Viewed,Smartphones,439
+CUST1788,65,Other,California,PST,Push,2024-08-25 22:46:58,0.48,At-Risk,,Promotional,2024-07-16 01:58:01,0,0,0,18,18,19,14,Product Viewed,Smartphones,492
+CUST1789,46,Female,New York,PST,Email,2024-08-23 23:09:35,0.88,At-Risk,2024-09-25 10:11:50,Promotional,2024-09-02 16:44:54,1,0,0,14,8,13,17,Product Viewed,Smartphones,453
+CUST1790,58,Female,Texas,MST,Push,2024-09-12 20:11:52,0.1,At-Risk,2024-08-10 07:01:08,Informational,2024-07-03 08:59:56,1,0,0,5,5,10,18,Product Viewed,Smartphones,186
+CUST1791,29,Male,Texas,PST,Email,2024-07-13 07:39:02,0.29,First-Time Buyer,,Promotional,2024-08-15 19:39:08,0,0,0,23,3,6,23,Product Viewed,Smartphones,405
+CUST1792,53,Female,California,MST,Push,2024-09-12 17:01:34,0.85,Loyal Customer,2024-08-20 04:50:01,Promotional,2024-09-20 15:01:08,1,0,0,6,6,0,21,Product Viewed,Smartphones,248
+CUST1793,41,Other,Illinois,CST,Push,2024-08-07 13:42:56,0.38,Frequent Buyer,2024-07-11 13:04:45,Promotional,2024-08-09 07:27:07,0,0,0,21,21,16,19,Product Viewed,Smartphones,342
+CUST1794,45,Male,Illinois,CST,Push,2024-08-27 17:41:42,0.62,High-Value,2024-08-31 18:39:49,Promotional,2024-07-11 13:35:08,1,0,0,12,12,8,18,Product Viewed,Smartphones,491
+CUST1795,58,Male,Florida,EST,Email,2024-09-14 08:21:19,0.14,Frequent Buyer,2024-08-06 05:53:46,Transactional,2024-08-16 07:40:59,1,1,1,2,11,16,9,Product Viewed,Smartphones,318
+CUST1796,30,Female,Illinois,CST,Email,2024-09-25 03:32:50,0.66,Frequent Buyer,2024-07-13 08:05:10,Transactional,2024-07-29 08:29:17,1,1,0,7,4,13,12,Product Viewed,Smartphones,366
+CUST1797,27,Male,Illinois,PST,Email,2024-08-11 22:07:59,0.12,High-Value,2024-07-29 12:58:37,Promotional,2024-08-02 16:05:20,1,0,0,7,10,18,2,Product Viewed,Smartphones,101
+CUST1798,22,Other,Florida,MST,Push,2024-08-05 20:50:15,0.48,Loyal Customer,2024-07-04 11:18:22,Transactional,2024-07-28 19:52:39,0,0,0,22,22,18,5,Product Viewed,Smartphones,297
+CUST1799,31,Male,Texas,PST,Push,2024-09-03 08:41:32,0.48,First-Time Buyer,2024-07-06 07:28:27,Promotional,2024-09-19 22:08:34,0,0,0,1,1,1,13,Product Viewed,Smartphones,301
+CUST1800,42,Female,Illinois,EST,Email,2024-08-07 10:20:29,0.75,Loyal Customer,,Promotional,2024-08-24 05:52:10,1,0,0,4,8,5,22,Product Viewed,Smartphones,279
+CUST1801,53,Male,Illinois,CST,Push,2024-09-17 12:30:01,0.61,High-Value,2024-08-31 23:53:27,Transactional,2024-09-01 01:42:05,1,0,0,4,4,10,10,Product Viewed,Smartphones,194
+CUST1802,57,Male,Florida,MST,Email,2024-09-02 04:06:21,0.41,Loyal Customer,2024-08-28 22:44:49,Transactional,2024-07-30 01:23:15,0,0,0,4,22,23,12,Product Viewed,Smartphones,347
+CUST1803,27,Female,Illinois,PST,Email,2024-08-05 18:48:17,0.82,High-Value,2024-09-16 10:22:01,Transactional,2024-08-18 10:23:11,1,0,0,9,5,22,0,Product Viewed,Smartphones,279
+CUST1804,32,Other,Texas,CST,Push,2024-09-17 20:27:46,0.2,Frequent Buyer,2024-08-19 05:55:36,Promotional,2024-07-31 05:54:35,0,0,0,7,7,17,2,Product Viewed,Smartphones,186
+CUST1805,36,Female,California,EST,Push,2024-08-30 16:48:03,0.35,Frequent Buyer,2024-08-26 20:57:35,Informational,2024-07-12 09:32:29,1,1,0,17,17,5,21,Product Viewed,Smartphones,224
+CUST1806,25,Other,Illinois,PST,Push,2024-08-17 21:41:38,0.75,Loyal Customer,2024-09-16 00:17:05,Transactional,2024-07-25 04:58:23,0,0,0,7,7,15,3,Product Viewed,Smartphones,351
+CUST1807,20,Other,California,PST,Push,2024-08-20 11:00:58,0.1,First-Time Buyer,2024-09-12 08:32:20,Promotional,2024-07-06 00:04:21,0,0,0,22,22,6,15,Product Viewed,Smartphones,180
+CUST1808,52,Male,California,PST,Email,2024-09-30 00:43:27,0.27,High-Value,,Transactional,2024-08-28 14:51:31,0,0,0,0,18,16,11,Product Viewed,Smartphones,357
+CUST1809,57,Female,California,PST,Push,2024-09-12 22:34:14,0.15,High-Value,2024-09-05 22:54:07,Promotional,2024-08-19 06:23:59,0,0,0,21,21,9,21,Product Viewed,Smartphones,193
+CUST1810,23,Female,Illinois,EST,Push,2024-07-15 04:39:10,0.48,High-Value,,Transactional,2024-08-10 01:16:35,0,0,0,18,18,21,4,Product Viewed,Smartphones,330
+CUST1811,45,Female,Texas,MST,Email,2024-07-21 07:19:28,0.87,At-Risk,,Promotional,2024-08-29 18:38:12,1,1,1,2,20,14,1,Product Viewed,Smartphones,196
+CUST1812,41,Other,California,EST,Push,2024-08-10 11:35:33,0.85,Frequent Buyer,2024-07-20 11:53:11,Transactional,2024-09-02 09:37:15,0,0,0,19,19,21,3,Product Viewed,Smartphones,421
+CUST1813,60,Male,Florida,EST,Push,2024-09-15 05:03:07,0.6,Frequent Buyer,2024-09-19 08:06:22,Promotional,2024-09-09 10:15:46,0,0,0,3,3,21,9,Product Viewed,Smartphones,450
+CUST1814,44,Other,Florida,EST,Email,2024-09-14 04:41:45,0.88,At-Risk,2024-09-18 02:17:38,Transactional,2024-07-28 03:40:15,0,0,0,2,7,15,23,Product Viewed,Smartphones,339
+CUST1815,63,Male,California,PST,Email,2024-07-12 23:31:18,0.5,First-Time Buyer,,Promotional,2024-08-21 11:39:06,1,0,0,18,11,3,16,Product Viewed,Smartphones,108
+CUST1816,58,Other,California,PST,Push,2024-07-05 07:06:36,0.81,Frequent Buyer,,Promotional,2024-08-30 15:58:54,0,0,0,23,23,18,19,Product Viewed,Smartphones,147
+CUST1817,41,Male,Illinois,PST,Push,2024-07-07 09:38:39,0.21,Frequent Buyer,2024-08-26 09:16:32,Transactional,2024-09-13 21:47:23,0,0,0,20,20,19,23,Product Viewed,Smartphones,214
+CUST1818,24,Other,New York,PST,Push,2024-09-13 10:36:30,0.42,Loyal Customer,2024-07-25 02:09:17,Informational,2024-09-22 02:21:09,0,0,0,12,12,21,3,Product Viewed,Smartphones,426
+CUST1819,55,Female,Texas,MST,Push,2024-07-18 03:07:49,0.53,Frequent Buyer,2024-07-02 19:27:18,Promotional,2024-08-08 01:13:32,1,1,0,1,1,21,16,Product Viewed,Smartphones,477
+CUST1820,46,Other,Florida,MST,Email,2024-09-25 11:24:52,0.14,Frequent Buyer,2024-09-07 21:52:24,Promotional,2024-07-15 11:00:02,1,1,0,15,2,18,7,Product Viewed,Smartphones,78
+CUST1821,41,Male,Florida,CST,Push,2024-09-06 20:47:24,0.43,At-Risk,2024-09-07 15:51:22,Promotional,2024-07-09 12:35:37,1,0,0,20,20,10,0,Product Viewed,Smartphones,385
+CUST1822,18,Male,Texas,PST,Email,2024-08-31 16:11:18,0.84,First-Time Buyer,2024-08-25 23:36:00,Informational,2024-07-31 12:56:40,0,0,0,19,22,23,0,Product Viewed,Smartphones,359
+CUST1823,62,Male,Texas,MST,Email,2024-08-02 16:10:28,0.32,First-Time Buyer,2024-09-06 04:09:58,Informational,2024-08-11 23:40:43,0,0,0,10,2,5,5,Product Viewed,Smartphones,183
+CUST1824,57,Other,Texas,CST,Push,2024-09-07 09:30:47,0.22,Loyal Customer,2024-08-14 14:06:24,Transactional,2024-08-25 20:39:13,1,1,0,5,5,5,3,Product Viewed,Smartphones,395
+CUST1825,41,Male,Illinois,CST,Push,2024-07-11 23:31:13,0.66,First-Time Buyer,,Promotional,2024-08-07 03:45:50,1,1,0,1,1,18,12,Product Viewed,Smartphones,431
+CUST1826,29,Female,Texas,PST,Email,2024-09-29 09:26:02,0.21,At-Risk,2024-09-28 17:27:04,Informational,2024-08-24 04:17:51,0,0,0,23,16,7,0,Product Viewed,Smartphones,391
+CUST1827,58,Male,Illinois,EST,Push,2024-07-14 11:08:56,0.76,At-Risk,2024-08-16 15:29:24,Promotional,2024-09-20 16:10:12,1,1,0,5,5,15,23,Product Viewed,Smartphones,482
+CUST1828,25,Female,California,EST,Push,2024-08-03 08:25:03,0.35,First-Time Buyer,,Promotional,2024-07-07 23:10:42,0,0,0,14,14,2,3,Product Viewed,Smartphones,111
+CUST1829,28,Other,California,CST,Push,2024-07-12 00:08:58,0.48,Frequent Buyer,,Informational,2024-09-07 06:12:09,0,0,0,10,10,22,7,Product Viewed,Smartphones,225
+CUST1830,60,Male,New York,CST,Email,2024-09-14 12:52:22,0.43,At-Risk,,Transactional,2024-09-04 06:35:34,0,0,0,11,19,8,13,Product Viewed,Smartphones,213
+CUST1831,62,Other,New York,MST,Email,2024-09-30 08:48:24,0.5,Frequent Buyer,,Promotional,2024-09-09 09:02:48,1,0,0,19,7,11,8,Product Viewed,Smartphones,114
+CUST1832,53,Female,California,EST,Push,2024-07-29 20:13:12,0.74,Frequent Buyer,2024-09-22 06:01:24,Transactional,2024-09-01 17:35:22,1,0,0,23,23,8,3,Product Viewed,Smartphones,250
+CUST1833,31,Male,New York,EST,Push,2024-08-04 15:26:26,0.2,Loyal Customer,2024-08-20 09:41:55,Promotional,2024-07-08 07:52:39,0,0,0,9,9,21,15,Product Viewed,Smartphones,167
+CUST1834,52,Other,California,CST,Email,2024-07-29 00:48:34,0.82,At-Risk,2024-09-16 04:10:30,Promotional,2024-08-17 06:15:01,1,1,0,5,3,20,13,Product Viewed,Smartphones,212
+CUST1835,41,Male,New York,PST,Email,2024-07-18 00:04:58,0.28,Loyal Customer,2024-09-27 07:18:46,Promotional,2024-09-06 16:00:27,0,0,0,5,9,12,23,Product Viewed,Smartphones,376
+CUST1836,44,Other,California,PST,Push,2024-08-02 03:32:58,0.73,Frequent Buyer,2024-08-12 23:14:21,Transactional,2024-07-19 18:16:17,0,0,0,18,18,6,23,Product Viewed,Smartphones,412
+CUST1837,22,Female,Illinois,EST,Push,2024-08-28 16:46:44,0.71,At-Risk,,Transactional,2024-08-08 07:30:24,1,0,0,22,22,14,19,Product Viewed,Smartphones,78
+CUST1838,51,Other,Illinois,CST,Push,2024-08-11 19:13:34,0.8,At-Risk,,Transactional,2024-07-05 04:10:30,1,0,0,16,16,9,7,Product Viewed,Smartphones,115
+CUST1839,61,Other,Florida,CST,Email,2024-09-26 10:55:39,0.87,Frequent Buyer,2024-08-14 12:51:23,Promotional,2024-08-22 16:11:45,1,1,1,5,4,14,9,Product Viewed,Smartphones,201
+CUST1840,32,Other,Texas,EST,Push,2024-07-12 15:40:56,0.56,Frequent Buyer,2024-07-17 08:27:41,Transactional,2024-09-27 04:21:37,1,0,0,5,5,4,6,Product Viewed,Smartphones,454
+CUST1841,29,Other,Illinois,CST,Email,2024-07-19 00:59:14,0.1,Loyal Customer,2024-08-13 05:19:15,Promotional,2024-07-26 13:07:11,0,0,0,16,20,7,3,Product Viewed,Smartphones,100
+CUST1842,21,Other,California,MST,Email,2024-08-30 17:12:40,0.22,High-Value,2024-09-15 14:23:55,Informational,2024-08-07 04:50:56,1,1,0,17,19,7,21,Product Viewed,Smartphones,301
+CUST1843,39,Female,Florida,CST,Email,2024-07-14 02:27:41,0.36,Frequent Buyer,,Promotional,2024-07-20 14:00:10,1,0,0,12,19,5,20,Product Viewed,Smartphones,109
+CUST1844,24,Male,Texas,EST,Push,2024-07-11 11:05:37,0.78,First-Time Buyer,2024-09-22 06:23:46,Informational,2024-08-20 06:28:25,0,0,0,3,3,19,20,Product Viewed,Smartphones,267
+CUST1845,45,Other,Florida,EST,Push,2024-09-19 13:37:00,0.71,At-Risk,,Promotional,2024-07-07 13:29:39,1,0,0,15,15,14,6,Product Viewed,Smartphones,137
+CUST1846,51,Other,California,CST,Email,2024-09-01 04:19:43,0.7,First-Time Buyer,2024-07-09 14:38:44,Promotional,2024-08-27 20:55:58,1,0,0,7,2,4,15,Product Viewed,Smartphones,227
+CUST1847,57,Other,California,PST,Email,2024-09-04 12:48:07,0.78,Loyal Customer,,Informational,2024-07-28 22:56:08,0,0,0,0,5,9,18,Product Viewed,Smartphones,451
+CUST1848,64,Female,New York,MST,Email,2024-08-26 23:28:09,0.45,Frequent Buyer,2024-08-08 15:23:39,Transactional,2024-07-11 23:43:21,1,1,0,8,5,14,6,Product Viewed,Smartphones,113
+CUST1849,21,Female,New York,PST,Email,2024-08-07 23:28:16,0.23,Frequent Buyer,,Promotional,2024-07-14 10:28:01,0,0,0,16,22,18,15,Product Viewed,Smartphones,382
+CUST1850,33,Other,Illinois,MST,Push,2024-09-01 23:15:37,0.58,High-Value,,Informational,2024-07-31 11:28:48,0,0,0,4,4,14,23,Product Viewed,Smartphones,139
+CUST1851,31,Male,Florida,CST,Push,2024-09-29 18:50:48,0.8,First-Time Buyer,2024-07-29 17:19:25,Transactional,2024-09-29 21:17:41,0,0,0,20,20,17,15,Product Viewed,Smartphones,483
+CUST1852,38,Male,California,MST,Push,2024-09-22 11:18:16,0.79,First-Time Buyer,2024-09-22 22:43:44,Promotional,2024-09-20 21:53:22,1,0,0,19,19,23,6,Product Viewed,Smartphones,244
+CUST1853,52,Male,Illinois,MST,Email,2024-07-04 11:02:38,0.77,At-Risk,2024-09-12 06:49:50,Promotional,2024-09-06 16:33:28,0,0,0,8,15,4,10,Product Viewed,Smartphones,488
+CUST1854,18,Male,Illinois,MST,Push,2024-07-27 16:43:57,0.25,First-Time Buyer,2024-08-28 05:29:19,Promotional,2024-08-19 10:38:28,1,1,1,11,11,11,1,Product Viewed,Smartphones,61
+CUST1855,65,Male,Texas,PST,Push,2024-09-12 15:17:37,0.18,High-Value,2024-08-06 12:56:33,Promotional,2024-08-07 19:47:47,0,0,0,23,23,17,16,Product Viewed,Smartphones,127
+CUST1856,35,Female,California,EST,Email,2024-09-03 23:24:44,0.42,Loyal Customer,2024-08-26 08:35:52,Informational,2024-07-22 15:25:58,0,0,0,19,0,15,5,Product Viewed,Smartphones,494
+CUST1857,47,Female,New York,EST,Push,2024-07-30 07:16:51,0.65,At-Risk,2024-08-30 08:47:53,Transactional,2024-08-21 01:50:49,1,1,0,7,7,17,18,Product Viewed,Smartphones,108
+CUST1858,45,Female,Texas,EST,Push,2024-07-06 12:49:26,0.33,Frequent Buyer,,Transactional,2024-09-24 12:53:13,0,0,0,3,3,15,13,Product Viewed,Smartphones,480
+CUST1859,51,Male,Texas,EST,Email,2024-07-27 20:57:42,0.87,Loyal Customer,2024-07-16 21:28:00,Informational,2024-08-14 05:03:15,0,0,0,3,3,3,3,Product Viewed,Smartphones,251
+CUST1860,35,Female,New York,MST,Push,2024-08-07 23:45:48,0.75,Loyal Customer,2024-08-28 09:44:46,Informational,2024-09-26 02:55:16,1,0,0,0,0,5,11,Product Viewed,Smartphones,149
+CUST1861,43,Other,New York,MST,Email,2024-07-25 09:28:41,0.86,At-Risk,2024-07-14 23:20:05,Informational,2024-07-27 05:51:07,1,1,1,22,10,1,8,Product Viewed,Smartphones,254
+CUST1862,56,Female,California,EST,Push,2024-08-25 12:16:03,0.61,Frequent Buyer,2024-09-25 08:13:59,Informational,2024-09-17 12:13:05,1,1,1,23,23,19,22,Product Viewed,Smartphones,243
+CUST1863,58,Female,New York,PST,Email,2024-07-15 18:11:30,0.29,At-Risk,2024-08-30 12:06:06,Promotional,2024-09-12 07:20:43,0,0,0,18,6,0,23,Product Viewed,Smartphones,199
+CUST1864,36,Female,Texas,CST,Email,2024-08-11 23:50:17,0.15,At-Risk,,Informational,2024-09-04 04:39:04,0,0,0,23,11,18,23,Product Viewed,Smartphones,489
+CUST1865,39,Other,Florida,MST,Push,2024-07-28 20:02:19,0.54,Loyal Customer,2024-09-26 19:19:29,Transactional,2024-08-13 18:44:34,0,0,0,7,7,5,20,Product Viewed,Smartphones,173
+CUST1866,48,Male,California,CST,Email,2024-09-05 02:41:24,0.36,High-Value,2024-08-16 14:53:02,Informational,2024-08-13 11:09:19,0,0,0,20,8,1,10,Product Viewed,Smartphones,437
+CUST1867,28,Other,California,CST,Push,2024-09-12 17:06:52,0.53,First-Time Buyer,2024-07-03 04:24:39,Transactional,2024-07-13 10:11:48,1,1,0,12,12,4,18,Product Viewed,Smartphones,242
+CUST1868,36,Female,Texas,PST,Email,2024-07-07 06:20:38,0.84,At-Risk,2024-07-08 12:24:18,Transactional,2024-09-19 14:18:36,1,0,0,8,17,12,12,Product Viewed,Smartphones,146
+CUST1869,41,Female,Texas,MST,Email,2024-08-09 10:16:34,0.29,Loyal Customer,,Informational,2024-08-30 23:55:22,0,0,0,9,17,22,14,Product Viewed,Smartphones,413
+CUST1870,56,Female,California,CST,Email,2024-09-22 15:43:42,0.17,At-Risk,2024-08-11 23:00:28,Informational,2024-09-04 10:51:26,0,0,0,3,0,20,9,Product Viewed,Smartphones,331
+CUST1871,51,Other,California,EST,Push,2024-08-13 10:08:54,0.29,At-Risk,2024-08-28 05:12:49,Informational,2024-09-12 10:24:11,0,0,0,19,19,22,2,Product Viewed,Smartphones,265
+CUST1872,63,Other,Florida,MST,Push,2024-08-24 07:58:39,0.26,First-Time Buyer,2024-07-03 21:42:04,Transactional,2024-08-27 07:28:01,1,1,1,18,18,7,3,Product Viewed,Smartphones,295
+CUST1873,25,Female,New York,EST,Push,2024-07-09 14:10:04,0.3,At-Risk,2024-07-18 11:02:58,Promotional,2024-07-19 11:58:00,0,0,0,22,22,4,3,Product Viewed,Smartphones,426
+CUST1874,59,Female,Illinois,MST,Push,2024-09-05 03:28:10,0.45,Frequent Buyer,2024-08-08 08:07:42,Promotional,2024-07-17 05:40:23,0,0,0,16,16,13,21,Product Viewed,Smartphones,147
+CUST1875,61,Other,Texas,MST,Email,2024-09-14 23:39:10,0.41,High-Value,,Informational,2024-09-07 02:57:48,1,0,0,11,8,16,8,Product Viewed,Smartphones,391
+CUST1876,45,Male,Illinois,EST,Push,2024-08-27 03:52:26,0.9,First-Time Buyer,2024-07-23 00:44:45,Transactional,2024-08-19 21:44:06,1,0,0,0,0,10,4,Product Viewed,Smartphones,158
+CUST1877,28,Other,Illinois,PST,Email,2024-09-10 09:54:20,0.69,High-Value,,Promotional,2024-07-03 18:26:18,0,0,0,20,16,2,2,Product Viewed,Smartphones,287
+CUST1878,51,Other,Illinois,CST,Email,2024-09-29 13:46:45,0.44,First-Time Buyer,2024-09-24 18:38:14,Transactional,2024-08-26 21:43:16,1,0,0,6,15,19,3,Product Viewed,Smartphones,159
+CUST1879,43,Male,Illinois,MST,Push,2024-07-20 08:16:51,0.18,High-Value,,Informational,2024-07-14 02:32:29,0,0,0,22,22,14,19,Product Viewed,Smartphones,397
+CUST1880,34,Male,California,MST,Push,2024-08-21 02:18:00,0.87,High-Value,2024-09-08 13:15:34,Promotional,2024-07-05 00:24:06,1,0,0,3,3,11,21,Product Viewed,Smartphones,190
+CUST1881,37,Male,New York,PST,Push,2024-07-29 05:51:01,0.16,Loyal Customer,2024-07-10 13:11:45,Informational,2024-08-24 23:59:05,0,0,0,11,11,9,9,Product Viewed,Smartphones,302
+CUST1882,33,Female,New York,CST,Push,2024-09-21 07:49:45,0.13,First-Time Buyer,2024-08-03 09:39:59,Informational,2024-07-23 08:56:34,1,0,0,4,4,2,23,Product Viewed,Smartphones,124
+CUST1883,42,Other,Illinois,MST,Email,2024-08-06 23:54:47,0.67,Loyal Customer,2024-09-02 04:43:23,Promotional,2024-07-06 02:47:12,0,0,0,23,18,3,0,Product Viewed,Smartphones,56
+CUST1884,60,Male,Texas,EST,Push,2024-09-24 03:31:51,0.21,At-Risk,,Transactional,2024-07-27 22:42:10,1,1,0,23,23,9,17,Product Viewed,Smartphones,400
+CUST1885,51,Other,Texas,EST,Push,2024-07-28 01:34:09,0.73,Loyal Customer,2024-08-11 17:49:32,Informational,2024-09-02 01:41:02,1,0,0,11,11,20,23,Product Viewed,Smartphones,53
+CUST1886,43,Female,Florida,MST,Push,2024-09-08 21:50:46,0.42,Frequent Buyer,,Promotional,2024-08-19 19:07:08,1,0,0,20,20,4,10,Product Viewed,Smartphones,103
+CUST1887,47,Male,Texas,MST,Push,2024-07-16 23:29:17,0.17,Frequent Buyer,2024-08-03 03:56:51,Promotional,2024-07-25 06:16:13,1,0,0,20,20,10,22,Product Viewed,Smartphones,282
+CUST1888,45,Other,Illinois,CST,Email,2024-07-27 13:08:27,0.76,Loyal Customer,,Informational,2024-07-14 10:11:11,1,0,0,10,6,16,5,Product Viewed,Smartphones,451
+CUST1889,62,Other,New York,MST,Email,2024-09-11 19:12:28,0.54,At-Risk,,Promotional,2024-09-06 04:10:49,0,0,0,5,12,4,6,Product Viewed,Smartphones,420
+CUST1890,62,Other,Texas,EST,Email,2024-07-30 22:03:51,0.27,At-Risk,2024-07-06 08:47:28,Transactional,2024-07-05 00:52:52,1,1,0,18,19,11,2,Product Viewed,Smartphones,461
+CUST1891,56,Male,California,MST,Push,2024-07-20 15:16:08,0.23,First-Time Buyer,2024-08-19 20:37:42,Promotional,2024-09-09 10:23:29,0,0,0,17,17,0,10,Product Viewed,Smartphones,425
+CUST1892,24,Other,New York,PST,Push,2024-08-21 19:52:11,0.75,High-Value,2024-07-13 13:35:13,Transactional,2024-07-15 07:50:47,1,1,1,18,18,16,23,Product Viewed,Smartphones,429
+CUST1893,56,Male,California,EST,Push,2024-09-16 11:15:22,0.67,Frequent Buyer,,Transactional,2024-09-25 16:30:07,0,0,0,10,10,7,16,Product Viewed,Smartphones,60
+CUST1894,51,Other,California,EST,Email,2024-07-18 22:50:40,0.82,At-Risk,2024-09-12 09:24:06,Informational,2024-07-10 21:12:57,0,0,0,11,7,0,20,Product Viewed,Smartphones,197
+CUST1895,37,Other,New York,EST,Push,2024-08-04 18:24:03,0.22,At-Risk,,Informational,2024-07-28 20:59:33,0,0,0,5,5,15,12,Product Viewed,Smartphones,250
+CUST1896,51,Other,New York,MST,Email,2024-09-09 12:26:47,0.54,Loyal Customer,2024-07-14 11:07:15,Transactional,2024-07-30 00:37:18,1,0,0,20,6,17,16,Product Viewed,Smartphones,111
+CUST1897,55,Other,Illinois,CST,Email,2024-08-02 16:47:18,0.79,First-Time Buyer,2024-07-09 01:44:04,Promotional,2024-08-06 21:00:53,1,0,0,1,4,15,19,Product Viewed,Smartphones,182
+CUST1898,28,Male,Texas,EST,Email,2024-08-03 17:36:31,0.51,At-Risk,2024-07-09 15:18:06,Promotional,2024-07-24 11:26:07,0,0,0,19,17,4,8,Product Viewed,Smartphones,193
+CUST1899,59,Male,New York,EST,Push,2024-09-17 15:44:48,0.36,Loyal Customer,,Transactional,2024-09-14 08:52:32,1,1,0,3,3,20,15,Product Viewed,Smartphones,377
+CUST1900,42,Other,Illinois,CST,Email,2024-08-26 07:10:59,0.25,Frequent Buyer,2024-07-09 08:02:19,Transactional,2024-09-22 14:44:45,1,1,1,20,18,17,2,Product Viewed,Smartphones,468
+CUST1901,40,Male,New York,EST,Email,2024-08-22 19:28:49,0.81,Frequent Buyer,2024-08-25 17:08:47,Transactional,2024-08-16 21:47:49,0,0,0,15,0,12,9,Product Viewed,Smartphones,342
+CUST1902,63,Male,California,PST,Email,2024-08-18 21:37:59,0.65,First-Time Buyer,2024-07-21 07:18:18,Informational,2024-09-25 07:04:19,1,0,0,0,4,9,19,Product Viewed,Smartphones,52
+CUST1903,33,Female,California,EST,Email,2024-09-02 07:50:01,0.43,First-Time Buyer,2024-08-20 20:28:30,Informational,2024-09-14 14:09:26,1,1,0,2,4,6,0,Product Viewed,Smartphones,248
+CUST1904,58,Male,Texas,EST,Email,2024-08-25 12:26:04,0.61,Loyal Customer,2024-08-23 15:03:35,Informational,2024-08-23 00:03:35,1,0,0,9,23,6,3,Product Viewed,Smartphones,234
+CUST1905,59,Female,California,PST,Push,2024-08-07 00:48:59,0.85,Frequent Buyer,2024-07-11 21:22:20,Transactional,2024-07-25 15:33:44,1,1,1,17,17,10,10,Product Viewed,Smartphones,461
+CUST1906,56,Other,New York,CST,Email,2024-08-21 10:50:13,0.46,High-Value,,Promotional,2024-09-28 23:43:32,1,0,0,14,4,9,15,Product Viewed,Smartphones,94
+CUST1907,25,Other,Illinois,PST,Email,2024-08-01 05:15:17,0.27,First-Time Buyer,,Informational,2024-09-15 03:02:41,0,0,0,20,5,3,20,Product Viewed,Smartphones,242
+CUST1908,19,Male,California,PST,Push,2024-07-19 19:19:35,0.26,Frequent Buyer,2024-09-25 15:30:16,Informational,2024-07-22 23:31:44,1,1,0,6,6,6,19,Product Viewed,Smartphones,86
+CUST1909,19,Female,Illinois,PST,Email,2024-08-24 15:19:19,0.23,At-Risk,,Informational,2024-08-04 19:47:00,0,0,0,1,0,9,12,Product Viewed,Smartphones,91
+CUST1910,26,Female,California,CST,Push,2024-07-10 12:40:46,0.89,First-Time Buyer,,Promotional,2024-09-16 00:25:08,0,0,0,9,9,21,5,Product Viewed,Smartphones,263
+CUST1911,59,Other,Illinois,CST,Push,2024-07-13 10:12:32,0.23,Loyal Customer,,Informational,2024-09-09 17:45:59,0,0,0,11,11,22,5,Product Viewed,Smartphones,188
+CUST1912,35,Female,New York,MST,Push,2024-09-17 15:53:17,0.87,High-Value,2024-08-16 01:13:23,Promotional,2024-09-03 14:59:48,1,1,0,10,10,12,9,Product Viewed,Smartphones,364
+CUST1913,19,Female,California,MST,Email,2024-07-17 00:36:42,0.39,Loyal Customer,2024-08-19 16:37:34,Informational,2024-08-18 14:50:50,1,0,0,11,4,0,9,Product Viewed,Smartphones,101
+CUST1914,38,Other,Texas,CST,Push,2024-07-29 20:53:25,0.14,At-Risk,2024-09-09 16:20:39,Promotional,2024-08-14 04:22:03,0,0,0,22,22,15,5,Product Viewed,Smartphones,279
+CUST1915,61,Other,Florida,PST,Push,2024-09-05 06:59:53,0.46,At-Risk,2024-08-29 21:55:25,Promotional,2024-09-04 05:29:15,0,0,0,7,7,14,14,Product Viewed,Smartphones,272
+CUST1916,47,Other,California,PST,Email,2024-07-26 08:52:51,0.43,High-Value,2024-07-11 20:09:24,Transactional,2024-07-24 00:25:54,0,0,0,13,0,19,1,Product Viewed,Smartphones,394
+CUST1917,20,Other,New York,PST,Push,2024-08-08 23:22:55,0.64,At-Risk,2024-09-23 23:38:00,Promotional,2024-07-25 00:53:40,1,1,1,9,9,16,12,Product Viewed,Smartphones,150
+CUST1918,30,Other,Texas,MST,Push,2024-09-18 10:49:07,0.62,First-Time Buyer,2024-07-09 11:47:45,Transactional,2024-07-24 09:09:13,1,0,0,13,13,22,21,Product Viewed,Smartphones,68
+CUST1919,32,Male,Florida,PST,Push,2024-07-20 03:30:28,0.85,Loyal Customer,,Promotional,2024-07-22 02:55:39,1,1,1,10,10,23,1,Product Viewed,Smartphones,476
+CUST1920,22,Other,California,CST,Email,2024-09-23 22:42:28,0.35,First-Time Buyer,2024-09-17 07:08:16,Transactional,2024-09-14 06:16:09,0,0,0,16,23,1,6,Product Viewed,Smartphones,59
+CUST1921,53,Other,California,EST,Email,2024-09-12 04:48:38,0.57,Loyal Customer,2024-07-17 11:18:48,Informational,2024-08-24 04:39:05,1,1,1,17,1,3,23,Product Viewed,Smartphones,89
+CUST1922,25,Male,California,MST,Email,2024-08-11 05:11:13,0.2,At-Risk,2024-07-19 07:04:35,Promotional,2024-07-26 04:14:05,0,0,0,15,3,17,7,Product Viewed,Smartphones,482
+CUST1923,46,Male,Texas,PST,Push,2024-09-28 11:23:44,0.59,Loyal Customer,2024-07-19 21:18:52,Informational,2024-07-22 06:04:08,0,0,0,2,2,13,17,Product Viewed,Smartphones,193
+CUST1924,55,Other,California,EST,Push,2024-08-10 23:22:04,0.46,At-Risk,2024-08-07 21:31:58,Transactional,2024-08-05 11:48:35,0,0,0,11,11,12,18,Product Viewed,Smartphones,324
+CUST1925,20,Female,California,CST,Email,2024-09-25 01:26:24,0.88,First-Time Buyer,2024-08-24 03:56:29,Transactional,2024-07-07 07:29:17,1,0,0,22,19,12,15,Product Viewed,Smartphones,253
+CUST1926,47,Female,Texas,MST,Email,2024-07-17 00:17:59,0.63,At-Risk,2024-08-28 10:01:17,Transactional,2024-09-26 06:01:08,1,1,1,17,23,20,11,Product Viewed,Smartphones,50
+CUST1927,22,Other,California,CST,Email,2024-08-08 09:55:05,0.32,High-Value,2024-09-17 07:02:30,Promotional,2024-08-10 16:16:37,0,0,0,20,11,8,12,Product Viewed,Smartphones,355
+CUST1928,63,Female,Texas,EST,Push,2024-09-21 09:13:13,0.62,At-Risk,2024-09-27 10:07:21,Transactional,2024-07-13 20:41:22,0,0,0,2,2,8,6,Product Viewed,Smartphones,259
+CUST1929,59,Male,Florida,PST,Email,2024-09-21 08:19:41,0.47,First-Time Buyer,2024-07-24 11:56:38,Informational,2024-09-11 17:39:35,1,0,0,2,9,21,0,Product Viewed,Smartphones,413
+CUST1930,39,Female,California,CST,Email,2024-08-07 01:20:17,0.72,At-Risk,2024-07-24 08:38:32,Transactional,2024-09-04 06:01:45,1,1,1,17,21,4,5,Product Viewed,Smartphones,268
+CUST1931,61,Female,Texas,EST,Email,2024-07-27 21:23:00,0.57,Frequent Buyer,,Informational,2024-07-28 14:10:32,0,0,0,20,11,12,1,Product Viewed,Smartphones,399
+CUST1932,46,Female,California,MST,Push,2024-08-07 13:59:55,0.63,First-Time Buyer,2024-09-02 21:26:30,Transactional,2024-08-30 19:51:52,0,0,0,20,20,0,0,Product Viewed,Smartphones,122
+CUST1933,43,Female,Florida,PST,Email,2024-09-21 12:20:35,0.47,Loyal Customer,2024-08-04 09:17:42,Promotional,2024-09-26 06:31:21,1,1,0,15,21,14,12,Product Viewed,Smartphones,70
+CUST1934,33,Other,Texas,EST,Push,2024-09-03 12:23:19,0.42,Loyal Customer,2024-07-13 16:48:25,Informational,2024-09-30 18:02:10,0,0,0,1,1,16,8,Product Viewed,Smartphones,373
+CUST1935,58,Other,Texas,PST,Push,2024-07-03 10:18:17,0.47,First-Time Buyer,2024-09-28 13:50:25,Transactional,2024-09-10 15:11:13,0,0,0,6,6,5,1,Product Viewed,Smartphones,294
+CUST1936,24,Other,Illinois,EST,Email,2024-09-25 02:42:30,0.24,Frequent Buyer,2024-07-18 01:59:22,Promotional,2024-08-23 09:31:08,0,0,0,17,14,8,15,Product Viewed,Smartphones,118
+CUST1937,52,Male,New York,CST,Push,2024-07-20 20:11:43,0.19,At-Risk,2024-08-25 04:56:09,Informational,2024-07-12 17:03:46,1,0,0,14,14,1,18,Product Viewed,Smartphones,261
+CUST1938,54,Other,Illinois,MST,Push,2024-09-07 13:56:41,0.67,At-Risk,2024-07-06 17:20:03,Promotional,2024-08-18 05:17:10,1,1,0,6,6,11,16,Product Viewed,Smartphones,428
+CUST1939,65,Female,Illinois,MST,Email,2024-09-15 20:26:27,0.39,Loyal Customer,2024-07-10 12:32:47,Promotional,2024-08-13 02:26:01,0,0,0,13,22,15,1,Product Viewed,Smartphones,131
+CUST1940,28,Male,Illinois,PST,Push,2024-07-19 12:25:48,0.11,High-Value,2024-07-28 12:01:12,Informational,2024-09-06 04:04:27,0,0,0,6,6,8,18,Product Viewed,Smartphones,136
+CUST1941,33,Other,California,MST,Push,2024-07-28 08:58:36,0.69,First-Time Buyer,2024-07-07 14:05:19,Transactional,2024-09-07 16:33:44,1,0,0,5,5,7,18,Product Viewed,Smartphones,150
+CUST1942,55,Male,New York,MST,Email,2024-08-01 23:18:39,0.82,Frequent Buyer,,Informational,2024-07-27 05:53:52,1,1,0,13,8,20,7,Product Viewed,Smartphones,426
+CUST1943,33,Male,Texas,EST,Email,2024-08-22 15:29:00,0.3,At-Risk,2024-09-20 16:04:24,Informational,2024-07-31 01:11:22,0,0,0,12,13,7,14,Product Viewed,Smartphones,352
+CUST1944,31,Other,Florida,CST,Push,2024-08-08 15:59:29,0.35,Loyal Customer,2024-09-18 08:10:12,Informational,2024-07-09 20:23:41,0,0,0,11,11,17,6,Product Viewed,Smartphones,273
+CUST1945,47,Female,Texas,PST,Email,2024-07-13 15:44:46,0.21,At-Risk,,Informational,2024-07-23 22:02:38,0,0,0,10,12,14,13,Product Viewed,Smartphones,166
+CUST1946,43,Male,California,PST,Push,2024-09-10 04:02:07,0.4,At-Risk,,Promotional,2024-07-28 15:07:55,0,0,0,5,5,4,11,Product Viewed,Smartphones,372
+CUST1947,44,Female,New York,CST,Email,2024-07-05 05:42:55,0.74,Frequent Buyer,2024-08-31 08:27:11,Transactional,2024-08-16 08:35:46,0,0,0,19,9,14,17,Product Viewed,Smartphones,499
+CUST1948,31,Other,Florida,CST,Email,2024-07-31 20:43:07,0.19,Loyal Customer,2024-09-12 12:19:19,Informational,2024-09-28 09:36:25,1,1,0,0,10,3,5,Product Viewed,Smartphones,158
+CUST1949,55,Female,Florida,EST,Push,2024-08-03 07:18:52,0.84,High-Value,2024-08-17 23:20:23,Transactional,2024-09-20 05:30:48,0,0,0,9,9,2,12,Product Viewed,Smartphones,478
+CUST1950,25,Male,California,PST,Push,2024-09-18 08:17:09,0.47,High-Value,2024-08-18 15:11:28,Promotional,2024-09-05 05:57:06,0,0,0,7,7,4,16,Product Viewed,Smartphones,213
+CUST1951,27,Male,California,EST,Push,2024-08-16 11:19:21,0.24,First-Time Buyer,,Informational,2024-08-11 05:13:44,1,0,0,22,22,19,6,Product Viewed,Smartphones,148
+CUST1952,28,Other,Florida,PST,Email,2024-09-07 09:14:43,0.73,First-Time Buyer,,Promotional,2024-09-29 18:53:59,0,0,0,5,1,22,0,Product Viewed,Smartphones,440
+CUST1953,50,Female,California,PST,Email,2024-09-17 02:11:58,0.2,Loyal Customer,2024-07-11 12:45:51,Promotional,2024-08-26 22:40:34,0,0,0,6,20,0,18,Product Viewed,Smartphones,274
+CUST1954,27,Other,Florida,CST,Email,2024-08-05 15:36:24,0.79,Loyal Customer,2024-07-24 10:39:27,Promotional,2024-07-04 02:57:33,0,0,0,16,22,11,19,Product Viewed,Smartphones,185
+CUST1955,36,Other,Florida,PST,Push,2024-08-02 18:12:56,0.24,At-Risk,2024-09-18 16:44:16,Promotional,2024-09-16 17:25:46,0,0,0,0,0,9,5,Product Viewed,Smartphones,275
+CUST1956,48,Female,California,EST,Push,2024-07-18 09:11:45,0.85,First-Time Buyer,2024-08-29 16:49:09,Promotional,2024-08-25 13:40:21,1,0,0,6,6,23,16,Product Viewed,Smartphones,261
+CUST1957,26,Male,California,EST,Email,2024-09-04 01:18:14,0.17,Frequent Buyer,2024-07-10 05:38:40,Promotional,2024-08-04 09:21:49,0,0,0,12,5,10,12,Product Viewed,Smartphones,261
+CUST1958,22,Female,Illinois,PST,Push,2024-09-05 11:43:21,0.21,High-Value,2024-08-13 19:25:41,Informational,2024-08-23 10:01:19,0,0,0,18,18,5,6,Product Viewed,Smartphones,204
+CUST1959,31,Other,California,EST,Email,2024-09-04 15:10:34,0.86,Loyal Customer,2024-08-04 06:07:34,Promotional,2024-08-10 22:14:43,0,0,0,14,0,14,17,Product Viewed,Smartphones,292
+CUST1960,51,Other,Texas,MST,Push,2024-08-31 18:29:23,0.15,Loyal Customer,2024-07-28 11:48:01,Informational,2024-07-15 16:59:19,0,0,0,15,15,17,0,Product Viewed,Smartphones,308
+CUST1961,22,Male,Florida,CST,Email,2024-09-14 03:05:54,0.88,Loyal Customer,2024-07-14 12:16:10,Transactional,2024-07-15 03:40:07,1,1,1,2,3,13,17,Product Viewed,Smartphones,287
+CUST1962,28,Male,New York,MST,Push,2024-07-18 15:20:12,0.82,First-Time Buyer,2024-07-18 19:47:07,Promotional,2024-08-01 01:42:57,0,0,0,11,11,23,12,Product Viewed,Smartphones,126
+CUST1963,54,Other,California,MST,Email,2024-08-18 17:14:36,0.29,High-Value,2024-07-08 16:16:34,Transactional,2024-09-13 02:31:30,0,0,0,2,4,17,15,Product Viewed,Smartphones,232
+CUST1964,46,Male,Illinois,PST,Email,2024-08-17 13:57:51,0.48,First-Time Buyer,,Informational,2024-07-13 20:28:14,0,0,0,21,9,18,16,Product Viewed,Smartphones,490
+CUST1965,54,Other,Texas,CST,Push,2024-08-09 04:31:58,0.51,Loyal Customer,,Promotional,2024-08-13 07:46:53,1,1,0,7,7,12,7,Product Viewed,Smartphones,474
+CUST1966,43,Other,California,CST,Push,2024-07-04 23:08:52,0.24,High-Value,,Transactional,2024-08-01 23:39:29,0,0,0,2,2,22,11,Product Viewed,Smartphones,222
+CUST1967,30,Male,New York,CST,Push,2024-09-07 23:51:44,0.69,High-Value,2024-09-04 20:21:52,Promotional,2024-09-18 09:14:56,0,0,0,8,8,13,15,Product Viewed,Smartphones,182
+CUST1968,23,Female,California,MST,Push,2024-09-04 20:59:15,0.38,At-Risk,2024-08-17 07:27:12,Promotional,2024-09-10 09:07:44,0,0,0,2,2,16,9,Product Viewed,Smartphones,81
+CUST1969,18,Male,Florida,MST,Email,2024-08-31 23:09:58,0.45,At-Risk,2024-09-03 13:38:29,Informational,2024-07-16 20:54:35,0,0,0,23,0,20,0,Product Viewed,Smartphones,442
+CUST1970,43,Female,Illinois,EST,Email,2024-09-29 18:40:53,0.6,At-Risk,,Promotional,2024-09-18 18:02:53,1,1,1,20,0,22,19,Product Viewed,Smartphones,141
+CUST1971,24,Female,California,EST,Email,2024-09-05 00:46:27,0.66,Frequent Buyer,2024-07-16 20:18:03,Informational,2024-08-21 06:42:39,1,1,0,21,16,17,0,Product Viewed,Smartphones,255
+CUST1972,42,Female,Texas,CST,Push,2024-09-07 05:51:30,0.35,At-Risk,,Informational,2024-07-19 05:49:35,1,1,1,15,15,10,4,Product Viewed,Smartphones,229
+CUST1973,59,Other,New York,EST,Push,2024-09-03 07:53:26,0.66,First-Time Buyer,,Informational,2024-09-02 12:08:25,0,0,0,10,10,10,3,Product Viewed,Smartphones,86
+CUST1974,57,Female,California,MST,Email,2024-09-08 13:54:12,0.51,Frequent Buyer,2024-09-17 14:08:57,Transactional,2024-08-28 14:02:05,0,0,0,20,16,12,23,Product Viewed,Smartphones,265
+CUST1975,62,Male,Texas,PST,Push,2024-08-09 16:16:47,0.22,High-Value,2024-08-04 13:28:11,Transactional,2024-07-06 03:52:23,0,0,0,14,14,3,15,Product Viewed,Smartphones,203
+CUST1976,44,Other,Florida,EST,Email,2024-07-20 09:57:05,0.86,High-Value,2024-07-28 07:03:01,Promotional,2024-09-25 05:38:09,1,0,0,4,8,16,3,Product Viewed,Smartphones,342
+CUST1977,52,Female,Illinois,CST,Push,2024-08-25 07:58:03,0.8,High-Value,,Promotional,2024-09-06 02:05:46,1,1,1,0,0,9,8,Product Viewed,Smartphones,50
+CUST1978,40,Male,Texas,MST,Push,2024-07-09 23:10:46,0.32,Frequent Buyer,2024-07-13 01:05:18,Transactional,2024-09-03 16:39:47,0,0,0,0,0,7,16,Product Viewed,Smartphones,476
+CUST1979,51,Other,Florida,EST,Push,2024-09-14 04:52:13,0.15,High-Value,2024-08-03 12:48:45,Informational,2024-07-15 13:04:01,0,0,0,12,12,23,14,Product Viewed,Smartphones,216
+CUST1980,30,Female,New York,CST,Push,2024-07-28 04:53:04,0.68,First-Time Buyer,,Informational,2024-07-11 07:29:25,1,0,0,23,23,10,12,Product Viewed,Smartphones,494
+CUST1981,36,Other,California,MST,Email,2024-09-07 16:28:19,0.26,At-Risk,,Informational,2024-07-08 18:15:47,0,0,0,15,21,6,11,Product Viewed,Smartphones,442
+CUST1982,59,Male,New York,CST,Email,2024-07-06 00:47:55,0.23,At-Risk,2024-08-04 16:05:15,Transactional,2024-08-29 12:28:02,0,0,0,12,12,11,12,Product Viewed,Smartphones,110
+CUST1983,52,Female,Texas,EST,Email,2024-08-14 04:55:25,0.26,At-Risk,2024-09-30 05:39:48,Transactional,2024-08-08 13:11:45,1,0,0,2,20,16,6,Product Viewed,Smartphones,166
+CUST1984,25,Female,Florida,EST,Email,2024-07-07 00:00:30,0.38,First-Time Buyer,2024-09-11 15:03:02,Transactional,2024-07-28 10:53:04,0,0,0,2,14,12,11,Product Viewed,Smartphones,65
+CUST1985,44,Female,Florida,CST,Push,2024-08-10 12:00:43,0.19,First-Time Buyer,2024-07-26 14:13:46,Promotional,2024-09-11 21:12:55,1,0,0,17,17,4,3,Product Viewed,Smartphones,460
+CUST1986,43,Other,Illinois,MST,Email,2024-07-25 19:40:17,0.28,At-Risk,2024-08-31 12:01:17,Informational,2024-09-26 01:29:36,1,1,0,15,0,16,23,Product Viewed,Smartphones,128
+CUST1987,33,Female,Texas,EST,Push,2024-09-16 22:15:24,0.57,Frequent Buyer,2024-09-29 01:16:53,Promotional,2024-07-25 15:56:35,1,0,0,4,4,23,6,Product Viewed,Smartphones,230
+CUST1988,42,Other,New York,EST,Email,2024-07-12 06:41:16,0.56,At-Risk,2024-07-20 06:38:01,Informational,2024-08-07 06:58:11,0,0,0,19,23,18,14,Product Viewed,Smartphones,421
+CUST1989,19,Female,Texas,CST,Email,2024-07-29 03:21:26,0.16,Loyal Customer,2024-08-11 16:39:45,Promotional,2024-08-20 15:01:23,0,0,0,1,17,8,2,Product Viewed,Smartphones,338
+CUST1990,20,Female,Texas,MST,Email,2024-08-15 10:23:37,0.3,At-Risk,,Promotional,2024-09-06 17:33:55,1,1,1,3,3,12,13,Product Viewed,Smartphones,376
+CUST1991,41,Male,Florida,PST,Push,2024-08-07 15:20:54,0.69,Frequent Buyer,2024-08-23 20:38:46,Transactional,2024-08-29 09:05:01,0,0,0,7,7,16,23,Product Viewed,Smartphones,442
+CUST1992,18,Other,Illinois,EST,Push,2024-07-25 21:30:40,0.74,At-Risk,,Transactional,2024-08-31 13:54:51,0,0,0,12,12,10,11,Product Viewed,Smartphones,192
+CUST1993,31,Female,New York,MST,Push,2024-07-26 07:06:45,0.85,Loyal Customer,2024-07-06 09:33:29,Informational,2024-07-28 19:59:18,0,0,0,23,23,16,13,Product Viewed,Smartphones,466
+CUST1994,21,Female,New York,EST,Email,2024-09-13 09:51:05,0.87,High-Value,2024-07-19 20:33:42,Transactional,2024-09-19 13:34:54,0,0,0,14,15,18,13,Product Viewed,Smartphones,286
+CUST1995,28,Other,New York,CST,Push,2024-08-12 10:26:39,0.46,High-Value,2024-08-23 13:41:48,Transactional,2024-08-07 06:19:27,1,1,0,2,2,20,11,Product Viewed,Smartphones,419
+CUST1996,58,Female,California,PST,Push,2024-07-27 05:59:11,0.64,Frequent Buyer,2024-07-28 04:55:25,Informational,2024-09-16 23:42:00,0,0,0,14,14,13,10,Product Viewed,Smartphones,55
+CUST1997,41,Other,Illinois,CST,Email,2024-07-11 17:33:55,0.75,Frequent Buyer,2024-09-29 00:21:39,Transactional,2024-08-19 01:15:22,0,0,0,21,9,10,17,Product Viewed,Smartphones,69
+CUST1998,63,Male,Illinois,MST,Email,2024-07-16 04:17:34,0.28,At-Risk,2024-07-09 12:20:42,Transactional,2024-07-31 11:45:37,1,1,0,19,0,4,3,Product Viewed,Smartphones,428
+CUST1999,64,Female,Florida,EST,Email,2024-08-11 16:03:28,0.7,At-Risk,2024-08-24 14:07:07,Informational,2024-08-05 23:06:51,1,1,1,19,3,9,12,Product Viewed,Smartphones,482

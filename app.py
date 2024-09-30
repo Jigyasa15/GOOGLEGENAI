@@ -288,6 +288,8 @@
 
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 import os
+import time
+import csv
 import asyncio
 import google.generativeai as genai
 import langchain
@@ -669,6 +671,102 @@ def generate_segments_route():
         'segment_3': segments[2]
     })
 
+@app.route('/generate-content',methods=['POST'])
+def generate_content_route():
+   """Handle content generation based on the predefined prompt."""
+    # Get the  prompt from the form data
+   prompt = request.form.get('prompt')
+   print(prompt)
+   contentType = request.form.get('contentType')
+   llm = ChatGoogleGenerativeAI(
+                                 model="gemini-1.5-flash",
+                                 temperature=0,
+                                 max_tokens=10,) 
+   if contentType == 'push':
+      prompt_template = PromptTemplate.from_template(template="""Use this prompt: {prompt}. The output should follow a structured list format and provide 3 distinct variants for testing purposes, covering the following elements:
+Output Format in array: "Title": [ "Title 1", "Title 2", "Title 3" ], "Subtitle": [ "Subtitle 1", "Subtitle 2", "Subtitle 3" ], "Message": [ "Message 1", "Message 2", "Message 3" ]. The output will just be array and no extra information apart from it.
+Where Title 1 is Title 1 suggestion, Title 2 is Title 2 suggestion and Title 3 is Title 3 suggestion.
+Where Subtitle 1 is Subtitle 1 suggestion, Subtitle 2 is Subtitle 2 suggestion and Subtitle 3 is Subtitle 3 suggestion. 
+Where Message 1 is Message 1 suggestion, Message 2 is Message 2 suggestion and Message 3 is Message 3 suggestion.
+""")
+   else:
+    prompt_template = PromptTemplate.from_template(template="""{prompt}.
+                                                       The output should follow a structured list format and provide 3 distinct variants for testing purposes, covering the following elements: Output Format in array: 
+                                  "Subject": [ "Subject 1", "Subject 2", "Subject 3" ], "Body": [ "Body 1", "Body 2", "Body 3" ], "CTA": [ "CTA 1", "CTA 2", "CTA 3" ]. The output will just be array and no extra information apart from it.
+Where Subject 1 is Subject 1 suggestion, Subject 2 is Subject 2 suggestion and Subject 3 is Subject 3 suggestion
+where Body 1 is Body 1 suggestion, Body 2 is Body 2 suggestion and Body 3 is Body 3 suggestion
+Where CTA 1 is  CTA 1 suggestion,  CTA 2 is  CTA 2 suggestion and  CTA 3 is  CTA 3 suggestion
+ """)
+    
+   content_generate = prompt_template.format(prompt=prompt)
+   ai_push_msg =  llm.invoke(content_generate)
+   response = ai_push_msg.content
+   print(jsonify(response))
+   return jsonify(response)
+
+
+def extract_csv(pathname: str) -> list[str]:
+    parts = [f"--- START OF CSV ${pathname}"]
+    with open(pathname,"r",newline="") as csvfile:
+        csv_reader=csv.reader(csvfile)
+        for row in csv_reader:
+          str=" "
+          parts.append(str.join(row))
+    
+    return parts
+
+
+@app.route('/generate-timing', methods=['POST'])
+def generate_best_timing():
+ generation_config = {
+  "temperature": 0,
+  "top_p": 0.95,
+  "top_k": 64,
+  "max_output_tokens": 8192,
+  "response_mime_type": "text/plain",
+}
+ model = genai.GenerativeModel(
+  model_name="gemini-1.5-flash",
+  generation_config=generation_config,
+)
+ chat_session = model.start_chat(
+  history=[
+    {
+      "role": "user",
+      "parts":
+        extract_csv("static/Updated_User_Event_Data_with_User_Count.csv")
+      ,
+    },
+  ]
+)
+
+ contentType = request.form.get('contentType')
+ timing_prompt= ("""You're a data scientist. You're task is to provide summary insights to identify when is the best time to send {contentType} notifications to users to achieve maximum user engagement and boost conversion based on below csv file.Keep the output format as the sample shown below and make sure output format is user friendly as this will be shown in the webpage. Don't use column name and * in output.
+1. Overall Best Hours:
+2. Segment-Specific Timing:
+3. Event-Specific Timing:
+4. Additional Considerations:
+5. Recommendations:
+""")
+
+ chat_session = model.start_chat(
+  history=[
+    {
+      "role": "user",
+      "parts":
+        extract_csv("static/Updated_User_Event_Data_with_User_Count.csv")
+      ,
+    },
+  ]
+)
+ formatted_prompt = timing_prompt.format(contentType=contentType)
+ best_timing = chat_session.send_message(formatted_prompt)
+ response = best_timing.text
+ print(response)
+ return jsonify({'best_timing': response})
+
+
+
 @app.route('/generate-predefined-content-prompt', methods=['POST'])
 def generate_predefined_content_prompt():
     # Capture the form data from the request
@@ -679,19 +777,33 @@ def generate_predefined_content_prompt():
     business_description = session.get('business_description')
     industry = session.get('industry')
     target_segment = request.form.get('targetSegment')
+    
     if content_type == 'push':
-       prompt_template = """You are a content generation expert for {business_description} in the {industry} industry. Based on the campaign goal of {campaign_goal}, content objective {content_objective}, the desired tone of {tone}, and the target segment of {target_segment}, please create content for  {content_type} notification channel.
+      prompt_template = """You are a content generation expert for {business_description} in the {industry} industry. Based on the campaign goal of {campaign_goal}, content objective {content_objective}, the desired tone of {tone}, and the target segment of {target_segment}, please create content for  {content_type} notification channel.
 The content should include the following elements:
-- Title: A compelling headline that grabs attention, conveys the main benefit, and includes high-performing keywords relevant to the target segment.
-- Subtitle: A supporting line that adds more context or highlights a secondary benefit, tailored to the specific needs of the target audience.
-- Message: A clear and concise body text that emphasizes the key value proposition, action, or solution, ensuring it resonates with the target segment's pain points or desires.
+
+
+Title: A compelling headline that grabs attention, conveys the main benefit, and includes high-performing keywords relevant to the target segment.
+
+
+Subtitle: A supporting line that adds more context or highlights a secondary benefit, tailored to the specific needs of the target audience.
+
+
+Message: A clear and concise body text that emphasizes the key value proposition, action, or solution, ensuring it resonates with the target segment's pain points or desires.
 """
     else:
-       prompt_template = """You are a content generation expert for {business_description} in the {industry} industry. Based on the target segment of {target_segment}, the campaign goal of {campaign_goal}, the content objective of {content_objective}, and the desired tone of {tone}, please create content for {content_type} notification. 
-       The content should include: 
-       - Subject: A compelling headline that grabs attention. 
-       - Body: A clear and concise supporting message that adds context or highlights a secondary benefit. 
-       - CTA Button**: A strong, action-driven call-to-action (CTA) button to encourage immediate engagement. """
+      prompt_template = """You are a content generation expert for {business_description} in the {industry} industry. Based on the target segment of {target_segment}, the campaign goal of {campaign_goal}, the content objective of {content_objective}, and the desired tone of {tone}, please create content for {content_type} notification.
+The content should include:
+
+
+Subject: A compelling headline that grabs attention.
+
+
+Body: A clear and concise supporting message that adds context or highlights a secondary benefit.
+
+
+CTA Button**: A strong, action-driven call-to-action (CTA) button to encourage immediate engagement. """
+
 
     content_prompt = prompt_template.format(business_description=business_description,industry=industry,content_type=content_type,content_objective=content_objective,tone=tone,campaign_goal=campaign_goal,target_segment=target_segment)
     predefined_prompt = content_prompt
