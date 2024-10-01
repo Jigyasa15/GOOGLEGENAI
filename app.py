@@ -286,8 +286,9 @@
 # if __name__ == '__main__':  # Corrected here
 #     app.run(debug=True, port=5001)
 
-from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
+from flask import Flask, render_template, request, send_file, redirect, url_for, session, flash, jsonify
 import os
+import io
 import time
 import csv
 import asyncio
@@ -296,6 +297,7 @@ import langchain
 import pandas as pd
 # from google.cloud import aiplatform
 from flask_mail import Mail, Message
+from io import BytesIO
 from datetime import datetime, timedelta
 import random
 from langchain.prompts import PromptTemplate
@@ -318,6 +320,14 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 app = Flask(__name__)  # Corrected here
 app.secret_key = 'random_secret_key'
+
+# Define the folder where uploaded files will be stored
+app.config['UPLOAD_FOLDER'] = os.path.join(os.getcwd(), 'uploads')
+
+# Ensure the uploads directory exists
+if not os.path.exists(app.config['UPLOAD_FOLDER']):
+    os.makedirs(app.config['UPLOAD_FOLDER'])
+
 # Configure Flask-Mail
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
@@ -388,6 +398,120 @@ def dashboard():
   
    return render_template('dashboard.html') # Render your dashboard template here
 
+# Path to the static CSV file
+STATIC_CSV_PATH = 'static/Marketing_Campaign_Performance_Dataset_final.numbers'
+
+# Load CSV data into a Pandas DataFrame
+def load_csv_data():
+    df = pd.read_csv(STATIC_CSV_PATH)
+    return df
+
+@app.route('/load-campaign-data', methods=['GET'])
+def load_campaign_data():
+    csv_file_path = 'static/Campaign_Analytics_Final.csv'  # Update with the actual path to your CSV file
+
+    campaign_data = []
+    with open(csv_file_path, newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            # Normalize column names to avoid mismatches
+            campaign_data.append({
+                'Sent Date': row.get('Sent Date'),
+                'Campaign Name': row.get('Campaign Name'),
+                'Status': row.get('Status'),
+                'Channel': row.get('Channel'),
+                'User Segment': row.get('User Segment'),
+                'Delivered': row.get('Delivered'),
+                'Opened': row.get('Opened'),
+                'Clicked': row.get('Clicked'),
+                'Open Rate (%)': row.get('Open Rate (%)'),
+                'Unsubscribe Rate (%)': row.get('Unsubscribe Rate (%)'),
+                'CTR (%)': row.get('CTR (%)'),
+                'Avg. Open Time (min)': row.get('Avg. Open Time (min)'),
+                'Avg. Click Time (min)': row.get('Avg. Click Time (min)')
+            })
+
+    return jsonify(campaign_data)
+# @app.route('/load-campaign-data', methods=['GET'])
+# def load_campaign_data():
+    # Get filters from request
+    # channel = request.args.get('channel', 'all')
+    # status = request.args.get('status', 'all')
+    # date_from = request.args.get('dateFrom')
+    # date_to = request.args.get('dateTo')
+    # sort_by = request.args.get('sortBy')
+
+    # # Load the data
+    # df = load_csv_data()
+
+    # # Apply filters
+    # if channel != 'all':
+    #     df = df[df['Channel'].str.lower() == channel]
+    # if status != 'all':
+    #     df = df[df['Status'].str.lower() == status]
+    # if date_from:
+    #     df = df[df['Sent Date'] >= date_from]
+    # if date_to:
+    #     df = df[df['Sent Date'] <= date_to]
+
+    # # Sorting logic
+    # if sort_by == 'CTR':
+    #     df = df.sort_values(by='CTR (%)', ascending=False)
+    # elif sort_by == 'sent':
+    #     df = df.sort_values(by='Sent', ascending=False)
+    # elif sort_by == 'clicked':
+    #     df = df.sort_values(by='Clicked', ascending=False)
+    # elif sort_by == 'performance':
+    #     df['performance'] = df['Open Rate (%)'] + df['CTR (%)']
+    #     df = df.sort_values(by='performance', ascending=False)
+    # elif sort_by == 'createDate':
+    #     df = df.sort_values(by='Sent Date', ascending=False)
+
+    # # Convert to list of dictionaries for JSON response
+    # data = df.to_dict(orient='records')
+    # return jsonify(data)
+
+@app.route('/download-excel', methods=['GET'])
+def download_excel():
+    # Load and filter data
+    df = load_csv_data()
+    channel = request.args.get('channel', 'all')
+    status = request.args.get('status', 'all')
+    date_from = request.args.get('dateFrom')
+    date_to = request.args.get('dateTo')
+    sort_by = request.args.get('sortBy')
+
+    # Apply filters and sorting (same as the load_campaign_data function)
+    if channel != 'all':
+        df = df[df['Channel'].str.lower() == channel]
+    if status != 'all':
+        df = df[df['Status'].str.lower() == status]
+    if date_from:
+        df = df[df['Sent Date'] >= date_from]
+    if date_to:
+        df = df[df['Sent Date'] <= date_to]
+    
+    # Sorting logic
+    if sort_by == 'CTR':
+        df = df.sort_values(by='CTR (%)', ascending=False)
+    elif sort_by == 'sent':
+        df = df.sort_values(by='Sent', ascending=False)
+    elif sort_by == 'clicked':
+        df = df.sort_values(by='Clicked', ascending=False)
+    elif sort_by == 'performance':
+        df['performance'] = df['Open Rate (%)'] + df['CTR (%)']
+        df = df.sort_values(by='performance', ascending=False)
+    elif sort_by == 'createDate':
+        df = df.sort_values(by='Sent Date', ascending=False)
+
+    # Save the DataFrame to an Excel file in memory
+    output = BytesIO()
+    with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
+        df.to_excel(writer, index=False)
+    
+    output.seek(0)
+    return send_file(output, mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                     as_attachment=True, attachment_filename='campaign_data.xlsx')
 
 # Send OTP Email
 @app.route('/send_otp', methods=['POST'])
@@ -623,10 +747,12 @@ def generate_segments(predefined_prompt):
    #  response = llm.generate_content(segment_prompt_template)
     llm = ChatGoogleGenerativeAI(
                                  model="gemini-1.5-flash",
-                                 temperature=0,
-                                 max_tokens=10,) 
+                                 temperature=1.0,
+                                 max_tokens=20,) 
     segment_prompt_template = PromptTemplate.from_template(template="{predefined_prompt}.The output should be formatted as follows: segment1, segment2, segment3 and should not contain any extra details. Where segment1, segment 2 and segment3 are the proposed segment names ")
     segment_prompt = segment_prompt_template.format(predefined_prompt=predefined_prompt)
+    random_seed = str(random.random())
+    final_prompt = segment_prompt + " " + random_seed
     ai_segment_msg =  llm.invoke(segment_prompt)
     
     
@@ -680,8 +806,8 @@ def generate_content_route():
    contentType = request.form.get('contentType')
    llm = ChatGoogleGenerativeAI(
                                  model="gemini-1.5-flash",
-                                 temperature=0,
-                                 max_tokens=10,) 
+                                 temperature=0.7,
+                                 max_tokens=50,) 
    if contentType == 'push':
       prompt_template = PromptTemplate.from_template(template="""Use this prompt: {prompt}. The output should follow a structured list format and provide 3 distinct variants for testing purposes, covering the following elements:
 Output Format in array: "Title": [ "Title 1", "Title 2", "Title 3" ], "Subtitle": [ "Subtitle 1", "Subtitle 2", "Subtitle 3" ], "Message": [ "Message 1", "Message 2", "Message 3" ]. The output will just be array and no extra information apart from it.
@@ -704,6 +830,22 @@ Where CTA 1 is  CTA 1 suggestion,  CTA 2 is  CTA 2 suggestion and  CTA 3 is  CTA
    print(jsonify(response))
    return jsonify(response)
 
+@app.route('/upload-csv', methods=['POST'])
+def upload_csv():
+    if 'csv_file' not in request.files:
+        return jsonify({"error": "No file uploaded"}), 400
+    
+    file = request.files['csv_file']
+    
+    # Save the file temporarily
+    file_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+    file.save(file_path)
+    
+    # Store the path in the session or return it to the frontend to store in sessionStorage
+    session['uploaded_csv_path'] = file_path
+    
+    return jsonify({"file_path": file_path})
+
 
 def extract_csv(pathname: str) -> list[str]:
     parts = [f"--- START OF CSV ${pathname}"]
@@ -716,8 +858,68 @@ def extract_csv(pathname: str) -> list[str]:
     return parts
 
 
+
+
 @app.route('/generate-timing', methods=['POST'])
 def generate_best_timing():
+     # Use session to retrieve the uploaded CSV path or get from sessionStorage via frontend
+ file_path = session.get('uploaded_csv_path')
+    
+ if not file_path or not os.path.exists(file_path):
+        return jsonify({"error": "CSV file not found"}), 400
+    
+ generation_config = {
+  "temperature": 0,
+  "top_p": 0.95,
+  "top_k": 64,
+  "max_output_tokens": 8192,
+  "response_mime_type": "text/plain",
+}
+ model = genai.GenerativeModel(
+  model_name="gemini-1.5-flash",
+  generation_config=generation_config,
+)
+#  chat_session = model.start_chat(
+#   history=[
+#     {
+#       "role": "user",
+#       "parts":
+#         extract_csv("static/Updated_User_Event_Data_with_User_Count.csv")
+#       ,
+#     },
+#   ]
+# )
+
+ contentType = request.form.get('contentType')
+ timing_prompt= ("""You're a data scientist. You're task is to provide summary insights to identify when is the best time to send {contentType} notifications to users to achieve maximum user engagement and boost conversion based on below csv file.Keep the output format as the sample shown below and make sure output format is user friendly as this will be shown in the webpage. Don't use column name and * in output.
+1. Overall Best Hours:
+2. Segment-Specific Timing:
+3. Event-Specific Timing:
+4. Additional Considerations:
+5. Recommendations:
+""")
+
+ chat_session = model.start_chat(
+  history=[
+    {
+      "role": "user",
+      "parts":
+        extract_csv(file_path)
+      ,
+    },
+  ]
+)
+ formatted_prompt = timing_prompt.format(contentType=contentType)
+ best_timing = chat_session.send_message(formatted_prompt)
+ response = best_timing.text
+#  print(response)
+ return jsonify({'best_timing': response})
+
+@app.route('/generate-insights', methods=['POST'])
+def generate_insights():
+     # Use session to retrieve the uploaded CSV path or get from sessionStorage via frontend
+ file_path = 'static/Campaign_Analytics_Final.csv'
+    
  generation_config = {
   "temperature": 0,
   "top_p": 0.95,
@@ -734,37 +936,14 @@ def generate_best_timing():
     {
       "role": "user",
       "parts":
-        extract_csv("static/Updated_User_Event_Data_with_User_Count.csv")
+        extract_csv(file_path)
       ,
     },
-  ]
-)
-
- contentType = request.form.get('contentType')
- timing_prompt= ("""You're a data scientist. You're task is to provide summary insights to identify when is the best time to send {contentType} notifications to users to achieve maximum user engagement and boost conversion based on below csv file.Keep the output format as the sample shown below and make sure output format is user friendly as this will be shown in the webpage. Don't use column name and * in output.
-1. Overall Best Hours:
-2. Segment-Specific Timing:
-3. Event-Specific Timing:
-4. Additional Considerations:
-5. Recommendations:
-""")
-
- chat_session = model.start_chat(
-  history=[
-    {
-      "role": "user",
-      "parts":
-        extract_csv("static/Updated_User_Event_Data_with_User_Count.csv")
-      ,
-    },
-  ]
-)
- formatted_prompt = timing_prompt.format(contentType=contentType)
- best_timing = chat_session.send_message(formatted_prompt)
- response = best_timing.text
- print(response)
- return jsonify({'best_timing': response})
-
+  ])
+ prompt = request.form.get('prompt')
+ insights = chat_session.send_message(prompt)
+ print(insights.text)
+ return jsonify({'insights': insights.text})
 
 
 @app.route('/generate-predefined-content-prompt', methods=['POST'])

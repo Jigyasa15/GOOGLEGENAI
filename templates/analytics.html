@@ -1,3 +1,89 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Analytics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <div class="analytics-container">
+        <h2>Campaign Analytics</h2>
+
+        <!-- Filters Section -->
+        <!-- <div class="filters">
+            <div class="filter-row">
+                <label for="channel">Channel:</label>
+                <select id="channel">
+                    <option value="all">All</option>
+                    <option value="push">Push</option>
+                    <option value="email">Email</option>
+                </select>
+
+                <label for="campaignName">Campaign Name:</label>
+                <input type="text" id="campaignName" placeholder="Enter Campaign Name">
+
+                <label for="dateFrom">Date From:</label>
+                <input type="date" id="dateFrom">
+
+                <label for="dateTo">Date To:</label>
+                <input type="date" id="dateTo">
+
+                <label for="status">Status:</label>
+                <select id="status">
+                    <option value="all">All</option>
+                    <option value="active">Active</option>
+                    <option value="scheduled">Scheduled</option>
+                    <option value="drafts">Drafts</option>
+                </select>
+            </div> -->
+
+            <!-- Sorting Section -->
+            <!-- <div class="sort-by">
+                <label for="sortBy">Sort By:</label>
+                <select id="sortBy">
+                    <option value="CTR">CTR</option>
+                    <option value="sent">Sent</option>
+                    <option value="clicked">Clicked</option>
+                    <option value="performance">Campaign Performance</option>
+                    <option value="createDate">Create Date</option> <!-- Added Create Date to sorting options -->
+                <!-- </select>
+            </div> --> -->
+
+            <!-- Filter Button -->
+            <!-- <button onclick="applyFilters()">Apply Filters</button>
+        </div> -->
+
+        <!-- Campaign Table -->
+        <!-- <table id="campaignTable" border="1">
+            <thead>
+                <tr>
+                    <th>Campaign Name</th>
+                    <th>Channel</th>
+                    <th>Status</th>
+                    <th>Test Variant</th>
+                    <th>User Distribution</th>
+                    <th>CTR (%)</th>
+                    <th>Sent</th>
+                    <th>Clicked</th>
+                    <th>Ignored</th>
+                    <th>Unsubscribe</th>
+                    <th>Campaign Performance (%)</th>
+                    <th>Create Date</th>Added Create Date column -->
+                <!-- </tr>
+            </thead>
+            <tbody> -->
+                <!-- Dynamic data rows will go here -->
+            <!-- </tbody>
+        </table> -->
+
+        <!-- Download Button -->
+        <!-- <button onclick="downloadExcel()">Download Excel</button>
+    </div>
+</body>
+</html> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,46 +126,74 @@
             </div>
 
             <!-- Sorting Section -->
-            <div class="sort-by">
-                <label for="sortBy">Sort By:</label>
-                <select id="sortBy">
-                    <option value="CTR">CTR</option>
-                    <option value="sent">Sent</option>
-                    <option value="clicked">Clicked</option>
-                    <option value="performance">Campaign Performance</option>
-                    <option value="createDate">Create Date</option> <!-- Added Create Date to sorting options -->
-                </select>
-            </div>
+           
+    <div class="sort-by">
+        <label for="sortBy">Sort By:</label>
+        <select id="sortBy">
+            <option value="CTR">CTR</option>
+            <option value="openRate">Open Rate</option>
+        </select>
+        <button onclick="applyFilters()">Apply Filters</button>
+    </div>
 
             <!-- Filter Button -->
-            <button onclick="applyFilters()">Apply Filters</button>
         </div>
+        <div class="input-field">
+            <label for="askAI">Anaylze your Campaign Data with AI</label>
+            <textarea id="Question" placeholder="Describe your what you want to analyze " rows="4" required></textarea>
+        </div>
+        <button id="GetInsights" style="display:block" onclick="getInsights()">Get Insights</button>
+
 
         <!-- Campaign Table -->
         <table id="campaignTable" border="1">
             <thead>
                 <tr>
+                    <th>Sent Date</th>
                     <th>Campaign Name</th>
-                    <th>Channel</th>
                     <th>Status</th>
-                    <th>Test Variant</th>
-                    <th>User Distribution</th>
-                    <th>CTR (%)</th>
-                    <th>Sent</th>
+                    <th>Channel</th>
+                    <th>User Segment</th>
+                    <th>Delivered</th>
+                    <th>Opened</th>
                     <th>Clicked</th>
-                    <th>Ignored</th>
-                    <th>Unsubscribe</th>
-                    <th>Campaign Performance (%)</th>
-                    <th>Create Date</th> <!-- Added Create Date column -->
+                    <th>Unsubscribe Rate (%)</th>
+                    <th>Open Rate (%)</th>
+                    <th>CTR (%)</th>
+                    <th>Avg. Open Time (min)</th>
+                    <th>Avg. Click Time (min)</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="campaignDataBody">
                 <!-- Dynamic data rows will go here -->
             </tbody>
         </table>
-
-        <!-- Download Button -->
-        <button onclick="downloadExcel()">Download Excel</button>
     </div>
 </body>
+
+
+<!-- Popup for Delivery Insights -->
+<div id="InsightsPopup" style="
+    display: none; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100vw; 
+    height: 100vh; 
+    background-color: white; 
+    padding: 10px; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+    z-index: 1000; 
+    overflow-y: auto;
+">
+    <h3>Campaign Data Insights</h3>
+    <p id="campaignInsights">Generating insights...</p>
+    <button onclick="closeInsights()">Close</button>
+</div>
+
+<!-- Overlay for Popup -->
+<div id="popupOverlayInsights" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999;" onclick="closeInsights()"></div>
+
 </html>
+
+

@@ -1,0 +1,51 @@
+Sent Date,Campaign Name,Status,Channel,User Segment,Delivered,Opened,Clicked,Unsubscribe Rate (%),Open Rate (%),CTR (%),Avg. Open Time (min),Avg. Click Time (min)
+2024-05-03,Holiday Sale,Active,Email,All Users,14808,8984,8416,18.6,60.67,56.83,55.48,70.18
+2024-09-18,Welcome Email,Active,Email,New Users,16535,11508,7865,69.81,69.6,47.57,76.05,44.98
+2024-01-05,New Feature Announcement,Scheduled,Push,Inactive Users,1714,1481,857,60.49,86.41,50.0,117.5,64.85
+2024-02-15,Welcome Email,Active,Email,New Users,10727,9722,2435,19.67,90.63,22.7,30.65,15.07
+2024-08-26,New Feature Announcement,Active,Push,Inactive Users,8625,5400,1347,78.46,62.61,15.62,72.21,32.29
+2024-03-07,Welcome Email,Active,Email,New Users,9010,6024,3812,75.58,66.86,42.31,73.99,44.18
+2023-12-18,Welcome Email,Draft,Email,New Users,17008,11443,3087,90.51,67.28,18.15,19.38,111.6
+2024-04-21,Welcome Email,Scheduled,Email,New Users,16944,11708,1542,51.56,69.1,9.1,112.93,39.35
+2023-10-30,New Feature Announcement,Draft,Push,Inactive Users,5971,4375,1920,19.26,73.27,32.16,93.79,86.41
+2023-12-16,New Feature Announcement,Draft,Push,Inactive Users,5533,4829,1609,42.96,87.28,29.08,113.84,63.11
+2024-08-07,Promo Push,Draft,Push,Active Users,15387,13651,9639,92.69,88.72,62.64,79.58,24.88
+2024-03-01,Welcome Email,Active,Email,New Users,13656,9569,2303,2.17,70.07,16.86,87.51,15.98
+2023-10-30,Welcome Email,Active,Email,New Users,6352,4684,3606,22.81,73.74,56.77,45.18,5.98
+2024-07-24,Promo Push,Active,Push,Active Users,2131,2016,762,18.64,94.6,35.76,95.76,58.69
+2024-02-01,New Feature Announcement,Active,Push,Inactive Users,11838,6068,3707,72.58,51.26,31.31,74.89,66.01
+2023-10-02,New Feature Announcement,Scheduled,Push,Inactive Users,15309,14810,1553,99.75,96.74,10.14,104.77,102.8
+2023-12-30,Holiday Sale,Active,Email,All Users,8115,7920,2922,13.72,97.6,36.01,97.63,109.84
+2024-07-06,Promo Push,Draft,Push,Active Users,1105,570,299,51.46,51.58,27.06,81.32,14.53
+2024-09-15,Cart Abandonment,Draft,Email,Abandoned Cart Users,14233,10910,4173,46.1,76.65,29.32,15.44,17.99
+2023-11-15,Cart Abandonment,Scheduled,Email,Abandoned Cart Users,14340,9198,7325,83.84,64.14,51.08,33.28,74.73
+2024-04-14,Welcome Email,Scheduled,Email,New Users,3107,3087,749,4.28,99.36,24.11,55.7,98.56
+2024-08-01,Promo Push,Scheduled,Push,Active Users,11584,6381,1602,27.61,55.08,13.83,94.56,51.26
+2024-09-24,Cart Abandonment,Draft,Email,Abandoned Cart Users,19707,13901,9807,42.67,70.54,49.76,11.52,103.37
+2024-01-07,Cart Abandonment,Draft,Email,Abandoned Cart Users,18460,10241,4047,73.74,55.48,21.92,17.34,72.97
+2024-06-12,New Feature Announcement,Active,Push,Inactive Users,5050,2539,267,52.44,50.28,5.29,56.83,22.32
+2024-03-11,Welcome Email,Draft,Email,New Users,18881,18603,15676,67.66,98.53,83.03,98.98,98.42
+2024-08-01,Welcome Email,Draft,Email,New Users,9143,6340,5750,98.73,69.34,62.89,5.05,56.4
+2024-01-01,New Feature Announcement,Active,Push,Inactive Users,15268,11989,3934,16.77,78.52,25.77,40.2,43.35
+2024-08-02,Welcome Email,Scheduled,Email,New Users,8527,4334,644,34.85,50.83,7.55,110.03,12.56
+2024-07-21,Promo Push,Draft,Push,Active Users,2625,1398,259,91.53,53.26,9.87,43.0,5.9
+2024-09-26,Promo Push,Scheduled,Push,Active Users,17460,14169,8513,19.59,81.15,48.76,64.85,98.47
+2024-04-29,Holiday Sale,Draft,Email,All Users,10441,8069,4098,3.38,77.28,39.25,116.06,96.59
+2024-05-24,Promo Push,Active,Push,Active Users,10912,5546,674,80.44,50.82,6.18,18.2,112.97
+2024-01-20,Welcome Email,Draft,Email,New Users,9427,7235,3342,23.94,76.75,35.45,116.22,48.87
+2023-10-16,Welcome Email,Draft,Email,New Users,11131,10199,3584,69.51,91.63,32.2,70.33,10.88
+2024-02-18,Promo Push,Scheduled,Push,Active Users,13624,7304,1006,50.65,53.61,7.38,113.05,115.82
+2023-11-16,New Feature Announcement,Draft,Push,Inactive Users,16481,11950,6752,24.89,72.51,40.97,75.98,52.73
+2024-01-11,Holiday Sale,Scheduled,Email,All Users,17055,15012,8851,30.65,88.02,51.9,78.69,70.42
+2024-01-07,Promo Push,Draft,Push,Active Users,18681,11967,8929,21.56,64.06,47.8,100.41,71.21
+2024-06-06,Promo Push,Active,Push,Active Users,4940,4272,2683,96.03,86.48,54.31,52.84,48.01
+2023-10-23,New Feature Announcement,Draft,Push,Inactive Users,17940,11343,4316,93.0,63.23,24.06,24.0,52.67
+2024-06-18,New Feature Announcement,Scheduled,Push,Inactive Users,10165,6970,3792,67.95,68.57,37.3,20.18,29.69
+2023-10-02,Cart Abandonment,Scheduled,Email,Abandoned Cart Users,8033,7805,4762,57.21,97.16,59.28,70.42,98.28
+2023-12-24,Welcome Email,Scheduled,Email,New Users,5237,3631,2984,61.43,69.33,56.98,62.04,112.37
+2024-09-17,Welcome Email,Scheduled,Email,New Users,4519,3629,2339,75.43,80.31,51.76,20.65,101.81
+2024-03-06,Promo Push,Draft,Push,Active Users,14646,8318,6892,98.69,56.79,47.06,40.6,86.06
+2024-05-20,Promo Push,Active,Push,Active Users,19406,11575,2140,45.02,59.65,11.03,46.17,80.6
+2024-06-23,New Feature Announcement,Scheduled,Push,Inactive Users,8903,8498,3982,17.92,95.45,44.73,56.44,62.61
+2023-10-23,Promo Push,Active,Push,Active Users,17370,15787,13165,20.26,90.89,75.79,86.84,107.93
+2024-04-05,Holiday Sale,Draft,Email,All Users,19965,13389,1399,27.78,67.06,7.01,39.86,115.09

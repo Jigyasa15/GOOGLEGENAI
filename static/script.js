@@ -1,3 +1,4 @@
+let campaignData = [];  // Store campaign data globally
 let selectedContentType = 'push'; // Default value
 // function toggleSegmentOption() {
 //     const aiSegmentFields = document.getElementById('aiSegmentFields');
@@ -31,6 +32,7 @@ function toggleTemplateOption() {
         newTemplateField.style.display = 'block';
         predefinedTemplateField.style.display = 'none';
         generateButton.style.display = 'block';
+        document.getElementById('generateSegmentButton').innerHTML = 'Generate Segment'
     } else {
         newTemplateField.style.display = 'none';
     }
@@ -418,103 +420,32 @@ function sendCampaign() {
     window.location.href = '/analytics';  // URL path for Flask routing
 }
 
-// Sample data for the table, including create date
-const campaignData = [
-    { name: 'Campaign 1', channel: 'push', status: 'active', variant: 'A/B', distribution: '50/50', ctr: 5, sent: 1000, clicked: 50, ignored: 950, unsubscribe: 10, performance: 50, createDate: '2023-09-01' },
-    { name: 'Campaign 2', channel: 'email', status: 'scheduled', variant: 'Control', distribution: '100%', ctr: 10, sent: 1500, clicked: 150, ignored: 1350, unsubscribe: 20, performance: 65, createDate: '2023-08-15' },
-    { name: 'Campaign 3', channel: 'push', status: 'drafts', variant: 'A/B', distribution: '70/30', ctr: 7, sent: 500, clicked: 35, ignored: 465, unsubscribe: 5, performance: 30, createDate: '2023-09-20' },
-];
+document.addEventListener("DOMContentLoaded", function () {
+    if (window.location.pathname === '/analytics') {
+        loadCampaignData();  // Load CSV data when on the analytics page
+    }
+});
 
-// Function to render the table based on filtered data
-function renderTable(data) {
-    const tableBody = document.getElementById('campaignTable').querySelector('tbody');
-    tableBody.innerHTML = ''; // Clear current table data
-
-    data.forEach(row => {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-            <td>${row.name}</td>
-            <td>${row.channel}</td>
-            <td>${row.status}</td>
-            <td>${row.variant}</td>
-            <td>${row.distribution}</td>
-            <td>${row.ctr}</td>
-            <td>${row.sent}</td>
-            <td>${row.clicked}</td>
-            <td>${row.ignored}</td>
-            <td>${row.unsubscribe}</td>
-            <td>${row.performance}</td>
-            <td>${row.createDate}</td> <!-- Added Create Date -->
-        `;
-        tableBody.appendChild(tr);
-    });
+function loadCampaignData() {
+    fetch('/load-campaign-data')
+        .then(response => response.json())
+        .then(data => {
+            campaignData = data;
+            populateTable(data);
+        })
+        .catch(error => {
+            console.error('Error loading campaign data:', error);
+        });
 }
 
-// Function to apply filters and sorting
-function applyFilters() {
-    let filteredData = campaignData;
 
-    // Get filter values
-    const channel = document.getElementById('channel').value;
-    const campaignName = document.getElementById('campaignName').value.toLowerCase();
-    const dateFrom = document.getElementById('dateFrom').value;
-    const dateTo = document.getElementById('dateTo').value;
-    const status = document.getElementById('status').value;
-    const sortBy = document.getElementById('sortBy').value;
+    // Apply filters and sorting when the user clicks on the "Apply Filters" button
 
-    // Apply channel and status filters
-    if (channel !== 'all') {
-        filteredData = filteredData.filter(campaign => campaign.channel === channel);
-    }
-    if (campaignName) {
-        filteredData = filteredData.filter(campaign => campaign.name.toLowerCase().includes(campaignName));
-    }
-    if (status !== 'all') {
-        filteredData = filteredData.filter(campaign => campaign.status === status);
-    }
-
-    // Filter based on create date
-    if (dateFrom) {
-        filteredData = filteredData.filter(campaign => new Date(campaign.createDate) >= new Date(dateFrom));
-    }
-    if (dateTo) {
-        filteredData = filteredData.filter(campaign => new Date(campaign.createDate) <= new Date(dateTo));
-    }
-
-    // Apply sorting
-    filteredData.sort((a, b) => {
-        if (sortBy === 'createDate') {
-            return new Date(b.createDate) - new Date(a.createDate); // Sort by create date
-        }
-        return b[sortBy] - a[sortBy]; // Other sorting options (CTR, Sent, Clicked, etc.)
-    });
-
-    // Render the filtered and sorted data in the table
-    renderTable(filteredData);
-}
-
-// Function to download the table data as an Excel file
-function downloadExcel() {
-    let table = document.getElementById('campaignTable');
-    let rows = [...table.rows];
-
-    let csvContent = "data:text/csv;charset=utf-8,";
-    rows.forEach(row => {
-        let rowData = [...row.cells].map(cell => cell.textContent).join(",");
-        csvContent += rowData + "\r\n";
-    });
-
-    // Create a download link and trigger the download
-    let downloadLink = document.createElement('a');
-    downloadLink.setAttribute('href', encodeURI(csvContent));
-    downloadLink.setAttribute('download', 'campaign_analytics.csv');
-    downloadLink.click();
-}
 
 // Initial table render
-document.addEventListener('DOMContentLoaded', () => {
-    renderTable(campaignData); // Render table with initial data
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//     renderTable(campaignData); // Render table with initial data
+// });
 
 function toggleSegmentOption() {
     const aiSegmentFields = document.getElementById('aiSegmentFields');
@@ -605,6 +536,97 @@ function generateSegment() {
     });
 }
 
+function populateTable(data) {
+    const tableBody = document.querySelector('#campaignTable tbody');
+    tableBody.innerHTML = '';  // Clear any existing rows
+
+
+    data.forEach(row => {
+        const rowElement = `
+            <tr>
+                <td>${row['Sent Date']}</td>
+                <td>${row['Campaign Name']}</td>
+                <td>${row['Status']}</td>
+                <td>${row['Channel']}</td>
+                <td>${row['User Segment']}</td>
+                <td>${row['Delivered']}</td>
+                <td>${row['Opened']}</td>
+                <td>${row['Clicked']}</td>
+                <td>${row['Unsubscribe Rate (%)']}</td>
+                <td>${row['Open Rate (%)']}</td>
+                <td>${row['CTR (%)']}</td>
+                <td>${row['Avg. Open Time (min)']}</td>
+                <td>${row['Avg. Click Time (min)']}</td>
+            </tr>
+        `;
+        tableBody.innerHTML += rowElement;
+    });
+}
+
+function applyFilters() {
+    let filteredData = [...campaignData];  // Make a copy of the original data
+
+    // Get filter values
+    const channel = document.getElementById('channel').value;
+    const campaignName = document.getElementById('campaignName').value.trim().toLowerCase();
+    const dateFrom = document.getElementById('dateFrom').value;
+    const dateTo = document.getElementById('dateTo').value;
+    const status = document.getElementById('status').value;
+
+    // Filter by channel
+    if (channel !== 'all') {
+        filteredData = filteredData.filter(row => row['Channel'].toLowerCase() === channel.toLowerCase());
+    }
+
+    // Filter by campaign name (case-insensitive)
+    if (campaignName) {
+        filteredData = filteredData.filter(row => row['Campaign Name'].toLowerCase().includes(campaignName));
+    }
+
+    // Filter by status
+    if (status !== 'all') {
+        filteredData = filteredData.filter(row => row['Status'].toLowerCase() === status.toLowerCase());
+    }
+
+    // Filter by date range
+    if (dateFrom) {
+        filteredData = filteredData.filter(row => new Date(row['Sent Date']) >= new Date(dateFrom));
+    }
+    if (dateTo) {
+        filteredData = filteredData.filter(row => new Date(row['Sent Date']) <= new Date(dateTo));
+    }
+
+    // Sort the filtered data by CTR or Open Rate
+    const sortBy = document.getElementById('sortBy').value;
+    if (sortBy === 'CTR') {
+        filteredData.sort((a, b) => parseFloat(b['CTR (%)']) - parseFloat(a['CTR (%)']));
+    } else if (sortBy === 'openRate') {
+        filteredData.sort((a, b) => parseFloat(b['Open Rate (%)']) - parseFloat(a['Open Rate (%)']));
+    }
+
+    // Repopulate the table with the filtered and sorted data
+    populateTable(filteredData);
+}
+
+// Download Excel file
+// function downloadExcel() {
+//     const channel = document.getElementById('channel').value;
+//     const dateFrom = document.getElementById('dateFrom').value;
+//     const dateTo = document.getElementById('dateTo').value;
+//     const status = document.getElementById('status').value;
+//     const sortBy = document.getElementById('sortBy').value;
+
+//     const queryParams = new URLSearchParams({
+//         channel: channel,
+//         dateFrom: dateFrom,
+//         dateTo: dateTo,
+//         status: status,
+//         sortBy: sortBy
+//     });
+
+//     window.location.href = `/download-excel?${queryParams}`;
+// }
+
 // function toggleSegmentOption() {
 //     // Show or hide the generate button based on segment option selection
 //     if (document.getElementById('segmentAI').checked) {
@@ -662,7 +684,34 @@ function generateSegment() {
 
  function regenerateContent() {
     // Logic to regenerate the segment
-    alert("Content regenerated!");
+    // alert("Content regenerated!");
+    // const contentType = document.querySelector('input[name="contentChannel"]:checked').value;
+    // let prompt = document.getElementById('customPromptContent').value;
+    const contentType = sessionStorage.getItem('contentType');
+    const prompt = sessionStorage.getItem('content_prompt')
+    // const predefined = document.getElementById('predefinedTemplateContent').checked;
+    // if (predefined) {
+    //     prompt = document.getElementById('predefinedPromptContent').value;
+    // }
+    const formData = new FormData();
+    formData.append('prompt', prompt);
+    formData.append('contentType', contentType);
+
+    fetch('/generate-content', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Store the response data in sessionStorage based on content type
+            sessionStorage.setItem('generatedContentData', data);  // Store the response data
+            populateContentGenerationPage();
+        // Navigate to content generation tab and then populate data
+        // nextTab('contentGeneration');
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
  }
  
  document.addEventListener('DOMContentLoaded', function () {
@@ -750,6 +799,7 @@ function toggleTemplateContentOption(selectedOption) {
         predefinedTemplateField.style.display = 'block';
         newTemplateField.style.display = 'none';
         // Show the generate segments button after predefined prompt is generated
+        document.getElementById('generateSegmentButton').innerHTML = 'Generate Segment'
         document.getElementById('generateSegmentButton').style.display = 'block';
     })
     .catch(error => {
@@ -820,7 +870,7 @@ function generateSegments() {
         document.getElementById('segment1').innerHTML = data.segment_1;
         document.getElementById('segment2').innerHTML = data.segment_2;
         document.getElementById('segment3').innerHTML = data.segment_3;
-
+        document.getElementById('generateSegmentButton').innerHTML = 'Regenerate Segment'
         // Show the segment container after generating
         document.getElementById('segmentContainer').style.display = 'block';
     })
@@ -996,7 +1046,7 @@ function generateContent() {
     if (predefined) {
         prompt = document.getElementById('predefinedPromptContent').value;
     }
-
+    sessionStorage.setItem('content_prompt',prompt)
     const formData = new FormData();
     formData.append('prompt', prompt);
     formData.append('contentType', contentType);
@@ -1020,74 +1070,237 @@ function generateContent() {
 // Function to populate the generated content in the Content Generation Page
 function populateContentGenerationPage() {
     // Retrieve the generated content data from sessionStorage
-    const contentType = document.querySelector('input[name="contentChannel"]:checked').value;
-    const data = sessionStorage.getItem('generatedContentData');
-    let cleanedData = data.replace(/`/g, ''); // This removes backticks
-    if (cleanedData.startsWith('json')) {
-        // Remove the prefix (if it exists)
-        cleanedData = cleanedData.substring(4).trim(); // Remove the first 4 characters
-    }
-    const generatedData = JSON.parse(cleanedData);
-    if (!generatedData) {
-        console.log('No data found in sessionStorage.');
-        return;
-    }
+//     const contentType = document.querySelector('input[name="contentChannel"]:checked').value;
+//     const data = sessionStorage.getItem('generatedContentData');
+//     let cleanedData = data.replace(/`/g, ''); // This removes backticks
+//     if (cleanedData.startsWith('json')) {
+//         // Remove the prefix (if it exists)
+//         cleanedData = cleanedData.substring(4).trim(); // Remove the first 4 characters
+//     }
+//     const generatedData = JSON.parse(cleanedData);
+//     if (!generatedData) {
+//         console.log('No data found in sessionStorage.');
+//         return;
+//     }
 
-    if(contentType == 'push'){
+//     if(contentType == 'push'){
     
-    // Populate Titles
+//     // Populate Titles
+//     if (generatedData.Title && Array.isArray(generatedData.Title)) {
+//         document.getElementById('pushTitle').innerHTML = generatedData.Title.map((title, index) => 
+//             `<button class="segment-pill" id="title${index + 1}" onclick="selectTitle('title${index + 1}')">${title}</button>`
+//         ).join('');
+//     } else {
+//         console.log('No title data found');
+//     }
+
+//     // Populate Subtitles
+//     if (generatedData.Subtitle && Array.isArray(generatedData.Subtitle)) {
+//         document.getElementById('pushSubtitle').innerHTML = generatedData.Subtitle.map((subtitle, index) => 
+//             `<button class="segment-pill" id="subtitle${index + 1}" onclick="selectSubtitle('subtitle${index + 1}')">${subtitle}</button>`
+//         ).join('');
+//     } else {
+//         console.log('No subtitle data found');
+//     }
+
+//     // Populate Messages
+//     if (generatedData.Message && Array.isArray(generatedData.Message)) {
+//         document.getElementById('pushMessage').innerHTML = generatedData.Message.map((message, index) => 
+//             `<button class="segment-pill" id="message${index + 1}" onclick="selectPushmsg('message${index + 1}')">${message}</button>`
+//         ).join('');
+//     } else {
+//         console.log('No message data found');
+//     }
+// }
+// else{
+//     // Populate Email Subjects
+//     document.getElementById('Subject').innerHTML = generatedData.Subject.map((subject, index) => 
+//         `<div class="segment-pill" id="subject${index + 1}" onclick="selectSubject('subject${index + 1}')">${subject}</div>`
+//     ).join('');
+
+//     // Populate Email Body
+//     document.getElementById('Body').innerHTML = generatedData.Body.map((body, index) => 
+//         `<div class="segment-pill" id="body${index + 1}" onclick="selectBody('body${index + 1}')">${body}</div>`
+//     ).join('');
+
+//     // Populate Email CTA
+//     document.getElementById('CTA').innerHTML = generatedData.CTA.map((cta, index) => 
+//         `<div class="segment-pill" id="CTA${index + 1}" onclick="selectCTA('CTA${index + 1}')">${cta}</div>`
+//     ).join('');
+// }
+
+// Retrieve the generated content data from sessionStorage
+const contentType = document.querySelector('input[name="contentChannel"]:checked').value;
+const data = sessionStorage.getItem('generatedContentData');
+let cleanedData = data.replace(/`/g, ''); // This removes backticks
+
+if (cleanedData.startsWith('json')) {
+    // Remove the prefix (if it exists)
+    cleanedData = cleanedData.substring(4).trim(); // Remove the first 4 characters
+}
+const generatedData = JSON.parse(cleanedData);
+if (!generatedData) {
+    console.log('No data found in sessionStorage.');
+    return;
+}
+
+if (contentType == 'push') {
+
+    // Update Titles (without clearing the DOM)
     if (generatedData.Title && Array.isArray(generatedData.Title)) {
-        document.getElementById('pushTitle').innerHTML = generatedData.Title.map((title, index) => 
-            `<button class="segment-pill" id="title${index + 1}" onclick="selectTitle('title${index + 1}')">${title}</button>`
-        ).join('');
+        generatedData.Title.forEach((title, index) => {
+            let titleButton = document.getElementById(`title${index + 1}`);
+            if (titleButton) {
+                // If the button exists, update the text
+                titleButton.innerHTML = title;
+            } else {
+                // If the button doesn't exist, create a new one
+                const newButton = document.createElement('button');
+                newButton.className = 'segment-pill';
+                newButton.id = `title${index + 1}`;
+                newButton.onclick = () => selectTitle(`title${index + 1}`);
+                newButton.innerHTML = title;
+                document.getElementById('pushTitle').appendChild(newButton);
+            }
+        });
     } else {
         console.log('No title data found');
     }
 
-    // Populate Subtitles
+    // Update Subtitles (without clearing the DOM)
     if (generatedData.Subtitle && Array.isArray(generatedData.Subtitle)) {
-        document.getElementById('pushSubtitle').innerHTML = generatedData.Subtitle.map((subtitle, index) => 
-            `<button class="segment-pill" id="subtitle${index + 1}" onclick="selectSubtitle('subtitle${index + 1}')">${subtitle}</button>`
-        ).join('');
+        generatedData.Subtitle.forEach((subtitle, index) => {
+            let subtitleButton = document.getElementById(`subtitle${index + 1}`);
+            if (subtitleButton) {
+                // Update existing button
+                subtitleButton.innerHTML = subtitle;
+            } else {
+                // Create new button if not exists
+                const newButton = document.createElement('button');
+                newButton.className = 'segment-pill';
+                newButton.id = `subtitle${index + 1}`;
+                newButton.onclick = () => selectSubtitle(`subtitle${index + 1}`);
+                newButton.innerHTML = subtitle;
+                document.getElementById('pushSubtitle').appendChild(newButton);
+            }
+        });
     } else {
         console.log('No subtitle data found');
     }
 
-    // Populate Messages
+    // Update Messages (without clearing the DOM)
     if (generatedData.Message && Array.isArray(generatedData.Message)) {
-        document.getElementById('pushMessage').innerHTML = generatedData.Message.map((message, index) => 
-            `<button class="segment-pill" id="message${index + 1}" onclick="selectPushmsg('message${index + 1}')">${message}</button>`
-        ).join('');
+        generatedData.Message.forEach((message, index) => {
+            let messageButton = document.getElementById(`message${index + 1}`);
+            if (messageButton) {
+                messageButton.innerHTML = message;
+            } else {
+                const newButton = document.createElement('button');
+                newButton.className = 'segment-pill';
+                newButton.id = `message${index + 1}`;
+                newButton.onclick = () => selectPushmsg(`message${index + 1}`);
+                newButton.innerHTML = message;
+                document.getElementById('pushMessage').appendChild(newButton);
+            }
+        });
     } else {
         console.log('No message data found');
     }
+
+} else {
+    // Populate Email Subjects (without clearing the DOM)
+    generatedData.Subject.forEach((subject, index) => {
+        let subjectDiv = document.getElementById(`subject${index + 1}`);
+        if (subjectDiv) {
+            subjectDiv.innerHTML = subject;
+        } else {
+            const newDiv = document.createElement('div');
+            newDiv.className = 'segment-pill';
+            newDiv.id = `subject${index + 1}`;
+            newDiv.onclick = () => selectSubject(`subject${index + 1}`);
+            newDiv.innerHTML = subject;
+            document.getElementById('Subject').appendChild(newDiv);
+        }
+    });
+
+    // Populate Email Body (without clearing the DOM)
+    generatedData.Body.forEach((body, index) => {
+        let bodyDiv = document.getElementById(`body${index + 1}`);
+        if (bodyDiv) {
+            bodyDiv.innerHTML = body;
+        } else {
+            const newDiv = document.createElement('div');
+            newDiv.className = 'segment-pill';
+            newDiv.id = `body${index + 1}`;
+            newDiv.onclick = () => selectBody(`body${index + 1}`);
+            newDiv.innerHTML = body;
+            document.getElementById('Body').appendChild(newDiv);
+        }
+    });
+
+    // Populate Email CTA (without clearing the DOM)
+    generatedData.CTA.forEach((cta, index) => {
+        let ctaDiv = document.getElementById(`CTA${index + 1}`);
+        if (ctaDiv) {
+            ctaDiv.innerHTML = cta;
+        } else {
+            const newDiv = document.createElement('div');
+            newDiv.className = 'segment-pill';
+            newDiv.id = `CTA${index + 1}`;
+            newDiv.onclick = () => selectCTA(`CTA${index + 1}`);
+            newDiv.innerHTML = cta;
+            document.getElementById('CTA').appendChild(newDiv);
+        }
+    });
 }
-else{
-    // Populate Email Subjects
-    document.getElementById('Subject').innerHTML = generatedData.Subject.map((subject, index) => 
-        `<div class="segment-pill" id="subject${index + 1}" onclick="selectSubject('subject${index + 1}')">${subject}</div>`
-    ).join('');
-
-    // Populate Email Body
-    document.getElementById('Body').innerHTML = generatedData.Body.map((body, index) => 
-        `<div class="segment-pill" id="body${index + 1}" onclick="selectBody('body${index + 1}')">${body}</div>`
-    ).join('');
-
-    // Populate Email CTA
-    document.getElementById('CTA').innerHTML = generatedData.CTA.map((cta, index) => 
-        `<div class="segment-pill" id="CTA${index + 1}" onclick="selectCTA('CTA${index + 1}')">${cta}</div>`
-    ).join('');
-}
 
 
 }
-
+function uploadCSV() {
+    const fileInput = document.getElementById('customerData');
+    const formData = new FormData();
+    
+    if (fileInput.files.length > 0) {
+        formData.append('csv_file', fileInput.files[0]);
+        
+        // Send the file to the server via AJAX
+        fetch('/upload-csv', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.file_path) {
+                // Store the file path in sessionStorage for later use
+                sessionStorage.setItem('uploadedCsvPath', data.file_path);
+                console.log("CSV file uploaded successfully: " + data.file_path);
+            } else {
+                console.error("CSV upload failed");
+            }
+        })
+        .catch(error => {
+            console.error("Error uploading CSV:", error);
+        });
+    } else {
+        console.error("No file selected for upload");
+    }
+}
 function DeliveryInsights() {
     document.getElementById('deliveryInsightsPopup').style.display = 'block';
     document.getElementById('popupOverlay').style.display = 'block';
-    contentType = sessionStorage.getItem('contentType');
+    
+    // Retrieve the uploaded CSV file path from sessionStorage
+    const uploadedCsvPath = sessionStorage.getItem('uploadedCsvPath');
+    
+    if (!uploadedCsvPath) {
+        console.error('No CSV file found');
+        return;
+    }
+    
+    const contentType = sessionStorage.getItem('contentType'); // or get it from the form
     const formData = new FormData();
     formData.append('contentType', contentType);
+    formData.append('csv_file_path', uploadedCsvPath);  // Send the file path to the backend
 
     fetch('/generate-timing', {
         method: 'POST',
@@ -1095,16 +1308,66 @@ function DeliveryInsights() {
     })
     .then(response => response.json())
     .then(data => {
-
-        // // Store the response data in sessionStorage based on content type
-        //     sessionStorage.setItem('generatedContentData', data);  // Store the response data
-        // // Navigate to content generation tab and then populate data
-        // nextTab('contentGeneration');
         let best_timing = data.best_timing;
-         best_timing = best_timing.replace(/[`*]/g, '');
+        best_timing = best_timing.replace(/[`*]/g, ''); // Remove unwanted characters
         document.getElementById('bestTimeAIContent').innerHTML = `
-            <pre style="font-family: 'Arial', sans-serif; font-size: 16px; white-space: pre-wrap; word-wrap: break-word; width: 100%; overflow-wrap: break-word;">
-                ${best_timing}
+            <pre style="font-family: 'Arial', sans-serif; font-size: 16px; white-space: pre-wrap; word-wrap: break-word; width: 100%; overflow-wrap: break-word;">${best_timing}
+            </pre>
+        `;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+// function DeliveryInsights() {
+//     document.getElementById('deliveryInsightsPopup').style.display = 'block';
+//     document.getElementById('popupOverlay').style.display = 'block';
+//     contentType = sessionStorage.getItem('contentType');
+//     const formData = new FormData();
+//     formData.append('contentType', contentType);
+
+//     fetch('/generate-timing', {
+//         method: 'POST',
+//         body: formData,
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+
+//         // // Store the response data in sessionStorage based on content type
+//         //     sessionStorage.setItem('generatedContentData', data);  // Store the response data
+//         // // Navigate to content generation tab and then populate data
+//         // nextTab('contentGeneration');
+//         let best_timing = data.best_timing;
+//          best_timing = best_timing.replace(/[`*]/g, '');
+//         document.getElementById('bestTimeAIContent').innerHTML = `
+//             <pre style="font-family: 'Arial', sans-serif; font-size: 16px; white-space: pre-wrap; word-wrap: break-word; width: 100%; overflow-wrap: break-word;">
+//                 ${best_timing}
+//             </pre>
+//         `;
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//     });
+// }
+
+function getInsights(){
+    document.getElementById('InsightsPopup').style.display = 'block';
+    document.getElementById('popupOverlayInsights').style.display = 'block';
+    const prompt = document.getElementById('Question').value; // or get it from the form
+    const formData = new FormData();
+    formData.append('prompt', prompt);  // Send the file path to the backend
+
+    fetch('/generate-insights', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        let insights = data.insights;
+        insights = insights.replace(/[`*]/g, ''); // Remove unwanted characters
+        document.getElementById('campaignInsights').innerHTML = `
+            <pre style="font-family: 'Arial', sans-serif; font-size: 16px; white-space: pre-wrap; word-wrap: break-word; width: 100%; overflow-wrap: break-word;">${insights}
             </pre>
         `;
     })
@@ -1116,6 +1379,11 @@ function DeliveryInsights() {
 function closeDeliveryInsights() {
     document.getElementById('deliveryInsightsPopup').style.display = 'none';
     document.getElementById('popupOverlay').style.display = 'none';
+}
+
+function closeInsights() {
+    document.getElementById('InsightsPopup').style.display = 'none';
+    document.getElementById('popupOverlayInsights').style.display = 'none';
 }
 
 
