@@ -43,9 +43,11 @@ if not os.path.exists(app.config['UPLOAD_FOLDER']):
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'ainotify80@gmail.com'  # Your email
-app.config['MAIL_PASSWORD'] = 'snyj vlph hbbg ebns'   # Your email password
-app.config['MAIL_DEFAULT_SENDER'] = 'ainotify@gmail.com'
+app.config['MAIL_USERNAME'] = 'ainotify80@gmail.com'
+# os.getenv('MAIL_USERNAME')  # Your email
+app.config['MAIL_PASSWORD'] = 'snyj vlph hbbg ebns'
+# os.getenv('MAIL_PASSWORD')  # Your email password
+app.config['MAIL_DEFAULT_SENDER'] = 'ainotify80@gmail.com'
 mail = Mail(app)
 
 
@@ -53,8 +55,8 @@ mail = Mail(app)
 oauth = OAuth(app)
 google = oauth.register(
    name='google',
-   client_id='154232292325-gke4qtojhrffani8dn3bbagvq88ma1ps.apps.googleusercontent.com',
-   client_secret='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',
+   client_id= os.getenv('GOOGLE_OAUTH_CLIENT_ID'),
+   client_secret= os.getenv('GOOGLE_OAUTH_CLIENT_SECRET'),
    access_token_url='https://oauth2.googleapis.com/token',  # Use the correct URL
    access_token_params=None,
    authorize_url='https://accounts.google.com/o/oauth2/auth',
