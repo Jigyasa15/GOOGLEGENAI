@@ -1,26 +1,5 @@
 let campaignData = [];  // Store campaign data globally
 let selectedContentType = 'push'; // Default value
-// function toggleSegmentOption() {
-//     const aiSegmentFields = document.getElementById('aiSegmentFields');
-//     const customSegmentField = document.getElementById('customSegmentField');
-//     const segmentAI = document.getElementById('segmentAI').checked;
-
-//     if (segmentAI) {
-//         aiSegmentFields.style.display = 'block';
-//         customSegmentField.style.display = 'none';
-//     } else {
-//         aiSegmentFields.style.display = 'none';
-//         customSegmentField.style.display = 'block';
-//     }
-    // Show or hide the predefined prompt generation and segments based on user option
-    // if (document.getElementById('segmentAI').checked) {
-    //     document.getElementById('generatePredefinedButton').style.display = 'block';
-    //     document.getElementById('aiSegmentFields').style.display = 'block';
-    // } else {
-    //     document.getElementById('generatePredefinedButton').style.display = 'none';
-    //     document.getElementById('aiSegmentFields').style.display = 'none';
-    // }
-// }
 
 function toggleTemplateOption() {
     const newTemplateField = document.getElementById('newTemplateField');
@@ -68,10 +47,6 @@ function saveContentType(contentType) {
         }
     }
 
-    // function generateContent() {
-    //     alert('Generating content...');
-    //     // Add logic for generating content based on inputs
-    // }
 
 
     function saveContentType(contentType) {
@@ -103,10 +78,6 @@ function saveContentType(contentType) {
         }
     }
 
-    // function generateContent() {
-    //     alert('Generating content...');
-    //     // Add logic for generating content based on inputs
-    // }
 
     function previousTab(prevTabId) {
         showTab(prevTabId);
@@ -439,13 +410,6 @@ function loadCampaignData() {
 }
 
 
-    // Apply filters and sorting when the user clicks on the "Apply Filters" button
-
-
-// Initial table render
-// document.addEventListener('DOMContentLoaded', () => {
-//     renderTable(campaignData); // Render table with initial data
-// });
 
 function toggleSegmentOption() {
     const aiSegmentFields = document.getElementById('aiSegmentFields');
@@ -460,48 +424,6 @@ function toggleSegmentOption() {
     }
  }
  
- 
-//  function toggleTemplateOption() {
-//     const predefinedTemplateField = document.getElementById('predefinedTemplateField');
-//     const newTemplateField = document.getElementById('newTemplateField');
-//     const generateButton = document.getElementById('generateButton');
-//     const segmentContainer = document.getElementById('segmentContainer');
-//     const regenerateButton = document.getElementById('regenerateButton');
-   
-//     segmentContainer.style.display = 'none';
-//     regenerateButton.style.display = 'none';
-//     generateButton.style.display = 'block'; // Show generate button
- 
-    
-//     // if (document.getElementById('predefinedTemplate').checked) {
-//     //     predefinedTemplateField.style.display = 'block';
-//     //     newTemplateField.style.display = 'none';
-//     //     templateType = 'predefined';
-//     // } else {
-//         predefinedTemplateField.style.display = 'none';
-//         newTemplateField.style.display = 'block';
-//         templateType = 'new';
-//     // }
-//  }
- 
- 
-//  function generateSegment() {
-//     const segmentContainer = document.getElementById('segmentContainer');
-//     const regenerateButton = document.getElementById('regenerateButton');
-//     const generateButton = document.getElementById('generateButton');
-   
-//     // Show segment container and regenerate button after generating
-//     segmentContainer.style.display = 'block';
-//     regenerateButton.style.display = 'block';
-//     generateButton.style.display = 'none'; // Hide the generate button after generation
-//     selectSegment('Segment 1');  // Default to Segment 1
-//  }
- 
- 
-//  function selectSegment(segment) {
-//     const editableSegment = document.getElementById('editableSegment');
-//     editableSegment.value = segment;
-//  }
 
 function generateSegment() {
     // Capture form data
@@ -609,35 +531,6 @@ function applyFilters() {
     populateTable(filteredData);
 }
 
-// Download Excel file
-// function downloadExcel() {
-//     const channel = document.getElementById('channel').value;
-//     const dateFrom = document.getElementById('dateFrom').value;
-//     const dateTo = document.getElementById('dateTo').value;
-//     const status = document.getElementById('status').value;
-//     const sortBy = document.getElementById('sortBy').value;
-
-//     const queryParams = new URLSearchParams({
-//         channel: channel,
-//         dateFrom: dateFrom,
-//         dateTo: dateTo,
-//         status: status,
-//         sortBy: sortBy
-//     });
-
-//     window.location.href = `/download-excel?${queryParams}`;
-// }
-
-// function toggleSegmentOption() {
-//     // Show or hide the generate button based on segment option selection
-//     if (document.getElementById('segmentAI').checked) {
-//         document.getElementById('generateButton').style.display = 'block';
-//         document.getElementById('aiSegmentFields').style.display = 'block';
-//     } else {
-//         document.getElementById('generateButton').style.display = 'none';
-//         document.getElementById('aiSegmentFields').style.display = 'none';
-//     }
-// }
  function selectTitle(title) {
     // const editableTitle = document.getElementById('editableTitle');
     // editableTitle.value = title;
@@ -806,43 +699,6 @@ function toggleTemplateContentOption(selectedOption) {
     .catch(error => {
         console.error('Error:', error);
     });
-    // Collect form data from the target audience tab
-    // const formData = new FormData();
-    // formData.append('campaignName', document.getElementById('campaignName').value);
-    // formData.append('campaignGoal', document.getElementById('campaignGoal').value);
-    // formData.append('customerData', document.getElementById('customerData').files[0]);
-
-    // // Fetch business details from the session via AJAX
-    // fetch('/get_business_details', {
-    //     method: 'GET',
-    // })
-    // .then(response => response.json())
-    // .then(businessDetails => {
-    //     // Append business details to the form data
-    //     formData.append('businessName', businessDetails.business_name);
-    //     formData.append('industry', businessDetails.industry);
-    //     formData.append('businessDescription', businessDetails.business_description);
-    //     formData.append('primaryColor', businessDetails.primary_color);
-    //     formData.append('secondaryColor', businessDetails.secondary_color);
-    //     formData.append('tertiaryColor', businessDetails.tertiary_color);
-    //     formData.append('fontSize', businessDetails.font_size);
-    //     formData.append('fontStyle', businessDetails.font_style);
-
-    //     // Send the form data to the backend for AI prompt generation
-    //     return fetch('/generate-prompt', {
-    //         method: 'POST',
-    //         body: formData,
-    //     });
-    // })
-    // .then(response => response.json())
-    // .then(data => {
-    //     // Display the generated predefined prompt
-    //     document.getElementById('predefinedPrompt').value = data.predefined_prompt;
-    //     predefinedTemplateField.style.display = 'block';
-    //     newTemplateField.style.display = 'none';
-    //     document.getElementById("generateButton").style.display = 'inline-block';
-    // })
-    // .catch(error => console.error('Error:', error));
 }
 
 function generateSegments() {
@@ -950,89 +806,16 @@ function saveTargetAudienceData() {
     if(custom){
     segment = document.getElementById('customSegment').value;
     }
-    // Assuming the customerData is a file input, we handle it separately
-    // let customerData = document.getElementById('customerData').files[0]; // File input
-    
-    // let templateOption = document.querySelector('input[name="templateOption"]:checked').value;
-    
-    // // If using predefined prompt
-    // let predefinedPrompt = document.getElementById('predefinedPrompt').value;
-    
-    // // If using custom prompt (in case they choose to create a new template)
-    // let customPrompt = document.getElementById('customPrompt').value;
     
     // Store the data in sessionStorage
     sessionStorage.setItem('campaignName', campaignName);
     sessionStorage.setItem('campaignGoal', campaignGoal);
     sessionStorage.setItem('segment',segment);
     
-    // Store template choice and prompts
-    // sessionStorage.setItem('templateOption', templateOption);
-    // sessionStorage.setItem('predefinedPrompt', predefinedPrompt);
-    // sessionStorage.setItem('customPrompt', customPrompt);
-    
     // Navigate to the next tab (you might want to modify this depending on your setup)
     nextTab('contentIdeation');
 }
 
-// function generateContent() {
-//     const contentType = document.querySelector('input[name="contentChannel"]:checked').value;
-//     let prompt = document.getElementById('customPromptContent').value;
-
-//     const predefined = document.getElementById('predefinedTemplateContent').checked;
-//     if (predefined) {
-//         prompt = document.getElementById('predefinedPromptContent').value;
-//     }
-
-//     const formData = new FormData();
-//     formData.append('prompt', prompt);
-//     formData.append('contentType', contentType);
-
-//     fetch('/generate-content', {
-//         method: 'POST',
-//         body: formData,
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//         // Store the response data in sessionStorage based on content type
-//         if (contentType === 'push') {
-//             sessionStorage.setItem('generatedContentData', JSON.stringify(data));  // Store the response data
-//         } else if (contentType === 'email') {
-//             populateEmailContent(data);  // Call email-specific function
-//         }
-
-//         // Navigate to content generation tab and then populate data
-//         nextTab('contentGeneration');
-//         populateContentGenerationPage();  // Populate fields after navigating to the page
-//     })
-//     .catch(error => {
-//         console.error('Error:', error);
-//     });
-// }
-
-// // Function to populate email content
-
-// function populateContentGenerationPage() {
-//     // Retrieve the generated content data from sessionStorage
-//     const generatedData = JSON.parse(sessionStorage.getItem('generatedContentData'));
-
-//     if (generatedData) {
-//         // Populate Titles
-//         document.getElementById('pushTitle').innerHTML = generatedData.title.map((title, index) => 
-//             `<button class="segment-pill" onclick="selectTitle('${title}')">Title ${index + 1}</button>`
-//         ).join('');
-
-//         // Populate Subtitles
-//         document.getElementById('pushSubtitle').innerHTML = generatedData.subtitle.map((subtitle, index) => 
-//             `<button class="segment-pill" onclick="selectSubtitle('${subtitle}')">Subtitle ${index + 1}</button>`
-//         ).join('');
-
-//         // Populate Messages
-//         document.getElementById('pushMessage').innerHTML = generatedData.message.map((message, index) => 
-//             `<button class="segment-pill" onclick="selectPushmsg('${message}')">Message ${index + 1}</button>`
-//         ).join('');
-//     }
-// }
 function generateContent() {
     const contentType = document.querySelector('input[name="contentChannel"]:checked').value;
     let prompt = document.getElementById('customPromptContent').value;
@@ -1064,66 +847,6 @@ function generateContent() {
 
 // Function to populate the generated content in the Content Generation Page
 function populateContentGenerationPage() {
-    // Retrieve the generated content data from sessionStorage
-//     const contentType = document.querySelector('input[name="contentChannel"]:checked').value;
-//     const data = sessionStorage.getItem('generatedContentData');
-//     let cleanedData = data.replace(/`/g, ''); // This removes backticks
-//     if (cleanedData.startsWith('json')) {
-//         // Remove the prefix (if it exists)
-//         cleanedData = cleanedData.substring(4).trim(); // Remove the first 4 characters
-//     }
-//     const generatedData = JSON.parse(cleanedData);
-//     if (!generatedData) {
-//         console.log('No data found in sessionStorage.');
-//         return;
-//     }
-
-//     if(contentType == 'push'){
-    
-//     // Populate Titles
-//     if (generatedData.Title && Array.isArray(generatedData.Title)) {
-//         document.getElementById('pushTitle').innerHTML = generatedData.Title.map((title, index) => 
-//             `<button class="segment-pill" id="title${index + 1}" onclick="selectTitle('title${index + 1}')">${title}</button>`
-//         ).join('');
-//     } else {
-//         console.log('No title data found');
-//     }
-
-//     // Populate Subtitles
-//     if (generatedData.Subtitle && Array.isArray(generatedData.Subtitle)) {
-//         document.getElementById('pushSubtitle').innerHTML = generatedData.Subtitle.map((subtitle, index) => 
-//             `<button class="segment-pill" id="subtitle${index + 1}" onclick="selectSubtitle('subtitle${index + 1}')">${subtitle}</button>`
-//         ).join('');
-//     } else {
-//         console.log('No subtitle data found');
-//     }
-
-//     // Populate Messages
-//     if (generatedData.Message && Array.isArray(generatedData.Message)) {
-//         document.getElementById('pushMessage').innerHTML = generatedData.Message.map((message, index) => 
-//             `<button class="segment-pill" id="message${index + 1}" onclick="selectPushmsg('message${index + 1}')">${message}</button>`
-//         ).join('');
-//     } else {
-//         console.log('No message data found');
-//     }
-// }
-// else{
-//     // Populate Email Subjects
-//     document.getElementById('Subject').innerHTML = generatedData.Subject.map((subject, index) => 
-//         `<div class="segment-pill" id="subject${index + 1}" onclick="selectSubject('subject${index + 1}')">${subject}</div>`
-//     ).join('');
-
-//     // Populate Email Body
-//     document.getElementById('Body').innerHTML = generatedData.Body.map((body, index) => 
-//         `<div class="segment-pill" id="body${index + 1}" onclick="selectBody('body${index + 1}')">${body}</div>`
-//     ).join('');
-
-//     // Populate Email CTA
-//     document.getElementById('CTA').innerHTML = generatedData.CTA.map((cta, index) => 
-//         `<div class="segment-pill" id="CTA${index + 1}" onclick="selectCTA('CTA${index + 1}')">${cta}</div>`
-//     ).join('');
-// }
-
 // Retrieve the generated content data from sessionStorage
 const contentType = document.querySelector('input[name="contentChannel"]:checked').value;
 const data = sessionStorage.getItem('generatedContentData');
@@ -1314,37 +1037,6 @@ function DeliveryInsights() {
         console.error('Error:', error);
     });
 }
-
-// function DeliveryInsights() {
-//     document.getElementById('deliveryInsightsPopup').style.display = 'block';
-//     document.getElementById('popupOverlay').style.display = 'block';
-//     contentType = sessionStorage.getItem('contentType');
-//     const formData = new FormData();
-//     formData.append('contentType', contentType);
-
-//     fetch('/generate-timing', {
-//         method: 'POST',
-//         body: formData,
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-
-//         // // Store the response data in sessionStorage based on content type
-//         //     sessionStorage.setItem('generatedContentData', data);  // Store the response data
-//         // // Navigate to content generation tab and then populate data
-//         // nextTab('contentGeneration');
-//         let best_timing = data.best_timing;
-//          best_timing = best_timing.replace(/[`*]/g, '');
-//         document.getElementById('bestTimeAIContent').innerHTML = `
-//             <pre style="font-family: 'Arial', sans-serif; font-size: 16px; white-space: pre-wrap; word-wrap: break-word; width: 100%; overflow-wrap: break-word;">
-//                 ${best_timing}
-//             </pre>
-//         `;
-//     })
-//     .catch(error => {
-//         console.error('Error:', error);
-//     });
-// }
 
 function getInsights(){
     document.getElementById('InsightsPopup').style.display = 'block';

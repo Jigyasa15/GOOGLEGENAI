@@ -1,291 +1,3 @@
-# from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
-# from dotenv import load_dotenv
-# import os 
-# import pandas as pd
-# import logging
-# from google.cloud import aiplatform
-
-# from flask_mail import Mail, Message
-# from datetime import datetime, timedelta
-# import random
-# from authlib.integrations.flask_client import OAuth
-
-# app = Flask(__name__)  # Corrected here
-# app.secret_key = os.getenv('secret_key')
-
-# load_dotenv()
-# import vertexai
-
-# GOOGLE_OAUTH_CLIENT_ID = os.getenv("GOOGLE_OAUTH_CLIENT_ID")
-# GOOGLE_OAUTH_CLIENT_SECRET = os.getenv("GOOGLE_OAUTH_CLIENT_SECRET")
-# import re
-# import urllib
-# import warnings
-# from pathlib import Path
-
-# # import backoff
-# # import pandas as pd
-# # import PyPDF2
-# # import ratelimit
-# # from google.api_core import exceptions
-# # from tqdm import tqdm
-# from vertexai.generative_models import GenerationConfig, GenerativeModel
-# warnings.filterwarnings("ignore")
-# generation_config = GenerationConfig(temperature=0.1, max_output_tokens=256)
-# # Set Google Application Credentials (path to your service account key JSON file)
-# os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/Users/jigyasa/Downloads/elevated-summer-436915-p7-390d4dc62cad.json"
-
-# # Initialize Vertex AI API
-# aiplatform.init(project=os.getenv('GOOGLE_PROJECT'), location=os.getenv('GOOGLE_LOCATION'))
-
-# generation_model = GenerativeModel("text-bison@001")
-
-# PROMPT_TEMPLATE = """
-# Generate a marketing prompt for a campaign with the following details:
-# Campaign Name: {campaign_name}
-# Campaign Goal: {campaign_goal}
-# Customer Data Insights: {csv_data}
-# """
-
-# CSV_ANALYSIS_PROMPT = """
-# Analyze the following customer data and extract key trends, patterns, and attributes that would help generate a customer segment for targeted marketing.
-
-# {csv_data}
-# """
-
-
-
-# # Configure Flask-Mail
-# app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-# app.config['MAIL_PORT'] = 587
-# app.config['MAIL_USE_TLS'] = True
-# app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')  # Your email
-# app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')   # Your email password
-# app.config['MAIL_DEFAULT_SENDER'] = 'abhisheksauray34@gmail.com'
-# mail = Mail(app)
-
-# # Configure OAuth
-# oauth = OAuth(app)
-# google = oauth.register(
-#     name='google',
-#     client_id=GOOGLE_OAUTH_CLIENT_ID,
-#     client_secret=GOOGLE_OAUTH_CLIENT_SECRET,
-#     access_token_url='https://oauth2.googleapis.com/token',  # Use the correct URL
-#     access_token_params=None,
-#     authorize_url='https://accounts.google.com/o/oauth2/auth',
-#     authorize_params=None,
-#     userinfo_endpoint='https://openidconnect.googleapis.com/v1/userinfo',  # Updated endpoint
-#     client_kwargs={'scope': 'openid profile email'},
-# )
-
-# # Home Route
-# @app.route('/')
-# def index():
-#     return render_template('index.html')
-
-# @app.route('/analytics')
-# def analytics():
-#     return render_template('analytics.html')
-
-# # Sign-In Route
-# @app.route('/signin')
-# def signin():
-#     return render_template('signin.html')
-
-# # Google Login Route
-# @app.route('/login/google')
-# def google_login():
-#     redirect_uri = url_for('google_authorize', _external=True)
-#     return google.authorize_redirect(redirect_uri)
-
-# # Google OAuth Callback Route
-# @app.route('/authorize/google')
-# def google_authorize():
-#     token = google.authorize_access_token()
-#     user_info = google.get('userinfo').json()
-    
-#     # Save user info in session
-#     session['profile'] = user_info
-#     return redirect(url_for('dashboard'))
-
-# # Dashboard Route
-# @app.route('/dashboard')
-# def dashboard():
-#      # Check if the OTP is verified
-#     if 'otp_verified' not in session or not session['otp_verified']:
-#         flash("You need to verify your OTP first.")
-#         return redirect(url_for('signin'))
-    
-#     return render_template('dashboard.html') # Render your dashboard template here
-
-# # Send OTP Email
-# @app.route('/send_otp', methods=['POST'])
-# def send_otp():
-#     email = request.form['email']
-
-#     # Generate a random OTP
-#     otp = random.randint(100000, 999999)
-    
-#     # Get the current time (UTC) and set an expiration time (e.g., 5 minutes)
-#     now = datetime.utcnow()
-#     otp_expiry = now + timedelta(minutes=5)  # OTP will be valid for 5 minutes
-
-#     # Store OTP and expiry time in session temporarily
-#     session['otp'] = otp
-#     session['email'] = email
-#     session['otp_expiry'] = otp_expiry.isoformat()  # Store expiry time in ISO format
-
-#     # Send OTP to the user's email
-#     msg = Message('Your OTP Code', recipients=[email])
-#     msg.body = f'Your OTP code is {otp}. This code will expire in 5 minutes.'
-#     mail.send(msg)
-
-#     return render_template('verify_otp.html', email=email)
-# # Verify OTP
-# @app.route('/verify_otp', methods=['POST'])
-# def verify_otp():
-#     otp_input = request.form['otp']  # Get user input
-#     current_time = datetime.utcnow()  # Get current time
-
-#     # Check if the OTP and its expiry exist in the session
-#     if 'otp' in session and 'otp_expiry' in session:
-#         otp_expiry = datetime.fromisoformat(session['otp_expiry'])  # Parse expiry time
-
-#         if current_time > otp_expiry:
-#             flash("OTP has expired. Please request a new one.")
-#             session.pop('otp', None)  # Clear expired OTP
-#             session.pop('otp_expiry', None)
-#             return redirect(url_for('signin'))
-
-#         try:
-#             # Check if OTP is correct
-#             if session.get('otp') == int(otp_input):
-#                 session['otp_verified'] = True  # Set OTP verified flag
-#                 session.pop('otp', None)  # Clear OTP
-#                 session.pop('otp_expiry', None)  # Clear expiry
-#                 return redirect(url_for('dashboard'))  # Redirect to dashboard
-#             else:
-#                 flash("Invalid OTP. Please try again.")
-#                 return redirect(url_for('signin'))  # Redirect to sign-in if OTP is wrong
-#         except ValueError:
-#             flash("Invalid OTP format. Please enter a numeric OTP.")
-#             return redirect(url_for('signin'))  # Redirect if the input is invalid
-#     else:
-#         flash("Session expired or OTP not found. Please request a new OTP.")
-#         return redirect(url_for('signin'))
-
-# @app.route('/submit_business_details', methods=['POST'])
-# def submit_business_details():
-#     # Save the form data in the session
-#     session['business_name'] = request.form.get('businessName')
-#     session['industry'] = request.form.get('industry')
-#     session['other_industry'] = request.form.get('otherIndustry')
-#     session['business_description'] = request.form.get('businessDescription')
-#     session['primary_color'] = request.form.get('primaryColor')
-#     session['secondary_color'] = request.form.get('secondaryColor')
-#     session['tertiary_color'] = request.form.get('tertiaryColor')
-#     session['font_size'] = request.form.get('fontSize')
-#     session['font_style'] = request.form.get('fontStyle')
-
-#     # Handle the business logo file upload (if needed)
-#     business_logo = request.files.get('businessLogo')
-#     if business_logo:
-#         business_logo.save(f"static/uploads/{business_logo.filename}")
-#         session['business_logo'] = f"/static/uploads/{business_logo.filename}"
-
-#     return jsonify({"success": True})
-
-# @app.route('/get_business_details', methods=['GET'])
-# def get_business_details():
-#     business_details = {
-#         'business_name': session.get('business_name'),
-#         'industry': session.get('industry'),
-#         'other_industry': session.get('other_industry'),
-#         'business_description': session.get('business_description'),
-#         'primary_color': session.get('primary_color'),
-#         'secondary_color': session.get('secondary_color'),
-#         'tertiary_color': session.get('tertiary_color'),
-#         'font_size': session.get('font_size'),
-#         'font_style': session.get('font_style'),
-#         'business_logo': session.get('business_logo'),
-#     }
-#     return jsonify(business_details)
-
-
-# def read_and_prepare_csv(file):
-#     """Reads CSV and prepares it for AI analysis."""
-#     try:
-#         df = pd.read_csv(file)
-#         return df.to_string()  # Convert the entire DataFrame to a string for AI processing
-#     except Exception as e:
-#         return f"Error processing CSV: {str(e)}"
-
-# def analyze_csv_with_vertex_ai(csv_data):
-#     # """Send the CSV data to Vertex AI for analysis."""
-#     # prompt = CSV_ANALYSIS_PROMPT.format(csv_data=csv_data[:30000])
-
-#     # # Use Vertex AI Text Generation model
-#     # # Use the model to summarize the text using the prompt
-#     # summary = generation_model.predict(prompt=prompt,max_output_tokens=1024)
-#     # return summary  # Return AI-generated CSV insights
-#     """Send the CSV data to Vertex AI for analysis."""
-#     prompt = CSV_ANALYSIS_PROMPT.format(csv_data=csv_data[:30000])
-
-#     # Use Vertex AI Text Generation model
-#     # Correct format for input
-#     # instances = [{"content": prompt}]
-    
-#     # # Make the prediction call
-#     # response = generation_model.predict(instances=instances, parameters={"max_output_tokens": 1024})
-
-#     # # Extract the generated text from the response
-#     # summary = response.predictions[0]["content"]
-#     summary = generation_model.generate_content(
-#     contents=prompt, generation_config=generation_config)
-#     logging.basicConfig(level=logging.DEBUG)
-
-# # Example of logging instead of print
-#     logging.debug(f"Response from Vertex AI: {summary}")
-#     return summary  # Return AI-generated CSV insights
-    
-
-# def generate_predefined_prompt(campaign_name, campaign_goal, csv_data):
-#     """Generate predefined prompt using Vertex AI."""
-    
-#     prompt = PROMPT_TEMPLATE.format(
-#         campaign_name=campaign_name,
-#         campaign_goal=campaign_goal,
-#         csv_data=csv_data
-#     )
-    
-#     model = aiplatform.TextGenerationModel.from_pretrained("text-bison@001")
-#     response = model.predict(prompt)
-    
-#     return response.text
-
-# @app.route('/generate-prompt', methods=['POST'])
-# def generate_prompt():
-#     """Handle predefined prompt generation based on user inputs."""
-#     # Capture campaign details
-#     campaign_name = request.form.get('campaignName')
-#     campaign_goal = request.form.get('campaignGoal')
-    
-#     # Handle CSV file upload
-#     csv_file = request.files.get('customerData')
-#     if csv_file:
-#         csv_data_string = read_and_prepare_csv(csv_file)
-#         csv_insights = analyze_csv_with_vertex_ai(csv_data_string)
-#     else:
-#         csv_insights = "No customer data provided."
-    
-#     # Generate the predefined prompt using Vertex AI
-#     predefined_prompt = generate_predefined_prompt(campaign_name, campaign_goal, csv_insights)
-    
-#     return jsonify({'predefined_prompt': predefined_prompt})
-
-# if __name__ == '__main__':  # Corrected here
-#     app.run(debug=True, port=5001)
-
 from flask import Flask, render_template, request, send_file, redirect, url_for, session, flash, jsonify
 import os
 import io
@@ -295,7 +7,6 @@ import asyncio
 import google.generativeai as genai
 import langchain
 import pandas as pd
-# from google.cloud import aiplatform
 from flask_mail import Mail, Message
 from io import BytesIO
 from datetime import datetime, timedelta
@@ -305,7 +16,7 @@ from langchain.schema.output_parser import StrOutputParser
 from langchain.chat_models import init_chat_model
 from langchain_google_genai import ChatGoogleGenerativeAI
 
-# from google.cloud import aiplatform
+
 
 
 from dotenv import load_dotenv
@@ -332,9 +43,6 @@ if not os.path.exists(app.config['UPLOAD_FOLDER']):
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-# app.config['MAIL_USERNAME'] = 'abhisheksauray34@gmail.com'  # Your email
-# app.config['MAIL_PASSWORD'] = 'xbtc qgoo ipnu ddmd'   # Your email password
-# app.config['MAIL_DEFAULT_SENDER'] = 'abhisheksauray34@gmail.com'
 app.config['MAIL_USERNAME'] = 'ainotify80@gmail.com'  # Your email
 app.config['MAIL_PASSWORD'] = 'snyj vlph hbbg ebns'   # Your email password
 app.config['MAIL_DEFAULT_SENDER'] = 'ainotify@gmail.com'
@@ -435,86 +143,6 @@ def load_campaign_data():
             })
 
     return jsonify(campaign_data)
-# @app.route('/load-campaign-data', methods=['GET'])
-# def load_campaign_data():
-    # Get filters from request
-    # channel = request.args.get('channel', 'all')
-    # status = request.args.get('status', 'all')
-    # date_from = request.args.get('dateFrom')
-    # date_to = request.args.get('dateTo')
-    # sort_by = request.args.get('sortBy')
-
-    # # Load the data
-    # df = load_csv_data()
-
-    # # Apply filters
-    # if channel != 'all':
-    #     df = df[df['Channel'].str.lower() == channel]
-    # if status != 'all':
-    #     df = df[df['Status'].str.lower() == status]
-    # if date_from:
-    #     df = df[df['Sent Date'] >= date_from]
-    # if date_to:
-    #     df = df[df['Sent Date'] <= date_to]
-
-    # # Sorting logic
-    # if sort_by == 'CTR':
-    #     df = df.sort_values(by='CTR (%)', ascending=False)
-    # elif sort_by == 'sent':
-    #     df = df.sort_values(by='Sent', ascending=False)
-    # elif sort_by == 'clicked':
-    #     df = df.sort_values(by='Clicked', ascending=False)
-    # elif sort_by == 'performance':
-    #     df['performance'] = df['Open Rate (%)'] + df['CTR (%)']
-    #     df = df.sort_values(by='performance', ascending=False)
-    # elif sort_by == 'createDate':
-    #     df = df.sort_values(by='Sent Date', ascending=False)
-
-    # # Convert to list of dictionaries for JSON response
-    # data = df.to_dict(orient='records')
-    # return jsonify(data)
-
-@app.route('/download-excel', methods=['GET'])
-def download_excel():
-    # Load and filter data
-    df = load_csv_data()
-    channel = request.args.get('channel', 'all')
-    status = request.args.get('status', 'all')
-    date_from = request.args.get('dateFrom')
-    date_to = request.args.get('dateTo')
-    sort_by = request.args.get('sortBy')
-
-    # Apply filters and sorting (same as the load_campaign_data function)
-    if channel != 'all':
-        df = df[df['Channel'].str.lower() == channel]
-    if status != 'all':
-        df = df[df['Status'].str.lower() == status]
-    if date_from:
-        df = df[df['Sent Date'] >= date_from]
-    if date_to:
-        df = df[df['Sent Date'] <= date_to]
-    
-    # Sorting logic
-    if sort_by == 'CTR':
-        df = df.sort_values(by='CTR (%)', ascending=False)
-    elif sort_by == 'sent':
-        df = df.sort_values(by='Sent', ascending=False)
-    elif sort_by == 'clicked':
-        df = df.sort_values(by='Clicked', ascending=False)
-    elif sort_by == 'performance':
-        df['performance'] = df['Open Rate (%)'] + df['CTR (%)']
-        df = df.sort_values(by='performance', ascending=False)
-    elif sort_by == 'createDate':
-        df = df.sort_values(by='Sent Date', ascending=False)
-
-    # Save the DataFrame to an Excel file in memory
-    output = BytesIO()
-    with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
-        df.to_excel(writer, index=False)
-    
-    output.seek(0)
-    return send_file(output, mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                     as_attachment=True, attachment_filename='campaign_data.xlsx')
 
 # Send OTP Email
 @app.route('/send_otp', methods=['POST'])
@@ -703,60 +331,22 @@ def generate_predefined_prompt(campaign_name, campaign_goal, csv_data):
 # Initialize Google Generative AI
 llm = genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 # Function to generate predefined prompt based on user input
-# llm = OpenLLM(
-#     model_name="dolly-v2",
-#     model_id="databricks/dolly-v2-3b",
-#     temperature=0.94,
-#     repetition_penalty=1.2,
-# )
 def generate_predefined_prompt(campaign_name, campaign_goal, business_description, industry):
     """Generate predefined prompt using Gemini AI."""
-   #  llm = ChatGoogleGenerativeAI(
-   #                               model="gemini-1.5-flash",
-   #                               temperature=0,
-   #                               max_tokens=10,) 
-   #  prompt_template = PromptTemplate.from_template(template="You are a marketing and prompt generation expert in the {industry} industry with experience in {business_description}. Provide a prompt to generate the top 3 target segment names based on the campaign goal: {campaign_goal} based on these details.Keep the tone formal")
-   #  prompt = prompt_template.format(industry=industry, business_description=business_description, campaign_goal=campaign_goal)
-    
-    # Use the AI to generate the predefined prompt
-   #  llm = genai.GenerativeModel(model="gemini-1.5-pro", temperature=0, max_tokens=100)
-   #  response = llm.generate_content(prompt_template)
-   #  ai_msg =  llm.invoke(prompt)
     template = ("You are a marketing expert in the {industry} industry. Based on the campaign goal of {campaign_goal}, "
             "identify and generate three distinct target segment names that effectively encapsulate the characteristics and preferences of potential customers. "
             "Consider factors such as demographics, psychographics, and behavioral patterns relevant to the {industry} industry and business {business_description}. "
             )
     predefined_prompt = template.format(industry=industry, business_description=business_description, campaign_goal=campaign_goal)
-      # predefined_prompt = ai_msg.content
-    # Extract the generated prompt from the response
-   #  predefined_prompt = response.candidates[0].content.parts[0].text
     return predefined_prompt
 
 # Function to generate segments based on the predefined prompt
 def generate_segments(predefined_prompt):
     """Generate target segments based on predefined prompt."""
-    
-    # Create a new prompt to generate segments
-   #  segment_prompt_template = f"Prompt: {predefined_prompt}. In the output, give only 3 distinct target segments names, comma-separated, no extra text within 15 words."
-    
-   #  # Use AI to generate the segments
-   #  llm = genai.GenerativeModel(model="gemini-1.5-pro", temperature=0, max_tokens=100)
-   #  response = llm.generate_content(segment_prompt_template)
-    # llm = ChatGoogleGenerativeAI(
-    #                              model="gemini-1.5-flash",
-    #                              temperature=1.0,
-    #                              max_tokens=20,) 
     segment_prompt_template = PromptTemplate.from_template(template="{predefined_prompt}.The output should be formatted as follows: segment1, segment2, segment3 and should not contain any extra details. Where segment1, segment 2 and segment3 are the proposed segment names ")
     segment_prompt = segment_prompt_template.format(predefined_prompt=predefined_prompt)
     random_seed = str(random.random())
     final_prompt = segment_prompt + " " + random_seed
-    # ai_segment_msg =  llm.invoke(segment_prompt)
-    
-
-    
-    # Extract the generated segments from the response
-    # segments = ai_segment_msg.content.split(',')
-
 
     file_path = session.get('uploaded_csv_path')
     
@@ -774,16 +364,6 @@ def generate_segments(predefined_prompt):
     model_name="gemini-1.5-flash",
     generation_config=generation_config,
 )
-#  chat_session = model.start_chat(
-#   history=[
-#     {
-#       "role": "user",
-#       "parts":
-#         extract_csv("static/Updated_User_Event_Data_with_User_Count.csv")
-#       ,
-#     },
-#   ]
-# )
 
     final_prompt =  "Refer the csv data for the task" + final_prompt
     chat_session = model.start_chat(
@@ -911,16 +491,6 @@ def generate_best_timing():
   model_name="gemini-1.5-flash",
   generation_config=generation_config,
 )
-#  chat_session = model.start_chat(
-#   history=[
-#     {
-#       "role": "user",
-#       "parts":
-#         extract_csv("static/Updated_User_Event_Data_with_User_Count.csv")
-#       ,
-#     },
-#   ]
-# )
 
  contentType = request.form.get('contentType')
  timing_prompt= ("""You're a data scientist. You're task is to provide summary insights to identify when is the best time to send {contentType} notifications to users to achieve maximum user engagement and boost conversion based on below csv file.Keep the output format as the sample shown below and make sure output format is user friendly as this will be shown in the webpage. Don't use column name and * in output.
@@ -991,18 +561,6 @@ def generate_predefined_content_prompt():
     businessname = session.get('businessName')
     
     if content_type == 'push':
-#       prompt_template = """You are a content generation expert for {business_description} in the {industry} industry. Based on the campaign goal of {campaign_goal}, content objective {content_objective}, the desired tone of {tone}, and the target segment of {target_segment}, please create content for  {content_type} notification channel.
-# The content should include the following elements:
-
-
-# Title: A compelling headline that grabs attention, conveys the main benefit, and includes high-performing keywords relevant to the target segment.
-
-
-# Subtitle: A supporting line that adds more context or highlights a secondary benefit, tailored to the specific needs of the target audience.
-
-
-# Message: A clear and concise body text that emphasizes the key value proposition, action, or solution, ensuring it resonates with the target segment's pain points or desires.
-# """
        prompt_template = """You are a content generation expert at {businessname}, a {business_description} in the {industry} industry. Based on the campaign goal of {campaign_goal}, content objective {content_objective}, and the desired tone of {tone}, please create personalized content for the {content_type} notification channel that resonates with the {target_segment}.
 
 The content must adhere to {businessname}'s brand guidelines, using language and tone that aligns with the company's voice while engaging the target segment effectively.
@@ -1030,170 +588,12 @@ Body: A clear and concise message that provides context, highlights secondary be
 
 CTA Button: A strong, action-driven call-to-action (CTA) that encourages immediate engagement. The CTA should align with the campaign goal and the desired user action, prompting users to take the next step (e.g., learn more, buy now, sign up).
 
-Focus on creating personalized and engaging content with username in body. Make sure it adheres to the brand's voice while maximizing relevance, impact, and action for the specified segment. """
+Focus on creating personalized and engaging content with username in body.Don't use username in subject and CTA. Make sure it adheres to the brand's voice while maximizing relevance, impact, and action for the specified segment. """
 
 
     content_prompt = prompt_template.format(businessname=businessname,business_description=business_description,industry=industry,content_type=content_type,content_objective=content_objective,tone=tone,campaign_goal=campaign_goal,target_segment=target_segment)
     predefined_prompt = content_prompt
     return jsonify({'predefined_prompt': predefined_prompt})
 
-   #  # Generate a prompt using AI
-   #  prompt_template = """
-   #  You are a content expert for {business_description} and {industry}. Create content for the {content_type} channel.
-   #  The objective is: {content_objective}. The tone should be {tone}.
-   #  The campaign goal is {campaign_goal}, and the target segment is {target_segment}.
-   #  """
-
-#     llm = ChatGoogleGenerativeAI(
-#                                  model="gemini-1.5-flash",
-#                                  temperature=0,
-#                                  max_tokens=100,) 
-#     content_prompt_template = PromptTemplate.from_template(template="""You are a prompt generation expert for {business_description} in the {industry} industry. Create a prompt template for content generation with fields title, message and CTA button for a {content_type} notification channel.
-
-# Ensure the following are reflected in the prompt:
-
-# Content Objective: {content_objective}
-# Campaign Goal: {campaign_goal}
-# Target Segment: {target_segment}
-# Tone: {tone}""")
-
-   #   content_prompt = content_prompt_template.format(business_description=business_description,industry=industry,content_type=content_type,content_objective=content_objective,tone=tone,campaign_goal=campaign_goal,target_segment=target_segment)
-#     ai_content_msg =  llm.invoke(content_prompt)
-    # Extract the generated prompt from the response
-   #  predefined_prompt = ai_content_msg.content
-   
-    
-   #  Return the predefined prompt as JSON
-   #  return jsonify({'predefined_prompt': predefined_prompt})
-
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
-
-
-# @app.route('/generate-prompt', methods=['POST'])
-# def generate_prompt():
-#     """Handle predefined prompt generation based on user inputs."""
-    
-#     # Capture campaign details
-#     campaign_name = request.form.get('campaignName')
-#     campaign_goal = request.form.get('campaignGoal')
-#     business_description = session.get('business_description')
-#     industry = session.get('industry')
-
-#     # Initialize the ChatGoogleGenerativeAI model
-#     # llm = ChatGoogleGenerativeAI(
-#     #     model="gemini-1.5-pro",
-#     #     temperature=0,
-#     #     max_tokens=1024,
-#     #     timeout=None,
-#     #     max_retries=2,
-#     #     # other params...
-#     # )
-#     # llm = ChatGoogleGenerativeAI(model="gemini-pro") 
-#     llm = genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-#     llm = ChatGoogleGenerativeAI(
-#                                  model="gemini-1.5-pro",
-#                                  temperature=0,
-#                                  max_tokens=100,) 
-#     # Define the messages for the AI prompt
-    
-#     prompt_template = PromptTemplate.from_template(template="You are a marketing and prompt generation expert in the {industry} industry with experience in {business_description}. Provide a prompt to generate the top 3 target segment names based on the campaign goal: {campaign_goal} based on these details.Keep the tone formal")
-#     prompt = prompt_template.format(industry=industry, business_description=business_description, campaign_goal=campaign_goal)
-#     print(prompt)
-#     ai_msg =  llm.invoke(prompt)
-#     predefined_prompt = ai_msg.content
-#     segment_prompt_template = PromptTemplate.from_template(template="Prompt: {predefined_prompt}. In the output give 3 distinct target segmnent comma seperated in 15 words")
-#     segment_prompt = segment_prompt_template.format(predefined_prompt=predefined_prompt)
-#     ai_segment_msg =  llm.invoke(segment_prompt)
-#     print(ai_segment_msg.content)
-#     # ai_msg = chain.invoke(input={"industry": industry, "business_description": business_description, "campaign_goal": campaign_goal})
-    
-    
-
-#     # Get the AI's response
-#     # ai_msg =  llm.invoke(messages)
-#    #  print(ai_msg)
-#    #  print(ai_msg.content)
-
-#     # Use Gemini AI for content generation working code 
-#    #  model = genai.GenerativeModel("gemini-1.5-flash")
-#    #  response = model.generate_content("Write a story about a magic backpack.")
-#    #  predefined_prompt = response.candidates[0].content.parts[0].text
-    
-#     # Return the generated prompt as JSON response
-#     return jsonify({'predefined_prompt': predefined_prompt})
-
-
-# if __name__ == '__main__':
-#     app.run(debug=True, port=50001)
-
-# def generate_prompt():
-#    """Handle predefined prompt generation based on user inputs."""
-  
-#    # Capture campaign details
-#     campaign_name = request.form.get('campaignName')
-#    campaign_goal = request.form.get('campaignGoal')
-#    business_description = session.get('business_description')
-#    industry = session.get('industry')
-#    llm = ChatGoogleGenerativeAI(
-#     model="gemini-1.5-pro",
-#     temperature=0,
-#     max_tokens=1024,
-#     timeout=None,
-#     max_retries=2,
-#     # other params...
-# )
-#     messages = [
-#     (
-#         "system",
-#         "You are a marketing and prompt generation expert of {industry} industry having experience in {business_description}. Provide a prompt to generate best target segmenent based on campaign goal {campaign_goal}",
-#     )
-# ]
-#     ai_msg = llm.invoke(messages)
-#     print(ai_msg)
-#     print(ai_msg.content)
-#     model = genai.GenerativeModel("gemini-1.5-flash")
-#     response = model.generate_content("Write a story about a magic backpack.")
-#     predefined_prompt = response.candidates[0].content.parts[0].text
-#         return jsonify({'predefined_prompt': predefined_prompt})
-
-# if __name__ == '__main__':  # Corrected here
-#    app.run(debug=True, port=50001)
-#    print(industry)
-#    print(business_description)
-#    business_description = request.form('business_description')
-#    industry = request.form('industry')
-#    print(campaign_goal)
-#    print(campaign_name)
-#    print(business_description)
-#    print(industry)
-   # Handle CSV file upload
-   # csv_file = request.files.get('customerData')
-   # if csv_file:
-   #     csv_data_string = read_and_prepare_csv(csv_file)
-   #     csv_insights = analyze_csv_with_vertex_ai(csv_data_string)
-   # else:
-   #     csv_insights = "No customer data provided."
-
-
-#    model = genai.GenerativeModel("gemini-1.5-flash")
-#    response = model.generate_content("Write a story about a magic backpack.")
-#    predefined_prompt = response.candidates[0].content.parts[0].text
-#    return jsonify({'predefined_prompt': predefined_prompt})
-#    print(response)
-#    print(response.candidates[0].content.parts[0].text)
-    # return response.candidates[0].content.parts[0].text
-   # Extract and print the generated content
-#    if response and 'candidates' in response:
-#        for candidate in response['candidates']:
-#           print(candidate['output'])
-#    else:
-#        print("No text generated")
-    # print(response)
-  
-   # Generate the predefined prompt using Vertex AI
-   # predefined_prompt = generate_predefined_prompt(campaign_name, campaign_goal, csv_insights)
-# return jsonify({'predefined_prompt': predefined_prompt})
- 
-#  if __name__ == '__main__':  # Corrected here
-#    app.run(debug=True, port=50001)
