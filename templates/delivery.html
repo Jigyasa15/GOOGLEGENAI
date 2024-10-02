@@ -1,25 +1,30 @@
 <div id="deliveryTab">
     <h2>Delivery Options</h2>
-
+ 
+ 
     <!-- Campaign Type Selection: One-Time or Periodic -->
-    <div>
+    <div style="margin-bottom: 20px;">
         <label><input type="radio" name="campaignType" value="oneTime" onclick="toggleCampaignType()"> One-Time</label>
         <label><input type="radio" name="campaignType" value="periodic" onclick="toggleCampaignType()"> Periodic</label>
     </div>
-
+ 
+ 
     <!-- One-Time Campaign Options -->
-    <div id="oneTimeOptions" style="display: none;">
+    <div id="oneTimeOptions" style="display: none; margin-bottom: 20px;">
         <h3>One-Time Options</h3>
-
+ 
+ 
         <!-- Date & Time Options -->
         <!-- <div>
             <label><input type="radio" name="scheduleType" value="fixedTime" onclick="toggleOneTimeSchedule()"> Fixed Time</label>
             <label><input type="radio" name="scheduleType" value="bestTime" onclick="toggleOneTimeSchedule()"> Best Time for User</label>
         </div> -->
-
+ 
+ 
         <!-- Fixed Time Options for One-Time Campaign -->
         <!-- <div id="oneTimeFixedOptions" style="display: none;"> -->
-
+ 
+ 
             <input type="date" id="oneTimeDate">
             <input type="time" id="oneTimeTime">
             <select id="oneTimeTimezone">
@@ -29,23 +34,28 @@
             </select>
             <button onclick="DeliveryInsights()">View Best Time with AI</button>
         <!-- </div> -->
-
+ 
+ 
         <!-- Best Time Link -->
         <!-- <div id="bestTimeLink" style="display: none;">
             <a href="#">View Best Time for Users</a>
         </div> -->
     </div>
-
+ 
+ 
     <!-- Periodic Campaign Options -->
     <div id="periodicOptions" style="display: none;">
         <h3>Periodic Options</h3>
-
+ 
+ 
         <!-- Daily or Weekly Selection -->
         <div>
             <label><input type="radio" name="periodicType" value="daily" onclick="togglePeriodicType()"> Daily</label>
             <label><input type="radio" name="periodicType" value="weekly" onclick="togglePeriodicType()"> Weekly</label>
         </div>
-
+        <br>
+ 
+ 
         <!-- Date & Time Options for Periodic Campaign (shown after daily/weekly is selected) -->
         <div id="periodicTimeOptions" style="display: none;">
             <!-- Fixed or Best Time for Periodic Campaign -->
@@ -53,7 +63,8 @@
                 <label><input type="radio" name="periodicScheduleType" value="fixedTime" onclick="togglePeriodicSchedule()"> Fixed Time</label>
                 <label><input type="radio" name="periodicScheduleType" value="bestTime" onclick="togglePeriodicSchedule()"> Best Time for User</label>
             </div> -->
-
+ 
+ 
             <!-- Fixed Time Options for Periodic Campaign -->
             <!-- <div id="periodicFixedOptions" style="display: none;"> -->
                 <input type="date" id="periodicDate">
@@ -65,23 +76,29 @@
                 </select>
                 <button onclick="DeliveryInsights()">View Best Time with AI</button>
             <!-- </div> -->
-
+ 
+ 
             <!-- Best Time for User Link for Periodic Campaign -->
             <!-- <div id="bestTimePeriodicLink" style="display: none;">
                 <a href="#">View Best Time for Users</a>
             </div> -->
         </div>
-
+ 
+ 
         <!-- Daily Options (repeat every X days) -->
+        <br>
         <div id="dailyOptions" style="display: none;">
             <label>Repeat Every: <input type="number" min="1" id="dailyRepeat"> days</label>
         </div>
-
         <!-- Weekly Options (repeat every X weeks + select multiple days) -->
         <div id="weeklyOptions" style="display: none;">
             <label>Repeat Every: <input type="number" min="1" id="weeklyRepeat"> weeks</label>
+ 
+ 
+            <br><br>
             <label>Select Days of the Week:</label>
-            <div>
+            <br>
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
                 <label><input type="checkbox" name="daysOfWeek" value="mon"> Monday</label>
                 <label><input type="checkbox" name="daysOfWeek" value="tue"> Tuesday</label>
                 <label><input type="checkbox" name="daysOfWeek" value="wed"> Wednesday</label>
@@ -92,31 +109,62 @@
             </div>
         </div>
     </div>
+    <br>
     <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
         <button onclick="previousTab('contentGeneration')">Back</button>
         <button onclick="sendCampaign()">Send</button>
     </div>
-</div>
-
-<!-- Popup for Delivery Insights -->
-<div id="deliveryInsightsPopup" style="
-    display: none; 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100vw; 
-    height: 100vh; 
-    background-color: white; 
-    padding: 10px; 
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
-    z-index: 1000; 
-    overflow-y: auto;
-">
-    <h3>Best Timing Suggestions by AI</h3>
+ </div>
+ 
+ 
+ <!-- Popup for Delivery Insights -->
+ <div id="deliveryInsightsPopup" style="
+    display: none;
+    position: fixed;
+    top: 30px;
+    left: 150px;
+    right: 150px;
+    bottom: 40px;
+    transform: translate(-50%, -50%)
+    width: 30vw;
+    height: 75vh;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    overflow-y: auto;  /* Enables vertical scrolling */
+    border-radius: 10px;
+ ">
+    <h3 style="text-align: center;">Best Timing Suggestions by AI</h3>
     <p id="bestTimeAIContent">Loading best times...</p>
-    <button onclick="closeDeliveryInsights()">Close</button>
-</div>
-
-<!-- Overlay for Popup -->
-<div id="popupOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999;" onclick="closeDeliveryInsights()"></div>
-
+    <!-- <button onclick="closeDeliveryInsights()">Close</button>
+ </div>  -->
+ <!-- Close button positioned at the top-right corner -->
+ <button onclick="closeDeliveryInsights()" style="
+        position: absolute;
+        top: 10px;
+        right: 40px;
+        background-color: #ff7f50;  /* Set the background color to red */
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        border-radius: 60%;  /* Make the button circular */
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    ">&times;</button>
+ </div>
+ 
+ 
+ <!-- Overlay for Popup -->
+ <div id="popupOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999;" onclick="closeDeliveryInsights()"></div>
+ 
+ 
+ 
+ 
+ 
+ 

@@ -1,0 +1,51 @@
+Sent Date,Campaign Name,Status,Channel,User Segment,Delivered,Opened,Clicked,Unsubscribe Rate (%),Open Rate (%),CTR (%),Avg. Open Time (min),Avg. Click Time (min)
+2024-05-03,Holiday Sale,Active,Email,All Users,14808,8984,8416,"18.6","6.067","5.683","5.548","7.018"
+2024-09-18,Welcome Email,Active,Email,New Users,16535,11508,7865,"6.981","69.6","4.757","7.605","4.498"
+2024-01-05,New Feature Announcement,Scheduled,Push,Inactive Users,0,0,0,0,0,0,0,0
+2024-02-15,Welcome Email,Active,Email,New Users,10727,9722,2435,"1.967","9.063","22.7","3.065","1.507"
+2024-08-26,New Feature Announcement,Active,Push,Inactive Users,8625,5400,1347,"7.846","6.261","1.562","7.221","3.229"
+2024-03-07,Welcome Email,Active,Email,New Users,9010,6024,3812,"7.558","6.686","4.231","7.399","4.418"
+2023-12-18,Welcome Email,Draft,Email,New Users,0,0,0,0,0,0,0,0
+2024-04-21,Welcome Email,Scheduled,Email,New Users,0,0,0,0,0,0,0,0
+2023-10-30,New Feature Announcement,Draft,Push,Inactive Users,0,0,0,0,0,0,0,0
+2023-12-16,New Feature Announcement,Draft,Push,Inactive Users,0,0,0,0,0,0,0,0
+2024-08-07,Promo Push,Draft,Push,Active Users,0,0,0,0,0,0,0,0
+2024-03-01,Welcome Email,Active,Email,New Users,13656,9569,2303,217,"7.007","1.686","8.751","1.598"
+2023-10-30,Welcome Email,Active,Email,New Users,6352,4684,3606,"2.281","7.374","5.677","4.518",598
+2024-07-24,Promo Push,Active,Push,Active Users,2131,2016,762,"1.864","94.6","3.576","9.576","5.869"
+2024-02-01,New Feature Announcement,Active,Push,Inactive Users,11838,6068,3707,"7.258","5.126","3.131","7.489","6.601"
+2023-10-02,New Feature Announcement,Scheduled,Push,Inactive Users,0,0,0,0,0,0,0,0
+2023-12-30,Holiday Sale,Active,Email,All Users,8115,7920,2922,"1.372","97.6","3.601","9.763","10.984"
+2024-07-06,Promo Push,Draft,Push,Active Users,0,0,0,0,0,0,0,0
+2024-09-15,Cart Abandonment,Draft,Email,Abandoned Cart Users,0,0,0,0,0,0,0,0
+2023-11-15,Cart Abandonment,Scheduled,Email,Abandoned Cart Users,0,0,0,0,0,0,0,0
+2024-04-14,Welcome Email,Scheduled,Email,New Users,0,0,0,0,0,0,0,0
+2024-08-01,Promo Push,Scheduled,Push,Active Users,0,0,0,0,0,0,0,0
+2024-09-24,Cart Abandonment,Draft,Email,Abandoned Cart Users,0,0,0,0,0,0,0,0
+2024-01-07,Cart Abandonment,Draft,Email,Abandoned Cart Users,0,0,0,0,0,0,0,0
+2024-06-12,New Feature Announcement,Active,Push,Inactive Users,5050,2539,267,"5.244","5.028",529,"5.683","2.232"
+2024-03-11,Welcome Email,Draft,Email,New Users,0,0,0,0,0,0,0,0
+2024-08-01,Welcome Email,Draft,Email,New Users,0,0,0,0,0,0,0,0
+2024-01-01,New Feature Announcement,Active,Push,Inactive Users,15268,11989,3934,"1.677","7.852","2.577","40.2","4.335"
+2024-08-02,Welcome Email,Scheduled,Email,New Users,0,0,0,0,0,0,0,0
+2024-07-21,Promo Push,Draft,Push,Active Users,0,0,0,0,0,0,0,0
+2024-09-26,Promo Push,Scheduled,Push,Active Users,0,0,0,0,0,0,0,0
+2024-04-29,Holiday Sale,Draft,Email,All Users,0,0,0,0,0,0,0,0
+2024-05-24,Promo Push,Active,Push,Active Users,10912,5546,674,"8.044","5.082",618,"18.2","11.297"
+2024-01-20,Welcome Email,Draft,Email,New Users,0,0,0,0,0,0,0,0
+2023-10-16,Welcome Email,Draft,Email,New Users,0,0,0,0,0,0,0,0
+2024-02-18,Promo Push,Scheduled,Push,Active Users,0,0,0,0,0,0,0,0
+2023-11-16,New Feature Announcement,Draft,Push,Inactive Users,0,0,0,0,0,0,0,0
+2024-01-11,Holiday Sale,Scheduled,Email,All Users,0,0,0,0,0,0,0,0
+2024-01-07,Promo Push,Draft,Push,Active Users,0,0,0,0,0,0,0,0
+2024-06-06,Promo Push,Active,Push,Active Users,4940,4272,2683,"9.603","8.648","5.431","5.284","4.801"
+2023-10-23,New Feature Announcement,Draft,Push,Inactive Users,0,0,0,0,0,0,0,0
+2024-06-18,New Feature Announcement,Scheduled,Push,Inactive Users,0,0,0,0,0,0,0,0
+2023-10-02,Cart Abandonment,Scheduled,Email,Abandoned Cart Users,0,0,0,0,0,0,0,0
+2023-12-24,Welcome Email,Scheduled,Email,New Users,0,0,0,0,0,0,0,0
+2024-09-17,Welcome Email,Scheduled,Email,New Users,0,0,0,0,0,0,0,0
+2024-03-06,Promo Push,Draft,Push,Active Users,0,0,0,0,0,0,0,0
+2024-05-20,Promo Push,Active,Push,Active Users,19406,11575,2140,"4.502","5.965","1.103","4.617","80.6"
+2024-06-23,New Feature Announcement,Scheduled,Push,Inactive Users,0,0,0,0,0,0,0,0
+2023-10-23,Promo Push,Active,Push,Active Users,17370,15787,13165,"2.026","9.089","7.579","8.684","10.793"
+2024-04-05,Holiday Sale,Draft,Email,All Users,0,0,0,0,0,0,0,0

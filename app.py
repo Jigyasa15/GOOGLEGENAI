@@ -332,9 +332,12 @@ if not os.path.exists(app.config['UPLOAD_FOLDER']):
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'abhisheksauray34@gmail.com'  # Your email
-app.config['MAIL_PASSWORD'] = 'xbtc qgoo ipnu ddmd'   # Your email password
-app.config['MAIL_DEFAULT_SENDER'] = 'abhisheksauray34@gmail.com'
+# app.config['MAIL_USERNAME'] = 'abhisheksauray34@gmail.com'  # Your email
+# app.config['MAIL_PASSWORD'] = 'xbtc qgoo ipnu ddmd'   # Your email password
+# app.config['MAIL_DEFAULT_SENDER'] = 'abhisheksauray34@gmail.com'
+app.config['MAIL_USERNAME'] = 'ainotify80@gmail.com'  # Your email
+app.config['MAIL_PASSWORD'] = 'snyj vlph hbbg ebns'   # Your email password
+app.config['MAIL_DEFAULT_SENDER'] = 'ainotify@gmail.com'
 mail = Mail(app)
 
 
@@ -399,7 +402,7 @@ def dashboard():
    return render_template('dashboard.html') # Render your dashboard template here
 
 # Path to the static CSV file
-STATIC_CSV_PATH = 'static/Marketing_Campaign_Performance_Dataset_final.numbers'
+STATIC_CSV_PATH = 'static/Marketing_Data_Campaign_with_commas copy.csv'
 
 # Load CSV data into a Pandas DataFrame
 def load_csv_data():
@@ -408,7 +411,7 @@ def load_csv_data():
 
 @app.route('/load-campaign-data', methods=['GET'])
 def load_campaign_data():
-    csv_file_path = 'static/Campaign_Analytics_Final.csv'  # Update with the actual path to your CSV file
+    csv_file_path = 'static/Marketing_Data_Campaign_with_commas copy.csv'  # Update with the actual path to your CSV file
 
     campaign_data = []
     with open(csv_file_path, newline='') as csvfile:
@@ -584,20 +587,6 @@ def submit_business_details():
    session['industry'] = request.form.get('industry')
    session['other_industry'] = request.form.get('otherIndustry')
    session['business_description'] = request.form.get('businessDescription')
-   session['primary_color'] = request.form.get('primaryColor')
-   session['secondary_color'] = request.form.get('secondaryColor')
-   session['tertiary_color'] = request.form.get('tertiaryColor')
-   session['font_size'] = request.form.get('fontSize')
-   session['font_style'] = request.form.get('fontStyle')
-
-
-   # Handle the business logo file upload (if needed)
-   business_logo = request.files.get('businessLogo')
-   if business_logo:
-       business_logo.save(f"static/uploads/{business_logo.filename}")
-       session['business_logo'] = f"/static/uploads/{business_logo.filename}"
-
-
    return jsonify({"success": True})
 
 
@@ -619,7 +608,15 @@ def get_business_details():
 
 
 
-
+def extract_csv(pathname: str) -> list[str]:
+    parts = [f"--- START OF CSV ${pathname}"]
+    with open(pathname,"r",newline="") as csvfile:
+        csv_reader=csv.reader(csvfile)
+        for row in csv_reader:
+          str=" "
+          parts.append(str.join(row))
+    
+    return parts
 
 
 PROMPT_TEMPLATE = """
@@ -745,20 +742,65 @@ def generate_segments(predefined_prompt):
    #  # Use AI to generate the segments
    #  llm = genai.GenerativeModel(model="gemini-1.5-pro", temperature=0, max_tokens=100)
    #  response = llm.generate_content(segment_prompt_template)
-    llm = ChatGoogleGenerativeAI(
-                                 model="gemini-1.5-flash",
-                                 temperature=1.0,
-                                 max_tokens=20,) 
+    # llm = ChatGoogleGenerativeAI(
+    #                              model="gemini-1.5-flash",
+    #                              temperature=1.0,
+    #                              max_tokens=20,) 
     segment_prompt_template = PromptTemplate.from_template(template="{predefined_prompt}.The output should be formatted as follows: segment1, segment2, segment3 and should not contain any extra details. Where segment1, segment 2 and segment3 are the proposed segment names ")
     segment_prompt = segment_prompt_template.format(predefined_prompt=predefined_prompt)
     random_seed = str(random.random())
     final_prompt = segment_prompt + " " + random_seed
-    ai_segment_msg =  llm.invoke(segment_prompt)
+    # ai_segment_msg =  llm.invoke(segment_prompt)
     
+
     
     # Extract the generated segments from the response
-    segments = ai_segment_msg.content.split(',')    
+    # segments = ai_segment_msg.content.split(',')
+
+
+    file_path = session.get('uploaded_csv_path')
+    
+    if not file_path or not os.path.exists(file_path):
+        return jsonify({"error": "CSV file not found"}), 400
+    
+    generation_config = {
+  "temperature": 0.5,
+  "top_p": 0.95,
+  "top_k": 64,
+  "max_output_tokens": 8192,
+  "response_mime_type": "text/plain",
+}
+    model = genai.GenerativeModel(
+    model_name="gemini-1.5-flash",
+    generation_config=generation_config,
+)
+#  chat_session = model.start_chat(
+#   history=[
+#     {
+#       "role": "user",
+#       "parts":
+#         extract_csv("static/Updated_User_Event_Data_with_User_Count.csv")
+#       ,
+#     },
+#   ]
+# )
+
+    final_prompt =  "Refer the csv data for the task" + final_prompt
+    chat_session = model.start_chat(
+    history=[
+    {
+      "role": "user",
+      "parts":
+        extract_csv(file_path)
+      ,
+    },
+  ]
+)
+    response = chat_session.send_message(final_prompt)
+    segments = response.text.split(',')
+    print(response.text)  
     return [segment.strip() for segment in segments]
+
 
 # Route to generate predefined prompt
 @app.route('/generate-predefined-prompt', methods=['POST'])
@@ -806,8 +848,8 @@ def generate_content_route():
    contentType = request.form.get('contentType')
    llm = ChatGoogleGenerativeAI(
                                  model="gemini-1.5-flash",
-                                 temperature=0.7,
-                                 max_tokens=50,) 
+                                 temperature=1,
+                                 max_tokens=1024,) 
    if contentType == 'push':
       prompt_template = PromptTemplate.from_template(template="""Use this prompt: {prompt}. The output should follow a structured list format and provide 3 distinct variants for testing purposes, covering the following elements:
 Output Format in array: "Title": [ "Title 1", "Title 2", "Title 3" ], "Subtitle": [ "Subtitle 1", "Subtitle 2", "Subtitle 3" ], "Message": [ "Message 1", "Message 2", "Message 3" ]. The output will just be array and no extra information apart from it.
@@ -846,16 +888,6 @@ def upload_csv():
     
     return jsonify({"file_path": file_path})
 
-
-def extract_csv(pathname: str) -> list[str]:
-    parts = [f"--- START OF CSV ${pathname}"]
-    with open(pathname,"r",newline="") as csvfile:
-        csv_reader=csv.reader(csvfile)
-        for row in csv_reader:
-          str=" "
-          parts.append(str.join(row))
-    
-    return parts
 
 
 
@@ -918,7 +950,7 @@ def generate_best_timing():
 @app.route('/generate-insights', methods=['POST'])
 def generate_insights():
      # Use session to retrieve the uploaded CSV path or get from sessionStorage via frontend
- file_path = 'static/Campaign_Analytics_Final.csv'
+ file_path = 'static/Marketing_Data_Campaign_with_commas copy.csv'
     
  generation_config = {
   "temperature": 0,
@@ -956,35 +988,52 @@ def generate_predefined_content_prompt():
     business_description = session.get('business_description')
     industry = session.get('industry')
     target_segment = request.form.get('targetSegment')
+    businessname = session.get('businessName')
     
     if content_type == 'push':
-      prompt_template = """You are a content generation expert for {business_description} in the {industry} industry. Based on the campaign goal of {campaign_goal}, content objective {content_objective}, the desired tone of {tone}, and the target segment of {target_segment}, please create content for  {content_type} notification channel.
-The content should include the following elements:
+#       prompt_template = """You are a content generation expert for {business_description} in the {industry} industry. Based on the campaign goal of {campaign_goal}, content objective {content_objective}, the desired tone of {tone}, and the target segment of {target_segment}, please create content for  {content_type} notification channel.
+# The content should include the following elements:
 
 
-Title: A compelling headline that grabs attention, conveys the main benefit, and includes high-performing keywords relevant to the target segment.
+# Title: A compelling headline that grabs attention, conveys the main benefit, and includes high-performing keywords relevant to the target segment.
 
 
-Subtitle: A supporting line that adds more context or highlights a secondary benefit, tailored to the specific needs of the target audience.
+# Subtitle: A supporting line that adds more context or highlights a secondary benefit, tailored to the specific needs of the target audience.
 
 
-Message: A clear and concise body text that emphasizes the key value proposition, action, or solution, ensuring it resonates with the target segment's pain points or desires.
-"""
+# Message: A clear and concise body text that emphasizes the key value proposition, action, or solution, ensuring it resonates with the target segment's pain points or desires.
+# """
+       prompt_template = """You are a content generation expert at {businessname}, a {business_description} in the {industry} industry. Based on the campaign goal of {campaign_goal}, content objective {content_objective}, and the desired tone of {tone}, please create personalized content for the {content_type} notification channel that resonates with the {target_segment}.
+
+The content must adhere to {businessname}'s brand guidelines, using language and tone that aligns with the company's voice while engaging the target segment effectively.
+
+Please include the following elements:
+
+Title: A compelling headline that grabs attention, conveys the primary benefit, and incorporates high-performing keywords relevant to the target segment.
+
+Subtitle: A supporting line that offers additional context or highlights a secondary benefit tailored to the specific needs or pain points of the target audience.
+
+Message: Message emphasizing the key value proposition, action, or solution, encouraging immediate action with a clear call-to-action ensuring it aligns with the desires or challenges of the target segment.
+
+Focus on producing personalized and creatively engaging content with username that adheres to the brand's voice while maximizing relevance and impact for the specified segment."""
+    
     else:
-      prompt_template = """You are a content generation expert for {business_description} in the {industry} industry. Based on the target segment of {target_segment}, the campaign goal of {campaign_goal}, the content objective of {content_objective}, and the desired tone of {tone}, please create content for {content_type} notification.
-The content should include:
+      prompt_template = """You are a content generation expert at {businessname}, a {business_description} in the {industry} industry. Based on the campaign goal of {campaign_goal}, the content objective of {content_objective}, and the desired tone of {tone}, please create personalized content for the {content_type} email notification that resonates with the {target_segment}.
+
+The content must adhere to {businessname}'s brand guidelines, using language and tone that aligns with the company's voice while engaging the target segment effectively.
+
+Please include the following elements:
+
+Subject: A compelling and attention-grabbing headline that incorporates high-performing keywords relevant to the target segment, conveying the primary benefit of the email.
+
+Body: A clear and concise message that provides context, highlights secondary benefits, and addresses the specific needs or pain points of the target audience. Ensure that the body content speaks directly to the target segment and motivates action.
+
+CTA Button: A strong, action-driven call-to-action (CTA) that encourages immediate engagement. The CTA should align with the campaign goal and the desired user action, prompting users to take the next step (e.g., learn more, buy now, sign up).
+
+Focus on creating personalized and engaging content with username in body. Make sure it adheres to the brand's voice while maximizing relevance, impact, and action for the specified segment. """
 
 
-Subject: A compelling headline that grabs attention.
-
-
-Body: A clear and concise supporting message that adds context or highlights a secondary benefit.
-
-
-CTA Button**: A strong, action-driven call-to-action (CTA) button to encourage immediate engagement. """
-
-
-    content_prompt = prompt_template.format(business_description=business_description,industry=industry,content_type=content_type,content_objective=content_objective,tone=tone,campaign_goal=campaign_goal,target_segment=target_segment)
+    content_prompt = prompt_template.format(businessname=businessname,business_description=business_description,industry=industry,content_type=content_type,content_objective=content_objective,tone=tone,campaign_goal=campaign_goal,target_segment=target_segment)
     predefined_prompt = content_prompt
     return jsonify({'predefined_prompt': predefined_prompt})
 

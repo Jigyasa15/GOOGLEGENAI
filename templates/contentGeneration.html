@@ -161,59 +161,88 @@ new
     <div id="pushNotification" class="content-section">
         <h3>Push Notification Details</h3>
     
-        <div>
-            <label for="editableTitle" style="margin-bottom: 10px;">Title:</label>
-            <textarea id="editableTitle" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your title will appear here" required></textarea>
+        <!-- <div>
+            <label for="editableTitle" style="margin-bottom: 10px; display: inline-block; width: 100px;">Title:</label>
+            <textarea id="editableTitle" rows="2" style="width: 75%; resize: vertical;" placeholder="Your title will appear here" required ></textarea>
             <div class="segment-wrapper" id="pushTitle">
-                <!-- Titles will be populated here dynamically -->
+                <! Titles will be populated here dynamically -->
                 
-            </div>
+            <!-- </div>
         </div>
     
         <div>
-            <label for="editableSubtitle" style="margin-bottom: 10px;">Subtitle:</label>
-            <textarea id="editableSubtitle" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your subtitle will appear here" required></textarea>
-            <div class="segment-wrapper" id="pushSubtitle">
+            <label for="editableSubtitle" style="margin-bottom: 10px; display: inline-block; width: 100px;">Subtitle:</label>
+            <textarea id="editableSubtitle" rows="2" style="width: 75%; resize: vertical;" placeholder="Your subtitle will appear here" required></textarea>
+            <div class="segment-wrapper" id="pushSubtitle"> -->
+                <!-- Subtitles will be populated here dynamically -->
+            <!-- </div>
+        </div>
+    
+        <div>
+            <label for="editablePushmsg" style="margin-bottom: 10px; display: inline-block; width: 100px;">Push Message:</label>
+            <textarea id="editablePushmsg" rows="4" style="width: 75%; resize: vertical; ;" placeholder="Your message will appear here" required></textarea>
+            <div class="segment-wrapper" id="pushMessage"> -->
+                <!-- Messages will be populated here dynamically -->
+            <!-- </div>
+        </div>
+    </div> -->
+    <div class="custom-container">
+        <div class="custom-field-row">
+            <label for="editableTitle">Title:</label>
+            <textarea id="editableTitle" rows="2" placeholder="Your title will appear here" required></textarea>
+            <div class="custom-segment-wrapper" id="pushTitle">
+                <!-- Titles will be populated here dynamically -->
+            </div>
+        </div>
+    
+        <div class="custom-field-row">
+            <label for="editableSubtitle">Subtitle:</label>
+            <textarea id="editableSubtitle" rows="2" placeholder="Your subtitle will appear here" required></textarea>
+            <div class="custom-segment-wrapper" id="pushSubtitle">
                 <!-- Subtitles will be populated here dynamically -->
             </div>
         </div>
     
-        <div>
-            <label for="editablePushmsg" style="margin-bottom: 10px;">Push Message:</label>
-            <textarea id="editablePushmsg" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your message will appear here" required></textarea>
-            <div class="segment-wrapper" id="pushMessage">
+        <div class="custom-field-row">
+            <label for="editablePushmsg">Push Message:</label>
+            <textarea id="editablePushmsg" rows="4" placeholder="Your message will appear here" required></textarea>
+            <div class="custom-segment-wrapper" id="pushMessage">
                 <!-- Messages will be populated here dynamically -->
             </div>
         </div>
     </div>
+    </div>
     
     <div id="email" class="content-section" style="display:none;">
         <h3>Email Details</h3>
-        
-        <div>
-            <label for="editableSubject" style="margin-bottom: 10px;">Subject:</label>
-            <textarea id="editableSubject" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your subject will appear here" required></textarea>
-            <div class="segment-wrapper" id="Subject">
-                <!-- Email subjects will be populated here dynamically -->
-            </div>
-        </div>
     
-        <div>
-            <label for="editableBody" style="margin-bottom: 10px;">Body:</label>
-            <textarea id="editableBody" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your body will appear here" required></textarea>
-            <div class="segment-wrapper" id="Body">
-                <!-- Email bodies will be populated here dynamically -->
+        <div class="custom-container">
+            <div class="custom-field-row">
+                <label for="editableSubject">Subject:</label>
+                <textarea id="editableSubject" rows="2" placeholder="Your subject will appear here" required></textarea>
+                <div class="custom-segment-wrapper" id="Subject">
+                    <!-- Email subjects will be populated here dynamically -->
+                </div>
             </div>
-        </div>
     
-        <div>
-            <label for="editableCTA" style="margin-bottom: 10px;">CTA:</label>
-            <textarea id="editableCTA" rows="2" style="width: 50%; resize: vertical; margin-left: 10px;" placeholder="Your CTA will appear here" required></textarea>
-            <div class="segment-wrapper" id="CTA">
-                <!-- CTA buttons will be populated here dynamically -->
+            <div class="custom-field-row">
+                <label for="editableBody">Body:</label>
+                <textarea id="editableBody" rows="4" placeholder="Your body will appear here" required></textarea>
+                <div class="custom-segment-wrapper" id="Body">
+                    <!-- Email bodies will be populated here dynamically -->
+                </div>
+            </div>
+    
+            <div class="custom-field-row">
+                <label for="editableCTA">CTA:</label>
+                <textarea id="editableCTA" rows="2" placeholder="Your CTA will appear here" required></textarea>
+                <div class="custom-segment-wrapper" id="CTA">
+                    <!-- CTA buttons will be populated here dynamically -->
+                </div>
             </div>
         </div>
     </div>
+    
     
     <!-- Button for regenerating content -->
     <div>

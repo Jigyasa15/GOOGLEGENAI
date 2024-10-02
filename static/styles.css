@@ -219,3 +219,261 @@ button:hover {
     display: block;
     margin: 10px auto;
 }
+
+.custom-container {
+    display: grid;
+    grid-template-columns: 200px 1fr; /* One column for labels, second for textareas and dynamic content */
+    grid-gap: 5px;
+    margin: 20px 0;
+    width: 100%; /* Ensures full container width */
+}
+
+.custom-field-row {
+    display: contents; /* Keeps the label, textarea, and segment-wrapper together */
+    align-items: start;
+}
+
+.custom-field-row label {
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 150px; /* Properly adjusted to minimize space */
+    text-align: left;
+    padding-right: 5px; /* Padding to adjust label alignment */
+}
+
+.custom-field-row textarea {
+    width: 80%; /* Ensures textarea fills the available space */
+    resize: vertical;
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    grid-column: 2 / 3; /* Positions textarea in second column */
+}
+
+.custom-segment-wrapper {
+    grid-column: 2 / 3; /* Ensures segment wrapper is aligned below the textarea */
+    margin-top: 2px;
+}
+
+/* Ensures textarea fits large text */
+.custom-field-row textarea {
+    padding: 10px;
+    min-width: 80%; /* Keeps the textarea wide */
+}
+
+/* Styling for segment pills */
+.segment-pill {
+    display: inline-block;
+    background-color: #f0f0f0;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin: 5px 5px 0 0;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+}
+
+.segment-pill:hover {
+    background-color: #e0e0e0;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+ }
+ .filters .filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+ }
+ 
+ 
+ .filter-row label {
+    margin-right: 5px;
+    font-weight: bold;
+ }
+ .filter-row input,
+ .filter-row select {
+    padding: 5px;
+    font-size: 14px;
+    width: auto;
+    margin-right: 5px;
+    vertical-align: middle;
+ }
+ .sort-by {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+ }
+ .sort-by select {
+    padding: 5px;
+    font-size: 14px;
+ }
+ .sort-by button {
+    padding: 7px 15px;
+    background-color: #ff7f50;
+    border: none;
+    color: white;
+    cursor: pointer;
+ }
+ h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+ }
+ /* Table styling */
+ table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+ }
+ th, td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+ }
+ th {
+    background-color: #f2f2f2;
+ }
+ td {
+    background-color: #fff;
+ }
+ 
+ 
+ .analytics-container {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+ }
+ 
+ 
+ /* Center title */
+ h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+ }
+ 
+ 
+ /* Filter Section Styling */
+ .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+ }
+ 
+ 
+ .filter-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+ }
+ 
+ 
+ label {
+    font-weight: bold;
+ }
+ 
+ 
+ 
+ 
+ /* input[type="text"], input[type="date"], select {
+    padding: 8px;
+    width: 160px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+ }
+  */
+ 
+ /* Analyze Section Styling */
+ .analyze-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    text-align: left;
+    max-width: 100%;
+ }
+ 
+ 
+ .analyze-container textarea {
+    padding: 20px;
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: none;
+ }
+ 
+ 
+ /* Get Insights button */
+ button#GetInsights {
+    padding: 10px 20px;
+    background-color: #ff7f50;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+ }
+ 
+ 
+ /* Table Styling */
+ table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+ }
+ 
+ 
+ th, td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+ }
+ 
+ 
+ th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+ }
+ 
+ 
+ td {
+    background-color: #fff;
+ }
+ 
+ 
+ /* Ensure equal width for each column */
+ td, th {
+    width: auto;
+ }
+ 
+ 
+ /* Add space around the table */
+ .analytics-container {
+    padding: 20px;
+ }
+ 
+ 
+ /* Add spacing between rows */
+ tbody tr {
+    margin-bottom: 10px;
+ }
+ 
+ 
+ 
+ 

@@ -191,7 +191,7 @@ function saveContentType(contentType) {
     }
     
     function getInTouch() {
-        alert('Contact us at support@notifyai.com');
+        alert('Contact us at ainotify80@gmail.com');
     }
 
     function nextTab(nextTabId) {
@@ -544,21 +544,22 @@ function populateTable(data) {
     data.forEach(row => {
         const rowElement = `
             <tr>
-                <td>${row['Sent Date']}</td>
-                <td>${row['Campaign Name']}</td>
-                <td>${row['Status']}</td>
-                <td>${row['Channel']}</td>
-                <td>${row['User Segment']}</td>
-                <td>${row['Delivered']}</td>
-                <td>${row['Opened']}</td>
-                <td>${row['Clicked']}</td>
-                <td>${row['Unsubscribe Rate (%)']}</td>
-                <td>${row['Open Rate (%)']}</td>
-                <td>${row['CTR (%)']}</td>
-                <td>${row['Avg. Open Time (min)']}</td>
-                <td>${row['Avg. Click Time (min)']}</td>
-            </tr>
-        `;
+               <td style="text-align: center; margin-right: 20px; width: 10%;"">${row['Sent Date']}</td>
+               <td style="text-align: center;">${row['Campaign Name']}</td>
+               <td style="text-align: center;">${row['Status']}</td>
+               <td style="text-align: center;">${row['Channel']}</td>
+               <td style="text-align: center;">${row['User Segment']}</td>
+               <td style="text-align: center;">${row['Delivered']}</td>
+               <td style="text-align: center;">${row['Opened']}</td>
+               <td style="text-align: center;">${row['Clicked']}</td>
+               <td style="text-align: center;">${row['Unsubscribe Rate (%)']}</td>
+               <td style="text-align: center;">${row['Open Rate (%)']}</td>
+               <td style="text-align: center;">${row['CTR (%)']}</td>
+               <td style="text-align: center;">${row['Avg. Open Time (min)']}</td>
+               <td style="text-align: center;">${row['Avg. Click Time (min)']}</td>
+           </tr>
+           `;
+
         tableBody.innerHTML += rowElement;
     });
 }
@@ -885,12 +886,6 @@ function submitBusinessDetails() {
     formData.append('industry', document.getElementById('industry').value);
     formData.append('otherIndustry', document.getElementById('otherIndustry').value);
     formData.append('businessDescription', document.getElementById('businessDescription').value);
-    formData.append('businessLogo', document.getElementById('businessLogo').files[0]);
-    formData.append('primaryColor', document.getElementById('primaryColor').value);
-    formData.append('secondaryColor', document.getElementById('secondaryColor').value);
-    formData.append('tertiaryColor', document.getElementById('tertiaryColor').value);
-    formData.append('fontSize', document.getElementById('fontSize').value);
-    formData.append('fontStyle', document.getElementById('fontStyle').value);
 
     fetch('/submit_business_details', {
         method: 'POST',
@@ -1366,6 +1361,7 @@ function getInsights(){
     .then(data => {
         let insights = data.insights;
         insights = insights.replace(/[`*]/g, ''); // Remove unwanted characters
+        document.getElementById('campaignInsights').innerHTML = '';
         document.getElementById('campaignInsights').innerHTML = `
             <pre style="font-family: 'Arial', sans-serif; font-size: 16px; white-space: pre-wrap; word-wrap: break-word; width: 100%; overflow-wrap: break-word;">${insights}
             </pre>
