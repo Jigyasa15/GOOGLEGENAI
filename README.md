@@ -17,6 +17,14 @@ Create a `.env` file in the project root with the following variables:
 ```
 GOOGLE_API_KEY=your_google_api_key
 FLASK_SECRET_KEY=your_flask_secret_key
+GOOGLE_OAUTH_CLIENT_ID=your_google_oauth_client_id
+GOOGLE_OAUTH_CLIENT_SECRET=your_google_oauth_client_secret
+secret_key=your_secret_key
+MAIL_USERNAME=your_mail_username  
+MAIL_PASSWORD=your_mail_password
+GMAIL_PASSWORD=your_gmail_password
+GOOGLE_PROJECT=your_google_project 
+GOOGLE_LOCATION=your_google_location
 ```
 
 ### Step 3: Install required libraries
